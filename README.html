@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אינדקס הפרויקט · AlphaDevs Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl; background: #fafbff;
+    color: #0f172a; line-height: 1.7; padding: 40px 24px;
+}
+.wrap { max-width: 980px; margin: 0 auto; }
+.hero {
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #831843 100%);
+    color: white; padding: 50px 40px; border-radius: 24px;
+    margin-bottom: 32px;
+}
+.hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; }
+.hero p { opacity: 0.92; font-size: 1.05rem; }
+.eyebrow {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    color: #fbcfe8; padding: 6px 14px; border-radius: 999px;
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em;
+    margin-bottom: 16px;
+}
+h2 {
+    font-size: 1.5rem; margin: 36px 0 16px; padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+}
+h3 { font-size: 1.1rem; margin: 20px 0 10px; color: #4338ca; }
+.section {
+    background: white; border: 1px solid #e2e8f0;
+    border-radius: 16px; padding: 26px 30px; margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+}
+.file-grid {
+    display: grid; gap: 12px; margin: 16px 0;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.file {
+    display: flex; align-items: start; gap: 12px;
+    padding: 14px 16px; background: #f8fafc;
+    border: 1px solid #e2e8f0; border-radius: 10px;
+    text-decoration: none; color: inherit; transition: all 200ms;
+}
+.file:hover { border-color: #6366f1; background: #eef2ff; transform: translateY(-1px); }
+.file-icon {
+    flex-shrink: 0; width: 36px; height: 36px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white; border-radius: 8px;
+    display: grid; place-items: center; font-size: 1.05rem; font-weight: 700;
+}
+.file-info b { display: block; font-size: 0.95rem; margin-bottom: 2px; }
+.file-info small { color: #64748b; font-size: 0.82rem; }
+.status {
+    display: inline-block; padding: 3px 10px;
+    border-radius: 999px; font-size: 0.75rem; font-weight: 700;
+    margin-bottom: 8px;
+}
+.status-done { background: #d1fae5; color: #065f46; }
+.status-pending { background: #fef3c7; color: #92400e; }
+.status-soon { background: #dbeafe; color: #1e40af; }
+.cta-box {
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+    border: 2px solid #6ee7b7; border-radius: 14px;
+    padding: 22px 26px; margin: 20px 0;
+}
+.cta-box h3 { color: #047857; margin-top: 0; }
+.cta-box p { color: #064e3b; margin-bottom: 8px; }
+ol { margin: 12px 24px; }
+li { margin-bottom: 6px; color: #475569; }
+.note {
+    background: #fef3c7; border: 1px solid #fde68a;
+    border-right: 3px solid #f59e0b;
+    border-radius: 10px; padding: 14px 18px; margin: 16px 0;
+    font-size: 0.93rem; color: #78350f;
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="hero">
+    <span class="eyebrow">📁 אינדקס מרכזי · יום 1 להשקה</span>
+    <h1>AlphaDevs Academy — מרכז הפרויקט</h1>
+    <p>כל מה שבניתי עד עכשיו, ממוין לפי קטגוריה. לחיצה על כל קובץ פותחת אותו. זה הדף שצריך להיות שלך כסימנייה.</p>
+</div>
+
+<!-- I18N STATUS -->
+<div class="cta-box" style="background:linear-gradient(135deg,#dbeafe 0%,#e0e7ff 100%);border-color:#818cf8;">
+    <h3 style="color:#3730a3;">🌍 ארכיטקטורה רב-לשונית מקצועית</h3>
+    <p style="color:#3730a3;">המערכת בנויה כמו בקורסים אונליין מובילים — שפה נבחרת בכניסה, נסגרת לכל הסשן, ולא מנגנת את המשתמש.</p>
+
+    <h4 style="margin-top:16px;color:#3730a3;">🎯 חוויית המשתמש המתוכננת</h4>
+    <ul style="margin:8px 24px;color:#3730a3;line-height:1.9;">
+        <li><strong>ביקור ראשון:</strong> Welcome Splash מסך מלא — בוחר עברית או English. החלטה ברורה, פעם אחת.</li>
+        <li><strong>שפה נשמרת:</strong> בכל ביקור עתידי — נטען בשפה שבחר. אוטומטי.</li>
+        <li><strong>אין סוויצ'ר במרכז:</strong> רק קישור דיסקרטי בפוטר (🌐 עברית · English) שניתן ללחוץ אם רוצים להחליף.</li>
+        <li><strong>שיתוף קישורים מכבד שפה:</strong> <code style="background:white;padding:2px 6px;border-radius:5px;">?lang=en</code> בURL מציג את הדף באנגלית גם למישהו שלא ביקר עוד.</li>
+        <li><strong>דפים לא מתורגמים = Coming Soon מסודר:</strong> מודל אלגנטי במקום הודעה צהובה צורמת.</li>
+    </ul>
+
+    <h4 style="margin-top:16px;color:#3730a3;">📊 מצב התרגום הנוכחי</h4>
+    <div style="background:white;border-radius:8px;padding:14px 18px;margin-top:8px;">
+        <p style="font-size:0.92rem;color:#0f172a;margin:0;line-height:2;">
+            <strong style="color:#10b981;">✓ עברית מלאה:</strong> כל הקורס, דפי המכירה, התעודות, חוברת העבודה<br>
+            <strong style="color:#10b981;">✓ אנגלית מלאה:</strong> דף הבית של הקורס · דף המכירות (sales.html) · UI גלובלי · כותרות יום 1<br>
+            <strong style="color:#f59e0b;">⏳ אנגלית בהמתנה:</strong> תוכן הסקציות בימים 2-7 — יוצג Coming Soon אלגנטי
+        </p>
+    </div>
+
+    <h4 style="margin-top:16px;color:#3730a3;">🔧 איך להוסיף שפה חדשה (ספרדית, ערבית, גרמנית...)</h4>
+    <ol style="margin:8px 24px;color:#3730a3;line-height:1.9;font-size:0.93rem;">
+        <li>פתח <code style="background:white;padding:2px 6px;border-radius:5px;">assets/js/i18n.js</code></li>
+        <li>הוסף שורה ל-<code style="background:white;padding:2px 6px;border-radius:5px;">LANGS</code>: <code style="background:white;padding:2px 6px;border-radius:5px;">es: { code: 'es', native: 'Español', flag: '🇪🇸', dir: 'ltr' }</code></li>
+        <li>הוסף בלוק <code style="background:white;padding:2px 6px;border-radius:5px;">es: { ... }</code> ב-<code style="background:white;padding:2px 6px;border-radius:5px;">TRANSLATIONS</code> עם כל המפתחות</li>
+        <li>זה הכל. ה-Welcome Splash, פוטר, ו-RTL/LTR — אוטומטיים.</li>
+    </ol>
+
+    <h4 style="margin-top:16px;color:#3730a3;">💼 לאיזה קהלים זה נותן ערך מסחרי</h4>
+    <ul style="margin:8px 24px;color:#3730a3;line-height:1.9;font-size:0.93rem;">
+        <li><strong>אנגלית</strong> — קונים גלובליים, סטארט-אפים, ישראלים בחו"ל. שוק עצום.</li>
+        <li><strong>ספרדית</strong> — דרום אמריקה, ספרד. שוק קורסי AI במהירה גדילה.</li>
+        <li><strong>ערבית</strong> — מדינות הסכמי אברהם. הזדמנות B2B חזקה.</li>
+        <li><strong>צרפתית/גרמנית</strong> — אירופה. קונים פרימיום.</li>
+    </ul>
+</div>
+
+<!-- DEPLOY -->
+<div class="cta-box" style="background:linear-gradient(135deg,#fef3c7 0%,#dcfce7 100%);border-color:#10b981;">
+    <h3 style="color:#064e3b;">🚀 מוכן להעלאה ל-academy.alphadevs.co</h3>
+    <p style="color:#064e3b;">הכנתי קובץ הגדרה (CNAME) ומדריך פעולה צעד-צעד. סה"כ 4 פעולות שלך, ~15 דקות. אחרי זה הקורס חי בכתובת מסחרית.</p>
+    <p style="margin-top:10px;"><a href="DEPLOY.html" style="display:inline-block;padding:10px 18px;background:#10b981;color:white;border-radius:8px;text-decoration:none;font-weight:700;">🚀 פתח את מדריך ההעלאה ←</a></p>
+</div>
+
+<!-- KIDS COURSE -->
+<div class="cta-box" style="background:linear-gradient(135deg,#fef3c7 0%,#fce7f3 50%,#f3e8ff 100%);border-color:#fbbf24;">
+    <h3 style="color:#78350f;">🤖 קורס לילדים — "מסע ה-AI שלי"</h3>
+    <p style="color:#78350f;">קורס נפרד לילדים בגילאי 8-11. 5 ימים, סיפורים, פעילויות, מדבקות. עיצוב מובחן ושמח. מתאים לכל כלי AI (לא קשור ל-Cowork ספציפית).</p>
+    <p style="margin-top:8px;color:#78350f;font-size:0.92rem;">
+        <strong>מצב:</strong> דף בית מלא · יום 1 מלא ("מי זה AI?" — סיפור, פעילות, מבחן) · ימים 2-5 ממתינים לבנייה (אותה תבנית, רק תוכן חדש).
+    </p>
+    <p style="margin-top:10px;"><a href="Kids/index.html" style="display:inline-block;padding:10px 18px;background:linear-gradient(135deg,#fbbf24,#ec4899,#a855f7);color:white;border-radius:8px;text-decoration:none;font-weight:700;">🤖 פתח את הקורס לילדים ←</a></p>
+</div>
+
+<!-- TEAM ACCESS -->
+<div class="cta-box" style="background:linear-gradient(135deg,#dbeafe 0%,#fce7f3 100%);border-color:#818cf8;">
+    <h3 style="color:#3730a3;">👥 גישות לצוות</h3>
+    <p style="color:#3730a3;">בנינו דפי גישה אישיים לחברי הצוות. כל אחת מקבלת חוויה מותאמת לתפקיד שלה — אדמין/לומדת.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+        <a href="SEND-TO-TEAM.html" style="display:inline-block;padding:10px 18px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;border-radius:8px;text-decoration:none;font-weight:700;">📤 שליחה לצוות (הוראות)</a>
+        <a href="natalia-access.html" style="display:inline-block;padding:10px 18px;background:#3b82f6;color:white;border-radius:8px;text-decoration:none;font-weight:700;">🛠️ דף נטליה (Manager)</a>
+        <a href="reema-access.html" style="display:inline-block;padding:10px 18px;background:#ec4899;color:white;border-radius:8px;text-decoration:none;font-weight:700;">💜 דף רימה (Student)</a>
+    </div>
+</div>
+
+<!-- OWNER ACCESS -->
+<div class="cta-box" style="background:linear-gradient(135deg,#fef3c7 0%,#fce7f3 100%);border-color:#fbbf24;">
+    <h3 style="color:#78350f;">👑 גישת אדמין — בשבילך, לאור</h3>
+    <p style="color:#78350f;"><strong>המפתח האישי שלך:</strong> <code style="background:white;padding:3px 10px;border-radius:6px;font-weight:800;font-size:1rem;">AD-LL2680</code> · מייל: <code style="background:white;padding:3px 8px;border-radius:6px;">lior@alphadevs.co</code></p>
+    <p style="margin-top:10px;color:#78350f;">לחץ על הכפתור — תוכנס אוטומטית לכל הקורסים, ללא watermark, ללא הגבלות:</p>
+    <p style="margin-top:10px;"><a href="owner-login.html" style="display:inline-block;padding:12px 22px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#78350f;border-radius:10px;text-decoration:none;font-weight:800;box-shadow:0 8px 20px rgba(245,158,11,0.3);">⚡ הפעל גישת אדמין ←</a></p>
+</div>
+
+<!-- ACTION FIRST -->
+<div class="cta-box">
+    <h3>🚨 קודם כל — קרא את זה</h3>
+    <p><strong>מסמך פעולות אישי:</strong> רשימת המשימות שאתה צריך לבצע (כ-95 דקות סך הכל).</p>
+    <p style="margin-top:10px;"><a href="00-START-HERE.html" style="display:inline-block;padding:10px 18px;background:#10b981;color:white;border-radius:8px;text-decoration:none;font-weight:700;">📋 פתח את מסמך הפעולות ←</a></p>
+</div>
+
+<!-- Strategic Foundation -->
+<div class="section">
+    <h2>🎯 בסיס אסטרטגי</h2>
+    <p>המסמכים האסטרטגיים — הבסיס לכל הביצוע.</p>
+
+    <div class="file-grid">
+        <a href="Master-Plan/index.html" class="file">
+            <div class="file-icon">📋</div>
+            <div class="file-info">
+                <span class="status status-done">✓ מוכן</span>
+                <b>תכנית המאסטר המלאה</b>
+                <small>11 סקציות · אסטרטגיה, פוזיציה, מספרים</small>
+            </div>
+        </a>
+        <a href="00-START-HERE.html" class="file">
+            <div class="file-icon">🚀</div>
+            <div class="file-info">
+                <span class="status status-done">✓ מוכן</span>
+                <b>מסמך פעולות (Start Here)</b>
+                <small>10 פעולות שאתה צריך לבצע</small>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Course -->
+<div class="section">
+    <h2>📚 הקורס עצמו</h2>
+    <p>הקורס הקיים. נשאר ללא שינוי. רק נחבר אותו לתשתית המכירה.</p>
+
+    <div class="file-grid">
+        <a href="index.html" class="file">
+            <div class="file-icon">🏠</div>
+            <div class="file-info">
+                <span class="status status-done">✓ מוכן</span>
+                <b>דף הבית של הקורס</b>
+                <small>7 ימים · 32 שיעורים · תעודה</small>
+            </div>
+        </a>
+        <a href="certificate.html" class="file">
+            <div class="file-icon">🎓</div>
+            <div class="file-info">
+                <span class="status status-done">✓ מוכן</span>
+                <b>תעודת סיום</b>
+                <small>נפתחת אחרי כל המבחנים</small>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Sales Pages -->
+<div class="section">
+    <h2>💰 דפי מכירה</h2>
+    <p>הנכסים השיווקיים שמחליפים גולשים בקונים.</p>
+
+    <div class="file-grid">
+        <a href="Landing-Pages/sales.html" class="file">
+            <div class="file-icon">🛒</div>
+            <div class="file-info">
+                <span class="status status-done">✓ מוכן</span>
+                <b>דף נחיתה ראשי (Sales)</b>
+                <small>Hero, pain points, pricing, testimonials, FAQ</small>
+            </div>
+        </a>
+        <a href="Lead-Magnet/landing.html" class="file">
+            <div class="file-icon">📨</div>
+            <div class="file-info">
+                <span class="status status-done">✓ מוכן</span>
+                <b>דף נחיתה — Lead Magnet</b>
+                <small>איסוף מיילים בתמורה ל-PDF</small>
+            </div>
+        </a>
+        <a href="Lead-Magnet/pdf-content.html" class="file">
+            <div class="file-icon">📄</div>
+            <div class="file-info">
+                <span class="status status-done">✓ מוכן</span>
+                <b>תוכן ה-PDF המתנה</b>
+                <small>10 פרומפטים מוכנים · להמיר ל-PDF</small>
+            </div>
+        </a>
+    </div>
+
+    <div class="note">
+        💡 <strong>איך להמיר את ה-PDF:</strong> פתח את הקובץ <code>pdf-content.html</code> בדפדפן → הדפס (Ctrl+P / Cmd+P) → בחר "Save as PDF". זהו.
+    </div>
+</div>
+
+<!-- Marketing -->
+<div class="section">
+    <h2>📣 חומרי שיווק</h2>
+    <p>תוכן מוכן לפרסום והפצה. העתק → הדבק → פרסם.</p>
+
+    <div class="file-grid">
+        <a href="Marketing/linkedin-posts.md" class="file">
+            <div class="file-icon">💼</div>
+            <div class="file-info">
+                <span class="status status-done">✓ מוכן</span>
+                <b>15 פוסטים ל-LinkedIn</b>
+                <small>+ לוח פרסום + טיפים לאלגוריתם</small>
+            </div>
+        </a>
+        <a href="Marketing/email-sequence.md" class="file">
+            <div class="file-icon">📧</div>
+            <div class="file-info">
+                <span class="status status-done">✓ מוכן</span>
+                <b>רצף 7 מיילים</b>
+                <small>Onboarding + Tripwire + Upsell</small>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Course Components (Updated) -->
+<div class="section" style="background:linear-gradient(135deg,#ecfdf5 0%,#f0fdf4 100%);border-color:#6ee7b7;">
+    <h2 style="border:none;margin-top:0;">🆕 שדרוגים חדשים — קורס עומק</h2>
+    <p>הקורס שודרג ל-2.5-3 שעות עבודה אמיתית ביום. כל יום עכשיו כולל: חימום, תרגיל מעשי, מקרה בוחן, חוברת עבודה, אתגר בונוס, ורפלקציה. בנוסף — מנגנון רישוי + watermark נגד שיתוף.</p>
+
+    <div class="file-grid">
+        <a href="Workbooks/workbook.html" class="file">
+            <div class="file-icon">📓</div>
+            <div class="file-info">
+                <span class="status status-done">✓ חדש</span>
+                <b>חוברת העבודה (PDF)</b>
+                <small>7 ימים · דפי תרגול · תבניות · להדפסה</small>
+            </div>
+        </a>
+        <a href="Video-Scripts/all-scripts.md" class="file">
+            <div class="file-icon">🎬</div>
+            <div class="file-info">
+                <span class="status status-done">✓ חדש</span>
+                <b>תסריטי וידאו לכל 7 הימים</b>
+                <small>תסריטי פתיחה מלאים + הוראות הקלטה</small>
+            </div>
+        </a>
+    </div>
+
+    <h3 style="margin-top:24px;">מה כל יום מכיל עכשיו</h3>
+    <ul style="margin:8px 24px;line-height:1.9;">
+        <li><strong>וידאו פתיחה</strong> — placeholder + תסריט מילה-במילה (לאור מקליט בעצמו)</li>
+        <li><strong>חימום (5 דק׳)</strong> — תרגיל מודעות עם textarea להקלדה</li>
+        <li><strong>שיעורים (50-60 דק׳)</strong> — התוכן הקיים, נשאר ללא שינוי</li>
+        <li><strong>תרגיל מעשי (30-40 דק׳)</strong> — פרומפט מובנה לביצוע ב-AI שלהם, צ׳ק-ליסט</li>
+        <li><strong>מקרה בוחן (20-25 דק׳)</strong> — סיפור אמיתי עם timeline ותוצאות</li>
+        <li><strong>חוברת עבודה (15-20 דק׳)</strong> — קישור להורדה</li>
+        <li><strong>אתגר בונוס (30-35 דק׳)</strong> — אופציונלי, למתקדמים</li>
+        <li><strong>רפלקציה (10 דק׳)</strong> — 4 שאלות, נשמרות ב-localStorage</li>
+        <li><strong>מבחן (קיים)</strong> — נשאר כמו שהיה</li>
+    </ul>
+
+    <h3 style="margin-top:24px;">הגנות נגד שיתוף לא מורשה</h3>
+    <ul style="margin:8px 24px;line-height:1.9;">
+        <li><strong>License Modal</strong> — בכניסה הראשונה דורש שם, מייל, ומפתח רישוי. נשמר ב-localStorage.</li>
+        <li><strong>Watermark אישי</strong> — שם הקונה והמייל מוצגים בכל עמוד (פינה + אלכסון מקבילי)</li>
+        <li><strong>Anti-share</strong> — חסימת קליק ימני, F12, Ctrl+S/U/P. הצגת אזהרה ב-console.</li>
+        <li><strong>בכל מפתח בפורמט AD-XXXXXX</strong> — תקבל גישה. בייצור — ה-LMS (Thinkific) ייקח אחריות.</li>
+    </ul>
+</div>
+
+<!-- Coming Next -->
+<div class="section">
+    <h2>🔜 מה אני בונה בהמשך</h2>
+    <p>אחרי שתבצע את המשימות במסמך הפעולות, אני אמשיך לבנות את אלה:</p>
+
+    <div class="file-grid">
+        <div class="file" style="opacity:0.8;">
+            <div class="file-icon" style="background:#94a3b8;">🎬</div>
+            <div class="file-info">
+                <span class="status status-soon">בקרוב</span>
+                <b>10 תסריטי רילים</b>
+                <small>לאינסטגרם וטיקטוק · עם הוראות צילום</small>
+            </div>
+        </div>
+        <div class="file" style="opacity:0.8;">
+            <div class="file-icon" style="background:#94a3b8;">🎨</div>
+            <div class="file-info">
+                <span class="status status-soon">בקרוב</span>
+                <b>Brand Identity Guide</b>
+                <small>לוגו מורחב, פלטה, מדריך עיצוב</small>
+            </div>
+        </div>
+        <div class="file" style="opacity:0.8;">
+            <div class="file-icon" style="background:#94a3b8;">📋</div>
+            <div class="file-info">
+                <span class="status status-soon">בקרוב</span>
+                <b>5 דפי נחיתה נוספים</b>
+                <small>Pro+, Business, מבצעים, B2B, אפיליאייטים</small>
+            </div>
+        </div>
+        <div class="file" style="opacity:0.8;">
+            <div class="file-icon" style="background:#94a3b8;">📞</div>
+            <div class="file-info">
+                <span class="status status-soon">בקרוב</span>
+                <b>20 תבניות תמיכת לקוחות</b>
+                <small>תגובות מוכנות לתרחישים נפוצים</small>
+            </div>
+        </div>
+        <div class="file" style="opacity:0.8;">
+            <div class="file-icon" style="background:#94a3b8;">⚙️</div>
+            <div class="file-info">
+                <span class="status status-pending">דורש ממך</span>
+                <b>הגדרת אוטומציות</b>
+                <small>אחרי שתפתח חשבונות, אני מחבר הכל</small>
+            </div>
+        </div>
+        <div class="file" style="opacity:0.8;">
+            <div class="file-icon" style="background:#94a3b8;">📊</div>
+            <div class="file-info">
+                <span class="status status-soon">בקרוב</span>
+                <b>דשבורד מדידה</b>
+                <small>מעקב אחרי מכירות, conversions, KPIs</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Workflow -->
+<div class="section">
+    <h2>🗺️ סדר הפעולות המומלץ</h2>
+    <p>לקרוא ולעשות לפי הסדר:</p>
+
+    <ol>
+        <li><strong>קרא את <a href="Master-Plan/index.html">תכנית המאסטר</a></strong> — להבין את התמונה הגדולה (15 דקות).</li>
+        <li><strong>פתח את <a href="00-START-HERE.html">מסמך הפעולות</a></strong> — בצע את המשימות הראשונות (60 דקות).</li>
+        <li><strong>עיין ב-<a href="Landing-Pages/sales.html">דף הנחיתה</a></strong> — אשר או בקש שינויים.</li>
+        <li><strong>בדוק את <a href="Lead-Magnet/landing.html">דף ה-Lead Magnet</a></strong> ואת ה-<a href="Lead-Magnet/pdf-content.html">PDF</a> — אשר.</li>
+        <li><strong>קרא את <a href="Marketing/linkedin-posts.md">15 הפוסטים</a></strong> — בחר את הפוסט הראשון לפרסום.</li>
+        <li><strong>קרא את <a href="Marketing/email-sequence.md">רצף המיילים</a></strong> — אשר את הטון.</li>
+        <li><strong>חזור אליי</strong> עם "סיימתי X" או "צריך שינוי ב-Y".</li>
+    </ol>
+</div>
+
+<!-- Contact -->
+<div class="section" style="background:linear-gradient(135deg,#eef2ff 0%,#fdf2f8 100%);border-color:#c7d2fe;">
+    <h2 style="border:none;margin-top:0;">💬 איך לעדכן אותי</h2>
+    <p>פשוט תכתוב לי בצ׳אט אחת מאלה:</p>
+    <ul style="margin:12px 24px;">
+        <li><strong>"סיימתי 1, 2, 3"</strong> — אני מסמן ועובר לשלב הבא</li>
+        <li><strong>"צריך שינוי ב-X"</strong> — אני מתקן</li>
+        <li><strong>"הוסף Y לקורס"</strong> — אני מוסיף</li>
+        <li><strong>"תקדם בלי לחכות לי"</strong> — אני ממשיך לבנות</li>
+        <li><strong>"איפה Z?"</strong> — אני מזכיר</li>
+    </ul>
+</div>
+
+<p style="text-align:center; margin-top: 50px; color: #94a3b8; font-size: 0.85rem;">
+AlphaDevs Academy · אינדקס פרויקט · עודכן יום 1<br>
+לאור — כשתחזור, פשוט פתח את הקובץ הזה. הכל מכאן.
+</p>
+
+</div>
+
+<script src="assets/js/i18n.js"></script>
+</body>
+</html>

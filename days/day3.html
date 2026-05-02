@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יום 3: סקילים · AlphaDevs Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Heebo,sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body id="top" class="gated">
+
+<header class="topbar">
+    <div class="container topbar-inner">
+        <a href="../index.html" class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-name"><b>AlphaDevs Academy</b><span>יום 3 מתוך 7</span></div>
+        </a>
+        <div class="topbar-actions">
+            <div class="progress-pill" id="progress-pill"><span class="dot"></span> טוען...</div>
+            <a href="../index.html" class="btn btn-ghost btn-sm">← חזרה לקורס</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="lesson-shell">
+        <aside class="lesson-sidebar">
+            <h4>תוכן היום</h4>
+            <ul class="toc-list">
+                <li><a href="#what-skill" class="active"><span class="toc-num">1</span>מה זה בעצם סקיל?</a></li>
+                <li><a href="#built-in"><span class="toc-num">2</span>הסקילים המובנים</a></li>
+                <li><a href="#auto-trigger"><span class="toc-num">3</span>איך סקיל מופעל</a></li>
+                <li><a href="#examples"><span class="toc-num">4</span>דוגמאות מעשיות</a></li>
+                <li><a href="#quiz"><span class="toc-num">★</span>מבחן יום 3</a></li>
+            </ul>
+        </aside>
+
+        <main class="lesson-main">
+            <header class="lesson-header">
+                <span class="lesson-eyebrow">יום 3 · 45 דקות · רמה: בינונית</span>
+                <h1>סקילים — מומחים מובנים</h1>
+                <p class="lesson-subtitle">היום נכיר את אחד הקונספטים העוצמתיים של Cowork — סקילים. אלו "מומחים" מובנים שגורמים לקלוד לבצע משימות ספציפיות ברמה הרבה יותר גבוהה.</p>
+                <div class="lesson-progress">
+                    <div class="bar"><div class="bar-fill" style="width:42%;"></div></div>
+                    <div class="progress-text">יום 3 מתוך 7</div>
+                </div>
+
+                <div class="lesson-time-bar">
+                    <div class="time-block"><div class="num">5'</div><div class="label">חימום</div></div>
+                    <div class="time-block"><div class="num">50'</div><div class="label">שיעורים</div></div>
+                    <div class="time-block"><div class="num">35'</div><div class="label">תרגיל</div></div>
+                    <div class="time-block"><div class="num">20'</div><div class="label">מקרה בוחן</div></div>
+                    <div class="time-block"><div class="num">15'</div><div class="label">חוברת עבודה</div></div>
+                    <div class="time-block"><div class="num">30'</div><div class="label">בונוס</div></div>
+                    <div class="time-block total"><div class="num">2.6 ש׳</div><div class="label">סך הכל</div></div>
+                </div>
+            </header>
+
+            <div class="video-block">
+                <div class="video-frame"><div class="video-play-btn"></div></div>
+                <div class="video-meta">
+                    <span class="video-title">🎬 וידאו: סקילים בפעולה</span>
+                    <span class="video-duration">⏱ 4:45</span>
+                </div>
+                <div class="video-placeholder-note">📹 <strong>הקלטת וידאו תיווסף בקרוב.</strong></div>
+            </div>
+
+            <section class="warmup">
+                <div class="warmup-header">
+                    <div class="warmup-icon">🔥</div>
+                    <div>
+                        <span class="warmup-tag">חימום · 5 דקות</span>
+                        <h3>איזה סוג מסמך/תוצר את הכי הרבה צריכה לייצר?</h3>
+                    </div>
+                </div>
+                <p>חשבי על השבוע שעבר. איזה סוג של תוצר את ייצרת הכי הרבה? Word? Excel? PDF? מצגת? כתבי מה זה ולמה — אנחנו נשתמש בסקיל המתאים לזה בתרגיל.</p>
+                <textarea class="warmup-input" data-qkey="day3-warmup" placeholder="הסוג: __________ | תדירות: __________ | מטרה: __________"></textarea>
+            </section>
+
+            <!-- Section 1: What is a Skill -->
+            <section class="section" id="what-skill">
+                <h2><span class="section-num">1</span>מה זה בעצם סקיל?</h2>
+                <p>תארי לעצמך שיש לך עוזר חכם, אבל לכל משימה ספציפית יש לו "כובע מומחה" שהוא חובש. כשהוא חובש את הכובע של "מומחית מצגות" — הוא יודע בדיוק איך לבנות מצגת מקצועית, באילו עקרונות עיצוב להשתמש, איך לסדר את הסליידים. כשהוא חובש את הכובע של "מומחית Excel" — הוא יודע נוסחאות, עיצוב טבלאות, יצירת גרפים.</p>
+                <p>זה בדיוק מה שסקיל עושה. הוא מערכת ידע + הנחיות שמתווספות לקלוד כשהמשימה שלך מתאימה.</p>
+
+                <h3>למה זה חשוב?</h3>
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">🎯</div>
+                        <h4>איכות גבוהה יותר</h4>
+                        <p>בלי סקיל, קלוד יכין לך Word סביר. עם סקיל docx — הוא יכין מסמך מקצועי עם עיצוב, כותרות, ותוכן עניינים.</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">⚡</div>
+                        <h4>מהירות ואחידות</h4>
+                        <p>סקיל יודע "איך עושים את זה נכון" — ולא צריך להסביר לקלוד בכל פעם.</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">🔧</div>
+                        <h4>יכולות מיוחדות</h4>
+                        <p>סקיל יכול להפעיל קוד פייתון, ליצור גרפים, לעבוד עם פורמטים מורכבים — דברים שצ׳אט פשוט לא יכול.</p>
+                    </div>
+                </div>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">ℹ️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">סקיל מול פרומפט רגיל</div>
+                        <p><strong>פרומפט רגיל:</strong> את אומרת לקלוד מה לעשות והוא עושה כמיטב יכולתו. <strong>סקיל:</strong> קלוד טוען לעצמו ידע מקצועי בנושא לפני שהוא מתחיל — ואז עושה הרבה יותר טוב.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Built-in Skills -->
+            <section class="section" id="built-in">
+                <h2><span class="section-num">2</span>הסקילים המובנים</h2>
+                <p>ב-Cowork יש סקילים שמותקנים מראש. הנה הליבה שכדאי להכיר:</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">📄</div>
+                        <div class="step-body">
+                            <h4>docx — מסמכי Word</h4>
+                            <p>יצירה, עריכה וניתוח של קבצי Word עם עיצוב מקצועי: כותרות, טבלאות, תוכן עניינים, צילומים, מספרי עמוד.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">📊</div>
+                        <div class="step-body">
+                            <h4>xlsx — גיליונות Excel</h4>
+                            <p>בניית גיליונות מתקדמים עם נוסחאות, עיצוב מותנה, גרפים, ניתוח נתונים, ועיבוד CSV.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">📑</div>
+                        <div class="step-body">
+                            <h4>pdf — קבצי PDF</h4>
+                            <p>קריאת PDFs (גם סרוקים), חילוץ טקסט וטבלאות, יצירת PDFs חדשים, מילוי טפסים, מיזוג ופיצול.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">🎨</div>
+                        <div class="step-body">
+                            <h4>pptx — מצגות PowerPoint</h4>
+                            <p>יצירת מצגות מקצועיות עם עיצוב, אנימציות, סליידים מובנים, הערות מנחה.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">⏰</div>
+                        <div class="step-body">
+                            <h4>schedule — משימות מתוזמנות</h4>
+                            <p>יצירה וניהול של משימות אוטומטיות שרצות לבד (נלמד ביום 7).</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">📧</div>
+                        <div class="step-body">
+                            <h4>gmail-send — שליחת מיילים</h4>
+                            <p>שליחת מיילים מ-Gmail שלך, עבודה עם טיוטות, ניהול תיבת דואר.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-pro">
+                    <div class="callout-icon">⭐</div>
+                    <div class="callout-body">
+                        <div class="callout-title">סקילים מתקדמים</div>
+                        <p>יש גם סקילים מתקדמים יותר — כמו אג׳נטים שלמים (Atlas, Sales, BizDev, Finance, LinkedIn). אלה לא רק מבצעים משימות — הם "אישיויות" עם תפקיד ושיטת עבודה. נדבר על זה ביום 6.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Auto Trigger -->
+            <section class="section" id="auto-trigger">
+                <h2><span class="section-num">3</span>איך סקיל מופעל</h2>
+                <p>החלק המגניב — לרוב את לא צריכה לעשות כלום. קלוד מזהה אוטומטית מתי המשימה שלך דורשת סקיל, וטוען אותו בעצמו.</p>
+
+                <h3>איך זה עובד טכנית</h3>
+                <p>לכל סקיל יש "תיאור" — מתי הוא רלוונטי. כשאת מבקשת משהו, קלוד בודק את התיאורים, ואם המשימה שלך מתאימה — הוא מפעיל את הסקיל. אחר כך הוא קורא את הוראות הסקיל המלאות ופועל לפיהן.</p>
+
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">✨</div>
+                        <h4>אוטומטי</h4>
+                        <p>"תכין מצגת" → קלוד מפעיל לבד את pptx. "תכין Excel" → לבד מפעיל xlsx.</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">👆</div>
+                        <h4>ידני (אם רוצה)</h4>
+                        <p>אפשר גם להגיד במפורש: "תשתמש בסקיל docx ותכין לי..." — אם את רוצה לוודא.</p>
+                    </div>
+                </div>
+
+                <h3>איך לדעת שסקיל הופעל?</h3>
+                <p>תראי הודעה בצ׳אט: "The xlsx skill is loading" או "טוען את הסקיל xlsx". זו אינדיקציה שקלוד עומד לבצע משימה ברמה גבוהה יותר.</p>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">⚠️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">אם הסקיל לא נטען לבד</div>
+                        <p>לפעמים קלוד לא מזהה שהמשימה דורשת סקיל. אם את רואה תוצאה לא מספקת — תזכירי לו במפורש: "השתמש בסקיל pptx" או "תפעיל את ה-skill הרלוונטי". זה לרוב פותר את הבעיה.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Examples -->
+            <section class="section" id="examples">
+                <h2><span class="section-num">4</span>דוגמאות מעשיות</h2>
+                <p>בואי נראה איך סקילים מקפיצים את העבודה שלך. הדוגמאות הבאות הן משימות שאת יכולה לעשות עכשיו.</p>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה 1 · pptx</span>
+                    <h4>🎨 מצגת בלי שתעשי כלום</h4>
+                    <div class="practice-prompt">
+                        תכין מצגת PowerPoint של 6 סליידים על הנושא "5 הטעויות הנפוצות בניהול זמן ואיך להימנע מהן". כל סליד: כותרת, נקודה אחת מרכזית, ו-2-3 פריטים מסבירים. עיצוב מודרני ונקי, פלטה: כתום וכחול. הוסיף הערות מנחה לכל סליד.
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה 2 · xlsx</span>
+                    <h4>📊 גיליון מעקב לקוחות</h4>
+                    <div class="practice-prompt">
+                        תכין קובץ Excel למעקב אחרי לקוחות. עמודות: שם, חברה, מייל, טלפון, סטטוס (תפריט: פוטנציאלי / משא"מ / סגור / איבדנו), סכום פוטנציאלי, תאריך מגע אחרון, מגע הבא, הערות. הוסף עיצוב מותנה — שורות עם סטטוס "סגור" בצבע ירוק בהיר. בנה גיליון נוסף "סיכום" עם נוסחאות לסה"כ פוטנציאל ומספר לקוחות בכל סטטוס.
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה 3 · pdf</span>
+                    <h4>📑 חילוץ מידע מ-PDF</h4>
+                    <div class="practice-prompt">
+                        קרא את ה-PDF הזה (חוזה / תקנון / מסמך משפטי) וחלץ לי טבלה מסודרת עם: כל הסעיפים החשובים, מי האחראי לכל סעיף, ותאריכי יעד. תוצאת — קובץ Excel.
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה 4 · docx</span>
+                    <h4>📄 דוח מקצועי עם תוכן עניינים</h4>
+                    <div class="practice-prompt">
+                        תכין לי מסמך Word — דוח רבעוני של החברה, עם תוכן עניינים אוטומטי, כותרות בכמה רמות, טבלת נתונים אחת, ופיסקת סיכום. נושאים: סיכום ביצועים, אתגרים, יעדים לרבעון הבא. עיצוב פרופסיונלי, פונט: Heebo, צבעי כותרות: כחול כהה.
+                    </div>
+                </div>
+
+                <h3>שילוב סקילים</h3>
+                <p>הקסם האמיתי קורה כשמשלבים. לדוגמה:</p>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה מתקדמת · שילוב</span>
+                    <h4>🔥 פייפליין שלם</h4>
+                    <div class="practice-prompt">
+                        קרא את ה-PDF הזה (דוח מכירות), חלץ את הנתונים, צור גיליון Excel עם הנתונים מאורגנים וגרף עוגה לפי קטגוריות, ואז הכן מצגת PowerPoint של 5 סליידים שמסכמת את הממצאים העיקריים מתאימה להצגה לדירקטוריון.
+                    </div>
+                </div>
+
+                <div class="callout callout-success">
+                    <div class="callout-icon">✅</div>
+                    <div class="callout-body">
+                        <div class="callout-title">זה הכוח של סקילים</div>
+                        <p>בקשה אחת → 3 סקילים מופעלים → 3 קבצים מקצועיים מוכנים. מה שהיה לוקח לך 4 שעות, קורה ב-2 דקות.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="exercise" id="exercise">
+                <div class="exercise-header">
+                    <div class="exercise-num">🎯</div>
+                    <div>
+                        <span class="exercise-tag">תרגיל מעשי · 35 דקות</span>
+                        <h3>הפעילי 3 סקילים שונים בעבודה אחת</h3>
+                        <div class="exercise-time">⏱ זמן משוער: 30-35 דקות</div>
+                    </div>
+                </div>
+                <div class="exercise-goal">
+                    <b>המטרה:</b> בתרגיל הזה תבני workflow אמיתי שמשלב 3 סקילים. דוגמה: לקרוא PDF (סקיל pdf) → לחלץ נתונים לאקסל (סקיל xlsx) → להציג בסיכום ויזואלי (סקיל pptx). כל הסקילים בבקשה אחת.
+                </div>
+                <div class="exercise-prompt-block">
+                    <pre>אני צריכה לבצע פעולה משולבת, ואני רוצה שתפעיל את כל הסקילים הרלוונטיים אוטומטית.
+
+הקלט: [תאר/י איזה קובץ או נתון יש לך — PDF, מסמך, רשימת מספרים]
+
+המטרה: אני רוצה לקבל בסוף 2 דברים:
+1. קובץ Excel עם הנתונים מאורגנים בטבלה ועם נוסחאות סיכום
+2. מצגת PowerPoint של 4-5 סלייידים שמסכמת את הממצאים העיקריים
+
+תהליך:
+1. תפעיל את הסקיל המתאים לקריאת הקלט
+2. תחלץ את הנתונים החשובים
+3. תפעיל את סקיל xlsx ותכין גיליון מסודר עם כותרות, עיצוב, ונוסחאות
+4. תפעיל את סקיל pptx ותכין מצגת עם הסלייידים — שער, סיכום נתונים, גרף, מסקנות, המלצה
+
+תוצרת: שני קישורים להורדה בסוף.
+
+תתחיל. תעדכן אותי בכל שלב.</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+                <div class="exercise-expected">
+                    <b>מה אמור לקרות:</b> תראי הודעות "טוען סקיל..." בכל שלב. בסוף יהיו לך 2 קבצים מקצועיים מוכנים — Excel ומצגת. <strong>שילוב סקילים = הקסם האמיתי.</strong> זה המקום שבו AI הופך מ-"עוזר" ל-"צוות שלם".
+                </div>
+                <ul class="exercise-checklist">
+                    <li>בחרתי קלט אמיתי (לא סינטטי) — קובץ, נתונים, או טקסט שיש לי</li>
+                    <li>הרצתי את הפרומפט ושמתי לב לסקילים שנטענו</li>
+                    <li>קיבלתי קובץ Excel — בדקתי את הנוסחאות</li>
+                    <li>קיבלתי מצגת PPTX — בדקתי את העיצוב</li>
+                    <li>שמרתי את שני הקבצים בתיקיית העבודה שלי</li>
+                </ul>
+            </section>
+
+            <section class="case-study" id="case-study">
+                <div class="case-study-header">
+                    <span class="case-study-tag">מקרה בוחן · 20 דקות</span>
+                    <h3>30 הצעות מחיר ב-2 שעות (במקום שבועיים)</h3>
+                    <div class="case-study-meta">
+                        <span>👤 רן · מייסד סטודיו עיצוב</span>
+                        <span>🎨 עיצוב גרפי · 8 עובדים</span>
+                        <span>⏱ חיסכון: 60+ שעות</span>
+                    </div>
+                </div>
+                <div class="case-study-body">
+                    <h4>המצב</h4>
+                    <p>רן הגיע לתערוכה גדולה. בשבוע אחד פגש 30 לקוחות פוטנציאליים. כולם ביקשו "תשלח לי הצעת מחיר". בעבר — שבועיים של עבודה. הפעם הוא ניסה אחרת.</p>
+
+                    <h4>השלבים</h4>
+                    <div class="case-study-timeline">
+                        <div class="step">
+                            <b>שלב 1 — בניית תבנית-אם (15 דקות)</b>
+                            <span>"תכין לי תבנית הצעת מחיר Word מקצועית עם [שדות מסומנים] לכל המקומות שצריך לעדכן." סקיל docx הפעיל את זה.</span>
+                        </div>
+                        <div class="step">
+                            <b>שלב 2 — מיפוי 30 הלקוחות (45 דקות)</b>
+                            <span>גיליון Excel עם עמודות: שם, חברה, צרכים, היקף משוער, תאריך. נכנס לקלוד עם הגיליון.</span>
+                        </div>
+                        <div class="step">
+                            <b>שלב 3 — יצירת 30 ההצעות (60 דקות)</b>
+                            <span>"קח את התבנית, וקח את גיליון הלקוחות, וצור 30 הצעות מחיר נפרדות — כל אחת מותאמת לפי הצרכים שצוינו. שמור ב-30 קבצי Word נפרדים בתיקייה."</span>
+                        </div>
+                        <div class="step">
+                            <b>שלב 4 — סקירה ושליחה (אחרי כמה ימים)</b>
+                            <span>רן עבר על כל 30 ההצעות (3 דקות לאחת). תיקן 2-3 דברים בכל אחת. שלח אותן ב-3 ימים, לא בשבועיים.</span>
+                        </div>
+                    </div>
+                    <div class="case-study-result">
+                        <b>התוצאה:</b> 30 הצעות → 11 חתמו תוך חודש. הכנסה של ₪140K שנכנסה בעקבות שבוע עבודה אחד. אם זה היה לוקח שבועיים, חצי מהלקוחות היו הולכים למתחרים.
+                    </div>
+                </div>
+            </section>
+
+            <section class="workbook-card" id="workbook">
+                <div class="workbook-icon">📓</div>
+                <div class="workbook-body">
+                    <span class="workbook-tag">חוברת עבודה · 15 דקות</span>
+                    <h4>מפת סקילים אישית — איזה סקיל מתאים למה</h4>
+                    <p>החוברת עוזרת למפות את העבודה שלך לסקילים הנכונים. בסוף יהיה לך מדריך מהיר אישי.</p>
+                </div>
+                <div class="workbook-actions">
+                    <a href="../Workbooks/workbook.html#day3" class="btn btn-primary btn-sm" target="_blank">📥 הורד PDF</a>
+                </div>
+            </section>
+
+            <section class="bonus" id="bonus">
+                <div class="bonus-header">
+                    <div class="bonus-icon">🚀</div>
+                    <div>
+                        <span class="bonus-tag">בונוס · 30 דקות</span>
+                        <h3>מצב מאסטר: pipeline של 4 סקילים</h3>
+                    </div>
+                </div>
+                <p>פעולה משולבת מסובכת — קח קלט גולמי, הפק 4 תוצרים שונים בבת אחת.</p>
+                <div class="bonus-task">
+                    <pre>אני אעלה לך [קובץ אחד — דוח, מאמר, תיעוד].
+
+תפיק לי 4 תוצרים נפרדים, כל אחד באמצעות סקיל אחר:
+
+1. תקציר Word של עמוד אחד (סקיל docx)
+2. גיליון Excel של 5 הנקודות העיקריות עם הסבר (סקיל xlsx)
+3. מצגת PowerPoint של 7 סלייידים להצגה (סקיל pptx)
+4. PDF של "Cheat Sheet" - דף אחד עם הכי חשוב (סקיל pdf)
+
+לכל אחד שמור בתיקיה משלו. תן לי 4 קישורים בסוף.
+
+תתחיל. כל סקיל יקבל את השלב המתאים לו.</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+            </section>
+
+            <section class="reflection" id="reflection">
+                <div class="reflection-header">
+                    <div class="reflection-icon">✍️</div>
+                    <div>
+                        <span class="reflection-tag">רפלקציה · 10 דקות</span>
+                        <h3>סגירת היום</h3>
+                    </div>
+                </div>
+                <ol class="reflection-questions" style="counter-reset: ref-counter;">
+                    <li><b>איזה סקיל הפתיע אותך הכי הרבה? למה?</b><textarea data-qkey="day3-r1"></textarea></li>
+                    <li><b>איזה שילוב של 2-3 סקילים יחסוך לך הכי הרבה זמן השבוע?</b><textarea data-qkey="day3-r2"></textarea></li>
+                    <li><b>איזה משימה שאת עושה ידנית כדאי להעביר לסקיל?</b><textarea data-qkey="day3-r3"></textarea></li>
+                    <li><b>הדבר הכי חשוב מהיום:</b><textarea data-qkey="day3-r4"></textarea></li>
+                </ol>
+                <div class="reflection-share"><b>💬 שתפי בקהילה:</b> איזה תוצר מקצועי הפקת היום שעדיין לא היה לך?</div>
+            </section>
+
+            <section class="quiz-section" id="quiz">
+                <div id="quiz-container"></div>
+            </section>
+
+            <nav class="lesson-nav" id="lesson-nav"></nav>
+        </main>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-brand"><div class="brand-logo" style="width:24px;height:24px;font-size:0.8rem;">A</div>AlphaDevs Academy</div>
+        <p>יום 3 מתוך 7 · © 2026 AlphaDevs</p>
+    </div>
+</footer>
+
+<meta name="i18n-incomplete" content="true">
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+const day3Quiz = [
+    {
+        q: "מה זה סקיל בקלוד?",
+        options: [
+            "סוג של משחק",
+            "מערכת ידע + הנחיות שמתווספות לקלוד כדי לבצע משימה ספציפית ברמה גבוהה יותר",
+            "אפליקציה חיצונית",
+            "סוג של משתמש"
+        ],
+        correct: 1,
+        explanation: "סקיל הוא חבילת ידע מקצועי + הנחיות שקלוד טוען כדי לבצע משימה ברמה גבוהה יותר ממה שיכל בלעדיו."
+    },
+    {
+        q: "איזה סקיל יוצר מצגות PowerPoint?",
+        options: [
+            "docx",
+            "xlsx",
+            "pptx",
+            "pdf"
+        ],
+        correct: 2,
+        explanation: "pptx הוא הסקיל המתמחה במצגות PowerPoint — עם עיצוב מקצועי, אנימציות, והערות מנחה."
+    },
+    {
+        q: "איך סקיל מופעל בדרך כלל?",
+        options: [
+            "צריך להפעיל ידנית בכל פעם",
+            "אוטומטית — קלוד מזהה את המשימה ובוחר את הסקיל המתאים",
+            "צריך לשלם נפרד",
+            "רק בשעות מסוימות"
+        ],
+        correct: 1,
+        explanation: "ברוב המקרים קלוד מזהה אוטומטית את המשימה ומפעיל את הסקיל הרלוונטי. אפשר גם לבקש במפורש אם רוצים לוודא."
+    },
+    {
+        q: "מה ההבדל בין בקשה רגילה לבקשה עם סקיל?",
+        options: [
+            "אין הבדל",
+            "סקיל = קלוד טוען ידע מקצועי בנושא לפני שהוא מבצע — תוצאה ברמה הרבה יותר גבוהה",
+            "סקיל יותר איטי",
+            "סקיל רק באנגלית"
+        ],
+        correct: 1,
+        explanation: "בלי סקיל, קלוד עושה כמיטב יכולתו עם הידע הכללי שלו. עם סקיל — הוא טוען מומחיות ספציפית ומבצע את המשימה הרבה יותר טוב."
+    },
+    {
+        q: "איזה סקיל מתאים לקריאת PDF סרוק וחילוץ נתונים ממנו?",
+        options: [
+            "docx",
+            "xlsx",
+            "pdf",
+            "pptx"
+        ],
+        correct: 2,
+        explanation: "סקיל ה-pdf יודע לקרוא PDFs (כולל סרוקים עם OCR), לחלץ טקסט וטבלאות, ולעבד את התוכן."
+    },
+    {
+        q: "אם קלוד הכין לך מצגת לא מספקת — מה לעשות?",
+        options: [
+            "להתחיל מחדש בשיחה אחרת",
+            "לציין במפורש: ׳תשתמש בסקיל pptx ותכין שוב׳",
+            "לוותר",
+            "לקרוא לטכנאי"
+        ],
+        correct: 1,
+        explanation: "אם הסקיל לא נטען לבד, אפשר תמיד לבקש מפורש שיופעל. זה לרוב פותר את הבעיה ומקפיץ את האיכות."
+    },
+    {
+        q: "האם אפשר לשלב כמה סקילים בבקשה אחת?",
+        options: [
+            "לא, רק אחד בכל פעם",
+            "כן — לדוגמה: לקרוא PDF, ליצור Excel, ולהכין מצגת — בבקשה אחת",
+            "רק אם משלמים נפרד",
+            "רק בגרסה המקצועית"
+        ],
+        correct: 1,
+        explanation: "אפשר ורצוי. ׳קרא את ה-PDF, חלץ נתונים, צור Excel וגרף, אז הכן מצגת׳ — בקשה אחת, 3 סקילים, 3 תוצרים מקצועיים."
+    }
+];
+document.addEventListener('DOMContentLoaded', () => {
+    renderQuiz('quiz-container', 3, day3Quiz);
+    renderLessonNav('lesson-nav', 3);
+});
+</script>
+
+</body>
+</html>

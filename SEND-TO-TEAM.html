@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📤 שליחה לצוות · AlphaDevs Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl; background: #fafbff;
+    color: #0f172a; line-height: 1.7; padding: 40px 24px;
+}
+.wrap { max-width: 920px; margin: 0 auto; }
+.hero {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    color: white; padding: 50px 40px; border-radius: 24px;
+    margin-bottom: 32px;
+    box-shadow: 0 20px 50px rgba(99,102,241,0.3);
+}
+.hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; }
+.hero p { opacity: 0.95; font-size: 1.05rem; }
+.eyebrow {
+    display: inline-block; background: rgba(255,255,255,0.2);
+    padding: 6px 14px; border-radius: 999px; font-size: 0.82rem;
+    font-weight: 700; letter-spacing: 0.05em; margin-bottom: 14px;
+}
+h2 {
+    font-size: 1.6rem; margin: 40px 0 18px; padding-bottom: 12px;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex; align-items: center; gap: 12px;
+}
+h2 .badge {
+    font-size: 0.78rem; padding: 4px 12px;
+    border-radius: 999px; font-weight: 700; letter-spacing: 0.05em;
+}
+h3 { font-size: 1.15rem; margin: 24px 0 10px; color: #4338ca; }
+p { color: #475569; margin-bottom: 12px; }
+strong { color: #0f172a; }
+a { color: #4338ca; font-weight: 600; }
+
+.person {
+    background: white; border: 1px solid #e2e8f0;
+    border-radius: 18px; padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+}
+.person.natalia { border-right: 5px solid #3b82f6; }
+.person.reema { border-right: 5px solid #ec4899; }
+
+.person-header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 18px;
+}
+.person-avatar {
+    width: 60px; height: 60px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 1.6rem; font-weight: 900;
+    color: white;
+}
+.natalia .person-avatar { background: linear-gradient(135deg, #3b82f6, #6366f1); }
+.reema .person-avatar { background: linear-gradient(135deg, #ec4899, #a855f7); }
+.person-info b { font-size: 1.3rem; display: block; }
+.person-info small { color: #64748b; font-size: 0.92rem; }
+
+.role-tag {
+    display: inline-block; padding: 4px 12px;
+    border-radius: 999px; font-size: 0.78rem;
+    font-weight: 700; margin-top: 4px;
+}
+.role-manager { background: #dbeafe; color: #1e3a8a; }
+.role-student { background: #fce7f3; color: #9d174d; }
+
+.info-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    margin: 18px 0;
+}
+@media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
+.info-item {
+    background: #f8fafc; border-radius: 10px; padding: 14px 18px;
+}
+.info-item .label {
+    font-size: 0.75rem; color: #64748b;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 4px;
+}
+.info-item .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem; font-weight: 700; color: #0f172a;
+    direction: ltr;
+}
+
+.send-options { margin-top: 22px; }
+.send-options h4 {
+    font-size: 0.95rem; color: #475569;
+    margin-bottom: 12px; font-weight: 700;
+}
+
+.send-btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
+
+.send-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 18px; border-radius: 10px;
+    font-weight: 700; font-size: 0.92rem;
+    text-decoration: none; transition: all 200ms;
+    border: 1.5px solid transparent;
+    cursor: pointer; font-family: inherit;
+}
+.send-btn-whatsapp {
+    background: #25d366; color: white;
+}
+.send-btn-whatsapp:hover { background: #1ebc59; transform: translateY(-1px); }
+.send-btn-email {
+    background: #4338ca; color: white;
+}
+.send-btn-email:hover { background: #3730a3; transform: translateY(-1px); }
+.send-btn-copy {
+    background: #f1f5f9; color: #0f172a; border-color: #cbd5e1;
+}
+.send-btn-copy:hover { background: #e2e8f0; }
+
+.message-preview {
+    background: #f8fafc;
+    border-right: 3px solid #6366f1;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-top: 12px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    direction: rtl;
+    white-space: pre-wrap;
+    color: #334155;
+    font-family: 'Heebo', sans-serif;
+}
+
+.note {
+    background: #fef3c7; border: 1px solid #fde68a;
+    border-right: 3px solid #f59e0b;
+    border-radius: 10px; padding: 14px 18px; margin: 16px 0;
+    font-size: 0.93rem; color: #78350f;
+}
+
+.warning {
+    background: #fee2e2; border: 1px solid #fecaca;
+    border-right: 3px solid #ef4444;
+    border-radius: 10px; padding: 14px 18px; margin: 16px 0;
+    font-size: 0.93rem; color: #991b1b;
+}
+
+.stage {
+    background: white; border: 1px solid #e2e8f0;
+    border-radius: 14px; padding: 22px 26px; margin: 16px 0;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+}
+.stage-num {
+    display: inline-block;
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white; border-radius: 50%;
+    text-align: center; line-height: 32px;
+    font-weight: 800; font-size: 0.92rem;
+    margin-left: 10px;
+}
+
+code {
+    background: #f1f5f9; padding: 2px 8px;
+    border-radius: 5px; font-family: 'JetBrains Mono', monospace;
+    color: #4338ca; direction: ltr; display: inline-block;
+    font-size: 0.88em;
+}
+
+.toast {
+    position: fixed; top: 20px; left: 50%;
+    transform: translateX(-50%);
+    background: #10b981; color: white;
+    padding: 12px 24px; border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(16,185,129,0.4);
+    opacity: 0; transition: opacity 250ms;
+    z-index: 1000;
+}
+.toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="hero">
+    <span class="eyebrow">📤 הוראות שליחה</span>
+    <h1>שלח לצוות שלך — בקליק</h1>
+    <p>הכנתי לכל אחת מהן דף גישה אישי. כל מה שאתה צריך לעשות הוא לשלוח לה את הקישור — היא תלחץ ותהיה בפנים בלי שאלות. גם הודעות מוכנות בעברית למייל ול-WhatsApp.</p>
+</div>
+
+<!-- HOW TO HOST FIRST -->
+<div class="stage">
+    <h3 style="margin-top:0;"><span class="stage-num">0</span>קודם — איפה הקבצים מתארחים?</h3>
+    <p>כדי שרימה ונטליה יוכלו לפתוח את הקישור, הקבצים צריכים להיות זמינים אונליין (לא רק במחשב שלך).</p>
+
+    <h4 style="margin-top:14px;">3 אפשרויות (מהקלה לקצינה):</h4>
+    <ol style="margin:8px 24px;">
+        <li><strong>GitHub Pages (כבר עובד אצלך):</strong> תעלה את הגרסה החדשה ל-<code>github.com/AlphaDevs-Security/Academy</code>, ה-Pages יעדכן אוטומטית. הכתובת תהיה <code>https://alphadevs-security.github.io/Academy/</code>.<br><strong>אופן הפעולה:</strong> ב-Terminal:<br><code>git add . &amp;&amp; git commit -m "Team access" &amp;&amp; git push</code></li>
+        <li><strong>Netlify Drop (פשוט בטירוף):</strong> <a href="https://app.netlify.com/drop" target="_blank">netlify.com/drop</a> → גרור את כל התיקייה → קבל URL חינמי תוך 30 שניות. אפשר אחרי זה לחבר דומיין.</li>
+        <li><strong>Custom domain (academy.alphadevs.co):</strong> הכי מקצועי — אבל דורש הגדרת DNS ב-Cloudflare. עיין בתכנית המאסטר לפרטים.</li>
+    </ol>
+
+    <div class="note">
+        💡 <strong>אם הקבצים עדיין לא online:</strong> אפשר לשלוח להן את כל התיקייה כ-ZIP דרך WhatsApp/Drive, והן יפתחו את הקובץ בדפדפן (קליק כפול). אבל זה פחות נוח — חוויית הלינק הקליקבלית עדיפה.
+    </div>
+</div>
+
+<!-- NATALIA -->
+<h2>
+    <span>נטליה — Manager (ניהול קורסים)</span>
+    <span class="badge role-manager">🛠️ MANAGER</span>
+</h2>
+
+<div class="person natalia">
+    <div class="person-header">
+        <div class="person-avatar">נ</div>
+        <div class="person-info">
+            <b>נטליה</b>
+            <small>אופרטור + HR + מנהלת קורסים</small>
+            <span class="role-tag role-manager">Manager — גישת אדמין</span>
+        </div>
+    </div>
+
+    <p>נטליה מקבלת גישת ניהול מלאה — כל הקורסים, התוצרים, חומרי שיווק, תכנית המאסטר. בלי watermark, יכולה להעתיק תוכן לצורך תמיכת לקוחות.</p>
+
+    <div class="info-grid">
+        <div class="info-item">
+            <div class="label">מייל</div>
+            <div class="value">natalia@alphadevs.co</div>
+        </div>
+        <div class="info-item">
+            <div class="label">מפתח רישוי</div>
+            <div class="value">AD-NAT001</div>
+        </div>
+    </div>
+
+    <div class="warning">
+        ⚠️ <strong>חשוב:</strong> אם המייל של נטליה אינו <code>natalia@alphadevs.co</code>, עדכן ב-2 מקומות:<br>
+        1. <code>assets/js/app.js</code> בשורת <code>MANAGERS = [...]</code><br>
+        2. <code>natalia-access.html</code> בשורת <code>STUDENT_DATA</code> (סקריפט בתחתית)
+    </div>
+
+    <div class="send-options">
+        <h4>📤 שלח לנטליה:</h4>
+        <div class="send-btn-row">
+            <button class="send-btn send-btn-whatsapp" onclick="sendNataliaWhatsapp()">📱 שלח ב-WhatsApp</button>
+            <button class="send-btn send-btn-email" onclick="sendNataliaEmail()">📧 שלח במייל</button>
+            <button class="send-btn send-btn-copy" onclick="copyNataliaLink()">🔗 העתק לינק בלבד</button>
+            <button class="send-btn send-btn-copy" onclick="copyNataliaMessage()">📋 העתק הודעה</button>
+        </div>
+
+        <h4 style="margin-top:18px;">תצוגת ההודעה:</h4>
+        <div class="message-preview" id="natalia-message">היי נטליה 🛠️
+
+לאור פה. בנינו מערכת חדשה לקורסים של AlphaDevs Academy — והכנתי לך גישת ניהול מלאה.
+
+לחיצה אחת ויש לך גישה לכל הקורסים, חומרי השיווק, תכנית המאסטר, ועוד.
+
+זה הקישור האישי שלך:
+[LINK]
+
+מה תמצאי שם:
+✓ אינדקס מרכזי לכל החומרים
+✓ הקורס המלא של 7 הימים
+✓ דף נחיתה ראשי + Lead Magnet
+✓ תכנית 45 יום להשקה מסחרית
+✓ חוברת עבודה + תסריטי וידאו
+✓ 15 פוסטים ל-LinkedIn ורצף 7 מיילים
+
+יש שאלות — תכתבי לי. אנחנו בונים פה משהו גדול.
+
+לאור</div>
+    </div>
+</div>
+
+<!-- REEMA -->
+<h2>
+    <span>רימה — Student (לומדת)</span>
+    <span class="badge role-student">🎓 STUDENT</span>
+</h2>
+
+<div class="person reema">
+    <div class="person-header">
+        <div class="person-avatar">ר</div>
+        <div class="person-info">
+            <b>רימה</b>
+            <small>אישתך — רוצה ללמוד לעבוד עם AI</small>
+            <span class="role-tag role-student">Student — גישת לומדת</span>
+        </div>
+    </div>
+
+    <p>רימה מקבלת חוויית לומדת מלאה — קורס מובנה של 7 ימים, מבחנים שמשחררים יום הבא, ותעודה בסוף. אין לה גישה ל"חדר אחורי" של חומרים אסטרטגיים — רק לקורס עצמו.</p>
+
+    <div class="info-grid">
+        <div class="info-item">
+            <div class="label">מייל</div>
+            <div class="value">reema@alphadevs.co</div>
+        </div>
+        <div class="info-item">
+            <div class="label">מפתח רישוי</div>
+            <div class="value">AD-REEMA1</div>
+        </div>
+    </div>
+
+    <div class="warning">
+        ⚠️ <strong>חשוב:</strong> אם המייל האמיתי של רימה שונה — עדכן ב-2 מקומות:<br>
+        1. <code>assets/js/app.js</code> בשורת <code>PRE_REG_STUDENTS = [...]</code><br>
+        2. <code>reema-access.html</code> בסקריפט בתחתית
+    </div>
+
+    <div class="send-options">
+        <h4>📤 שלח לרימה:</h4>
+        <div class="send-btn-row">
+            <button class="send-btn send-btn-whatsapp" onclick="sendReemaWhatsapp()">📱 שלח ב-WhatsApp</button>
+            <button class="send-btn send-btn-email" onclick="sendReemaEmail()">📧 שלח במייל</button>
+            <button class="send-btn send-btn-copy" onclick="copyReemaLink()">🔗 העתק לינק בלבד</button>
+            <button class="send-btn send-btn-copy" onclick="copyReemaMessage()">📋 העתק הודעה</button>
+        </div>
+
+        <h4 style="margin-top:18px;">תצוגת ההודעה:</h4>
+        <div class="message-preview" id="reema-message">רימי שלי 💜
+
+רוצה לקפוץ ב-7 ימים מ-0 ל-100 בעבודה עם AI?
+
+בניתי קורס מקצועי ברמה גבוהה — מהבסיס ועד לבניית עוזרים אישיים שיעבדו בשבילך 24/7. הכל בעברית, בקצב שלך, עם תרגול אמיתי.
+
+הכנתי לך גישה אישית. לחיצה אחת ואת בפנים:
+[LINK]
+
+7 ימים, ~3 שעות עבודה ביום (אפשר לפרוס). בסוף יש תעודה ויותר חשוב — את תדעי לעשות דברים שעולם העבודה החדש דורש.
+
+תאהבי את זה. אני יודע.
+
+❤️</div>
+    </div>
+</div>
+
+<!-- TROUBLESHOOTING -->
+<h2>🔧 בעיות נפוצות + פתרונות</h2>
+
+<div class="stage">
+    <h3 style="margin-top:0;">"הקישור לא עובד"</h3>
+    <p>1. וודא שהקבצים אכן online (GitHub Pages / Netlify / domain) — לא רק במחשב שלך.<br>
+    2. בדוק שהכתובת נכונה. ה-base URL צריך להיות הכתובת אונליין שלך.<br>
+    3. כל הקבצים צריכים להיות באותה תיקייה — <code>assets/</code>, <code>days/</code>, etc.</p>
+</div>
+
+<div class="stage">
+    <h3 style="margin-top:0;">"היא מקבלת license modal במקום להיכנס"</h3>
+    <p>זה אומר שהמפתח שלה לא מוכר במערכת. בדוק:<br>
+    1. האם עדכנת את <code>app.js</code> עם המייל הנכון?<br>
+    2. האם הקובץ <code>app.js</code> אכן עלה לשרת?<br>
+    3. תני לה ידנית את המייל + מפתח, היא יכולה להזין ב-modal.</p>
+</div>
+
+<div class="stage">
+    <h3 style="margin-top:0;">"היא רואה watermark על המסך"</h3>
+    <p>אם זו רימה — זה תקין (היא Student, watermark מופיע).<br>
+    אם זו נטליה — בדוק שהמייל שלה מוגדר נכון ב-<code>MANAGERS</code> ב-app.js. אם המייל לא תואם — היא נחשבת Student.</p>
+</div>
+
+<div class="stage">
+    <h3 style="margin-top:0;">"איך אני יודע שמישהי לחצה על הקישור?"</h3>
+    <p>כרגע אין מנגנון analytics מובנה. אופציות:<br>
+    1. תשאל אותה ישירות.<br>
+    2. בעתיד — נחבר Google Analytics או Plausible לעקוב אחרי כניסות.</p>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast">✓ הועתק!</div>
+
+<script>
+// Detect base URL — works whether opened locally or online
+function getBaseUrl() {
+    const path = window.location.pathname;
+    return window.location.origin + path.replace(/[^/]*$/, '');
+}
+
+// === NATALIA ===
+function getNataliaLink() {
+    return getBaseUrl() + 'natalia-access.html';
+}
+
+function getNataliaMessage() {
+    return document.getElementById('natalia-message').textContent
+        .replace('[LINK]', getNataliaLink());
+}
+
+function sendNataliaWhatsapp() {
+    const msg = encodeURIComponent(getNataliaMessage());
+    window.open(`https://wa.me/?text=${msg}`, '_blank');
+}
+
+function sendNataliaEmail() {
+    const subject = encodeURIComponent('הגישה שלך למערכת AlphaDevs Academy');
+    const body = encodeURIComponent(getNataliaMessage());
+    window.location.href = `mailto:natalia@alphadevs.co?subject=${subject}&body=${body}`;
+}
+
+function copyNataliaLink() {
+    navigator.clipboard.writeText(getNataliaLink()).then(() => showToast('הלינק הועתק'));
+}
+
+function copyNataliaMessage() {
+    navigator.clipboard.writeText(getNataliaMessage()).then(() => showToast('ההודעה הועתקה'));
+}
+
+// === REEMA ===
+function getReemaLink() {
+    return getBaseUrl() + 'reema-access.html';
+}
+
+function getReemaMessage() {
+    return document.getElementById('reema-message').textContent
+        .replace('[LINK]', getReemaLink());
+}
+
+function sendReemaWhatsapp() {
+    const msg = encodeURIComponent(getReemaMessage());
+    window.open(`https://wa.me/?text=${msg}`, '_blank');
+}
+
+function sendReemaEmail() {
+    const subject = encodeURIComponent('בשבילך — הקורס שלי');
+    const body = encodeURIComponent(getReemaMessage());
+    window.location.href = `mailto:reema@alphadevs.co?subject=${subject}&body=${body}`;
+}
+
+function copyReemaLink() {
+    navigator.clipboard.writeText(getReemaLink()).then(() => showToast('הלינק הועתק'));
+}
+
+function copyReemaMessage() {
+    navigator.clipboard.writeText(getReemaMessage()).then(() => showToast('ההודעה הועתקה'));
+}
+
+// === TOAST ===
+function showToast(text) {
+    const toast = document.getElementById('toast');
+    toast.textContent = '✓ ' + text;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+// Update message previews to include actual link
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('natalia-message').textContent =
+        document.getElementById('natalia-message').textContent.replace('[LINK]', getNataliaLink());
+    document.getElementById('reema-message').textContent =
+        document.getElementById('reema-message').textContent.replace('[LINK]', getReemaLink());
+});
+</script>
+
+</div>
+</body>
+</html>

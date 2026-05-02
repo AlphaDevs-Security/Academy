@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יום 5: זיכרון, פרויקטים, ארטיפקטים · AlphaDevs Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Heebo,sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body id="top" class="gated">
+
+<header class="topbar">
+    <div class="container topbar-inner">
+        <a href="../index.html" class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-name"><b>AlphaDevs Academy</b><span>יום 5 מתוך 7</span></div>
+        </a>
+        <div class="topbar-actions">
+            <div class="progress-pill" id="progress-pill"><span class="dot"></span> טוען...</div>
+            <a href="../index.html" class="btn btn-ghost btn-sm">← חזרה לקורס</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="lesson-shell">
+        <aside class="lesson-sidebar">
+            <h4>תוכן היום</h4>
+            <ul class="toc-list">
+                <li><a href="#memory" class="active"><span class="toc-num">1</span>איך הזיכרון של קלוד עובד</a></li>
+                <li><a href="#memory-rules"><span class="toc-num">2</span>מה לשמור ומה לא לשמור</a></li>
+                <li><a href="#projects"><span class="toc-num">3</span>פרויקטים — ארגון לטווח ארוך</a></li>
+                <li><a href="#artifacts"><span class="toc-num">4</span>ארטיפקטים — דשבורדים חיים</a></li>
+                <li><a href="#quiz"><span class="toc-num">★</span>מבחן יום 5</a></li>
+            </ul>
+        </aside>
+
+        <main class="lesson-main">
+            <header class="lesson-header">
+                <span class="lesson-eyebrow">יום 5 · 50 דקות · רמה: בינונית</span>
+                <h1>זיכרון, פרויקטים, וארטיפקטים</h1>
+                <p class="lesson-subtitle">היום נצלול לשלושה קונספטים שיהפכו את העבודה שלך לרציפה לאורך זמן — קלוד יזכור מי את, מה את עושה, ואיפה אתן בכל רגע.</p>
+                <div class="lesson-progress">
+                    <div class="bar"><div class="bar-fill" style="width:71%;"></div></div>
+                    <div class="progress-text">יום 5 מתוך 7</div>
+                </div>
+
+                <div class="lesson-time-bar">
+                    <div class="time-block"><div class="num">5'</div><div class="label">חימום</div></div>
+                    <div class="time-block"><div class="num">50'</div><div class="label">שיעורים</div></div>
+                    <div class="time-block"><div class="num">35'</div><div class="label">תרגיל</div></div>
+                    <div class="time-block"><div class="num">20'</div><div class="label">מקרה בוחן</div></div>
+                    <div class="time-block"><div class="num">15'</div><div class="label">חוברת עבודה</div></div>
+                    <div class="time-block"><div class="num">30'</div><div class="label">בונוס</div></div>
+                    <div class="time-block total"><div class="num">2.6 ש׳</div><div class="label">סך הכל</div></div>
+                </div>
+            </header>
+
+            <div class="video-block">
+                <div class="video-frame"><div class="video-play-btn"></div></div>
+                <div class="video-meta">
+                    <span class="video-title">🎬 וידאו: זיכרון ארוך-טווח</span>
+                    <span class="video-duration">⏱ 4:50</span>
+                </div>
+                <div class="video-placeholder-note">📹 <strong>הקלטת וידאו תיווסף בקרוב.</strong></div>
+            </div>
+
+            <section class="warmup">
+                <div class="warmup-header">
+                    <div class="warmup-icon">🔥</div>
+                    <div>
+                        <span class="warmup-tag">חימום · 5 דקות</span>
+                        <h3>מה ההעדפות שלך שאת חוזרת על עצמך כל פעם מחדש?</h3>
+                    </div>
+                </div>
+                <p>תזהי 3-5 דברים שאת מבקשת מ-AI ושמסבירה לו אותם בכל שיחה: סגנון כתיבה, פורמט מסמכים, טון, "אל תוסיף אימוג׳ים", "תכתוב בעברית מלאה". כתבי אותם.</p>
+                <textarea class="warmup-input" data-qkey="day5-warmup" placeholder="העדפות שאני חוזרת עליהן: ..."></textarea>
+            </section>
+
+            <!-- Section 1: Memory -->
+            <section class="section" id="memory">
+                <h2><span class="section-num">1</span>איך הזיכרון של קלוד עובד</h2>
+                <p>בלי זיכרון, כל שיחה עם קלוד היא היכרות מחדש. את צריכה להסביר מי את, מה החברה, מה האישיות שלך — בכל פעם. זה שחיקה אדירה.</p>
+                <p>עם זיכרון, קלוד <strong>זוכר אותך</strong>. הוא יודע שאת לאור מ-AlphaDevs, יודע איך את אוהבת לכתוב, יודע מי הלקוחות הקבועים. כל שיחה ממשיכה משם.</p>
+
+                <h3>שני סוגי זיכרון</h3>
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">💬</div>
+                        <h4>זיכרון בתוך השיחה</h4>
+                        <p>הכל מה שדיברתן בשיחה הנוכחית — קלוד זוכר עד הסוף. מתאפס כשמתחילים שיחה חדשה.</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">🧠</div>
+                        <h4>זיכרון ארוך-טווח</h4>
+                        <p>קבצים מיוחדים (בתיקיית ה-memory) שקלוד שומר ומשחזר בשיחות עתידיות.</p>
+                    </div>
+                </div>
+
+                <h3>איך מבקשים מקלוד לזכור משהו?</h3>
+                <p>פשוט לומר לו. הנה הניסוחים שעובדים:</p>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמאות</span>
+                    <h4>📝 פקודות זיכרון</h4>
+                    <div class="practice-prompt">
+                        זכור: שמי לאור, מנכ"ל ב-AlphaDevs. החברה עוסקת בהקמת אג'נטים מבוססי AI לעסקים. הלקוחות הקבועים שלי הם: [רשימה]. אני מעדיף תשובות קצרות ולעניין, בלי הקדמות מיותרות.
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה נוספת</span>
+                    <h4>🎯 העדפות עבודה</h4>
+                    <div class="practice-prompt">
+                        זכור — אני אוהב מסמכי Word עם הפונט Heebo, צבע כותרות כחול כהה (#1e293b), ושוליים מצומצמים. תשתמש בזה כברירת מחדל בכל מסמך שתכין לי.
+                    </div>
+                </div>
+
+                <div class="callout callout-tip">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-body">
+                        <div class="callout-title">איך לדעת שזה נשמר?</div>
+                        <p>קלוד יאמר לך מה נשמר. בפעם הבאה שאת פותחת שיחה — הוא ייקח את הזיכרון בחשבון אוטומטית. תרגישי הבדל מההודעה הראשונה.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Memory Rules -->
+            <section class="section" id="memory-rules">
+                <h2><span class="section-num">2</span>מה לשמור ומה לא לשמור</h2>
+                <p>זיכרון הוא משאב יקר. לא הכל צריך להישמר — הנה מה שכדאי, ומה שלא.</p>
+
+                <h3>✅ כדאי לשמור</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h4>מי את</h4>
+                            <p>שם, תפקיד, חברה, מה את עושה. ההקשר היומיומי שלך.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h4>העדפות עבודה</h4>
+                            <p>סגנון כתיבה, פורמט מסמכים, אורך תשובות מועדף, דוגמאות כתיבה שלך.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h4>פידבק חוזר</h4>
+                            <p>"אל תשתמש באמוג׳ים", "תכתוב בעברית פשוטה", "תמיד תשאל לפני שתשלח" — דברים שאת מתקנת שוב ושוב.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-body">
+                            <h4>הקשר עסקי קבוע</h4>
+                            <p>מי הלקוחות הקבועים, מי הצוות שלך, איפה הקבצים החשובים.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>❌ לא לשמור</h3>
+                <ul>
+                    <li><strong>פרטים רגישים:</strong> סיסמאות, מספרי כרטיס אשראי, מספרי תעודת זהות, פרטי בנק.</li>
+                    <li><strong>מידע רפואי אישי:</strong> אבחנות, תוצאות בדיקות, טיפולים.</li>
+                    <li><strong>פרטים חולפים:</strong> "השבוע אני בחופש" — זה ייתיישן.</li>
+                    <li><strong>פרטים על אנשים אחרים שאינם רוצים שיישמרו</strong> — שמור על פרטיות הסביבה שלך.</li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">⚠️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">חשוב</div>
+                        <p>קלוד יסרב באופן אוטומטי לשמור פרטים רגישים מסוימים — גם אם תבקשי. זו הגנה. אם את צריכה לעבוד עם פרטים כאלה — תני אותם בשיחה הספציפית, אבל אל תבקשי לשמור.</p>
+                    </div>
+                </div>
+
+                <h3>איך מוחקים זיכרון?</h3>
+                <div class="practice-box">
+                    <span class="practice-tag">מחיקה</span>
+                    <h4>🗑️ ביטול זיכרון</h4>
+                    <div class="practice-prompt">
+                        תשכח מה ששמרת על הפרויקט X — הוא הסתיים.
+                    </div>
+                    <p style="margin-top:14px;">או באופן רחב יותר: "תראה לי מה שמור בזיכרון" כדי לסקור, ואז "תמחק את הפריט בנושא Y".</p>
+                </div>
+            </section>
+
+            <!-- Section 3: Projects -->
+            <section class="section" id="projects">
+                <h2><span class="section-num">3</span>פרויקטים — ארגון לטווח ארוך</h2>
+                <p>פרויקטים זה רעיון פשוט עם השלכות עצומות. במקום ש-Cowork תזכור הכל בערימה אחת — את יוצרת "פרויקט" לכל תחום עבודה: לקוח X, פרויקט Y, נושא Z.</p>
+
+                <h3>למה פרויקטים?</h3>
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">📁</div>
+                        <h4>הפרדה</h4>
+                        <p>הזיכרון של פרויקט A לא יתבלבל עם פרויקט B. הקשר נפרד, נקי.</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">📚</div>
+                        <h4>ידע מצטבר</h4>
+                        <p>כל שיחה בפרויקט מוסיפה ידע. עם הזמן, קלוד הופך למומחה בפרויקט הזה.</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">🎯</div>
+                        <h4>פוקוס</h4>
+                        <p>כשאת בפרויקט "לקוח X" — קלוד יודע אוטומטית להגדיר את הקונטקסט הנכון.</p>
+                    </div>
+                </div>
+
+                <h3>איך עובדים עם פרויקט</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h4>צרי פרויקט חדש</h4>
+                            <p>בקלוד יש אפשרות "פרויקט" / "Project". לחצי על "פרויקט חדש" ותני לו שם משמעותי.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h4>תני הוראות (System Instructions)</h4>
+                            <p>בכל פרויקט יש מקום להוראות. כתבי שם: "בפרויקט הזה אנחנו עובדים על X עבור לקוח Y. הטון: רשמי. הסגנון: ...".</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h4>צרפי קבצים רלוונטיים</h4>
+                            <p>אפשר להעלות מסמכים לפרויקט (חוזה, מצגת, רקע). הם זמינים לקלוד בכל שיחה בפרויקט.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-body">
+                            <h4>פתחי שיחות בתוך הפרויקט</h4>
+                            <p>כל שיחה היא חלק מהפרויקט. קלוד מכיר את ההקשר מהרגע הראשון.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>דוגמאות לפרויקטים שכדאי ליצור</h3>
+                <ul>
+                    <li><strong>לקוח עיקרי</strong> — היסטוריית עבודה, הצעות, חוזים, מיילים</li>
+                    <li><strong>פרויקט שיווק Q2</strong> — קמפיינים, נתונים, יעדים, תוצרים</li>
+                    <li><strong>גיוס עובדים</strong> — תיאורי תפקיד, מועמדים, ראיונות</li>
+                    <li><strong>מחקר אישי</strong> — נושא שאת לומדת לעומק</li>
+                </ul>
+
+                <div class="callout callout-pro">
+                    <div class="callout-icon">⭐</div>
+                    <div class="callout-body">
+                        <div class="callout-title">טריק זהב</div>
+                        <p>אחרי כמה שיחות בפרויקט, בקשי מקלוד: "תכין סיכום מצב עדכני של הפרויקט" — הוא ייצר לך מסמך שמרכז את כל מה שעבדנו עליו. תאחסני אותו בפרויקט. בכל פעם שמישהו ישאל אותך מה קורה — שולחת.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Artifacts -->
+            <section class="section" id="artifacts">
+                <h2><span class="section-num">4</span>ארטיפקטים — דשבורדים חיים</h2>
+                <p>זה אחד הפיצ׳רים שאנשים מתאהבים בו. ארטיפקט = דף HTML חי שקלוד יוצר לך, שאת יכולה לחזור אליו, והוא מתעדכן בכל פעם שאת פותחת אותו.</p>
+
+                <h3>מה ההבדל מקובץ רגיל?</h3>
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">📄</div>
+                        <h4>קובץ רגיל</h4>
+                        <p>נוצר פעם אחת. אם הנתונים השתנו — צריך לבקש מחדש. סטטי.</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">⚡</div>
+                        <h4>ארטיפקט</h4>
+                        <p>חי. יכול לקרוא נתונים מ-Gmail/Calendar/Monday כל פעם שפותחים אותו. תמיד עדכני.</p>
+                    </div>
+                </div>
+
+                <h3>למה זה מועיל?</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">📊</div>
+                        <div class="step-body">
+                            <h4>דשבורד אישי</h4>
+                            <p>"הראה לי כל בוקר: מיילים שלא עניתי + פגישות היום + משימות חמות" — דף אחד שמתעדכן.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">📈</div>
+                        <div class="step-body">
+                            <h4>מעקב פרויקט</h4>
+                            <p>סטטוס משימות, התקדמות, תאריכי יעד — הכל מושך מ-Monday/Asana בזמן אמת.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">📅</div>
+                        <div class="step-body">
+                            <h4>תכנון שבועי</h4>
+                            <p>תצוגה של השבוע — פגישות, משימות, מטרות — שאת פותחת בכל יום ראשון.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">תרגול</span>
+                    <h4>💎 הארטיפקט הראשון שלך</h4>
+                    <div class="practice-prompt">
+                        תכין לי ארטיפקט - דף בית אישי שאני אפתח בכל בוקר. בדף יוצגו: 1) המיילים החשובים מאתמול שלא עניתי (מ-Gmail), 2) הפגישות של היום (מ-Calendar), 3) שלוש המשימות החמות ביותר. עיצוב נקי ומינימליסטי, צבעים: לבן וכחול.
+                    </div>
+                    <p style="margin-top:14px;">הארטיפקט יישמר. בכל בוקר תוכלי לפתוח אותו והוא יציג נתונים עדכניים.</p>
+                </div>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">ℹ️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">חשוב לדעת</div>
+                        <p>ארטיפקטים דורשים שהחיבורים הרלוונטיים יהיו פעילים (Gmail, Calendar וכו׳). אם החיבור מנותק, הארטיפקט לא יוכל לטעון את הנתונים.</p>
+                    </div>
+                </div>
+
+                <div class="callout callout-success">
+                    <div class="callout-icon">✨</div>
+                    <div class="callout-body">
+                        <div class="callout-title">מתי להשתמש?</div>
+                        <p>בכל פעם שאת רואה את עצמך שואלת אותה שאלה שוב ושוב — "מה קורה השבוע?", "מה הסטטוס?", "כמה...?" — זה רגע ליצור ארטיפקט. שאלה חד פעמית = תשובה בצ׳אט. שאלה שחוזרת = ארטיפקט.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="exercise" id="exercise">
+                <div class="exercise-header">
+                    <div class="exercise-num">🎯</div>
+                    <div>
+                        <span class="exercise-tag">תרגיל מעשי · 35 דקות</span>
+                        <h3>בני פרופיל זיכרון אישי + פרויקט ראשון + ארטיפקט</h3>
+                        <div class="exercise-time">⏱ זמן משוער: 30-35 דקות</div>
+                    </div>
+                </div>
+                <div class="exercise-goal">
+                    <b>המטרה:</b> בסוף התרגיל יהיו לך 3 דברים: 1) זיכרון מלא של הפרופיל המקצועי שלך, 2) פרויקט מסודר לעבודה השוטפת, 3) ארטיפקט-דשבורד שתפתחי כל בוקר.
+                </div>
+                <div class="exercise-prompt-block">
+                    <pre>שלב 1 — זיכרון אישי (10 דקות):
+"זכור עליי בזיכרון לטווח ארוך:
+- שם: [שלך]
+- תפקיד: [...]
+- חברה: [...]
+- מה אני עושה: [תיאור קצר]
+- 3 ההעדפות החשובות שלי: [מהחימום]
+- כלים שאני עובדת איתם: [...]
+- סגנון כתיבה מועדף: [...]"
+
+שלב 2 — פרויקט (15 דקות):
+"צור לי פרויקט חדש בשם '[שם פרויקט עיקרי שלך]'.
+תוסיף: הוראות מערכת קבועות (מי הלקוח, איזה טון, מה אסור).
+תכין מקום לקבצים שאני אעלה."
+
+שלב 3 — ארטיפקט (10 דקות):
+"בנה לי ארטיפקט - דף בית אישי שאני פותחת בכל בוקר.
+יציג: מיילים חדשים, פגישות היום, 3 משימות חמות,
+הערה רנדומלית מוטיבציה.
+עיצוב: נקי, מינימליסטי, צבעי המותג שלי."</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+                <div class="exercise-expected">
+                    <b>מה אמור לקרות:</b> בסוף יש לך תשתית קבועה ב-Cowork. כל שיחה חדשה תתחיל עם ההקשר שלך. כל יום תוכלי לפתוח את הארטיפקט ולראות תמונה מצב מעודכנת.
+                </div>
+                <ul class="exercise-checklist">
+                    <li>שמרתי זיכרון אישי - הצלחתי "תזכור..."</li>
+                    <li>יצרתי פרויקט אחד עם הוראות מערכת</li>
+                    <li>בניתי ארטיפקט-דשבורד עובד</li>
+                    <li>בדקתי שהזיכרון נשמר - פתחתי שיחה חדשה ובדקתי</li>
+                </ul>
+            </section>
+
+            <section class="case-study" id="case-study">
+                <div class="case-study-header">
+                    <span class="case-study-tag">מקרה בוחן · 20 דקות</span>
+                    <h3>"איך הפסקתי להסביר לקלוד מי אני בכל שיחה"</h3>
+                    <div class="case-study-meta">
+                        <span>👤 אלעד · מאמן עסקי</span>
+                        <span>💼 50 לקוחות אישיים</span>
+                        <span>⏱ חיסכון: 30 דקות יומיות</span>
+                    </div>
+                </div>
+                <div class="case-study-body">
+                    <h4>המצב</h4>
+                    <p>אלעד מקדיש שעות בשבוע לכתיבת תוכן ללקוחות שלו. כל שיחה התחיל באותו דבר: "אני מאמן עסקי, הלקוחה שלי X עוסקת ב-Y, היא רוצה שאני אעזור לה ב-Z..." כל שיחה. כל יום.</p>
+                    <h4>השלבים</h4>
+                    <div class="case-study-timeline">
+                        <div class="step"><b>זיכרון אישי (10 דקות)</b><span>"זכור: אני אלעד, מאמן עסקי. הסגנון שלי: ישיר אבל אמפתי. אני עובד עם נשים יזמיות בעיקר. אסור להשתמש בקלישאות פאתיות."</span></div>
+                        <div class="step"><b>פרויקט לכל לקוח (15 דקות לכולם)</b><span>50 פרויקטים. בכל אחד: מי הלקוחה, מה היא עושה, מה היעדים שלה, מה דיברנו בפעם האחרונה.</span></div>
+                        <div class="step"><b>ארטיפקט "מי הלקוחה הבאה"</b><span>דשבורד עם הלקוחות בסדר עדיפויות, פגישה הבאה, מה לדבר עליו.</span></div>
+                    </div>
+                    <div class="case-study-result">
+                        <b>אחרי חודש:</b> אלעד אומר "פתאום אני מרגיש שיש לי 50 שיחות פעילות, ולא 50 התחלות מאפס". הזמן ללקוחה ירד מ-45 דקות ל-15. נשאר לו זמן לקבל 15 לקוחות נוספים בלי לעבוד יותר.
+                    </div>
+                </div>
+            </section>
+
+            <section class="workbook-card" id="workbook">
+                <div class="workbook-icon">📓</div>
+                <div class="workbook-body">
+                    <span class="workbook-tag">חוברת עבודה · 15 דקות</span>
+                    <h4>מבנה הפרופיל האישי + רשימת פרויקטים</h4>
+                    <p>בחוברת תכתבי את כל מה שכדאי שיהיה לקלוד בזיכרון, ותתכנני אילו פרויקטים תיצרי.</p>
+                </div>
+                <div class="workbook-actions">
+                    <a href="../Workbooks/workbook.html#day5" class="btn btn-primary btn-sm" target="_blank">📥 הורד PDF</a>
+                </div>
+            </section>
+
+            <section class="bonus" id="bonus">
+                <div class="bonus-header">
+                    <div class="bonus-icon">🚀</div>
+                    <div>
+                        <span class="bonus-tag">בונוס · 30 דקות</span>
+                        <h3>ארטיפקט מתקדם: דשבורד שבועי דינמי</h3>
+                    </div>
+                </div>
+                <p>במקום דשבורד יומי - בני אחד שבועי שמתחבר ליומן, מיילים, ומשימות, ומציג תכנון שלם.</p>
+                <div class="bonus-task">
+                    <pre>בנה לי ארטיפקט מתקדם — "התכנון השבועי שלי".
+
+כשאני פותחת אותו בבוקר יום ראשון, הוא מציג:
+1. סקירת השבוע ביומן (ימים, פגישות עיקריות, אילוצים)
+2. 5 המשימות הקריטיות מהשבוע (לפי דדליין/חשיבות)
+3. תזכורות לפעולות חוזרות שלי (ניוזלטר, תשלומים)
+4. הצעה ל"היעד הראשי" של השבוע - דבר אחד שאם אצליח להשלים, השבוע הצליח
+5. 3 שאלות רפלקציה מהשבוע שעבר
+
+עיצוב: צבעי המותג שלי, פלייפול ופרודקטיבי.
+שמירה: שיתעדכן בכל פעם שאני פותחת.</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+            </section>
+
+            <section class="reflection" id="reflection">
+                <div class="reflection-header">
+                    <div class="reflection-icon">✍️</div>
+                    <div>
+                        <span class="reflection-tag">רפלקציה · 10 דקות</span>
+                        <h3>סגירת היום</h3>
+                    </div>
+                </div>
+                <ol class="reflection-questions" style="counter-reset: ref-counter;">
+                    <li><b>איזה מידע רגיש בחרת לא לשמור בזיכרון? למה?</b><textarea data-qkey="day5-r1"></textarea></li>
+                    <li><b>איזה פרויקטים נוספים תיצרי בחודש הקרוב?</b><textarea data-qkey="day5-r2"></textarea></li>
+                    <li><b>איזה ארטיפקט נוסף יחסוך לך זמן?</b><textarea data-qkey="day5-r3"></textarea></li>
+                    <li><b>הדבר הכי חשוב מהיום:</b><textarea data-qkey="day5-r4"></textarea></li>
+                </ol>
+                <div class="reflection-share"><b>💬 שתפי בקהילה:</b> איך הזיכרון של AI משתנה את חוויית העבודה שלך?</div>
+            </section>
+
+            <section class="quiz-section" id="quiz">
+                <div id="quiz-container"></div>
+            </section>
+
+            <nav class="lesson-nav" id="lesson-nav"></nav>
+        </main>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-brand"><div class="brand-logo" style="width:24px;height:24px;font-size:0.8rem;">A</div>AlphaDevs Academy</div>
+        <p>יום 5 מתוך 7 · © 2026 AlphaDevs</p>
+    </div>
+</footer>
+
+<meta name="i18n-incomplete" content="true">
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+const day5Quiz = [
+    {
+        q: "מה ההבדל בין זיכרון בתוך שיחה לזיכרון ארוך-טווח?",
+        options: [
+            "אין הבדל",
+            "בתוך השיחה — נמחק כשמתחילים שיחה חדשה. ארוך-טווח — נשמר ומשוחזר בשיחות עתידיות",
+            "ארוך-טווח עולה כסף",
+            "אפשר רק אחד מהם"
+        ],
+        correct: 1,
+        explanation: "זיכרון בשיחה זמני — מתאפס בכל שיחה חדשה. זיכרון ארוך-טווח נשמר בקבצים ומשוחזר אוטומטית בכל שיחה."
+    },
+    {
+        q: "מה כדאי לשמור בזיכרון ארוך-טווח?",
+        options: [
+            "סיסמאות וכרטיסי אשראי",
+            "מי את, העדפות עבודה, פידבק חוזר, הקשר עסקי קבוע",
+            "כל המיילים שלך",
+            "שיחות ספציפיות"
+        ],
+        correct: 1,
+        explanation: "זיכרון ארוך-טווח מתאים למידע יציב על העבודה שלך — מי את, איך את עובדת, ההעדפות שלך. לא לפרטים רגישים או חולפים."
+    },
+    {
+        q: "האם קלוד ישמור בזיכרון את הסיסמה של הבנק שלך אם תבקשי?",
+        options: [
+            "כן",
+            "לא — קלוד מסרב באופן מובנה לשמור פרטים רגישים",
+            "תלוי בסיסמה",
+            "רק ביום שלישי"
+        ],
+        correct: 1,
+        explanation: "קלוד מסרב לשמור פרטים רגישים (סיסמאות, כרטיסי אשראי, מספרי תעודת זהות) — גם אם תבקשי במפורש. זו הגנה."
+    },
+    {
+        q: "מה היתרון של עבודה בפרויקטים?",
+        options: [
+            "אסתטי",
+            "הפרדת הקשרים — פרויקט A לא יתבלבל עם פרויקט B, קלוד הופך למומחה בכל פרויקט",
+            "הפרויקטים פועלים מהר יותר",
+            "פרויקטים זה תכונה בתשלום"
+        ],
+        correct: 1,
+        explanation: "פרויקטים מפרידים הקשרים. כל פרויקט הוא ׳עולם׳ נפרד עם הוראות, קבצים, ושיחות משלו. ככה הקשרים לא מתערבבים."
+    },
+    {
+        q: "מה זה ארטיפקט?",
+        options: [
+            "סוג של קובץ Word",
+            "דף HTML חי שאפשר לחזור אליו, ויכול לטעון נתונים עדכניים בכל פתיחה",
+            "תמונה",
+            "סוג של פרומפט"
+        ],
+        correct: 1,
+        explanation: "ארטיפקט הוא דף HTML שנשמר בקלוד. בכל פתיחה הוא יכול לטעון נתונים עדכניים מהחיבורים שלך — תמיד תקין."
+    },
+    {
+        q: "מתי הכי כדאי ליצור ארטיפקט?",
+        options: [
+            "פעם אחת בלבד, ליום מיוחד",
+            "כששאלה חוזרת על עצמה — ׳מה קורה השבוע?׳, ׳מה הסטטוס?׳ — שווה דשבורד שמתעדכן",
+            "אף פעם",
+            "רק כשהמחשב פנוי"
+        ],
+        correct: 1,
+        explanation: "אם את שואלת את אותה שאלה שוב ושוב — זה הרגע ליצור ארטיפקט. שאלה חד פעמית = צ׳אט. שאלה חוזרת = ארטיפקט."
+    },
+    {
+        q: "מה צריך כדי שארטיפקט יציג נתונים מ-Gmail או Calendar?",
+        options: [
+            "אינטרנט מהיר",
+            "החיבורים הרלוונטיים חייבים להיות פעילים",
+            "תשלום נוסף",
+            "אין צורך בכלום"
+        ],
+        correct: 1,
+        explanation: "הארטיפקט משתמש בחיבורים שלך לטעון נתונים. אם Gmail מחובר — הוא יציג מיילים. אם לא מחובר — לא יציג."
+    }
+];
+document.addEventListener('DOMContentLoaded', () => {
+    renderQuiz('quiz-container', 5, day5Quiz);
+    renderLessonNav('lesson-nav', 5);
+});
+</script>
+
+</body>
+</html>

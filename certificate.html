@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>תעודת סיום · AlphaDevs Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+.cert-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #831843 100%);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cert-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cert-actions .btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+.cert-actions .btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+.certificate {
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 1.4 / 1;
+    border-radius: 12px;
+    padding: 60px;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cert-border {
+    position: absolute;
+    inset: 24px;
+    border: 2px solid #c7d2fe;
+    border-radius: 8px;
+    pointer-events: none;
+}
+.cert-border::before, .cert-border::after {
+    content: '';
+    position: absolute;
+    width: 30px; height: 30px;
+    border: 3px solid var(--brand-600);
+}
+.cert-border::before { top: -3px; right: -3px; border-bottom: none; border-left: none; }
+.cert-border::after  { bottom: -3px; left: -3px; border-top: none; border-right: none; }
+.cert-watermark {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 200px;
+    font-weight: 900;
+    color: rgba(99, 102, 241, 0.04);
+    pointer-events: none;
+    z-index: 0;
+}
+.cert-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+.cert-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.cert-logo {
+    width: 64px; height: 64px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 900;
+    font-size: 1.8rem;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+.cert-org {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    color: var(--brand-700);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.cert-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    color: var(--slate-900);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 8px 0;
+}
+.cert-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: var(--text-muted);
+    font-style: italic;
+}
+.cert-presented-to {
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 16px;
+}
+.cert-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    color: var(--brand-700);
+    font-weight: 900;
+    border-bottom: 2px solid var(--brand-200);
+    padding: 8px 40px 18px;
+    display: inline-block;
+    margin: 4px auto 12px;
+}
+.cert-description {
+    font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+    color: var(--text-muted);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+.cert-footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 24px;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.cert-foot-block { text-align: center; flex: 1; min-width: 120px; }
+.cert-foot-block .label {
+    font-size: 0.7rem;
+    color: var(--text-subtle);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+.cert-foot-block .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--text);
+    font-weight: 700;
+    border-top: 1.5px solid var(--slate-300);
+    padding-top: 10px;
+}
+.cert-signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--brand-700);
+    transform: rotate(-2deg);
+    border: none !important;
+    padding-top: 0 !important;
+}
+.cert-seal {
+    position: absolute;
+    bottom: 50px;
+    left: 70px;
+    width: 110px; height: 110px;
+    z-index: 2;
+}
+.cert-seal-circle {
+    width: 100%; height: 100%;
+    border: 3px double var(--brand-600);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: white;
+    transform: rotate(-12deg);
+    color: var(--brand-700);
+    font-weight: 800;
+    font-size: 0.65rem;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.1em;
+    padding: 12px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.confetti {
+    position: fixed;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(720deg); }
+}
+
+.no-access {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: var(--shadow-xl);
+}
+.no-access h2 { margin-bottom: 16px; }
+
+@media print {
+    .cert-actions, .confetti { display: none !important; }
+    .cert-page { background: white; padding: 0; min-height: auto; }
+    .certificate { box-shadow: none; max-width: none; }
+}
+@media (max-width: 700px) {
+    .certificate { padding: 30px; aspect-ratio: auto; }
+    .cert-seal { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cert-page">
+    <div id="cert-actions" class="cert-actions" style="display:none;">
+        <button class="btn" onclick="window.print()">🖨️ הדפיסי / שמרי כ-PDF</button>
+        <a href="index.html" class="btn">← חזרה לקורס</a>
+    </div>
+
+    <div id="cert-container"></div>
+</div>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+function renderCertificate() {
+    const p = loadProgress();
+    const allDone = COURSE_STRUCTURE.every(d => p.completedDays.includes(d.num));
+    const container = document.getElementById('cert-container');
+
+    if (!allDone) {
+        const remaining = COURSE_STRUCTURE.filter(d => !p.completedDays.includes(d.num)).map(d => `יום ${d.num}`).join(', ');
+        container.innerHTML = `
+            <div class="no-access">
+                <div style="font-size:3rem;margin-bottom:14px;">🔒</div>
+                <h2>התעודה עוד לא נפתחה</h2>
+                <p class="muted">צריך לסיים את כל 7 הימים ולעבור את כל המבחנים. נשאר לך: <strong>${remaining}</strong>.</p>
+                <a href="index.html" class="btn btn-primary mt-3">המשיכי בקורס</a>
+            </div>
+        `;
+        return;
+    }
+
+    document.getElementById('cert-actions').style.display = 'flex';
+
+    const studentName = p.studentName || prompt('מה שמך המלא? (לתעודה)') || 'משתתפ/ת הקורס';
+    if (studentName !== p.studentName) {
+        p.studentName = studentName;
+        saveProgress(p);
+    }
+
+    const completionDate = new Date().toLocaleDateString('he-IL', { year: 'numeric', month: 'long', day: 'numeric' });
+    const avgScore = Math.round(Object.values(p.scores).reduce((a, b) => a + b, 0) / Object.values(p.scores).length);
+    const certId = 'AD-' + (new Date(p.startedAt || Date.now()).getTime().toString(36).toUpperCase().slice(-6));
+
+    container.innerHTML = `
+        <div class="certificate">
+            <div class="cert-border"></div>
+            <div class="cert-watermark">A</div>
+
+            <div class="cert-content">
+                <div class="cert-header">
+                    <div class="cert-logo">A</div>
+                    <div class="cert-org">AlphaDevs Academy</div>
+                </div>
+
+                <div>
+                    <div class="cert-title">תעודת סיום</div>
+                    <div class="cert-subtitle">Certificate of Completion</div>
+                </div>
+
+                <div class="cert-presented-to">מוענקת בזאת ל</div>
+                <div class="cert-name">${studentName}</div>
+
+                <div class="cert-description">
+                    על השלמת הקורס המקצועי <strong>"מאפס לגיבור עם Claude Cowork"</strong> —
+                    7 ימי לימוד אינטנסיביים, 32 שיעורים, 7 מבחנים שעברו בהצלחה,
+                    ופרויקט סיום של בניית אג׳נט מתוזמן.
+                </div>
+            </div>
+
+            <div class="cert-footer">
+                <div class="cert-foot-block">
+                    <div class="value">${completionDate}</div>
+                    <div class="label">תאריך סיום</div>
+                </div>
+                <div class="cert-foot-block">
+                    <div class="value">${avgScore}%</div>
+                    <div class="label">ממוצע ציונים</div>
+                </div>
+                <div class="cert-foot-block">
+                    <div class="value cert-signature">לאור לסרי</div>
+                    <div class="label">מנכ"ל AlphaDevs</div>
+                </div>
+                <div class="cert-foot-block">
+                    <div class="value" style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;direction:ltr;">${certId}</div>
+                    <div class="label">מספר תעודה</div>
+                </div>
+            </div>
+
+            <div class="cert-seal">
+                <div class="cert-seal-circle">
+                    Certified<br>★ 2026 ★<br>AlphaDevs
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Confetti!
+    const colors = ['#6366f1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981'];
+    for (let i = 0; i < 80; i++) {
+        const c = document.createElement('div');
+        c.className = 'confetti';
+        c.style.left = Math.random() * 100 + 'vw';
+        c.style.background = colors[Math.floor(Math.random() * colors.length)];
+        c.style.animationDuration = (2 + Math.random() * 3) + 's';
+        c.style.animationDelay = Math.random() * 2 + 's';
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 6000);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', renderCertificate);
+</script>
+
+</body>
+</html>

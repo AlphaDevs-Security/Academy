@@ -1,0 +1,717 @@
+/* ============================================
+   AlphaDevs Junior — Kids Course Design System
+   For ages 8-11. Bright, playful, friendly.
+   ============================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Bright kid colors — high saturation, joyful */
+    --kid-blue: #3b82f6;
+    --kid-blue-soft: #dbeafe;
+    --kid-yellow: #fbbf24;
+    --kid-yellow-soft: #fef3c7;
+    --kid-pink: #ec4899;
+    --kid-pink-soft: #fce7f3;
+    --kid-green: #10b981;
+    --kid-green-soft: #d1fae5;
+    --kid-purple: #a855f7;
+    --kid-purple-soft: #f3e8ff;
+    --kid-orange: #f97316;
+    --kid-orange-soft: #ffedd5;
+
+    --bg: #fffbeb;
+    --bg-card: #ffffff;
+    --text: #1e293b;
+    --text-soft: #64748b;
+    --border: #fde68a;
+
+    --gradient-rainbow: linear-gradient(135deg, #fbbf24 0%, #ec4899 35%, #a855f7 70%, #3b82f6 100%);
+    --gradient-sunshine: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+    --gradient-ocean: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    --gradient-candy: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+    --gradient-grass: linear-gradient(135deg, #10b981 0%, #84cc16 100%);
+
+    --shadow-toy: 0 8px 0 rgba(0,0,0,0.08), 0 16px 30px rgba(0,0,0,0.1);
+    --shadow-bouncy: 0 4px 0 rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.08);
+}
+
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl;
+    background: var(--bg);
+    background-image:
+        radial-gradient(at 10% 10%, rgba(251,191,36,0.15) 0px, transparent 50%),
+        radial-gradient(at 90% 20%, rgba(236,72,153,0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 80%, rgba(168,85,247,0.10) 0px, transparent 50%);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+h3 { font-size: 1.5rem; }
+p { font-size: 1.1rem; line-height: 1.8; color: var(--text); }
+
+a { color: var(--kid-blue); text-decoration: none; font-weight: 700; }
+
+/* ---------- Top Bar ---------- */
+.kids-topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 251, 235, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 4px solid var(--border);
+    padding: 14px 0;
+}
+.kids-topbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.kids-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text);
+}
+.kids-brand-logo {
+    width: 50px; height: 50px;
+    background: var(--gradient-rainbow);
+    border-radius: 16px;
+    display: grid; place-items: center;
+    font-size: 1.6rem;
+    box-shadow: var(--shadow-bouncy);
+    transform: rotate(-4deg);
+    transition: transform 200ms;
+}
+.kids-brand:hover .kids-brand-logo { transform: rotate(0deg) scale(1.05); }
+.kids-brand-name b {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+.kids-brand-name span {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-soft);
+    font-weight: 600;
+}
+.stickers-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gradient-sunshine);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 800;
+    box-shadow: var(--shadow-bouncy);
+    font-size: 0.95rem;
+}
+
+/* ---------- Hero ---------- */
+.kids-hero {
+    padding: 60px 24px 40px;
+    text-align: center;
+    position: relative;
+}
+.kids-hero h1 {
+    background: var(--gradient-rainbow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 14px;
+    line-height: 1.1;
+}
+.kids-hero .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-soft);
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-weight: 500;
+}
+
+/* ---------- Mascot (Alphie the robot) ---------- */
+.mascot {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 24px;
+    position: relative;
+    animation: bounce 3s ease-in-out infinite;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+}
+.mascot-svg { width: 100%; height: 100%; }
+
+/* ---------- Day Cards Grid ---------- */
+.days-section {
+    max-width: 1100px;
+    margin: 30px auto 60px;
+    padding: 0 24px;
+}
+.days-section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.days-section-title h2 {
+    color: var(--text);
+}
+.days-section-title p {
+    color: var(--text-soft);
+    margin-top: 8px;
+}
+
+.kid-days-grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.kid-day-card {
+    background: var(--bg-card);
+    border: 4px solid var(--border);
+    border-radius: 24px;
+    padding: 26px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.kid-day-card.day-1 { border-color: var(--kid-yellow); }
+.kid-day-card.day-2 { border-color: var(--kid-pink); }
+.kid-day-card.day-3 { border-color: var(--kid-blue); }
+.kid-day-card.day-4 { border-color: var(--kid-green); }
+.kid-day-card.day-5 { border-color: var(--kid-purple); }
+
+.kid-day-card:hover:not(.locked) {
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: var(--shadow-toy);
+}
+
+.kid-day-card.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(0.5);
+}
+
+.kid-day-card.completed {
+    background: var(--kid-green-soft);
+    border-color: var(--kid-green);
+}
+
+.kid-day-num {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: var(--bg);
+    color: var(--text);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    align-self: flex-start;
+}
+.kid-day-card.day-1 .kid-day-num { background: var(--kid-yellow-soft); color: #92400e; }
+.kid-day-card.day-2 .kid-day-num { background: var(--kid-pink-soft); color: #9d174d; }
+.kid-day-card.day-3 .kid-day-num { background: var(--kid-blue-soft); color: #1e3a8a; }
+.kid-day-card.day-4 .kid-day-num { background: var(--kid-green-soft); color: #064e3b; }
+.kid-day-card.day-5 .kid-day-num { background: var(--kid-purple-soft); color: #581c87; }
+
+.kid-day-emoji {
+    font-size: 3.5rem;
+    line-height: 1;
+    margin: 4px 0;
+}
+
+.kid-day-card h3 {
+    font-size: 1.4rem;
+    line-height: 1.25;
+}
+
+.kid-day-card .day-desc {
+    color: var(--text-soft);
+    font-size: 0.97rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.kid-day-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 2px dashed var(--border);
+    font-size: 0.88rem;
+    color: var(--text-soft);
+}
+.kid-day-meta .time {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 700;
+}
+.kid-day-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--kid-blue);
+    font-weight: 800;
+}
+.kid-day-card.completed .kid-day-cta { color: var(--kid-green); }
+
+.locked-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(0,0,0,0.1);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-soft);
+}
+
+/* ---------- Sticker Collection ---------- */
+.sticker-collection {
+    max-width: 920px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--bg-card);
+    border: 4px solid var(--border);
+    border-radius: 28px;
+    text-align: center;
+}
+.sticker-collection h3 {
+    margin-bottom: 18px;
+}
+.sticker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+.sticker {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px dashed var(--border);
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    background: var(--bg);
+    transition: all 250ms;
+    position: relative;
+}
+.sticker.earned {
+    border-style: solid;
+    background: var(--gradient-sunshine);
+    color: white;
+    transform: scale(1);
+    animation: sticker-pop 600ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+    box-shadow: var(--shadow-bouncy);
+}
+@keyframes sticker-pop {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+.sticker.locked {
+    color: rgba(0,0,0,0.15);
+}
+
+/* ---------- Lesson Page Layout ---------- */
+.kids-lesson {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 24px 60px;
+}
+.kids-lesson-header {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    background: var(--bg-card);
+    border-radius: 28px;
+    border: 4px solid var(--border);
+}
+.kids-lesson-header .day-tag {
+    display: inline-block;
+    background: var(--gradient-sunshine);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+.kids-lesson-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    background: var(--gradient-rainbow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+.kids-lesson-header .subtitle {
+    color: var(--text-soft);
+    font-size: 1.1rem;
+}
+
+/* ---------- Story Block ---------- */
+.story-block {
+    background: var(--bg-card);
+    border: 4px solid var(--kid-purple);
+    border-radius: 24px;
+    padding: 32px 28px;
+    margin: 26px 0;
+    position: relative;
+}
+.story-block::before {
+    content: '📖';
+    position: absolute;
+    top: -22px;
+    right: 24px;
+    background: var(--bg-card);
+    padding: 0 12px;
+    font-size: 2rem;
+}
+.story-block h3 {
+    color: var(--kid-purple);
+    margin-bottom: 14px;
+}
+.story-block p {
+    font-size: 1.15rem;
+    line-height: 2;
+    margin-bottom: 14px;
+}
+.story-block p:last-child { margin-bottom: 0; }
+.story-block .speech-alphie {
+    background: var(--kid-blue-soft);
+    border-right: 4px solid var(--kid-blue);
+    padding: 14px 20px;
+    border-radius: 16px;
+    margin: 18px 0;
+    font-style: italic;
+}
+.story-block .speech-alphie::before {
+    content: '🤖 אלפי: ';
+    font-style: normal;
+    font-weight: 800;
+    color: var(--kid-blue);
+}
+
+/* ---------- Activity Block ---------- */
+.activity-block {
+    background: var(--gradient-grass);
+    color: white;
+    border-radius: 24px;
+    padding: 32px 28px;
+    margin: 26px 0;
+    position: relative;
+    overflow: hidden;
+}
+.activity-block::before {
+    content: '🎯';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 6rem;
+    opacity: 0.15;
+    transform: rotate(-15deg);
+}
+.activity-block h3 {
+    color: white;
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+}
+.activity-block .activity-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+.activity-block p {
+    color: white;
+    font-size: 1.1rem;
+}
+.activity-prompt {
+    background: rgba(0,0,0,0.25);
+    border: 2px dashed rgba(255,255,255,0.4);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin: 18px 0;
+    color: white;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    direction: rtl;
+}
+.activity-prompt b { color: #fef3c7; }
+
+.activity-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+.activity-checklist li {
+    padding: 12px 36px 12px 0;
+    position: relative;
+    font-size: 1.05rem;
+    color: white;
+    border-bottom: 1px dashed rgba(255,255,255,0.2);
+}
+.activity-checklist li::before {
+    content: '☐';
+    position: absolute;
+    right: 0; top: 10px;
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.6);
+}
+.activity-checklist li.done::before {
+    content: '✅';
+}
+.activity-checklist li:last-child { border-bottom: none; }
+
+/* ---------- Quiz (Kids version — fun!) ---------- */
+.kids-quiz {
+    background: var(--bg-card);
+    border: 4px solid var(--kid-yellow);
+    border-radius: 24px;
+    padding: 32px 28px;
+    margin: 26px 0;
+}
+.kids-quiz-header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+.kids-quiz-header .quiz-emoji {
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+.kids-quiz-header h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+}
+.kids-quiz-header p {
+    color: var(--text-soft);
+    font-size: 1rem;
+    margin-top: 4px;
+}
+
+.kids-question {
+    background: var(--bg);
+    border-radius: 16px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+}
+.kids-question .q-text {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+.kids-options {
+    display: grid;
+    gap: 10px;
+}
+.kids-option {
+    background: var(--bg-card);
+    border: 3px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-align: right;
+    font-family: inherit;
+    font-size: 1.05rem;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 200ms;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.kids-option:hover:not(:disabled) {
+    border-color: var(--kid-blue);
+    background: var(--kid-blue-soft);
+    transform: translateY(-2px);
+}
+.kids-option .opt-emoji {
+    font-size: 1.4rem;
+}
+.kids-option.selected {
+    border-color: var(--kid-blue);
+    background: var(--kid-blue-soft);
+}
+.kids-option.correct {
+    border-color: var(--kid-green);
+    background: var(--kid-green-soft);
+    color: #064e3b;
+}
+.kids-option.wrong {
+    border-color: var(--kid-pink);
+    background: var(--kid-pink-soft);
+    color: #9d174d;
+}
+.kids-option:disabled { cursor: not-allowed; }
+
+.quiz-feedback {
+    margin-top: 16px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 1rem;
+    line-height: 1.6;
+    display: none;
+}
+.quiz-feedback.show { display: block; }
+.quiz-feedback.right {
+    background: var(--kid-green-soft);
+    color: #064e3b;
+}
+.quiz-feedback.almost {
+    background: var(--kid-yellow-soft);
+    color: #78350f;
+}
+
+/* ---------- Big Buttons ---------- */
+.btn-big {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 36px;
+    border-radius: 18px;
+    font-family: inherit;
+    font-size: 1.15rem;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    transition: all 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-decoration: none;
+    box-shadow: var(--shadow-bouncy);
+}
+.btn-big:hover { transform: translateY(-3px); }
+.btn-big:active { transform: translateY(0); box-shadow: 0 2px 0 rgba(0,0,0,0.1); }
+
+.btn-yellow { background: var(--gradient-sunshine); color: white; }
+.btn-blue { background: var(--gradient-ocean); color: white; }
+.btn-pink { background: var(--gradient-candy); color: white; }
+.btn-green { background: var(--gradient-grass); color: white; }
+.btn-rainbow { background: var(--gradient-rainbow); color: white; }
+
+/* ---------- Sticker Earned Modal ---------- */
+.sticker-earned-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 100;
+    display: none;
+    place-items: center;
+    padding: 24px;
+    backdrop-filter: blur(4px);
+}
+.sticker-earned-overlay.show { display: grid; animation: fade-in 300ms ease; }
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.sticker-earned-card {
+    background: var(--bg-card);
+    border-radius: 28px;
+    padding: 40px 32px;
+    text-align: center;
+    max-width: 420px;
+    width: 100%;
+    border: 4px solid var(--kid-yellow);
+    animation: pop-in 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes pop-in {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.sticker-earned-emoji {
+    font-size: 5rem;
+    margin-bottom: 12px;
+    animation: spin-once 800ms ease;
+}
+@keyframes spin-once {
+    from { transform: rotate(-360deg) scale(0); }
+    to { transform: rotate(0) scale(1); }
+}
+.sticker-earned-card h2 {
+    color: var(--text);
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+}
+.sticker-earned-card p {
+    color: var(--text-soft);
+    margin-bottom: 22px;
+    font-size: 1.05rem;
+}
+
+/* ---------- Bottom Nav ---------- */
+.kids-bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 3px dashed var(--border);
+}
+.kids-bottom-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 18px;
+    background: var(--bg-card);
+    border: 3px solid var(--border);
+    border-radius: 16px;
+    color: var(--text);
+    transition: all 200ms;
+    font-weight: 700;
+}
+.kids-bottom-nav a:hover {
+    border-color: var(--kid-blue);
+    transform: translateY(-2px);
+}
+
+/* ---------- Confetti ---------- */
+.confetti-piece {
+    position: fixed;
+    width: 12px; height: 12px;
+    pointer-events: none;
+    z-index: 99;
+    animation: confetti-fall linear forwards;
+}
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .kids-hero { padding: 40px 18px 30px; }
+    .mascot { width: 140px; height: 140px; }
+    .kids-lesson { padding: 20px 16px 40px; }
+    .story-block, .activity-block, .kids-quiz { padding: 24px 20px; }
+    .kid-day-card { padding: 22px; }
+}

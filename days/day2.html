@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יום 2: קבצים ומסמכים · AlphaDevs Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Heebo,sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body id="top" class="gated">
+
+<header class="topbar">
+    <div class="container topbar-inner">
+        <a href="../index.html" class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-name"><b>AlphaDevs Academy</b><span>יום 2 מתוך 7</span></div>
+        </a>
+        <div class="topbar-actions">
+            <div class="progress-pill" id="progress-pill"><span class="dot"></span> טוען...</div>
+            <a href="../index.html" class="btn btn-ghost btn-sm">← חזרה לקורס</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="lesson-shell">
+        <aside class="lesson-sidebar">
+            <h4>תוכן היום</h4>
+            <ul class="toc-list">
+                <li><a href="#workspace" class="active"><span class="toc-num">1</span>תיקיית העבודה שלך</a></li>
+                <li><a href="#upload"><span class="toc-num">2</span>העלאת קבצים לקלוד</a></li>
+                <li><a href="#create"><span class="toc-num">3</span>יצירת מסמכים מקצועיים</a></li>
+                <li><a href="#edit"><span class="toc-num">4</span>עריכה ושינוי קבצים קיימים</a></li>
+                <li><a href="#share"><span class="toc-num">5</span>שיתוף וגישה לתוצאות</a></li>
+                <li><a href="#quiz"><span class="toc-num">★</span>מבחן יום 2</a></li>
+            </ul>
+        </aside>
+
+        <main class="lesson-main">
+            <header class="lesson-header">
+                <span class="lesson-eyebrow">יום 2 · 50 דקות · רמה: בסיסית</span>
+                <h1>קבצים, מסמכים, והעולם הדיגיטלי</h1>
+                <p class="lesson-subtitle">היום נבין איך קלוד באמת עובד עם הקבצים שלך — איך מעלים, איך יוצרים, איך עורכים, ואיפה הכל מתאחסן. זה הכוח האמיתי של Cowork.</p>
+                <div class="lesson-progress">
+                    <div class="bar"><div class="bar-fill" style="width:28%;"></div></div>
+                    <div class="progress-text">יום 2 מתוך 7</div>
+                </div>
+
+                <div class="lesson-time-bar">
+                    <div class="time-block"><div class="num">5'</div><div class="label">חימום</div></div>
+                    <div class="time-block"><div class="num">55'</div><div class="label">שיעורים</div></div>
+                    <div class="time-block"><div class="num">35'</div><div class="label">תרגיל</div></div>
+                    <div class="time-block"><div class="num">20'</div><div class="label">מקרה בוחן</div></div>
+                    <div class="time-block"><div class="num">15'</div><div class="label">חוברת עבודה</div></div>
+                    <div class="time-block"><div class="num">30'</div><div class="label">בונוס</div></div>
+                    <div class="time-block total"><div class="num">2.7 ש׳</div><div class="label">סך הכל</div></div>
+                </div>
+            </header>
+
+            <div class="video-block">
+                <div class="video-frame"><div class="video-play-btn"></div></div>
+                <div class="video-meta">
+                    <span class="video-title">🎬 וידאו פתיחה: לעבוד עם קבצים אמיתיים</span>
+                    <span class="video-duration">⏱ 5:00</span>
+                </div>
+                <div class="video-placeholder-note">📹 <strong>הקלטת וידאו תיווסף בקרוב.</strong> בינתיים — קראי את התוכן הכתוב.</div>
+            </div>
+
+            <section class="warmup">
+                <div class="warmup-header">
+                    <div class="warmup-icon">🔥</div>
+                    <div>
+                        <span class="warmup-tag">חימום · 5 דקות</span>
+                        <h3>בחרי קובץ אמיתי שאת עובדת איתו השבוע</h3>
+                    </div>
+                </div>
+                <p>חפשי במחשב שלך קובץ אחד שאת תיגעי בו השבוע — מסמך, גיליון אקסל, PDF, מצגת. <strong>זה לא תרגיל היפותטי</strong> — אנחנו נשתמש בקובץ הזה בתרגיל. תכתבי איזה קובץ זה, ומה את צריכה לעשות איתו השבוע.</p>
+                <textarea class="warmup-input" data-qkey="day2-warmup" placeholder="הקובץ: __________ | המשימה: __________"></textarea>
+            </section>
+
+            <!-- Section 1: Workspace -->
+            <section class="section" id="workspace">
+                <h2><span class="section-num">1</span>תיקיית העבודה שלך</h2>
+                <p>לפני שמתחילים — הרעיון הכי חשוב להיום: <strong>תיקיית העבודה</strong>. זו התיקייה במחשב שלך שקלוד יכול לקרוא וליצור בה קבצים. בלי תיקייה — קלוד לא יכול לשמור לך כלום.</p>
+
+                <h3>איך בוחרים תיקייה?</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h4>פתחי שיחה ב-Cowork</h4>
+                            <p>אם זו שיחה חדשה, קלוד עשוי לבקש ממך לבחור תיקייה לעבוד בה.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h4>בקשי במפורש</h4>
+                            <p>פשוט תכתבי: "אני רוצה לעבוד בתיקייה במחשב שלי". קלוד יבקש הרשאה ויפתח חלון בחירת תיקייה.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h4>בחרי תיקייה ייעודית</h4>
+                            <p>אל תבחרי את כל הדסקטופ. בחרי תיקייה ספציפית לפרויקט (למשל: <code>Documents/Claude/Projects/X</code>). ככה הכל מאורגן.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-tip">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-body">
+                        <div class="callout-title">למה זה חשוב</div>
+                        <p>כשאת בוחרת תיקייה, קלוד יכול: לקרוא קבצים שכבר שם, ליצור קבצים חדשים, לערוך קבצים קיימים, ולארגן הכל בצורה שאת תוכלי למצוא אחר כך. בלי תיקייה — כל הקבצים הולכים למקום זמני שלא תמצאי בקלות.</p>
+                    </div>
+                </div>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">🔒</div>
+                    <div class="callout-body">
+                        <div class="callout-title">פרטיות ובטיחות</div>
+                        <p>קלוד רואה רק את התיקייה שאישרת לו — לא את כל המחשב. הוא לא יכול להיכנס לתיקיות אחרות בלי אישור מפורש. את שולטת.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Upload -->
+            <section class="section" id="upload">
+                <h2><span class="section-num">2</span>העלאת קבצים לקלוד</h2>
+                <p>יש שתי דרכים להראות לקלוד קובץ — והבחירה ביניהן משנה את החוויה.</p>
+
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">📎</div>
+                        <h4>העלאה לשיחה (Upload)</h4>
+                        <p>גוררת קובץ לתוך הצ׳אט (drag & drop), או לוחצת על אייקון המהדק. מתאים לקובץ אחד-שניים שאת רוצה שיעיין בהם פה ועכשיו.</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">📂</div>
+                        <h4>קבצים בתיקייה</h4>
+                        <p>אם הקובץ כבר בתיקיית העבודה — קלוד יכול לקרוא אותו לבד, בלי שתעלי. מתאים לעבודה לאורך זמן ופרויקטים.</p>
+                    </div>
+                </div>
+
+                <h3>איזה סוגי קבצים אפשר להעלות?</h3>
+                <p>כמעט הכל. הנה הנפוצים:</p>
+                <ul>
+                    <li><strong>טקסט:</strong> .txt, .md, .csv</li>
+                    <li><strong>מסמכים:</strong> .docx (Word), .pdf, .pptx (מצגות)</li>
+                    <li><strong>גיליונות:</strong> .xlsx, .csv</li>
+                    <li><strong>תמונות:</strong> .png, .jpg, .gif (קלוד "רואה" את התמונה)</li>
+                    <li><strong>קוד:</strong> .py, .js, .html, וכל שפת תכנות</li>
+                </ul>
+
+                <div class="practice-box">
+                    <span class="practice-tag">תרגול</span>
+                    <h4>📤 העלאה ראשונה</h4>
+                    <p>קחי קובץ Word או PDF כלשהו מהמחשב שלך. גררי אותו לתוך חלון השיחה ב-Cowork וכתבי:</p>
+                    <div class="practice-prompt">
+                        קרא את הקובץ הזה וסכם לי בעברית פשוטה את 3 הנקודות החשובות ביותר. הוסף בסוף — אם היית צריך לפעול על המסמך הזה, מה היית עושה?
+                    </div>
+                </div>
+
+                <div class="callout callout-pro">
+                    <div class="callout-icon">⭐</div>
+                    <div class="callout-body">
+                        <div class="callout-title">טריק: צילום מסך כקלט</div>
+                        <p>קלוד "רואה" תמונות. אם את רואה משהו על המסך — אתר, מסמך סרוק, גרף — צלמי מסך והעלי. את יכולה להגיד "תסבר לי מה כתוב בתמונה" או "תכתוב לי טקסט שעונה על המייל הזה".</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Create -->
+            <section class="section" id="create">
+                <h2><span class="section-num">3</span>יצירת מסמכים מקצועיים</h2>
+                <p>זה אחד הדברים שיהפוך את העבודה שלך למהירה פי 5. קלוד יכול ליצור מסמכים מעוצבים — לא טקסט גולמי שאת צריכה להעתיק לוורד, אלא קבצים מוכנים שאת רק לוחצת ומשתמשת.</p>
+
+                <h3>הסוגים הנפוצים</h3>
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">📄</div>
+                        <h4>Word (.docx)</h4>
+                        <p>דוחות, מכתבים, מזכרים, חוזים, מאמרים. עם עיצוב מלא, כותרות, טבלאות, תוכן עניינים.</p>
+                    </div>
+                    <div class="compare-card icon-green">
+                        <div class="compare-icon">📊</div>
+                        <h4>Excel (.xlsx)</h4>
+                        <p>גיליונות, תקציבים, רשימות, ניתוח נתונים, גרפים. עם נוסחאות שעובדות.</p>
+                    </div>
+                    <div class="compare-card icon-orange">
+                        <div class="compare-icon">📑</div>
+                        <h4>PDF</h4>
+                        <p>מסמכים מקצועיים סופיים, הצעות מחיר, מילוי טפסים, תעודות.</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">🎨</div>
+                        <h4>מצגות (.pptx)</h4>
+                        <p>פרזנטציות עסקיות, סיכומי פרויקטים, הצגות לפגישות. סלייד אחר סלייד.</p>
+                    </div>
+                </div>
+
+                <h3>איך מבקשים ממנו ליצור?</h3>
+                <p>פשוט להגיד לו. הנה דוגמאות אמיתיות:</p>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה 1</span>
+                    <h4>📄 בקשה ליצירת Word</h4>
+                    <div class="practice-prompt">
+                        תכין לי מסמך Word — מכתב מקצועי לעובד חדש שמתחיל אצלנו ב-1 ביוני. שמו: עידן כהן. תפקיד: מתכנת בכיר. המכתב צריך לכלול: ברכה חמה, תיאור התפקיד ב-2 משפטים, רשימת הציוד שיקבל ביום הראשון (לפטופ, צג, אוזניות), ופרטי איש קשר ב-HR (שירה, 050-1234567). חתימה ממני - לאור, מנכ"ל.
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה 2</span>
+                    <h4>📊 בקשה ליצירת Excel</h4>
+                    <div class="practice-prompt">
+                        תכין לי קובץ Excel למעקב אחרי הוצאות חודשיות. עמודות: תאריך, קטגוריה, תיאור, סכום, אמצעי תשלום, הערות. קטגוריות לבחור מהן (תפריט נפתח): אוכל, תחבורה, בידור, חשבונות, עבודה, אחר. בסוף — נוסחת SUM של הסכום הכללי, ועוד SUM לפי כל קטגוריה. תוסיף עיצוב יפה — כותרת בולטת, גוונים בהירים.
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה 3</span>
+                    <h4>🎨 בקשה ליצירת מצגת</h4>
+                    <div class="practice-prompt">
+                        תכין לי מצגת PowerPoint להצגה של 10 דקות ללקוח. הנושא: שירותי הייעוץ של החברה שלנו. 8 סליידים: 1) שער עם הלוגו, 2) על החברה, 3) השירותים שלנו, 4) למה אנחנו, 5) לקוחות לדוגמה, 6) תהליך עבודה, 7) מקרה הצלחה, 8) צור קשר. עיצוב מודרני, צבעים: כחול ולבן.
+                    </div>
+                </div>
+
+                <div class="callout callout-tip">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-body">
+                        <div class="callout-title">טיפ זהב: תני דוגמה אם יש לך</div>
+                        <p>אם יש לך מסמך דומה שאהבת — העלי אותו וכתבי "תכין לי מסמך כמו זה אבל עם הנתונים שאני אספק". קלוד יחקה את הסגנון והעיצוב. זה מקצר זמן בענק.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Edit -->
+            <section class="section" id="edit">
+                <h2><span class="section-num">4</span>עריכה ושינוי קבצים קיימים</h2>
+                <p>קלוד לא רק יוצר — הוא יכול לערוך קבצים שכבר יש לך. זה משמעותי במיוחד כשיש לך מסמך ארוך שצריך לעבור עליו.</p>
+
+                <h3>סוגי עריכות שאפשר לבקש</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h4>תיקוני שפה</h4>
+                            <p>"עבור על המסמך הזה ותקן שגיאות כתיב, ניסוח ופיסוק. אל תשנה את התוכן או הכוונה — רק תשפר את הניסוח."</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h4>החלפת תוכן</h4>
+                            <p>"בקובץ הזה תחליף את כל המופעים של ׳חברה X׳ ב-׳חברת AlphaDevs׳, ועדכן את התאריכים מ-2025 ל-2026."</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h4>הוספת חלקים</h4>
+                            <p>"הוסף למסמך הזה פרק חדש בסוף — ׳סיכום והמלצות׳. שיהיה כ-3 פסקאות."</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-body">
+                            <h4>שינוי טון או פורמט</h4>
+                            <p>"קח את הטקסט הזה והפוך אותו לפוסט לינקדאין — קצר, עם hooks, עם אימוג׳ים."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">תרגול</span>
+                    <h4>✏️ עריכת מסמך אמיתי</h4>
+                    <p>קחי מסמך מהעבודה שלך — מייל, מסמך, הצעה. בקשי מקלוד:</p>
+                    <div class="practice-prompt">
+                        עבור על המסמך הזה. תקן שגיאות, שפר את הניסוח שיהיה זורם יותר, וצמצם את האורך ב-30%. תשמור את הטון שלי, ושמור על כל הנקודות העיקריות.
+                    </div>
+                </div>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">ℹ️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">חשוב לדעת</div>
+                        <p>כשקלוד עורך קובץ, הוא יוצר גרסה חדשה. הקובץ המקורי שלך נשאר בטוח. אם משהו לא מוצא חן בעינייך — תמיד יש לך את הגרסה הראשונה.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Share -->
+            <section class="section" id="share">
+                <h2><span class="section-num">5</span>שיתוף וגישה לתוצאות</h2>
+                <p>אחרי שקלוד יצר לך קובץ — איך את ניגשת אליו? איך את שולחת אותו ללקוח?</p>
+
+                <h3>איפה הקבצים נשמרים?</h3>
+                <p>בתיקייה שבחרת בהתחלה. קלוד יציג לך קישור ישיר בתוך השיחה — לחיצה אחת ויפתח לך את הקובץ.</p>
+
+                <div class="callout callout-tip">
+                    <div class="callout-icon">🔗</div>
+                    <div class="callout-body">
+                        <div class="callout-title">קישור בתוך השיחה</div>
+                        <p>אחרי שקלוד מסיים ליצור קובץ, הוא יציג לינק כזה: "📄 לצפייה במסמך — לחצי כאן". הלינק פותח את הקובץ באפליקציה המתאימה (Word, Excel, וכו׳) ישירות מהמחשב שלך.</p>
+                    </div>
+                </div>
+
+                <h3>שיתוף עם אחרים</h3>
+                <ol>
+                    <li><strong>שליחה במייל:</strong> פתחי את הקובץ, צרפי למייל. אם יש לך פלאגין Gmail מחובר — קלוד יכול לשלוח עבורך! נדבר על זה ביום 4.</li>
+                    <li><strong>העלאה ל-Drive:</strong> אם יש לך Google Drive מחובר — קלוד יכול להעלות ישירות.</li>
+                    <li><strong>שיתוף ידני:</strong> פתחי את התיקייה במחשב, מצאי את הקובץ, שתפי איך שאת רגילה.</li>
+                </ol>
+
+                <h3>מציאת קבצים ישנים</h3>
+                <p>כל הקבצים שקלוד יצר נשארים בתיקיית העבודה. אם את לא זוכרת איפה משהו, פשוט תשאלי:</p>
+
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה</span>
+                    <h4>🔍 מציאה</h4>
+                    <div class="practice-prompt">
+                        תראה לי את כל הקבצים בתיקייה שיצרת בשבועיים האחרונים. תסדר אותם לפי תאריך — החדשים קודם.
+                    </div>
+                </div>
+
+                <div class="callout callout-pro">
+                    <div class="callout-icon">⭐</div>
+                    <div class="callout-body">
+                        <div class="callout-title">טיפ ארגון</div>
+                        <p>בקשי מקלוד מההתחלה לארגן את הקבצים לתת-תיקיות לפי פרויקט: <code>Projects/Client-A/</code>, <code>Projects/Q2-Report/</code> וכו׳. ככה אחרי חודש העבודה לא תהיי בכאוס.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hands-On Exercise -->
+            <section class="exercise" id="exercise">
+                <div class="exercise-header">
+                    <div class="exercise-num">🎯</div>
+                    <div>
+                        <span class="exercise-tag">תרגיל מעשי · 35 דקות</span>
+                        <h3>הפכי את הקובץ שלך למסמך מקצועי תוך 10 דקות</h3>
+                        <div class="exercise-time">⏱ זמן משוער: 30-35 דקות בקלוד שלך</div>
+                    </div>
+                </div>
+                <div class="exercise-goal">
+                    <b>המטרה:</b> לעבוד על הקובץ האמיתי שזיהית בחימום. נבצע עליו 3 פעולות שונות שמדגימות את הכוח של עבודה עם קבצים: ניתוח, שיפור, ויצירת תוצר חדש.
+                </div>
+                <div class="exercise-prompt-block">
+                    <pre>שלב 1 — ניתוח:
+"קרא את הקובץ הזה (אעלה אותו). תן לי:
+1. סיכום ב-3 משפטים
+2. 3 הנקודות החשובות ביותר
+3. שאלה אחת חשובה שלא נענתה במסמך"
+
+שלב 2 — שיפור (אם זה מסמך טקסט):
+"עבור על המסמך. תקן שגיאות, שפר את הניסוח, צמצם ב-25%.
+שמור על הטון שלי וכל הנקודות העיקריות."
+
+שלב 3 — יצירת תוצר חדש:
+"קח את הקובץ והפק ממנו [מסמך Word / מצגת / Excel].
+הכן [תיאור התוצר הרצוי]. עיצוב מקצועי, [פלטה/פונט].
+התוצר הסופי - להוריד כקובץ."</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק את כל 3 השלבים</button>
+                </div>
+                <div class="exercise-expected">
+                    <b>מה אמור לקרות:</b> בסוף התרגיל יש לך קובץ אחד מקורי שעבר 3 פעולות מעולות — קיבלת ניתוח עומק, גרסה משופרת, ותוצר חדש (מצגת/Excel) שאת יכולה להשתמש בו עוד היום. סך הזמן: ~30 דקות. בלי AI: 4-6 שעות.
+                </div>
+                <p style="margin-top:18px;font-weight:700;color:#065f46;">סמני לעצמך:</p>
+                <ul class="exercise-checklist">
+                    <li>העליתי את הקובץ ל-Cowork (drag & drop או דרך הצ׳אט)</li>
+                    <li>ביצעתי את שלב 1 — ניתוח, וקיבלתי תוצאה ברורה</li>
+                    <li>ביצעתי את שלב 2 — שיפור (אם רלוונטי לסוג הקובץ)</li>
+                    <li>ביצעתי את שלב 3 — יצירת תוצר חדש</li>
+                    <li>שמרתי את התוצר החדש בתיקיית העבודה שלי</li>
+                </ul>
+            </section>
+
+            <!-- Case Study -->
+            <section class="case-study" id="case-study">
+                <div class="case-study-header">
+                    <span class="case-study-tag">מקרה בוחן · 20 דקות</span>
+                    <h3>חוזה של 47 עמודים, 2 דקות, החלטה</h3>
+                    <div class="case-study-meta">
+                        <span>👤 דנה · עורכת דין עצמאית</span>
+                        <span>⚖️ דיני חוזים מסחריים</span>
+                        <span>⏱ חיסכון: 6 שעות לחוזה</span>
+                    </div>
+                </div>
+                <div class="case-study-body">
+                    <h4>המצב</h4>
+                    <p>דנה מקבלת בממוצע 3 חוזים מסחריים לסקירה בשבוע. כל חוזה — 30-60 עמודים. הקריאה לבד הייתה לוקחת 2-3 שעות, ועוד שעה כתיבת הערות. סך הכל: 9-12 שעות בשבוע על משימה שאף אחד לא משלם עליה במלואה.</p>
+
+                    <h4>השלבים</h4>
+                    <div class="case-study-timeline">
+                        <div class="step">
+                            <b>שלב 1 — בניית פרומפט-תבנית לחוזים</b>
+                            <span>דנה הגדירה בדיוק מה היא מחפשת בכל חוזה: 8 סעיפים שתמיד מסקרת. AI הופך את זה לרשימת בדיקה אוטומטית.</span>
+                        </div>
+                        <div class="step">
+                            <b>שלב 2 — העלאת חוזה לדוגמה</b>
+                            <span>חוזה ספציפי (47 עמודים, אנגלית). AI הוציא: 12 סעיפים בעייתיים, 3 דברים שדורשים בירור עם הצד השני, ותקציר ב-5 שורות.</span>
+                        </div>
+                        <div class="step">
+                            <b>שלב 3 — ביקורת אנושית</b>
+                            <span>דנה עברה על מה ש-AI סימן (15 דקות). מצאה שהוא צדק ב-11 מתוך 12 הסעיפים. סעיף אחד היה false positive. שאר הקריאה הלכה מהר כי כיוונה את העין.</span>
+                        </div>
+                        <div class="step">
+                            <b>שלב 4 — ניסוח הערות</b>
+                            <span>במקום לכתוב מאפס: "תכתוב לי 12 הערות פורמליות לעו"ד הצד השני, על בסיס הסעיפים האלה". 8 דקות, מסמך מוכן.</span>
+                        </div>
+                    </div>
+
+                    <h4>הטעות שכמעט עשתה</h4>
+                    <p>בהתחלה דנה ניסתה "פשוט תקרא את החוזה ותגיד לי מה לא בסדר". התוצאה הייתה רחבה מדי, לא ממוקדת בסיכונים האמיתיים שלה. רק כשהגדירה <em>בדיוק 8 סעיפים</em> שהיא מחפשת, התוצאה הפכה לשימושית.</p>
+
+                    <div class="case-study-result">
+                        <b>התוצאה:</b> 9-12 שעות בשבוע הפכו ל-2-3 שעות. דנה לקחה 2 לקוחות נוספים מבלי להגדיל שעות עבודה. הכנסה חודשית גדלה ב-₪18,000 ללא תוספת זמן.
+                    </div>
+                </div>
+            </section>
+
+            <section class="workbook-card" id="workbook">
+                <div class="workbook-icon">📓</div>
+                <div class="workbook-body">
+                    <span class="workbook-tag">חוברת עבודה · 15 דקות</span>
+                    <h4>גיליון מיפוי קבצים + תבנית פרומפט-לקבצים</h4>
+                    <p>הורידי את החוברת. תכתבי את הקבצים שאת עובדת איתם השבוע. תכתבי איזה פעולה את צריכה. החוברת תייצר לך פרומפט מותאם.</p>
+                </div>
+                <div class="workbook-actions">
+                    <a href="../Workbooks/workbook.html#day2" class="btn btn-primary btn-sm" target="_blank">📥 הורד PDF</a>
+                </div>
+            </section>
+
+            <!-- Bonus -->
+            <section class="bonus" id="bonus">
+                <div class="bonus-header">
+                    <div class="bonus-icon">🚀</div>
+                    <div>
+                        <span class="bonus-tag">בונוס · 30 דקות</span>
+                        <h3>בני תבנית מסמך מקצועי שתחזרי עליה</h3>
+                    </div>
+                </div>
+                <p>אם יש לך סוג מסמך שאת מכינה הרבה (הצעת מחיר, דוח חודשי, סיכום פגישה) — תפסיקי לבנות מאפס. בני תבנית פעם אחת, השתמשי בה לחיים.</p>
+                <div class="bonus-task">
+                    <pre>אני מכינה הרבה [סוג המסמך — למשל: הצעת מחיר ללקוחות חדשים].
+
+בני לי תבנית Word מקצועית. דרישות:
+1. עיצוב נקי — פונט Heebo, צבעי מותג כחול-לבן
+2. סקציות: שער (לוגו, שם הלקוח, תאריך), מבוא, השירותים, תמחור, תנאים, חתימה
+3. שדות שמסומנים [למילוי] — כל מקום שאני אצטרך לעדכן
+4. מקום לטבלה דינמית של שירותים
+5. הערות מצורפות לי איך להשתמש בכל סקציה
+
+אחרי שתבנית מוכנה — תכין לי גם פרומפט שאני אוכל להשתמש בו בכל פעם שאני צריכה ליצור הצעה חדשה: רק להזין שם לקוח, פרטי שירות, ומחירים — והמסמך נוצר אוטומטית.</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section class="reflection" id="reflection">
+                <div class="reflection-header">
+                    <div class="reflection-icon">✍️</div>
+                    <div>
+                        <span class="reflection-tag">רפלקציה · 10 דקות</span>
+                        <h3>סגירת היום</h3>
+                    </div>
+                </div>
+                <ol class="reflection-questions" style="counter-reset: ref-counter;">
+                    <li><b>הקובץ שעבדת איתו — איזה תוצאה הופתעת ממנה הכי הרבה?</b><textarea data-qkey="day2-r1" placeholder=""></textarea></li>
+                    <li><b>איזה סוג קובץ את הולכת לעבד עם AI בשבוע הקרוב?</b><textarea data-qkey="day2-r2" placeholder=""></textarea></li>
+                    <li><b>מה התבנית הקבועה שכדאי לך לבנות פעם אחת ולחסוך שעות בעתיד?</b><textarea data-qkey="day2-r3" placeholder=""></textarea></li>
+                    <li><b>הדבר הכי חשוב מהיום:</b><textarea data-qkey="day2-r4" placeholder=""></textarea></li>
+                </ol>
+                <div class="reflection-share"><b>💬 שתפי בקהילה:</b> איזה קובץ עיבדת עם AI היום ומה הופתעת ממנו?</div>
+            </section>
+
+            <!-- Quiz -->
+            <section class="quiz-section" id="quiz">
+                <div id="quiz-container"></div>
+            </section>
+
+            <nav class="lesson-nav" id="lesson-nav"></nav>
+        </main>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-brand"><div class="brand-logo" style="width:24px;height:24px;font-size:0.8rem;">A</div>AlphaDevs Academy</div>
+        <p>יום 2 מתוך 7 · © 2026 AlphaDevs</p>
+    </div>
+</footer>
+
+<meta name="i18n-incomplete" content="true">
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+const day2Quiz = [
+    {
+        q: "מה זו ׳תיקיית עבודה׳ ולמה היא חשובה?",
+        options: [
+            "תיקייה במחשב של Anthropic",
+            "תיקייה במחשב שלך שקלוד יכול לקרוא ולשמור בה — בלי זה אין מקום קבוע לקבצים",
+            "תיקייה זמנית שנמחקת אוטומטית",
+            "זה לא חובה, אפשר בלי"
+        ],
+        correct: 1,
+        explanation: "תיקיית העבודה היא תיקייה ספציפית במחשב שלך שאת מאשרת לקלוד לעבוד בה. בלעדיה הקבצים הולכים למקום זמני שקשה למצוא אחר כך."
+    },
+    {
+        q: "מה ההבדל בין העלאת קובץ לשיחה לבין קובץ בתיקיית העבודה?",
+        options: [
+            "אין הבדל",
+            "העלאה לשיחה - חד פעמי לעיון מיידי. קובץ בתיקייה - קלוד יכול לעבוד עליו לאורך זמן",
+            "העלאה יותר מהירה",
+            "תיקייה לא עובדת בעברית"
+        ],
+        correct: 1,
+        explanation: "העלאה לשיחה מתאימה למקרה חד פעמי. אם הקובץ כבר בתיקייה — קלוד יכול לקרוא, לערוך ולחזור אליו לאורך השיחה והשיחות הבאות."
+    },
+    {
+        q: "אילו סוגי קבצים קלוד יכול ליצור עבורך?",
+        options: [
+            "רק טקסט פשוט",
+            "רק PDF",
+            "Word, Excel, PDF, מצגות, וקבצי קוד",
+            "רק קבצים שכבר קיימים"
+        ],
+        correct: 2,
+        explanation: "קלוד יוצר מגוון רחב — Word עם עיצוב מלא, Excel עם נוסחאות, PDF, מצגות PowerPoint, קוד. הוא לא רק נותן לך טקסט — הוא נותן קובץ מוכן."
+    },
+    {
+        q: "מה הטריק לקבל מסמך שדומה בסגנון למסמך קיים שאהבת?",
+        options: [
+            "להסביר את הסגנון במילים",
+            "להעלות את המסמך הקיים ולבקש מקלוד לחקות את הסגנון",
+            "אין דרך, צריך להתחיל מאפס",
+            "לבקש מאדם אחר"
+        ],
+        correct: 1,
+        explanation: "דוגמה אחת שווה אלף הסברים. העלי קובץ שאהבת ובקשי 'תכין לי מסמך כמו זה אבל עם הנתונים שאני אספק'. קלוד יחקה את הסגנון."
+    },
+    {
+        q: "אם הזמנת מקלוד לערוך קובץ קיים — האם הקובץ המקורי נמחק?",
+        options: [
+            "כן, תמיד",
+            "לא, הקובץ המקורי נשאר בטוח, נוצרת גרסה חדשה",
+            "תלוי בסוג הקובץ",
+            "תלוי במצב הירח"
+        ],
+        correct: 1,
+        explanation: "כשקלוד עורך, הוא יוצר גרסה חדשה. המקורי נשאר. אם משהו לא בסדר — תמיד יש לך את הגרסה הראשונה."
+    },
+    {
+        q: "אחרי שקלוד יצר לך מסמך, איך את ניגשת אליו?",
+        options: [
+            "צריך להוריד דרך הדפדפן",
+            "קלוד מציג קישור בשיחה — לחיצה אחת והקובץ נפתח באפליקציה המתאימה",
+            "צריך לשלוח אימייל",
+            "אי אפשר לגשת"
+        ],
+        correct: 1,
+        explanation: "קלוד מציג קישור ישיר בתוך השיחה (לדוגמה: 'לצפייה במסמך - לחצי כאן'). לחיצה אחת והקובץ נפתח ב-Word, Excel או באפליקציה המתאימה."
+    },
+    {
+        q: "אם קלוד יצר עשרות קבצים בתיקיית העבודה ואת לא מוצאת משהו ספציפי — מה לעשות?",
+        options: [
+            "לחפש ידנית בכל המחשב",
+            "לבקש מקלוד: ׳תראה לי את כל הקבצים שיצרת בשבועיים האחרונים, ממוין לפי תאריך׳",
+            "להתחיל הכל מחדש",
+            "לקרוא ל-IT"
+        ],
+        correct: 1,
+        explanation: "קלוד יכול לבדוק את התיקייה שלך ולהציג לך רשימה של קבצים — לפי תאריך, סוג, או כל קריטריון אחר. הוא העוזר שלך, פשוט תשאלי."
+    }
+];
+document.addEventListener('DOMContentLoaded', () => {
+    renderQuiz('quiz-container', 2, day2Quiz);
+    renderLessonNav('lesson-nav', 2);
+});
+</script>
+
+</body>
+</html>

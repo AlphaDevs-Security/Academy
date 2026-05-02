@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👋 ברוכה הבאה רימה · AlphaDevs Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl;
+    background: linear-gradient(135deg, #2d1b69 0%, #6d28d9 35%, #be185d 100%);
+    color: white; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 30px 20px;
+}
+.card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 28px;
+    padding: 60px 44px;
+    max-width: 560px; width: 100%;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.greeting-emoji {
+    font-size: 5rem; margin-bottom: 20px;
+    animation: wave 2s ease infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+}
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    75% { transform: rotate(-10deg); }
+}
+.eyebrow {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(236,72,153,0.25), rgba(168,85,247,0.25));
+    border: 1px solid rgba(236,72,153,0.4);
+    color: #fbcfe8;
+    padding: 7px 18px; border-radius: 999px;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em;
+    margin-bottom: 22px;
+}
+h1 {
+    font-size: 2.6rem; font-weight: 900; line-height: 1.15; margin-bottom: 14px;
+    background: linear-gradient(135deg, white 0%, #fbcfe8 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.lead {
+    font-size: 1.1rem;
+    opacity: 0.92;
+    margin-bottom: 28px;
+    line-height: 1.7;
+}
+.lead strong { color: #fbcfe8; }
+
+.what-youll-do {
+    text-align: right;
+    background: rgba(0,0,0,0.2);
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin: 26px 0;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.what-youll-do h3 {
+    font-size: 1rem;
+    color: #fbcfe8;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+.what-list { list-style: none; padding: 0; }
+.what-list li {
+    padding: 10px 30px 10px 0;
+    position: relative;
+    font-size: 0.96rem;
+    line-height: 1.6;
+    border-bottom: 1px dashed rgba(255,255,255,0.08);
+}
+.what-list li:last-child { border-bottom: none; }
+.what-list li::before {
+    content: '✨';
+    position: absolute;
+    right: 0; top: 10px;
+}
+
+.btn-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 32px; }
+
+.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 32px; border-radius: 14px; font-weight: 800;
+    font-size: 1.05rem; cursor: pointer; transition: all 250ms;
+    border: none; font-family: inherit; text-decoration: none;
+}
+.btn-pink {
+    background: linear-gradient(135deg, #ec4899, #a855f7);
+    color: white;
+    box-shadow: 0 12px 32px rgba(236,72,153,0.45);
+}
+.btn-pink:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 42px rgba(236,72,153,0.6);
+}
+.btn-ghost {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.2); }
+
+.status {
+    margin-top: 24px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    display: none;
+    text-align: center;
+}
+.status.success {
+    background: rgba(16,185,129,0.15);
+    border: 1px solid rgba(16,185,129,0.3);
+    color: #6ee7b7;
+    display: block;
+}
+
+.help {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+    opacity: 0.7;
+    line-height: 1.7;
+}
+.help b { color: #fbcfe8; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="greeting-emoji">👋</div>
+    <span class="eyebrow">ACCESS · רק לרימה</span>
+    <h1>שלום רימה!</h1>
+    <p class="lead">
+        בנינו לך גישה אישית מלאה לקורס <strong>"מאפס לגיבור עם AI"</strong>.<br><br>
+        זה הקורס שלאור פיתח כדי ללמד אותך (וכל מי שרוצה) לעבוד עם בינה מלאכותית כמו מקצוענית. 7 ימים, מבסיס ועד אג׳נטים.
+    </p>
+
+    <div class="what-youll-do">
+        <h3>מה יקרה כשתלחצי "התחילי":</h3>
+        <ul class="what-list">
+            <li>תיכנסי אוטומטית לקורס — בלי להזין סיסמה</li>
+            <li>תתחילי ביום 1 (40 דקות, יסודות הצ׳אט)</li>
+            <li>תוכלי לעצור ולחזור בכל רגע — ההתקדמות נשמרת</li>
+            <li>בסוף כל יום — מבחן קצר שמשחרר את היום הבא</li>
+            <li>בסוף 7 הימים — תעודה אישית עם השם שלך</li>
+        </ul>
+    </div>
+
+    <div class="btn-row">
+        <button class="btn btn-pink" onclick="enterCourse()">✨ התחילי את הקורס</button>
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <div class="help">
+        <b>שאלות?</b> תכתבי ללאור — הוא תמיד שמח לעזור.<br>
+        <b>תאהבי לדעת?</b> ביום 7 תבני אג׳נט אישי — עוזר אוטומטי שיעבוד בשבילך.
+    </div>
+</div>
+
+<script>
+const STUDENT_DATA = {
+    email: 'reema@alphadevs.co',
+    key: 'AD-REEMA1',
+    name: 'רימה'
+};
+const STORAGE_KEY = 'alphadevs_academy_license_v1';
+
+function enterCourse() {
+    const data = {
+        ...STUDENT_DATA,
+        activatedAt: new Date().toISOString()
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    // Set language preference
+    if (!localStorage.getItem('alphadevs_academy_lang_v1')) {
+        localStorage.setItem('alphadevs_academy_lang_v1', 'he');
+        localStorage.setItem('alphadevs_academy_lang_chosen_v1', 'true');
+    }
+    const status = document.getElementById('status');
+    status.className = 'status success';
+    status.innerHTML = '✨ מעולה! מעבירים אותך לקורס תוך 2 שניות...';
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 2000);
+}
+</script>
+
+</body>
+</html>

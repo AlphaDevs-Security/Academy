@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יום 6: אג׳נטים · AlphaDevs Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Heebo,sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body id="top" class="gated">
+
+<header class="topbar">
+    <div class="container topbar-inner">
+        <a href="../index.html" class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-name"><b>AlphaDevs Academy</b><span>יום 6 מתוך 7</span></div>
+        </a>
+        <div class="topbar-actions">
+            <div class="progress-pill" id="progress-pill"><span class="dot"></span> טוען...</div>
+            <a href="../index.html" class="btn btn-ghost btn-sm">← חזרה לקורס</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="lesson-shell">
+        <aside class="lesson-sidebar">
+            <h4>תוכן היום</h4>
+            <ul class="toc-list">
+                <li><a href="#what-agent" class="active"><span class="toc-num">1</span>מה זה אג׳נט?</a></li>
+                <li><a href="#vs"><span class="toc-num">2</span>אג׳נט מול סקיל מול פלאגין</a></li>
+                <li><a href="#anatomy"><span class="toc-num">3</span>אנטומיה של אג׳נט</a></li>
+                <li><a href="#build"><span class="toc-num">4</span>לבנות אג׳נט ראשון</a></li>
+                <li><a href="#examples"><span class="toc-num">5</span>אג׳נטים מהחיים</a></li>
+                <li><a href="#quiz"><span class="toc-num">★</span>מבחן יום 6</a></li>
+            </ul>
+        </aside>
+
+        <main class="lesson-main">
+            <header class="lesson-header">
+                <span class="lesson-eyebrow">יום 6 · 60 דקות · רמה: מתקדמת</span>
+                <h1>אג׳נטים — לבנות עוזרים מותאמים אישית</h1>
+                <p class="lesson-subtitle">היום נצלול לרובד הכי עוצמתי של Cowork — אג׳נטים. עוזרים מותאמים שאת בונה לתפקיד ספציפי, עם אישיות ומומחיות משלהם.</p>
+                <div class="lesson-progress">
+                    <div class="bar"><div class="bar-fill" style="width:85%;"></div></div>
+                    <div class="progress-text">יום 6 מתוך 7</div>
+                </div>
+
+                <div class="lesson-time-bar">
+                    <div class="time-block"><div class="num">5'</div><div class="label">חימום</div></div>
+                    <div class="time-block"><div class="num">60'</div><div class="label">שיעורים</div></div>
+                    <div class="time-block"><div class="num">40'</div><div class="label">תרגיל</div></div>
+                    <div class="time-block"><div class="num">25'</div><div class="label">מקרה בוחן</div></div>
+                    <div class="time-block"><div class="num">15'</div><div class="label">חוברת עבודה</div></div>
+                    <div class="time-block"><div class="num">35'</div><div class="label">בונוס</div></div>
+                    <div class="time-block total"><div class="num">3.0 ש׳</div><div class="label">סך הכל</div></div>
+                </div>
+            </header>
+
+            <div class="video-block">
+                <div class="video-frame"><div class="video-play-btn"></div></div>
+                <div class="video-meta">
+                    <span class="video-title">🎬 וידאו: בניית האג׳נט הראשון</span>
+                    <span class="video-duration">⏱ 6:00</span>
+                </div>
+                <div class="video-placeholder-note">📹 <strong>הקלטת וידאו תיווסף בקרוב.</strong></div>
+            </div>
+
+            <section class="warmup">
+                <div class="warmup-header">
+                    <div class="warmup-icon">🔥</div>
+                    <div>
+                        <span class="warmup-tag">חימום · 5 דקות</span>
+                        <h3>אם היה לך עוזר אישי 24/7 — מה היית רוצה שיעשה?</h3>
+                    </div>
+                </div>
+                <p>תכתבי 3 דברים. לא משימה אחת — תפקיד שלם. "מנהל מכירות שלי", "עוזרת תוכן", "אנליסט פיננסי". זה ההכנה לבניית האג׳נט הראשון שלך.</p>
+                <textarea class="warmup-input" data-qkey="day6-warmup" placeholder="האג׳נט שאני הכי צריכה הוא: ..."></textarea>
+            </section>
+
+            <!-- Section 1 -->
+            <section class="section" id="what-agent">
+                <h2><span class="section-num">1</span>מה זה אג׳נט?</h2>
+                <p>תארי לעצמך שיכולת לשכור עובד ספציפי — לא עוזר כללי, אלא <strong>איש מקצוע מומחה</strong> שמכיר את העסק שלך, יודע איך את אוהבת לעבוד, ויכול לבצע משימות באופן עצמאי. זה מה שאג׳נט הוא.</p>
+
+                <p>אג׳נט הוא בעצם <strong>קלוד עם תפקיד</strong>: מומחה לתחום מסוים (מכירות, BD, פיננסים), עם אישיות, עם דרך חשיבה, עם כלים שעומדים לרשותו, ועם הוראות עבודה ברורות.</p>
+
+                <h3>למה אג׳נט שונה מסתם פרומפט טוב?</h3>
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">📝</div>
+                        <h4>פרומפט טוב</h4>
+                        <p>ניסוח חד פעמי. כל פעם צריך לכתוב מחדש את ההקשר. נשכח ביום הבא.</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">🤖</div>
+                        <h4>אג׳נט</h4>
+                        <p>"דמות" קבועה. את קוראת לו ב-trigger מסוים — והוא עולה עם כל ההקשר, הסגנון, והכלים. שוב ושוב.</p>
+                    </div>
+                </div>
+
+                <h3>איך זה מרגיש בפועל?</h3>
+                <p>במקום לכתוב כל יום: "אני לאור, אני מנכ"ל, יש לי X לקוחות, אני רוצה שתעזור לי עם Y...", את פשוט אומרת: "תפעיל את אטלס" — והאג׳נט שלך עולה עם כל הידע, ההקשר, וההעדפות. כמו לקרוא לעובד בשם.</p>
+
+                <div class="callout callout-tip">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-body">
+                        <div class="callout-title">החשיבה הנכונה</div>
+                        <p>אג׳נט הוא לא "סופר-פרומפט". זה <strong>תפקיד</strong> שאת מגדירה. כמו שב-AlphaDevs יש מנכ"ל, ראש מכירות, ו-BizDev — את יכולה ליצור אג׳נט לכל תפקיד. כל אחד עם הבקיאות וכלי העבודה שלו.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="section" id="vs">
+                <h2><span class="section-num">2</span>אג׳נט מול סקיל מול פלאגין</h2>
+                <p>קל להתבלבל. בואי נסדר את ההבדלים פעם אחת ולתמיד.</p>
+
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">🎯</div>
+                        <h4>סקיל = יכולת ספציפית</h4>
+                        <p>"לדעת לעשות מצגת" / "לדעת ליצור Excel". כלי טכני. נטען לפי המשימה.</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">🔌</div>
+                        <h4>פלאגין = חיבור</h4>
+                        <p>"גישה ל-Gmail" / "גישה ל-Monday". גשר לכלי חיצוני.</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">🤖</div>
+                        <h4>אג׳נט = תפקיד שלם</h4>
+                        <p>"ראש מכירות" / "מנהל פיננסי". משלב סקילים + פלאגינים + אישיות + שיטת עבודה.</p>
+                    </div>
+                </div>
+
+                <h3>אנלוגיה</h3>
+                <ul>
+                    <li><strong>סקיל</strong> = "לדעת אקסל" — כישור מקצועי</li>
+                    <li><strong>פלאגין</strong> = "להיות מחובר ל-Gmail של החברה" — גישה</li>
+                    <li><strong>אג׳נט</strong> = "מנהל החשבונות החדש שלי" — אדם עם תפקיד, שיש לו את הכישורים והגישות שצריך</li>
+                </ul>
+
+                <h3>מתי כדאי אג׳נט?</h3>
+                <p>תיצרי אג׳נט כשיש לך תפקיד שחוזר על עצמו, עם שיטת עבודה ברורה, ושאת מתעסקת בו לעיתים קרובות.</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">✓</div>
+                        <div class="step-body">
+                            <h4>תפקיד שחוזר</h4>
+                            <p>"מנהל הקמפיינים שלי", "עוזר תוכן ל-LinkedIn", "אנליסט פיננסי"</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">✓</div>
+                        <div class="step-body">
+                            <h4>שיטת עבודה ברורה</h4>
+                            <p>אם את יודעת איך התפקיד צריך לעבוד — את יכולה ללמד את האג׳נט.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">✓</div>
+                        <div class="step-body">
+                            <h4>נכנסת אליו לעיתים קרובות</h4>
+                            <p>אם את תפעילי אותו פעם בחודש — לא שווה. פעם ביום או ביומיים? בהחלט.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="section" id="anatomy">
+                <h2><span class="section-num">3</span>אנטומיה של אג׳נט</h2>
+                <p>כל אג׳נט בנוי מ-5 מרכיבים:</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h4>שם ותפקיד</h4>
+                            <p>"אטלס - היד הימנית האסטרטגית של לאור". שם מעורר זיהוי, תפקיד ברור.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h4>תיאור הפעלה (Description)</h4>
+                            <p>איך קלוד יזהה מתי האג׳נט צריך לפעול. "השתמש באטלס כש-לאור רוצה לדבר אסטרטגיה, להתייעץ, או לתכנן את AlphaDevs".</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h4>אישיות וטון</h4>
+                            <p>איך הוא מדבר? ישיר? עוטף? פורמלי? אטלס: "ישיר, חד, אסטרטגי, מאתגר אבל תומך".</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-body">
+                            <h4>ידע והקשר</h4>
+                            <p>מה הוא יודע על העסק, על הלקוחות, על המתחרים, על המטרות. הקונטקסט שמייחד אותו.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-body">
+                            <h4>כלים שלרשותו</h4>
+                            <p>אילו סקילים ופלאגינים הוא יכול להפעיל. אטלס יכול להפעיל xlsx ליצירת מודלים פיננסיים, gmail-send לשליחת מיילים, וכו׳.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">ℹ️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">איפה אג׳נטים נשמרים?</div>
+                        <p>אג׳נט הוא בעצם קובץ עם הוראות. ב-Cowork הוא מותקן כסקיל מיוחד, וקלוד מפעיל אותו לפי תיאור ההפעלה. אפשר להחזיק כמה אג׳נטים, אחד לכל תפקיד.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="section" id="build">
+                <h2><span class="section-num">4</span>לבנות אג׳נט ראשון</h2>
+                <p>הדרך הכי פשוטה לבנות אג׳נט — לבקש מקלוד. בלי קוד, בלי הגדרות מסובכות.</p>
+
+                <h3>צעד 1: תכנון</h3>
+                <p>לפני שמדברים עם קלוד, ענה לעצמך:</p>
+                <ul>
+                    <li>איזה תפקיד אני רוצה שהאג׳נט ימלא?</li>
+                    <li>מה השם שלו (משהו שאת זוכרת)?</li>
+                    <li>מתי תקראי לו (באילו סוגי בקשות)?</li>
+                    <li>איזה ידע הוא צריך שיהיה לו?</li>
+                    <li>איזה טון מתאים?</li>
+                    <li>אילו כלים הוא יזדקק (Gmail? Calendar? Excel?)</li>
+                </ul>
+
+                <h3>צעד 2: בקשי מקלוד ליצור</h3>
+
+                <div class="practice-box">
+                    <span class="practice-tag">תרגול חי</span>
+                    <h4>🛠️ בנייה של אג׳נט אישי</h4>
+                    <div class="practice-prompt">
+                        אני רוצה לבנות אג׳נט אישי. השם שלו: "מורן" - העוזרת המקצועית שלי. תפקידה: לעזור לי בכל מה שקשור לתיאום פגישות, ניהול היומן, וכתיבת מיילים. הטון שלה: ידידותי אבל יעיל, בעברית. כלים שצריכה: Gmail, Calendar. אנא צור את האג׳נט הזה ותסביר לי איך להפעיל אותו.
+                    </div>
+                </div>
+
+                <h3>צעד 3: בדקי ושכלל</h3>
+                <p>אחרי שהאג׳נט נוצר — תפעילי אותו ותראי איך הוא עובד. אם משהו לא מדויק, תני פידבק:</p>
+
+                <div class="practice-box">
+                    <span class="practice-tag">פידבק לאג׳נט</span>
+                    <h4>🔧 שיפור</h4>
+                    <div class="practice-prompt">
+                        מורן, התשובה הייתה ארוכה מדי. בעדכון: תני תמיד תשובות תמציתיות, מקסימום 3 משפטים, אלא אם אני מבקשת לפרט. זכרי את זה לכל הפעמים הבאות.
+                    </div>
+                </div>
+
+                <div class="callout callout-pro">
+                    <div class="callout-icon">⭐</div>
+                    <div class="callout-body">
+                        <div class="callout-title">העיקרון</div>
+                        <p>אג׳נט הוא דבר חי. את לא בונה אותו פעם אחת ושוכחת. את משכללת אותו לאורך זמן — מוסיפה ידע, מתקנת התנהגויות, מרחיבה כלים. אחרי חודש האג׳נט שלך יהיה בלעדי לך וייעיל פי כמה ממה שהיה ביום הראשון.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="section" id="examples">
+                <h2><span class="section-num">5</span>אג׳נטים מהחיים — דוגמאות מ-AlphaDevs</h2>
+                <p>הנה כמה אג׳נטים שכבר עובדים בפועל. אפשר ללמוד מהם ולבנות גרסאות שלך.</p>
+
+                <div class="compare-grid">
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">🎯</div>
+                        <h4>Atlas</h4>
+                        <p><strong>תפקיד:</strong> שותף אסטרטגי. <strong>מתי:</strong> "אני תקוע", "מה דעתך על X", סוגיות גדולות. <strong>טון:</strong> מאתגר, חכם, ישיר.</p>
+                    </div>
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">💼</div>
+                        <h4>Sales Agent</h4>
+                        <p><strong>תפקיד:</strong> ניהול לידים והפייפליין. <strong>מתי:</strong> מעקב לקוחות, שליחת הצעות, תזכורות. <strong>כלים:</strong> Gmail, CRM, Calendar.</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">📈</div>
+                        <h4>BizDev Agent</h4>
+                        <p><strong>תפקיד:</strong> שותפויות ועסקאות. <strong>מתי:</strong> ניתוח הזדמנויות, ניהול שיחות עם פרטנרים, מעקב אחרי דילים.</p>
+                    </div>
+                    <div class="compare-card icon-green">
+                        <div class="compare-icon">💰</div>
+                        <h4>Finance Agent</h4>
+                        <p><strong>תפקיד:</strong> פיננסים ותזרים. <strong>מתי:</strong> בדיקת חשבוניות, מעקב הוצאות, דוחות חודשיים. <strong>כלים:</strong> Gmail, Excel.</p>
+                    </div>
+                    <div class="compare-card icon-orange">
+                        <div class="compare-icon">📱</div>
+                        <h4>LinkedIn Agent</h4>
+                        <p><strong>תפקיד:</strong> תוכן ופרוספקטינג ב-LinkedIn. <strong>מתי:</strong> כתיבת פוסטים, מציאת לידים, ניהול נטוורקינג.</p>
+                    </div>
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">📚</div>
+                        <h4>Skill Creator</h4>
+                        <p><strong>תפקיד:</strong> בניית סקילים ואג׳נטים חדשים. <strong>מתי:</strong> רוצים להוסיף יכולת חדשה — האג׳נט הזה בונה אותה.</p>
+                    </div>
+                </div>
+
+                <h3>הקסם של מספר אג׳נטים</h3>
+                <p>אחרי שיש לך כמה אג׳נטים, את עוברת בקלות בין "כובעים":</p>
+
+                <div class="practice-box">
+                    <span class="practice-tag">תרחיש</span>
+                    <h4>🎬 יום אחד עם אג׳נטים</h4>
+                    <p style="color:rgba(255,255,255,0.95);"><strong>בוקר:</strong> "Sales — מה הפייפליין השבוע? מי לוחצים עליו?"</p>
+                    <p style="color:rgba(255,255,255,0.95);"><strong>בצהריים:</strong> "Finance — תכין לי דוח הוצאות לחודש שעבר."</p>
+                    <p style="color:rgba(255,255,255,0.95);"><strong>אחר הצהריים:</strong> "Atlas — תקוע בהחלטה לגבי שיטת תמחור חדשה. בוא נחשוב יחד."</p>
+                    <p style="color:rgba(255,255,255,0.95);"><strong>בערב:</strong> "LinkedIn — תכין לי פוסט מקצועי על השבוע. בטון שלי, על הנושא X."</p>
+                </div>
+
+                <div class="callout callout-success">
+                    <div class="callout-icon">✨</div>
+                    <div class="callout-body">
+                        <div class="callout-title">הנה הקסם</div>
+                        <p>במקום עוזר אחד גנרי, יש לך צוות של מומחים. כל אחד בכובע שלו. כל אחד מכיר אותך. וזה לא עולה לך משכורת.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="exercise" id="exercise">
+                <div class="exercise-header">
+                    <div class="exercise-num">🎯</div>
+                    <div>
+                        <span class="exercise-tag">תרגיל מעשי · 40 דקות</span>
+                        <h3>בני את האג׳נט הראשון שלך — מקצה לקצה</h3>
+                        <div class="exercise-time">⏱ זמן משוער: 35-40 דקות</div>
+                    </div>
+                </div>
+                <div class="exercise-goal">
+                    <b>המטרה:</b> בסוף התרגיל יש לך אג׳נט עובד בקלוד. עם שם, תפקיד, אישיות, וכלים. תוכלי להפעיל אותו ולעבוד איתו - כמו עובדת חדשה.
+                </div>
+                <div class="exercise-prompt-block">
+                    <pre>אני רוצה לבנות אג׳נט מותאם אישית בשם [שם].
+התפקיד שלו: [תפקיד מהחימום]
+
+תפעל בשלבים:
+
+שלב 1 — שאל אותי 5 שאלות שיעזרו להגדיר אותו:
+- מתי אני אקרא לו (אילו טריגרים?)
+- מה האישיות שלו (טון, סגנון)?
+- אילו כלים הוא צריך (Gmail, Calendar, אקסל, וכו')?
+- מה הוא יודע על העסק/תחום שלי?
+- איזה תוצרים הוא ייצר?
+
+שלב 2 — אחרי שאני עונה, תכין מסמך אג׳נט מלא:
+- הוראות מערכת (system prompt)
+- תיאור הפעלה (כשקורים X, האג׳נט נכנס)
+- אישיות וטון
+- כלים ויכולות
+- 3 דוגמאות לאינטראקציה צפויה
+
+שלב 3 — תיתן לי הוראות איך להפעיל אותו בכל שיחה.
+
+שלב 4 — נבדוק יחד עם משימה אמיתית.</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+                <div class="exercise-expected">
+                    <b>מה אמור לקרות:</b> בסוף יש לך אג׳נט שאת קוראת לו בשמו והוא נכנס מיד לתפקיד. זה הופך לעמית עבודה הקבוע שלך — לא עוד "תכתוב לי...", אלא "[שם האג׳נט], תעזור לי עם...".
+                </div>
+                <ul class="exercise-checklist">
+                    <li>הגדרתי שם ותפקיד לאג׳נט</li>
+                    <li>עניתי על 5 השאלות בכנות ובפרטים</li>
+                    <li>קיבלתי מסמך אג׳נט מלא</li>
+                    <li>בדקתי אותו עם משימה אמיתית</li>
+                    <li>שמרתי את ההוראות איך להפעיל אותו</li>
+                </ul>
+            </section>
+
+            <section class="case-study" id="case-study">
+                <div class="case-study-header">
+                    <span class="case-study-tag">מקרה בוחן · 25 דקות</span>
+                    <h3>הצוות של 5 האג׳נטים — איך יזם אחד עובד עם 5 "עובדים"</h3>
+                    <div class="case-study-meta">
+                        <span>👤 יוסי · יזם, סוכנות שיווק דיגיטלי</span>
+                        <span>🎯 1 עובד אנושי + 5 אג׳נטים</span>
+                        <span>⏱ הכנסה: ₪780K שנה</span>
+                    </div>
+                </div>
+                <div class="case-study-body">
+                    <h4>המצב</h4>
+                    <p>יוסי הקים סוכנות שיווק דיגיטלי לפני שנתיים. הסיוט: גם להביא לקוחות, גם לעבוד עליהם, גם לסגור. רצה לגייס עובדים אבל לא היה תקציב יציב. החליט לבנות "צוות אג׳נטים" במקום.</p>
+                    <h4>הצוות שלו</h4>
+                    <div class="case-study-timeline">
+                        <div class="step"><b>"דנה" — אג׳נטית הפרוספקטינג</b><span>חיפוש לידים בלינקדאין, סינון, כתיבת הודעות פתיחה. רצה כל בוקר ב-7:00 ומכינה רשימת 20 לידים חמים.</span></div>
+                        <div class="step"><b>"רעי" — אג׳נט הצעות מחיר</b><span>אחרי שיחת זום ראשונית, יוסי מעלה תמלול. רעי מנסח הצעת מחיר מלאה תוך 3 דקות. יוסי בודק 5 דקות ושולח.</span></div>
+                        <div class="step"><b>"שרון" — אג׳נטית התוכן</b><span>יוצרת 4-5 פוסטים לחודש לכל לקוח. בכל פוסט שעות עבודה הופכות ל-15 דקות.</span></div>
+                        <div class="step"><b>"יוני" — אג׳נט ניהול פרויקטים</b><span>עוקב אחרי 12 פרויקטים בו-זמנית. מתריע על דדליינים, מסכם את השבוע, מעדכן לקוחות.</span></div>
+                        <div class="step"><b>"מיה" — אג׳נטית הפיננסים</b><span>בדיקת חשבוניות, זיהוי לקוחות שלא שילמו, הכנת דוחות חודשיים. יוסי לא נוגע בזה.</span></div>
+                    </div>
+                    <div class="case-study-result">
+                        <b>המספרים:</b> 12 לקוחות פעילים, ₪780K הכנסה שנתית, עובד אנושי אחד (יוסי + עובדת ליווי במשרה חלקית). יוסי אומר: "ניסיתי לשכור עובד מלא במשך 6 חודשים. בכל פעם שגייסתי - חזרתי הביתה ב-22:00. בנייתי את הצוות הזה ב-3 שבועות. עכשיו אני סוגר את היום ב-17:00."
+                    </div>
+                </div>
+            </section>
+
+            <section class="workbook-card" id="workbook">
+                <div class="workbook-icon">📓</div>
+                <div class="workbook-body">
+                    <span class="workbook-tag">חוברת עבודה · 15 דקות</span>
+                    <h4>תכנון הצוות שלך — 3 האג׳נטים הראשונים</h4>
+                    <p>החוברת מובילה אותך דרך 5 שאלות שנדרש לכל אג׳נט. בסוף יש לך תוכנית בנייה למספר חודשים.</p>
+                </div>
+                <div class="workbook-actions">
+                    <a href="../Workbooks/workbook.html#day6" class="btn btn-primary btn-sm" target="_blank">📥 הורד PDF</a>
+                </div>
+            </section>
+
+            <section class="bonus" id="bonus">
+                <div class="bonus-header">
+                    <div class="bonus-icon">🚀</div>
+                    <div>
+                        <span class="bonus-tag">בונוס · 35 דקות</span>
+                        <h3>שני אג׳נטים ש"מדברים" — צוות עובד</h3>
+                    </div>
+                </div>
+                <p>השילוב הכי מתקדם — בני שני אג׳נטים שמשלימים אחד את השני, ולמדי לקלוד להעביר משימה ביניהם.</p>
+                <div class="bonus-task">
+                    <pre>אני רוצה לבנות מערכת של 2 אג׳נטים שעובדים יחד:
+
+אג׳נט 1: [שם וגדה תפקידית]
+אג׳נט 2: [שם וגדה תפקידית משלימה]
+
+תהליך עבודתם המשולב:
+1. אני אקרא לאג׳נט 1, נותן לו משימה
+2. אג׳נט 1 מבצע את החלק שלו
+3. אג׳נט 1 "מעביר" לאג׳נט 2 - עם סיכום של מה שעשה ומה צריך עכשיו
+4. אג׳נט 2 ממשיך ומסיים
+5. אני מקבלת תוצאה מאוחדת
+
+בנה לי:
+- מסמכי שני האג׳נטים
+- פרוטוקול ההעברה ביניהם
+- 2 דוגמאות לאינטראקציה משולבת
+
+זה התרגיל המתקדם שיגרום לי להבין איך מבנים צוות אמיתי.</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+            </section>
+
+            <section class="reflection" id="reflection">
+                <div class="reflection-header">
+                    <div class="reflection-icon">✍️</div>
+                    <div>
+                        <span class="reflection-tag">רפלקציה · 10 דקות</span>
+                        <h3>סגירת היום</h3>
+                    </div>
+                </div>
+                <ol class="reflection-questions" style="counter-reset: ref-counter;">
+                    <li><b>איזה אג׳נט בנית? איזה תפקיד הוא ממלא?</b><textarea data-qkey="day6-r1"></textarea></li>
+                    <li><b>איזה 2 אג׳נטים נוספים תרצי לבנות בחודש הקרוב?</b><textarea data-qkey="day6-r2"></textarea></li>
+                    <li><b>איזה תפקיד אנושי בעסק שלך - יכול להיות אג׳נט?</b><textarea data-qkey="day6-r3"></textarea></li>
+                    <li><b>הדבר הכי חשוב מהיום:</b><textarea data-qkey="day6-r4"></textarea></li>
+                </ol>
+                <div class="reflection-share"><b>💬 שתפי בקהילה:</b> את ה"שם" של האג׳נט הראשון שלך — איך נראה הצוות שלך עכשיו?</div>
+            </section>
+
+            <section class="quiz-section" id="quiz">
+                <div id="quiz-container"></div>
+            </section>
+
+            <nav class="lesson-nav" id="lesson-nav"></nav>
+        </main>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-brand"><div class="brand-logo" style="width:24px;height:24px;font-size:0.8rem;">A</div>AlphaDevs Academy</div>
+        <p>יום 6 מתוך 7 · © 2026 AlphaDevs</p>
+    </div>
+</footer>
+
+<meta name="i18n-incomplete" content="true">
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+const day6Quiz = [
+    {
+        q: "מה זה אג׳נט?",
+        options: [
+            "סוג של פרומפט ארוך",
+            "קלוד עם תפקיד מוגדר — מומחה לתחום ספציפי, עם אישיות, ידע, וכלים משלו",
+            "אדם אנושי",
+            "סוג של מבחן"
+        ],
+        correct: 1,
+        explanation: "אג׳נט הוא דמות עם תפקיד — לא רק פרומפט אלא ׳עובד׳ עם תפקיד, אישיות, ידע, וכלים. את מפעילה אותו וכל הקונטקסט עולה ביחד."
+    },
+    {
+        q: "מה ההבדל המרכזי בין סקיל לאג׳נט?",
+        options: [
+            "אין הבדל",
+            "סקיל = יכולת ספציפית (לדעת לעשות X). אג׳נט = תפקיד שלם (להיות Y) שמשתמש בכמה סקילים",
+            "סקיל יותר חדש",
+            "אג׳נט עולה כסף"
+        ],
+        correct: 1,
+        explanation: "סקיל הוא יכולת ׳לדעת לעשות׳. אג׳נט הוא תפקיד שלם — דמות עם אישיות, הקשר, וכלים (סקילים) שעומדים לרשותה."
+    },
+    {
+        q: "מתי שווה ליצור אג׳נט (ולא להסתפק בפרומפט)?",
+        options: [
+            "תמיד",
+            "כשיש תפקיד שחוזר על עצמו, עם שיטת עבודה ברורה, שאת ניגשת אליו לעיתים קרובות",
+            "רק לאנשי מקצוע",
+            "אף פעם"
+        ],
+        correct: 1,
+        explanation: "אג׳נט שווה כשהוא יחזור — תפקיד שחוזר, עם שיטה ברורה, שאת תפעילי לעיתים קרובות. תפקיד חד פעמי? פרומפט מספיק."
+    },
+    {
+        q: "מה חמשת המרכיבים של אג׳נט?",
+        options: [
+            "שם, גיל, כתובת, טלפון, מייל",
+            "שם ותפקיד, תיאור הפעלה, אישיות, ידע, כלים שלרשותו",
+            "סיסמה ראשית ומשנית",
+            "צבעים ועיצוב"
+        ],
+        correct: 1,
+        explanation: "אג׳נט בנוי מ-5: שם ותפקיד, תיאור הפעלה (מתי הוא נטען), אישיות וטון, ידע והקשר ספציפי, וכלים (סקילים, פלאגינים) שעומדים לרשותו."
+    },
+    {
+        q: "איך יוצרים אג׳נט?",
+        options: [
+            "צריך לכתוב קוד",
+            "פשוט מבקשים מקלוד: ׳אני רוצה לבנות אג׳נט בשם X לתפקיד Y...׳ — קלוד יוצר",
+            "רק בגרסה מקצועית בתשלום נוסף",
+            "אי אפשר"
+        ],
+        correct: 1,
+        explanation: "פשוט מבקשים מקלוד. הוא יבנה את האג׳נט לפי ההגדרות שלך, בלי שתכתבי שורת קוד."
+    },
+    {
+        q: "אם האג׳נט שיצרת לא עונה כמו שצריך, מה לעשות?",
+        options: [
+            "להתחיל מחדש",
+            "לתת פידבק כמו לעובד אנושי: ׳התשובה הייתה ארוכה מדי, מהיום תמיד תיתני תשובות קצרות׳",
+            "לוותר",
+            "לחפש אג׳נט אחר"
+        ],
+        correct: 1,
+        explanation: "אג׳נט הוא דבר חי. נותנים פידבק והוא משתפר. ׳זכרי שמעכשיו...׳ — האג׳נט יישם את הפידבק בהמשך."
+    },
+    {
+        q: "מה היתרון של מספר אג׳נטים שונים על פני אחד גדול?",
+        options: [
+            "אסתטי",
+            "כל אג׳נט מומחה בתחום שלו — הקשרים נפרדים, התשובות מדויקות יותר, אפשר לעבור בקלות בין כובעים",
+            "יותר זול",
+            "קצר יותר"
+        ],
+        correct: 1,
+        explanation: "כמו צוות אמיתי — כל אחד בתחום שלו. תקבלי תשובה מדויקת יותר ממומחה בתחום מאשר ממישהו שמכוסה בכל הנושאים. וגם — את עוברת בקלות בין הקשרים."
+    },
+    {
+        q: "האם אג׳נט יכול להפעיל סקילים?",
+        options: [
+            "לא",
+            "כן — אג׳נט יכול להפעיל סקילים ופלאגינים בהתאם לצורך (חלק מהאנטומיה שלו)",
+            "רק סקיל אחד",
+            "רק אם משלמים"
+        ],
+        correct: 1,
+        explanation: "כלים (סקילים ופלאגינים) הם חלק מהאנטומיה של אג׳נט. אג׳נט מכירות יכול להפעיל gmail-send, אג׳נט פיננסי יפעיל xlsx, וכו׳."
+    }
+];
+document.addEventListener('DOMContentLoaded', () => {
+    renderQuiz('quiz-container', 6, day6Quiz);
+    renderLessonNav('lesson-nav', 6);
+});
+</script>
+
+</body>
+</html>

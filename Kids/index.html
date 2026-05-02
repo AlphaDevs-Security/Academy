@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🤖 מסע ה-AI שלי · AlphaDevs Junior</title>
+<meta name="description" content="קורס AI לילדים בגילאי 8-11 — 5 ימים מלאי כיף, סיפורים, פעילויות ומדבקות.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Varela+Round&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/kids-styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23fbbf24'/%3E%3Cstop offset='50%25' stop-color='%23ec4899'/%3E%3Cstop offset='100%25' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='65' font-family='sans-serif' font-size='50' text-anchor='middle'%3E🤖%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="kids-topbar">
+    <div class="kids-topbar-inner">
+        <a href="index.html" class="kids-brand">
+            <div class="kids-brand-logo">🤖</div>
+            <div class="kids-brand-name">
+                <b>מסע ה-AI שלי</b>
+                <span>AlphaDevs Junior · לילדים</span>
+            </div>
+        </a>
+        <div class="stickers-counter" id="stickers-counter">
+            ⭐ <span id="stickers-num">0</span>/5 מדבקות
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="kids-hero">
+
+    <div class="mascot">
+        <svg class="mascot-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Antenna -->
+            <line x1="100" y1="40" x2="100" y2="20" stroke="#a855f7" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="100" cy="16" r="6" fill="#fbbf24"/>
+            <!-- Head -->
+            <rect x="55" y="40" width="90" height="80" rx="20" fill="#3b82f6" stroke="#1e3a8a" stroke-width="3"/>
+            <!-- Eyes -->
+            <circle cx="80" cy="75" r="10" fill="white"/>
+            <circle cx="120" cy="75" r="10" fill="white"/>
+            <circle cx="82" cy="77" r="5" fill="#1e293b"/>
+            <circle cx="122" cy="77" r="5" fill="#1e293b"/>
+            <!-- Cheeks -->
+            <circle cx="68" cy="95" r="6" fill="#fca5a5" opacity="0.7"/>
+            <circle cx="132" cy="95" r="6" fill="#fca5a5" opacity="0.7"/>
+            <!-- Smile -->
+            <path d="M 80 100 Q 100 115 120 100" stroke="#1e293b" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- Body -->
+            <rect x="65" y="125" width="70" height="55" rx="15" fill="#a855f7" stroke="#6b21a8" stroke-width="3"/>
+            <!-- Heart on chest -->
+            <text x="100" y="160" font-size="28" text-anchor="middle">💛</text>
+            <!-- Arms -->
+            <rect x="40" y="135" width="20" height="35" rx="10" fill="#3b82f6" stroke="#1e3a8a" stroke-width="3"/>
+            <rect x="140" y="135" width="20" height="35" rx="10" fill="#3b82f6" stroke="#1e3a8a" stroke-width="3"/>
+            <!-- Hand wave -->
+            <circle cx="50" cy="178" r="9" fill="#fbbf24" stroke="#92400e" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <h1>היי! אני אלפי 🤖</h1>
+    <p class="subtitle">בואו לגלות יחד מה זה AI — מה הוא יודע, איך הוא חושב, ומה אפשר ליצור איתו. 5 ימים של הרפתקאות!</p>
+
+    <a href="days/day1.html" class="btn-big btn-rainbow">בואו נתחיל ✨</a>
+</section>
+
+<!-- DAYS GRID -->
+<section class="days-section">
+    <div class="days-section-title">
+        <h2>5 ימי הרפתקה</h2>
+        <p>כל יום — סיפור קצר, פעילות מגניבה, ומדבקה למי שעובר את המבחן</p>
+    </div>
+
+    <div class="kid-days-grid" id="kid-days-grid">
+        <!-- Days rendered via JS -->
+    </div>
+</section>
+
+<!-- STICKER COLLECTION -->
+<section class="sticker-collection">
+    <h3>🎨 אוסף המדבקות שלי</h3>
+    <p style="color:var(--text-soft);">כל יום שתעבור — תקבל מדבקה. תאסוף את כולן!</p>
+    <div class="sticker-grid" id="sticker-grid">
+        <!-- Stickers rendered via JS -->
+    </div>
+</section>
+
+<!-- For parents note -->
+<section style="max-width:800px;margin:40px auto;padding:30px;background:rgba(168,85,247,0.08);border-radius:20px;text-align:center;">
+    <h3 style="color:var(--kid-purple);margin-bottom:10px;">👨‍👩‍👧 הורים — קצת מידע</h3>
+    <p style="font-size:0.98rem;color:var(--text-soft);">הקורס מתאים לילדים בגילאי 8-11. כל יום ~15-20 דקות. אין צורך לבצע משימות עם AI אמיתי — הקורס מסביר את העקרונות. בימים שיש בהם פעילות עם AI — מומלץ לעשות יחד עם הילד/ה. הקורס מלמד גם כללי בטיחות חשובים (לא לשתף פרטים אישיים, לבדוק עם מבוגר, AI יכול לטעות).</p>
+</section>
+
+<script src="assets/js/kids-app.js"></script>
+</body>
+</html>

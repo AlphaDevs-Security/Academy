@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚀 העלאה ל-academy.alphadevs.co</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl;
+    background: #fafbff; color: #0f172a;
+    line-height: 1.7; padding: 40px 24px;
+}
+.wrap { max-width: 880px; margin: 0 auto; }
+.hero {
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #ec4899 100%);
+    color: white; padding: 50px 40px; border-radius: 24px;
+    margin-bottom: 32px; box-shadow: 0 20px 50px rgba(76,29,149,0.3);
+}
+.hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; }
+.hero p { opacity: 0.95; font-size: 1.05rem; }
+.eyebrow {
+    display: inline-block; background: rgba(255,255,255,0.2);
+    padding: 6px 14px; border-radius: 999px;
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 14px;
+}
+h2 {
+    font-size: 1.6rem; margin: 36px 0 18px; padding-bottom: 12px;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex; align-items: center; gap: 14px;
+}
+h3 { font-size: 1.15rem; margin: 24px 0 10px; color: #4338ca; }
+p { color: #475569; margin-bottom: 12px; }
+strong, b { color: #0f172a; }
+
+.stage-num {
+    display: inline-grid; place-items: center;
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white; border-radius: 50%;
+    font-weight: 900; font-size: 1.2rem;
+    box-shadow: 0 8px 20px rgba(99,102,241,0.4);
+    flex-shrink: 0;
+}
+
+.step {
+    background: white; border: 1px solid #e2e8f0;
+    border-radius: 16px; padding: 26px 30px; margin-bottom: 18px;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+}
+.step-header { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.step-header h2 {
+    margin: 0; padding: 0; border: none;
+    font-size: 1.4rem;
+}
+
+.code-block {
+    background: #1e293b;
+    color: #f1f5f9;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.93rem;
+    overflow-x: auto;
+    margin: 12px 0;
+    direction: ltr;
+    text-align: left;
+    position: relative;
+}
+.code-block::before {
+    content: 'TERMINAL';
+    position: absolute;
+    top: -10px; right: 16px;
+    background: #6366f1;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    direction: ltr;
+}
+.code-block.no-label::before { display: none; }
+.code-block .comment { color: #64748b; }
+.copy-btn {
+    position: absolute;
+    bottom: 10px; left: 12px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    font-family: inherit;
+    direction: rtl;
+}
+.copy-btn:hover { background: rgba(255,255,255,0.2); }
+.copy-btn.copied { background: #10b981; border-color: #10b981; }
+
+.dns-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    background: #fafbff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+.dns-table th, .dns-table td {
+    padding: 12px 14px;
+    text-align: right;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.93rem;
+}
+.dns-table th {
+    background: #f1f5f9;
+    font-weight: 700;
+}
+.dns-table td:nth-child(2) {
+    font-family: 'JetBrains Mono', monospace;
+    direction: ltr;
+    text-align: right;
+    color: #4338ca;
+    font-size: 0.88rem;
+}
+
+.callout {
+    background: #fef3c7; border: 1px solid #fde68a;
+    border-right: 3px solid #f59e0b;
+    border-radius: 10px; padding: 14px 18px; margin: 14px 0;
+    font-size: 0.93rem; color: #78350f;
+}
+.callout-success {
+    background: #d1fae5; border-color: #6ee7b7;
+    border-right-color: #10b981;
+    color: #065f46;
+}
+.callout-info {
+    background: #dbeafe; border-color: #93c5fd;
+    border-right-color: #3b82f6;
+    color: #1e3a8a;
+}
+
+ol li, ul li { margin: 8px 24px; }
+
+.success-banner {
+    background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
+    border: 2px solid #10b981;
+    border-radius: 16px;
+    padding: 26px 30px;
+    margin: 24px 0;
+    text-align: center;
+}
+.success-banner h3 { color: #064e3b; margin-bottom: 6px; font-size: 1.4rem; }
+.success-banner p { color: #064e3b; }
+.success-banner code {
+    background: white;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    direction: ltr;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #065f46;
+}
+
+.toast {
+    position: fixed; top: 20px; left: 50%;
+    transform: translateX(-50%);
+    background: #10b981; color: white;
+    padding: 12px 24px; border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(16,185,129,0.4);
+    opacity: 0; transition: opacity 250ms;
+    z-index: 1000;
+}
+.toast.show { opacity: 1; }
+
+.checkpoint {
+    margin-top: 18px; padding: 14px 18px;
+    background: #f8fafc; border-radius: 10px;
+    border-right: 3px solid #6366f1;
+    font-size: 0.92rem;
+}
+.checkpoint b { color: #4338ca; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="hero">
+    <span class="eyebrow">🚀 העלאה לאוויר</span>
+    <h1>academy.alphadevs.co — 4 צעדים, ~15 דקות</h1>
+    <p>מדריך פעולה לחיבור התת-דומיין academy לפרויקט שלך. הקובץ CNAME כבר מוכן בתיקייה. נשארו 4 דברים שאתה צריך לעשות ידנית.</p>
+</div>
+
+<!-- WHAT'S READY -->
+<div class="callout callout-success">
+    ✅ <b>מה כבר עשיתי בשבילך:</b> יצרתי קובץ <code>CNAME</code> בתיקיית הפרויקט עם התוכן <code>academy.alphadevs.co</code>. הקובץ הזה מאותת ל-GitHub Pages לאיזה דומיין הוא צריך לענות.
+</div>
+
+<!-- STEP 1 -->
+<div class="step">
+    <div class="step-header">
+        <span class="stage-num">1</span>
+        <h2>אתחל ודחוף לגיתהאב — פעם ראשונה</h2>
+    </div>
+    <p>התיקייה שלך לא מחוברת לגיתהאב עדיין. הפקודות הבאות עושות את הכל בפעם אחת — מאתחלות, מחברות לריפו, ודוחפות:</p>
+
+    <div class="code-block">
+        <button class="copy-btn" onclick="copy(this, 'cd \&quot;/Users/lior/Documents/Claude/Projects/AlphaDevs Public Academy\&quot;\ngit init\ngit branch -M main\ngit remote add origin https://github.com/AlphaDevs-Security/Academy.git\ngit add .\ngit commit -m \&quot;Full upgrade — courses + i18n + team access + kids course\&quot;\ngit push -u origin main --force')">📋 העתק</button>
+<pre><span class="comment"># 1. נכנסים לתיקייה</span>
+cd "/Users/lior/Documents/Claude/Projects/AlphaDevs Public Academy"
+
+<span class="comment"># 2. מאתחלים גיט מקומי</span>
+git init
+git branch -M main
+
+<span class="comment"># 3. מחברים לריפו בגיתהאב</span>
+git remote add origin https://github.com/AlphaDevs-Security/Academy.git
+
+<span class="comment"># 4. מוסיפים, יוצרים commit, ודוחפים</span>
+git add .
+git commit -m "Full upgrade — courses + i18n + team access + kids course"
+git push -u origin main --force</pre>
+    </div>
+
+    <div class="callout">
+        ⚠️ <b>למה <code>--force</code>?</b> כי הריפו בגיתהאב כנראה כבר מכיל גרסה ישנה של הקורס. הפקודה הזו דורסת את מה שיש שם בגרסה החדשה והמלאה מהמחשב שלך. <b>זה מה שאתה רוצה</b> — המחשב הוא מקור האמת.
+    </div>
+
+    <div class="callout callout-info">
+        💡 <b>אם הוא מבקש שם משתמש וסיסמה לגיתהאב:</b> סיסמה רגילה לא תעבוד מאז 2021. צריך טוקן אישי (Personal Access Token):<br>
+        1. כנס ל-<code>github.com/settings/tokens</code><br>
+        2. Generate new token (classic) → סמן את <b>repo</b> → Generate<br>
+        3. העתק את הטוקן (פעם אחת בלבד יוצג!)<br>
+        4. כשגיט שואל "Password" — הדבק את הטוקן במקום
+    </div>
+
+    <div class="checkpoint">
+        <b>בדיקה:</b> אחרי הפקודות — תיכנס ל-<code>github.com/AlphaDevs-Security/Academy</code>. אתה אמור לראות את כל הקבצים: <code>CNAME</code>, <code>Kids/</code>, <code>owner-login.html</code>, וכל השאר.
+    </div>
+</div>
+
+<!-- ALTERNATIVE -->
+<div class="step" style="background:#fef3c7;border-color:#fde68a;">
+    <div class="step-header">
+        <span class="stage-num" style="background:#f59e0b;">⚡</span>
+        <h2>אלטרנטיבה — בלי גיתהאב כלל (Netlify Drop)</h2>
+    </div>
+    <p>אם הגיט נראה לך מורכב מדי — יש דרך עוקפת בקליק אחד. זה לא יעלה ל-academy.alphadevs.co אבל ייתן לך URL חי תוך 30 שניות.</p>
+
+    <ol>
+        <li>פתח <a href="https://app.netlify.com/drop" target="_blank">app.netlify.com/drop</a></li>
+        <li>גרור את <b>כל התיקייה של הפרויקט</b> לאזור המסומן</li>
+        <li>תוך 30 שניות — תקבל URL כמו <code>https://magnificent-frog-12345.netlify.app</code></li>
+        <li>זה אונליין. אפשר לשלוח את הקישור הזה לרימה ולנטליה כבר עכשיו.</li>
+    </ol>
+
+    <p>אחרי שתבדוק שהכל עובד — נחבר לדומיין הקסטומי (גם ב-Netlify אפשר, או נחזור לגיתהאב).</p>
+</div>
+
+<!-- STEP 2 -->
+<div class="step">
+    <div class="step-header">
+        <span class="stage-num">2</span>
+        <h2>הוסף רשומת DNS ב-Cloudflare</h2>
+    </div>
+    <p>היכנס ל-Cloudflare, בחר את הדומיין <code>alphadevs.co</code>, ולחץ על "DNS" בתפריט הצדדי.</p>
+
+    <p>הוסף רשומה חדשה (Add record) עם הפרמטרים הבאים:</p>
+
+    <table class="dns-table">
+        <tr><th>שדה</th><th>ערך</th></tr>
+        <tr><td><b>סוג (Type)</b></td><td>CNAME</td></tr>
+        <tr><td><b>שם (Name)</b></td><td>academy</td></tr>
+        <tr><td><b>יעד (Target)</b></td><td>alphadevs-security.github.io</td></tr>
+        <tr><td><b>פרוקסי (Proxy status)</b></td><td>DNS only (ענן אפור, לא כתום!)</td></tr>
+        <tr><td><b>TTL</b></td><td>Auto</td></tr>
+    </table>
+
+    <div class="callout">
+        ⚠️ <b>קריטי — Proxy DNS only:</b> חייב שהענן יהיה אפור (לא כתום). הענן הכתום שובר את ה-HTTPS של GitHub Pages. אם ראית כתום — לחץ עליו והוא יהפוך לאפור.
+    </div>
+
+    <div class="checkpoint">
+        <b>בדיקה:</b> אחרי השמירה, תראה את הרשומה ברשימה. עוד כמה דקות (1-30) ה-DNS יתפשט לעולם.
+    </div>
+</div>
+
+<!-- STEP 3 -->
+<div class="step">
+    <div class="step-header">
+        <span class="stage-num">3</span>
+        <h2>חבר את הדומיין ב-GitHub Pages</h2>
+    </div>
+    <p>היכנס ל-<code>github.com/AlphaDevs-Security/Academy/settings/pages</code></p>
+
+    <p>בשדה "Custom domain" — הזן <code>academy.alphadevs.co</code> ולחץ Save.</p>
+
+    <p>GitHub ירוץ בדיקת DNS אוטומטית. אם הכל בסדר תראה ✅ ירוק.</p>
+
+    <p>סמן את <b>Enforce HTTPS</b> (אם זה לא מסומן — חכה כמה דקות שהאישור יוקצה ואז סמן).</p>
+
+    <div class="callout callout-info">
+        💡 <b>אם רואה אזהרה אדומה על DNS</b> — חכה 5-15 דקות ורענן. ההתפשטות של DNS לוקחת זמן. בדרך כלל מהיר יותר ב-Cloudflare.
+    </div>
+
+    <div class="checkpoint">
+        <b>בדיקה:</b> אחרי שהשמירה הסתיימה ויש ✅ ירוק — לחץ על הקישור באתר GitHub. הוא אמור לפתוח את <code>academy.alphadevs.co</code>.
+    </div>
+</div>
+
+<!-- STEP 4 -->
+<div class="step">
+    <div class="step-header">
+        <span class="stage-num">4</span>
+        <h2>בדוק שהכל עובד</h2>
+    </div>
+    <p>פתח בדפדפן את הקישור:</p>
+
+    <div class="code-block no-label">
+        <button class="copy-btn" onclick="copy(this, 'https://academy.alphadevs.co')">📋 העתק</button>
+<pre>https://academy.alphadevs.co</pre>
+    </div>
+
+    <p>צפי לראות את דף הבית של הקורס (index.html). אם פתחת בפעם הראשונה — תראה את ה-Welcome Splash שמבקש לבחור שפה.</p>
+
+    <p>בדוק עוד דפים:</p>
+    <ul>
+        <li><code>academy.alphadevs.co/owner-login.html</code> — דף הבעלים שלך</li>
+        <li><code>academy.alphadevs.co/Kids/</code> — קורס הילדים</li>
+        <li><code>academy.alphadevs.co/SEND-TO-TEAM.html</code> — שליחה לרימה ונטליה (יציג כעת קישורים נכונים בדומיין החדש)</li>
+    </ul>
+
+    <div class="checkpoint">
+        <b>בדיקה אחרונה:</b> פתח את <code>SEND-TO-TEAM.html</code> ולחץ על "📋 העתק לינק". וודא שהלינק שהועתק מתחיל ב-<code>https://academy.alphadevs.co/</code>, לא בכתובת אחרת.
+    </div>
+</div>
+
+<!-- SUCCESS -->
+<div class="success-banner">
+    <div style="font-size:3rem;margin-bottom:8px;">🎉</div>
+    <h3>זהו! האתר חי</h3>
+    <p>הקורסים שלך זמינים בכתובת:</p>
+    <code>https://academy.alphadevs.co</code>
+    <p style="margin-top:14px;font-size:0.92rem;">עכשיו אפשר לשלוח לרימה ולנטליה. הם יקבלו חוויה מקצועית, לא לינק חובבני.</p>
+</div>
+
+<!-- TROUBLESHOOTING -->
+<h2>🔧 בעיות נפוצות</h2>
+
+<div class="step">
+    <h3 style="margin-top:0;">"Connection refused" / "Site not reachable"</h3>
+    <p>סבירות גבוהה — ה-DNS עוד לא התפשט. חכה 15-30 דקות ונסה שוב. אם אחרי שעה זה עדיין לא עובד — בדוק ש:</p>
+    <ol>
+        <li>הרשומה ב-Cloudflare באמת CNAME ולא A או AAAA</li>
+        <li>הענן אפור (DNS only) ולא כתום (Proxied)</li>
+        <li>הקובץ <code>CNAME</code> אכן עלה ל-GitHub (תוודא שאתה רואה אותו ברפו)</li>
+    </ol>
+</div>
+
+<div class="step">
+    <h3 style="margin-top:0;">"Your site is not yet served from this domain"</h3>
+    <p>GitHub עוד מבצע אימות. רענן את דף ההגדרות (Settings → Pages) ב-GitHub אחרי 5 דקות. אם זה לא מתעדכן — מחק את ה-Custom domain ושמור (כדי לאפס), ואז הכנס מחדש.</p>
+</div>
+
+<div class="step">
+    <h3 style="margin-top:0;">"Mixed content warning" / HTTPS לא עובד</h3>
+    <p>חכה ל-Enforce HTTPS להיות זמין (יכול לקחת עד שעה). זה אישור שגיתהאב מקצה אוטומטית. עד שזה זמין — האתר יעבוד על HTTP בלבד.</p>
+</div>
+
+<div class="step">
+    <h3 style="margin-top:0;">"זה לא נכון מדויק לאן בקלאודפלייר אני נכנס"</h3>
+    <p>השלבים ב-Cloudflare:</p>
+    <ol>
+        <li>היכנס ל-<code>dash.cloudflare.com</code></li>
+        <li>בחר את <code>alphadevs.co</code> מרשימת הדומיינים</li>
+        <li>בתפריט הצדדי השמאלי — לחץ על <b>DNS</b> ואז <b>Records</b></li>
+        <li>בקצה העליון — לחץ <b>+ Add record</b></li>
+        <li>מלא את הפרטים מהטבלה למעלה</li>
+        <li>לחץ <b>Save</b></li>
+    </ol>
+</div>
+
+<div class="step">
+    <h3 style="margin-top:0;">"אני לא יודע אם הדומיין באמת בקלאודפלייר"</h3>
+    <p>הרץ בטרמינל:</p>
+    <div class="code-block no-label">
+        <button class="copy-btn" onclick="copy(this, 'dig NS alphadevs.co +short')">📋 העתק</button>
+<pre>dig NS alphadevs.co +short</pre>
+    </div>
+    <p>אם רואה שמות שמסתיימים ב-<code>cloudflare.com</code> — אתה ב-Cloudflare. אם רואה שמות אחרים (Google, GoDaddy, וכו׳) — תיגש לממשק שלהם, אבל הצעדים זהים בעיקרון: הוספת CNAME מ-academy ל-alphadevs-security.github.io.</p>
+</div>
+
+<!-- AFTER -->
+<h2>🎯 מה אחרי שהאתר עולה?</h2>
+
+<div class="step">
+    <p>ברגע שהאתר עובד על academy.alphadevs.co:</p>
+    <ol>
+        <li><b>פתח את <a href="SEND-TO-TEAM.html">SEND-TO-TEAM.html</a></b> — שלח את הקישור לרימה ולנטליה ב-WhatsApp/מייל בקליק.</li>
+        <li><b>בדוק עם רימה את הקורס לילדים</b> — היא יכולה להראות את זה לילדים. הם יהיו ה-beta testers הכי כנים.</li>
+        <li><b>קבל פידבק תוך 48 שעות</b> — מה אהבו, מה היה מבלבל, מה חסר. תעדכן אותי.</li>
+        <li><b>אם הפידבק חיובי</b> — אנחנו מתחילים את שלב המכירות (תוכנית 45 הימים).</li>
+    </ol>
+
+    <p style="margin-top:16px;">אל תלחץ על השלבים האלה. הסדר חשוב. <b>קודם validation, אחר כך מסחור.</b></p>
+</div>
+
+<div id="toast" class="toast">✓ הועתק!</div>
+
+</div>
+
+<script>
+function copy(btn, text) {
+    navigator.clipboard.writeText(text).then(() => {
+        btn.classList.add('copied');
+        const orig = btn.textContent;
+        btn.textContent = '✓ הועתק';
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.textContent = orig;
+            toast.classList.remove('show');
+        }, 2000);
+    });
+}
+</script>
+
+</body>
+</html>

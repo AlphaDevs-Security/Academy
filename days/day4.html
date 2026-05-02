@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יום 4: פלאגינים וחיבורים · AlphaDevs Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Heebo,sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body id="top" class="gated">
+
+<header class="topbar">
+    <div class="container topbar-inner">
+        <a href="../index.html" class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-name"><b>AlphaDevs Academy</b><span>יום 4 מתוך 7</span></div>
+        </a>
+        <div class="topbar-actions">
+            <div class="progress-pill" id="progress-pill"><span class="dot"></span> טוען...</div>
+            <a href="../index.html" class="btn btn-ghost btn-sm">← חזרה לקורס</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="lesson-shell">
+        <aside class="lesson-sidebar">
+            <h4>תוכן היום</h4>
+            <ul class="toc-list">
+                <li><a href="#what-plugin" class="active"><span class="toc-num">1</span>פלאגין, MCP, חיבור — מה זה הכל?</a></li>
+                <li><a href="#essential"><span class="toc-num">2</span>5 החיבורים שכל אחת חייבת</a></li>
+                <li><a href="#how-connect"><span class="toc-num">3</span>איך מחברים בפועל</a></li>
+                <li><a href="#real-use"><span class="toc-num">4</span>שימוש אמיתי בעבודה</a></li>
+                <li><a href="#security"><span class="toc-num">5</span>אבטחה ופרטיות</a></li>
+                <li><a href="#quiz"><span class="toc-num">★</span>מבחן יום 4</a></li>
+            </ul>
+        </aside>
+
+        <main class="lesson-main">
+            <header class="lesson-header">
+                <span class="lesson-eyebrow">יום 4 · 55 דקות · רמה: בינונית</span>
+                <h1>פלאגינים וחיבורים חיצוניים</h1>
+                <p class="lesson-subtitle">היום הופכים את קלוד לעמית עבודה אמיתי — שיודע לקרוא את המייל שלך, לראות את היומן, ולעבוד עם המערכות שאת משתמשת בהן יום-יום.</p>
+                <div class="lesson-progress">
+                    <div class="bar"><div class="bar-fill" style="width:57%;"></div></div>
+                    <div class="progress-text">יום 4 מתוך 7</div>
+                </div>
+
+                <div class="lesson-time-bar">
+                    <div class="time-block"><div class="num">5'</div><div class="label">חימום</div></div>
+                    <div class="time-block"><div class="num">55'</div><div class="label">שיעורים</div></div>
+                    <div class="time-block"><div class="num">35'</div><div class="label">תרגיל</div></div>
+                    <div class="time-block"><div class="num">20'</div><div class="label">מקרה בוחן</div></div>
+                    <div class="time-block"><div class="num">15'</div><div class="label">חוברת עבודה</div></div>
+                    <div class="time-block"><div class="num">30'</div><div class="label">בונוס</div></div>
+                    <div class="time-block total"><div class="num">2.7 ש׳</div><div class="label">סך הכל</div></div>
+                </div>
+            </header>
+
+            <div class="video-block">
+                <div class="video-frame"><div class="video-play-btn"></div></div>
+                <div class="video-meta">
+                    <span class="video-title">🎬 וידאו: לחבר את כל הכלים שלך</span>
+                    <span class="video-duration">⏱ 5:30</span>
+                </div>
+                <div class="video-placeholder-note">📹 <strong>הקלטת וידאו תיווסף בקרוב.</strong></div>
+            </div>
+
+            <section class="warmup">
+                <div class="warmup-header">
+                    <div class="warmup-icon">🔥</div>
+                    <div>
+                        <span class="warmup-tag">חימום · 5 דקות</span>
+                        <h3>כמה כלים את משתמשת בהם בעבודה ביום ממוצע?</h3>
+                    </div>
+                </div>
+                <p>תספרי. Gmail, Calendar, Drive, Slack, Monday, Excel, WhatsApp Business... תכתבי רשימה. אנחנו נחבר 2-3 מהם היום.</p>
+                <textarea class="warmup-input" data-qkey="day4-warmup" placeholder="הכלים שלי: ..."></textarea>
+            </section>
+
+            <!-- Section 1 -->
+            <section class="section" id="what-plugin">
+                <h2><span class="section-num">1</span>פלאגין, MCP, חיבור — מה זה הכל?</h2>
+                <p>היום נשמע הרבה מילים — פלאגין (Plugin), קונקטור (Connector), MCP. כולן מתארות בעצם את אותו דבר: <strong>גשר בין קלוד לכלי חיצוני</strong>.</p>
+
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">🔌</div>
+                        <h4>קונקטור / חיבור</h4>
+                        <p>הדרך לחבר את קלוד לשירות חיצוני — Gmail, Calendar, Drive וכו׳. התוצאה: קלוד יכול לקרוא ולפעול שם.</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">📦</div>
+                        <h4>פלאגין</h4>
+                        <p>חבילה של חיבורים + סקילים + אג׳נטים שמותקנת יחד. כמו "ערכה" מוכנה לתפקיד מסוים.</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">⚙️</div>
+                        <h4>MCP</h4>
+                        <p>הפרוטוקול הטכני שמאפשר את החיבורים. את לא צריכה להבין את זה — רק לדעת שזה הקסם מאחורי הקלעים.</p>
+                    </div>
+                </div>
+
+                <h3>מה זה משנה לי בפועל?</h3>
+                <p>בלי חיבורים: קלוד הוא צ׳אט חכם בקופסה. את אומרת לו דברים, הוא עונה.</p>
+                <p>עם חיבורים: קלוד הוא <strong>עמית עבודה</strong>. הוא יכול:</p>
+                <ul>
+                    <li>לקרוא את המיילים שלך ולסכם את הבוקר</li>
+                    <li>לבדוק מה ביומן ולהציע פגישות</li>
+                    <li>לחפש קבצים ב-Drive ולעבוד איתם</li>
+                    <li>לעדכן משימות ב-Monday/Asana</li>
+                    <li>לשלוח הודעות בסלאק</li>
+                    <li>ועוד עשרות שירותים</li>
+                </ul>
+
+                <div class="callout callout-tip">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-body">
+                        <div class="callout-title">חוק פשוט</div>
+                        <p>לכל אפליקציה שאת משתמשת בה הרבה — בדקי אם יש לה חיבור. אם כן, תחברי. הזמן שתחסכי הוא עצום.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="section" id="essential">
+                <h2><span class="section-num">2</span>5 החיבורים שכל אחת חייבת</h2>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h4>📧 Gmail</h4>
+                            <p>קריאה, סיכום, חיפוש ושליחה של מיילים. במיוחד שימושי לסיכום בוקר ("מה חשוב בתיבה?") וניסוח תשובות אוטומטיות.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h4>📅 Google Calendar</h4>
+                            <p>בדיקת היומן, הצעת זמנים פנויים, יצירת אירועים. שואלים "מה יש לי השבוע" ומקבלים סיכום מסודר.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h4>📁 Google Drive</h4>
+                            <p>גישה לכל הקבצים שלך בענן — לחפש, לקרוא, לערוך, ליצור. בלי להוריד ידנית כל פעם.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-body">
+                            <h4>📋 ניהול פרויקטים (Monday / Asana / Linear)</h4>
+                            <p>קריאה ועדכון משימות, יצירת פריטים, מעקב אחרי סטטוסים. אם הצוות שלך משתמש בזה — חיבור הוא חובה.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-body">
+                            <h4>💬 Slack / Microsoft Teams</h4>
+                            <p>סיכום ערוצים, חיפוש שיחות ישנות, ניסוח הודעות, שליחה אוטומטית.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>חיבורים שימושיים נוספים</h3>
+                <ul>
+                    <li><strong>Notion / Confluence</strong> — לעבודה עם תיעוד וויקי</li>
+                    <li><strong>HubSpot / Salesforce</strong> — CRM</li>
+                    <li><strong>QuickBooks / Xero</strong> — חשבונאות</li>
+                    <li><strong>LinkedIn</strong> — לעבודת prospecting ותוכן</li>
+                    <li><strong>GitHub</strong> — לעבודה עם קוד</li>
+                </ul>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="section" id="how-connect">
+                <h2><span class="section-num">3</span>איך מחברים בפועל</h2>
+
+                <h3>שיטה 1: בקשי מקלוד</h3>
+                <p>הדרך הכי פשוטה. כתבי לו במפורש:</p>
+                <div class="practice-box">
+                    <span class="practice-tag">דוגמה</span>
+                    <h4>🔌 חיבור על ידי בקשה</h4>
+                    <div class="practice-prompt">
+                        אני רוצה לחבר את Gmail ו-Google Calendar. תעזור לי?
+                    </div>
+                    <p style="margin-top:14px;">קלוד יבדוק אם יש פלאגין מתאים, יציע לך אותו, ויפתח דיאלוג להתקנה. את מאשרת ויש חיבור.</p>
+                </div>
+
+                <h3>שיטה 2: חיפוש ברישום (Registry)</h3>
+                <p>אם את רוצה לראות את כל החיבורים האפשריים, אפשר לבקש מקלוד "תראה לי איזה חיבורים זמינים בנושא X". הוא יראה לך רשימה.</p>
+
+                <h3>תהליך החיבור — צעד אחר צעד</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h4>הצעת חיבור</h4>
+                            <p>קלוד מציע לך פלאגין מתאים, ואת מאשרת.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h4>פתיחת דפדפן</h4>
+                            <p>נפתח דפדפן בו את מתחברת לחשבון שלך (Google, Microsoft וכו׳) ומאשרת את הגישה.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h4>בחירת הרשאות</h4>
+                            <p>את מאשרת אילו פעולות קלוד יכול לבצע (קריאה בלבד? גם שליחה? וכו׳). את שולטת.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-body">
+                            <h4>החיבור פעיל</h4>
+                            <p>חוזרים ל-Cowork. החיבור פעיל. אפשר להתחיל לעבוד.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">ℹ️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">חיבור חד פעמי</div>
+                        <p>עושים את החיבור פעם אחת. אחר כך הוא נשאר פעיל לתמיד (אלא אם מבטלים אותו). לא צריך לחבר בכל שיחה חדשה.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="section" id="real-use">
+                <h2><span class="section-num">4</span>שימוש אמיתי בעבודה</h2>
+                <p>זה החלק שיהפוך אותך למכורה. הנה דוגמאות מהחיים האמיתיים — דברים שאת יכולה להגיד לקלוד אחרי שיש לך חיבורים.</p>
+
+                <div class="practice-box">
+                    <span class="practice-tag">סצנה: בוקר</span>
+                    <h4>☕ סיכום בוקר</h4>
+                    <div class="practice-prompt">
+                        בוקר טוב. תסכם לי בקצרה: 1) המיילים החשובים שהגיעו אתמול ולא עניתי, 2) הפגישות של היום עם הסבר קצר על כל אחת, 3) משימות עם דדליין השבוע מ-Monday.
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">סצנה: תיאום פגישה</span>
+                    <h4>📅 תיאום חכם</h4>
+                    <div class="practice-prompt">
+                        אני צריכה לקבוע פגישה של שעה עם דנה לוי בשבוע הבא. תבדוק ביומן שלי מתי אני פנויה, תציע לה 3 אפשרויות, ותכין טיוטת מייל בעברית עם ההצעות.
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">סצנה: עבודה עם מסמכים</span>
+                    <h4>📁 חיפוש ב-Drive</h4>
+                    <div class="practice-prompt">
+                        חפש לי ב-Drive את ההצעת המחיר האחרונה ששלחתי ללקוח X. קח אותה כתבנית, עדכן את הסכומים והתאריכים לפי הפרטים האלה: [פרטים]. תוצרת — קובץ חדש בתיקייה של 2026.
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">סצנה: ניהול פרויקטים</span>
+                    <h4>📋 עדכון Monday</h4>
+                    <div class="practice-prompt">
+                        קח את הסיכום של הפגישה הבוקר (העלאתי כקובץ), עדכן את המשימות הרלוונטיות ב-Monday — סטטוסים, אחראים, תאריכים. צור פריטים חדשים אם צריך.
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">סצנה: סוף שבוע</span>
+                    <h4>📊 דוח שבועי אוטומטי</h4>
+                    <div class="practice-prompt">
+                        תכין לי דוח שבועי: כמה פגישות היו השבוע (מהיומן), כמה מיילים שלחתי וקיבלתי, מה הסטטוס של הפרויקטים העיקריים ב-Monday. תוצאת — מסמך Word מסודר.
+                    </div>
+                </div>
+
+                <div class="callout callout-pro">
+                    <div class="callout-icon">⭐</div>
+                    <div class="callout-body">
+                        <div class="callout-title">המכפיל האמיתי</div>
+                        <p>שילוב חיבורים + סקילים + פרומפט אחד = משהו שהיה לוקח שעות, נעשה בדקות. זה הכוח של Cowork. ביום 7 נראה איך לתזמן את זה לרוץ אוטומטית.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="section" id="security">
+                <h2><span class="section-num">5</span>אבטחה ופרטיות</h2>
+                <p>חיבורים נותנים לקלוד גישה לדברים אישיים — לכן חשוב להבין איך זה עובד.</p>
+
+                <div class="compare-grid">
+                    <div class="compare-card icon-green">
+                        <div class="compare-icon">✓</div>
+                        <h4>הרשאות מינימליות</h4>
+                        <p>תני רק את ההרשאות שצריך. אם מספיק "קריאה" — אל תתני "כתיבה".</p>
+                    </div>
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">🔍</div>
+                        <h4>שקיפות</h4>
+                        <p>קלוד אומר לך מה הוא הולך לעשות לפני שעושה. לא מתבצע כלום בלי שאת רואה.</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">🛑</div>
+                        <h4>אישור לפעולות מסוכנות</h4>
+                        <p>שליחת מייל, יצירת אירוע, עדכון משימה — קלוד שואל אישור לפני, לא עושה ביוזמתו.</p>
+                    </div>
+                </div>
+
+                <h3>מה לעשות אם משהו לא מרגיש בסדר?</h3>
+                <ol>
+                    <li><strong>נתקי את החיבור</strong> בכל רגע מתפריט החיבורים.</li>
+                    <li><strong>בטל את ההרשאה</strong> ישירות בחשבון Google/Microsoft שלך — תפריט "אפליקציות מחוברות".</li>
+                    <li><strong>החליפי סיסמה</strong> בכלי הרגיש אם מעוניינת.</li>
+                </ol>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">⚠️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">הימנעי משיתוף חיבורים</div>
+                        <p>אל תאפשרי גישה למישהו אחר ל-Cowork שלך. החיבורים שלך הם אישיים — הם נותנים גישה לחשבונות הפרטיים שלך.</p>
+                    </div>
+                </div>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">ℹ️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">פעולות פיננסיות</div>
+                        <p>גם אם תחברי כלים פיננסיים (QuickBooks, בנק וכו׳) — קלוד <strong>לעולם לא</strong> יבצע העברת כסף או עסקה אמיתית. את חייבת לאשר ולבצע ידנית. זו מגבלה מובנית לבטיחות שלך.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="exercise" id="exercise">
+                <div class="exercise-header">
+                    <div class="exercise-num">🎯</div>
+                    <div>
+                        <span class="exercise-tag">תרגיל מעשי · 35 דקות</span>
+                        <h3>חברי Gmail + Calendar וקבלי בריף בוקר ראשון</h3>
+                        <div class="exercise-time">⏱ זמן משוער: 30-35 דקות</div>
+                    </div>
+                </div>
+                <div class="exercise-goal">
+                    <b>המטרה:</b> תוך 35 דקות תהיי מחוברת ל-Gmail וליומן, ותקבלי בריף בוקר אמיתי שמתאר את היום שלך — ממש כמו עוזרת אישית. זה התרגיל הכי משנה-חיים בקורס.
+                </div>
+                <div class="exercise-prompt-block">
+                    <pre>שלב 1 — חיבור (10 דקות):
+"אני רוצה לחבר את Gmail ו-Google Calendar.
+תעזור לי. הסבר מה אני מאשרת בדיוק, ולמה."
+
+שלב 2 — בדיקה (5 דקות):
+"בדוק שאתה מחובר. תגיד לי כמה מיילים חדשים יש לי
+היום, ומה הפגישה הבאה ביומן."
+
+שלב 3 — הבריף הראשון (15 דקות):
+"בנה לי בריף בוקר אישי. כלול:
+1. סיכום מיילים מאתמול שלא עניתי - דירוג לפי דחיפות
+2. רשימת פגישות היום עם הסבר קצר על כל אחת
+3. רשימת משימות הקריטיות לפי דדליין
+4. הצעה: על מה כדאי להתמקד בשעתיים הראשונות?
+
+תבנה את זה כתבנית. אני רוצה שאוכל לבקש 'תן לי בריף בוקר'
+בכל יום ולקבל את אותו הפורמט."</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+                <div class="exercise-expected">
+                    <b>מה אמור לקרות:</b> בסוף התרגיל יש לך בריף בוקר מותאם אישית. תוכלי לבקש "תן לי בריף בוקר" כל יום, ותקבלי תוצאה דומה. <strong>זה השלב שבו AI הופך מ-עוזר ל-עמית עבודה.</strong>
+                </div>
+                <ul class="exercise-checklist">
+                    <li>חיברתי Gmail (אישרתי הרשאות)</li>
+                    <li>חיברתי Google Calendar</li>
+                    <li>בדקתי שהחיבור עובד — קלוד יודע לקרוא את הנתונים</li>
+                    <li>קיבלתי בריף בוקר מותאם</li>
+                    <li>שמרתי את הפרומפט-תבנית לשימוש יומי</li>
+                </ul>
+            </section>
+
+            <section class="case-study" id="case-study">
+                <div class="case-study-header">
+                    <span class="case-study-tag">מקרה בוחן · 20 דקות</span>
+                    <h3>"היום הראשון שהרגשתי שיש לי עוזרת אישית"</h3>
+                    <div class="case-study-meta">
+                        <span>👤 מיכל · יזמית, סטארט-אפ פינטק</span>
+                        <span>🚀 8 עובדים · גיוס סיד</span>
+                        <span>⏱ חיסכון: 90 דקות יומיות</span>
+                    </div>
+                </div>
+                <div class="case-study-body">
+                    <h4>המצב</h4>
+                    <p>מיכל עוסקת בגיוס. מקבלת 60-100 מיילים ביום מ-VCs, מועמדים, לקוחות פוטנציאליים. הפגישות זרמו, היומן שלה היה כאוס. כל בוקר ב-7:30 הייתה יושבת שעה וחצי לבדוק "מה היום".</p>
+                    <h4>השלבים</h4>
+                    <div class="case-study-timeline">
+                        <div class="step"><b>חיבור (10 דקות)</b><span>חיברה Gmail, Calendar, ו-Notion (מקום שבו היא רושמת את הליבה).</span></div>
+                        <div class="step"><b>הגדרת בריף (15 דקות)</b><span>הסבירה ל-AI בדיוק מה לחפש: מיילים מ-VCs, לוח גיוס, מועמדים בשלבים שונים, התראות מהבנק.</span></div>
+                        <div class="step"><b>הרצה ראשונה (5 דקות)</b><span>קלוד החזיר בריף של עמוד אחד: 4 דחופים, 3 פגישות, 7 לטיפול עוד היום, 12 שאפשר לדחות. דירוג לפי השפעה.</span></div>
+                        <div class="step"><b>שיפור (10 דקות)</b><span>"זה טוב, אבל תוסיף 'איך אני צריכה להתכונן לכל פגישה' — מה ההיסטוריה איתם, מה הם רוצים, מה לקרא לפני."</span></div>
+                    </div>
+                    <div class="case-study-result">
+                        <b>אחרי שבוע:</b> 90 דקות בכל בוקר הפכו ל-15. מיכל אומרת: "זו הפעם הראשונה שאני מרגישה ששולטת בעבודה במקום להיגרר אחריה. וכל זה — בעלות של חיבור פעם אחת."
+                    </div>
+                </div>
+            </section>
+
+            <section class="workbook-card" id="workbook">
+                <div class="workbook-icon">📓</div>
+                <div class="workbook-body">
+                    <span class="workbook-tag">חוברת עבודה · 15 דקות</span>
+                    <h4>מפת חיבורים אישית + תבנית בריף בוקר</h4>
+                    <p>זיהוי הכלים העיקריים בעבודה שלך, ובניית פרומפט-תבנית בריף שעובד עבורך.</p>
+                </div>
+                <div class="workbook-actions">
+                    <a href="../Workbooks/workbook.html#day4" class="btn btn-primary btn-sm" target="_blank">📥 הורד PDF</a>
+                </div>
+            </section>
+
+            <section class="bonus" id="bonus">
+                <div class="bonus-header">
+                    <div class="bonus-icon">🚀</div>
+                    <div>
+                        <span class="bonus-tag">בונוס · 30 דקות</span>
+                        <h3>workflow תלת-שלבי: מייל → תיאום → סיכום</h3>
+                    </div>
+                </div>
+                <p>שילוב של Gmail + Calendar + מסמכים — תיאום אוטומטי מלא של פגישה, מהמייל הראשון עד סיכום הפגישה.</p>
+                <div class="bonus-task">
+                    <pre>אני אעלה לך מייל אמיתי שהגיע ממישהו שמבקש פגישה.
+
+תבצע את כל התהליך:
+1. תקרא את המייל ותבין מה הצד השני רוצה (מטרה, נושא, אילוצים)
+2. תבדוק ביומן שלי מתי אני פנויה בשבוע הבא (1-2 חלונות אופציונליים)
+3. תכתוב לי טיוטת תשובה למייל - מקצועית, עם 2 הצעות זמן
+4. אחרי שאני מאשרת ושולחת - תכניס את הפגישה ליומן (כשתאושר)
+5. יום לפני הפגישה - תכין לי דף הכנה עם: היסטוריה איתו, נושאים לכסות, שאלות אפשריות
+
+המייל המקורי:
+[צרף מייל]</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+            </section>
+
+            <section class="reflection" id="reflection">
+                <div class="reflection-header">
+                    <div class="reflection-icon">✍️</div>
+                    <div>
+                        <span class="reflection-tag">רפלקציה · 10 דקות</span>
+                        <h3>סגירת היום</h3>
+                    </div>
+                </div>
+                <ol class="reflection-questions" style="counter-reset: ref-counter;">
+                    <li><b>איך הרגיש לקבל בריף בוקר אמיתי?</b><textarea data-qkey="day4-r1"></textarea></li>
+                    <li><b>איזה חיבור נוסף יחסוך לך הכי הרבה זמן?</b><textarea data-qkey="day4-r2"></textarea></li>
+                    <li><b>מה דאגה לגבי אבטחה ופרטיות יש לך — ואיך תטפלי בזה?</b><textarea data-qkey="day4-r3"></textarea></li>
+                    <li><b>הדבר הכי חשוב מהיום:</b><textarea data-qkey="day4-r4"></textarea></li>
+                </ol>
+                <div class="reflection-share"><b>💬 שתפי בקהילה:</b> איך הבריף בוקר השפיע על היום שלך?</div>
+            </section>
+
+            <section class="quiz-section" id="quiz">
+                <div id="quiz-container"></div>
+            </section>
+
+            <nav class="lesson-nav" id="lesson-nav"></nav>
+        </main>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-brand"><div class="brand-logo" style="width:24px;height:24px;font-size:0.8rem;">A</div>AlphaDevs Academy</div>
+        <p>יום 4 מתוך 7 · © 2026 AlphaDevs</p>
+    </div>
+</footer>
+
+<meta name="i18n-incomplete" content="true">
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+const day4Quiz = [
+    {
+        q: "מה זה ׳חיבור׳ (Connector / Plugin) בקלוד?",
+        options: [
+            "סוג של כבל פיזי",
+            "גשר בין קלוד לכלי חיצוני (Gmail, Calendar וכו׳) שמאפשר לו לעבוד שם",
+            "אפליקציה נפרדת",
+            "סוג של תשלום"
+        ],
+        correct: 1,
+        explanation: "חיבור הוא הגשר בין קלוד לשירות חיצוני. אחרי שמחברים — קלוד יכול לקרוא ולפעול בכלי הזה."
+    },
+    {
+        q: "איזה חיבור הכי שווה בעבודה היומיומית של רוב האנשים?",
+        options: [
+            "GitHub",
+            "Gmail + Calendar",
+            "אפליקציות גיימינג",
+            "תוכנות עיצוב"
+        ],
+        correct: 1,
+        explanation: "Gmail + Calendar הם הליבה לרוב האנשים — קריאת מיילים, סיכום בוקר, תיאום פגישות. השילוב משנה את חוויית העבודה."
+    },
+    {
+        q: "כמה פעמים צריך לחבר חיבור?",
+        options: [
+            "בכל שיחה חדשה",
+            "פעם אחת — נשאר פעיל לתמיד",
+            "כל יום",
+            "כל שבוע"
+        ],
+        correct: 1,
+        explanation: "החיבור הוא חד פעמי. אחרי שחיברת — נשאר פעיל עד שתבטלי בעצמך."
+    },
+    {
+        q: "מי שולט באילו פעולות קלוד יכול לבצע בכלי המחובר?",
+        options: [
+            "קלוד מחליט לבד",
+            "את — את מאשרת הרשאות בעת החיבור (קריאה? כתיבה? וכו׳)",
+            "Anthropic",
+            "אין שליטה"
+        ],
+        correct: 1,
+        explanation: "בעת החיבור את בוחרת אילו הרשאות לתת. אפשר ׳קריאה בלבד׳ אם רוצים, או הרשאות מלאות. את שולטת."
+    },
+    {
+        q: "מה צריך לעשות כדי לחבר Gmail ל-Cowork?",
+        options: [
+            "לכתוב קוד",
+            "פשוט לבקש מקלוד: ׳אני רוצה לחבר את Gmail׳ — הוא יוביל אותך בתהליך",
+            "להוריד תוכנה נוספת",
+            "לשלם נפרד"
+        ],
+        correct: 1,
+        explanation: "פשוט מבקשים מקלוד. הוא יציע פלאגין מתאים, יפתח דפדפן לאישור, ומכאן זה אוטומטי."
+    },
+    {
+        q: "מה ההגנה המובנית על פעולות מסוכנות (כמו שליחת מייל אמיתי)?",
+        options: [
+            "אין הגנה",
+            "קלוד מבצע ישר",
+            "קלוד שואל אישור לפני שמבצע, לא עושה ביוזמתו",
+            "צריך סיסמה נוספת"
+        ],
+        correct: 2,
+        explanation: "פעולות שיכולות להשפיע (שליחה, יצירה, עדכון) — קלוד מציג מה הוא הולך לעשות ושואל אישור. בלי אישור — לא קורה."
+    },
+    {
+        q: "האם קלוד יבצע העברת כסף אם תבקשי?",
+        options: [
+            "כן, אם יש חיבור לבנק",
+            "לא — מגבלה מובנית לבטיחותך, גם אם תבקשי",
+            "כן בסכום קטן",
+            "תלוי במצב הירח"
+        ],
+        correct: 1,
+        explanation: "פעולות פיננסיות אמיתיות (העברת כסף, ביצוע עסקה) חסומות באופן מובנה. קלוד יכול לעזור לך לתעד, לסכם ולתכנן — אבל לא לבצע. את מבצעת ידנית."
+    },
+    {
+        q: "אם רוצה לראות אילו חיבורים זמינים בנושא מסוים?",
+        options: [
+            "לקרוא תיעוד באנגלית",
+            "פשוט לשאול את קלוד: ׳איזה חיבורים זמינים לנושא X?׳",
+            "לחפש ב-Google",
+            "אין דרך"
+        ],
+        correct: 1,
+        explanation: "קלוד יכול לחפש בריג׳יסטרי הפלאגינים ולהראות לך מה זמין. ׳איזה חיבורים יש לתחום הניהול?׳ — תקבלי רשימה."
+    }
+];
+document.addEventListener('DOMContentLoaded', () => {
+    renderQuiz('quiz-container', 4, day4Quiz);
+    renderLessonNav('lesson-nav', 4);
+});
+</script>
+
+</body>
+</html>

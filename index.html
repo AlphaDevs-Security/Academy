@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מאפס לגיבור עם Claude · AlphaDevs Academy</title>
+<meta name="description" content="קורס מקצועי בן 7 ימים שילמד אותך לעבוד עם Claude Cowork מהבסיס ועד לבניית אג׳נטים, אוטומציות ופרויקטים מתקדמים.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='50%25' stop-color='%238b5cf6'/%3E%3Cstop offset='100%25' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Heebo,sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- Top Bar -->
+<header class="topbar">
+    <div class="container topbar-inner">
+        <a href="index.html" class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-name">
+                <b>AlphaDevs Academy</b>
+                <span data-i18n="brand.subtitle">From Zero to Hero with Claude</span>
+            </div>
+        </a>
+        <div class="topbar-actions">
+            <div class="progress-pill" id="progress-pill"><span class="dot"></span> 0/7 ימים · 0%</div>
+            <button class="btn btn-ghost btn-sm" onclick="resetProgress()" title="איפוס התקדמות" data-i18n="nav.reset_progress">איפוס</button>
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-eyebrow">
+            <span class="sparkle">✨</span>
+            <span data-i18n="index.eyebrow">קורס מקצועי · 7 ימים · עברית</span>
+        </div>
+        <h1><span data-i18n="index.title">מאפס לגיבור</span><br><span data-i18n="index.title_2">עם Claude Cowork</span></h1>
+        <p class="hero-sub" data-i18n="index.subtitle">הקורס המלא ביותר ללמידת עבודה עם Claude — מצ׳אט פשוט ועד בניית אג׳נטים, אוטומציות ופרויקטים מתקדמים. נבנה במיוחד עבור משתמשות ומשתמשים שרוצים לקפוץ קדימה בעבודה היומיומית.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="days/day1.html" class="btn btn-primary btn-lg" data-i18n="index.cta_start">התחילי את הקורס ←</a>
+            <a href="#program" class="btn btn-secondary btn-lg" data-i18n="index.cta_program">צפי בתוכנית הקורס</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-num">7</div>
+                <div class="stat-label" data-i18n="index.stat_days">ימי לימוד מובנים</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">32+</div>
+                <div class="stat-label" data-i18n="index.stat_lessons">שיעורים מעשיים</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">7</div>
+                <div class="stat-label" data-i18n="index.stat_quizzes">מבחני סיכום</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">∞</div>
+                <div class="stat-label" data-i18n="index.stat_practice">תרגול חי במחשב שלך</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What You'll Learn -->
+<section class="container">
+    <div class="section-title">
+        <div>
+            <span class="label" data-i18n="index.what_label">מה תרכשי בקורס</span>
+            <h2 data-i18n="index.what_title">כשתסיימי את הקורס תהיי מסוגלת ל...</h2>
+        </div>
+    </div>
+    <div class="compare-grid">
+        <div class="compare-card icon-blue">
+            <div class="compare-icon">💬</div>
+            <h4 data-i18n="index.what_chat">לדבר עם קלוד כמו עם עמית</h4>
+            <p data-i18n="index.what_chat_desc">תכתבי פרומפטים שמביאים תשובות מדויקות בפעם הראשונה — בלי לבזבז זמן.</p>
+        </div>
+        <div class="compare-card icon-purple">
+            <div class="compare-icon">📑</div>
+            <h4 data-i18n="index.what_docs">ליצור מסמכים מקצועיים</h4>
+            <p data-i18n="index.what_docs_desc">Word, Excel, PDF, מצגות — כולם בלחיצת כפתור, מעוצבים ברמה גבוהה.</p>
+        </div>
+        <div class="compare-card icon-pink">
+            <div class="compare-icon">🔌</div>
+            <h4 data-i18n="index.what_connect">לחבר את כל הכלים שלך</h4>
+            <p data-i18n="index.what_connect_desc">Gmail, Calendar, Drive, Monday — קלוד מתחיל לעבוד עם המערכות שלך.</p>
+        </div>
+        <div class="compare-card icon-green">
+            <div class="compare-icon">🤖</div>
+            <h4 data-i18n="index.what_agents">לבנות אג׳נטים אישיים</h4>
+            <p data-i18n="index.what_agents_desc">תכיני עוזרים מותאמים שעובדים בלילה כשאת ישנה, ושולחים תקציר בבוקר.</p>
+        </div>
+        <div class="compare-card icon-orange">
+            <div class="compare-icon">⏰</div>
+            <h4 data-i18n="index.what_schedule">לתזמן משימות חוזרות</h4>
+            <p data-i18n="index.what_schedule_desc">בריפים יומיים, התראות מתפרצות, דוחות שבועיים — הכל אוטומטי.</p>
+        </div>
+        <div class="compare-card icon-blue">
+            <div class="compare-icon">🧠</div>
+            <h4 data-i18n="index.what_memory">להשתמש בזיכרון לטווח ארוך</h4>
+            <p data-i18n="index.what_memory_desc">קלוד יזכור את ההעדפות שלך, הפרויקטים, וההקשר — לאורך כל השיחות.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Program (the 7 days) -->
+<section class="container" id="program">
+    <div class="section-title">
+        <div>
+            <span class="label" data-i18n="index.program_label">תוכנית הקורס</span>
+            <h2 data-i18n="index.program_title">7 ימים. כל יום מבחן. בסוף — תעודת סיום.</h2>
+            <p class="desc" data-i18n="index.program_desc">כל יום בנוי משילוב של תיאוריה קצרה, דוגמאות חיות, תרגול במחשב שלך, ומבחן סיכום שמשחרר את היום הבא. צריך 70% כדי לעבור.</p>
+        </div>
+    </div>
+    <div class="days-grid" id="days-grid">
+        <!-- Cards rendered by app.js -->
+    </div>
+</section>
+
+<!-- Methodology -->
+<section style="background:linear-gradient(135deg,#f5f3ff 0%,#fdf2f8 100%);padding:80px 0;margin-top:40px;">
+    <div class="container">
+        <div class="section-title" style="margin-top:0;">
+            <div>
+                <span class="label" data-i18n="index.method_label">המתודולוגיה שלנו</span>
+                <h2 data-i18n="index.method_title">איך הקורס בנוי כדי שבאמת תלמדי</h2>
+            </div>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-body">
+                    <h4 data-i18n="index.method_1_title">הסבר ברור — בלי ז׳רגון מיותר</h4>
+                    <p data-i18n="index.method_1_desc">כל מושג מוסבר בעברית פשוטה, עם דוגמאות מהחיים. אין צורך בידע טכני קודם.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-body">
+                    <h4 data-i18n="index.method_2_title">תרגול מעשי — את עושה, לא רק קוראת</h4>
+                    <p data-i18n="index.method_2_desc">בכל שיעור יש תרגול שאת מבצעת בקלוד שלך. למידה אמיתית מגיעה מעשייה.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-body">
+                    <h4 data-i18n="index.method_3_title">מבחן סיכום בכל יום</h4>
+                    <p data-i18n="index.method_3_desc">לא דקורציה — מבחן אמיתי של 5-7 שאלות. בלי 70% — אי אפשר לעבור הלאה.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-body">
+                    <h4 data-i18n="index.method_4_title">פרויקט סיום אמיתי</h4>
+                    <p data-i18n="index.method_4_desc">ביום השביעי תבני אג׳נט שלך, מתוזמן, מחובר לכלים — מהתחלה ועד הסוף.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certificate banner (shown only when all days complete) -->
+<section id="certificate-banner" class="container" style="padding:60px 0 0;display:none;">
+    <div style="background:linear-gradient(135deg,#1e1b4b 0%,#4c1d95 50%,#831843 100%);border-radius:24px;padding:50px 40px;text-align:center;color:white;box-shadow:0 30px 60px rgba(76,29,149,0.3);position:relative;overflow:hidden;">
+        <div style="font-size:4rem;margin-bottom:14px;">🎓</div>
+        <h2 style="color:white;margin-bottom:12px;" data-i18n="index.cert_banner_title">סיימת את הקורס!</h2>
+        <p style="color:rgba(255,255,255,0.9);font-size:1.1rem;margin-bottom:28px;max-width:520px;margin-inline:auto;" data-i18n="index.cert_banner_desc">כל 7 הימים הושלמו, כל המבחנים עברו בהצלחה. הגיע הזמן לקבל את התעודה שלך.</p>
+        <a href="certificate.html" class="btn btn-lg" style="background:white;color:var(--brand-700);box-shadow:0 10px 30px rgba(0,0,0,0.2);" data-i18n="index.cert_banner_btn">צפי בתעודת הסיום 🏆</a>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="container" style="padding:80px 0;text-align:center;">
+    <div style="max-width:680px;margin:0 auto;">
+        <h2 style="margin-bottom:18px;" data-i18n="index.cta_final_title">מוכנה להתחיל?</h2>
+        <p class="lead" style="margin-bottom:30px;" data-i18n="index.cta_final_desc">היום הראשון לוקח כ-40 דקות. בסוף השבוע תהיי במקום אחר לגמרי.</p>
+        <a href="days/day1.html" class="btn btn-primary btn-lg" data-i18n="index.cta_final_btn">בואי נתחיל ביום 1 ←</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-brand">
+            <div class="brand-logo" style="width:24px;height:24px;font-size:0.8rem;">A</div>
+            AlphaDevs Academy
+        </div>
+        <p data-i18n="footer.built_with_love">נבנה באהבה עבור הצוות. © 2026 AlphaDevs · כל הזכויות שמורות.</p>
+    </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+// Show certificate banner if all days complete
+document.addEventListener('DOMContentLoaded', () => {
+    const p = loadProgress();
+    if (COURSE_STRUCTURE.every(d => p.completedDays.includes(d.num))) {
+        document.getElementById('certificate-banner').style.display = 'block';
+    }
+});
+</script>
+</body>
+</html>

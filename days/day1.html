@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יום 1: יסודות הצ׳אט · AlphaDevs Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='50%25' stop-color='%238b5cf6'/%3E%3Cstop offset='100%25' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Heebo,sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body id="top" class="gated">
+
+<header class="topbar">
+    <div class="container topbar-inner">
+        <a href="../index.html" class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-name">
+                <b>AlphaDevs Academy</b>
+                <span data-i18n="day1.day_of_total">יום 1 מתוך 7</span>
+            </div>
+        </a>
+        <div class="topbar-actions">
+            <div class="progress-pill" id="progress-pill"><span class="dot"></span> טוען...</div>
+            <a href="../index.html" class="btn btn-ghost btn-sm" data-i18n="nav.back_to_course">← חזרה לקורס</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="lesson-shell">
+        <!-- Sidebar TOC -->
+        <aside class="lesson-sidebar">
+            <h4 data-i18n="lesson.toc_label">תוכן היום</h4>
+            <ul class="toc-list">
+                <li><a href="#intro" class="active"><span class="toc-num">1</span><span data-i18n="day1.toc_intro">ברוכה הבאה ל-Cowork</span></a></li>
+                <li><a href="#first-chat"><span class="toc-num">2</span><span data-i18n="day1.toc_first_chat">השיחה הראשונה</span></a></li>
+                <li><a href="#prompt-anatomy"><span class="toc-num">3</span><span data-i18n="day1.toc_prompt_anatomy">אנטומיה של פרומפט טוב</span></a></li>
+                <li><a href="#when-claude"><span class="toc-num">4</span><span data-i18n="day1.toc_when_claude">מתי לפנות לקלוד</span></a></li>
+                <li><a href="#quiz"><span class="toc-num">★</span><span data-i18n="day1.toc_quiz">מבחן יום 1</span></a></li>
+            </ul>
+        </aside>
+
+        <!-- Main -->
+        <main class="lesson-main">
+            <header class="lesson-header">
+                <span class="lesson-eyebrow" data-i18n="day1.lesson_eyebrow">יום 1 · 40 דקות · רמה: בסיסית</span>
+                <h1 data-i18n="day1.lesson_title">יסודות הצ׳אט עם Cowork</h1>
+                <p class="lesson-subtitle" data-i18n="day1.lesson_subtitle">היום נתחיל מההתחלה. נבין מה זה Cowork, איך לדבר עם קלוד נכון, ומה הופך פרומפט אחד למוצלח ואחר לכישלון.</p>
+                <div class="lesson-progress">
+                    <div class="bar"><div class="bar-fill" style="width:14%;"></div></div>
+                    <div class="progress-text" data-i18n="day1.day_of_total">יום 1 מתוך 7</div>
+                </div>
+
+                <!-- Time Plan Bar -->
+                <div class="lesson-time-bar">
+                    <div class="time-block"><div class="num">5'</div><div class="label" data-i18n="common.warmup">חימום</div></div>
+                    <div class="time-block"><div class="num">50'</div><div class="label" data-i18n="common.lessons">שיעורים</div></div>
+                    <div class="time-block"><div class="num">30'</div><div class="label" data-i18n="common.exercise">תרגיל</div></div>
+                    <div class="time-block"><div class="num">20'</div><div class="label" data-i18n="common.case_study">מקרה בוחן</div></div>
+                    <div class="time-block"><div class="num">15'</div><div class="label" data-i18n="common.workbook">חוברת עבודה</div></div>
+                    <div class="time-block"><div class="num">30'</div><div class="label" data-i18n="common.bonus">בונוס</div></div>
+                    <div class="time-block total"><div class="num">2.5 <span data-i18n="common.hours_short">ש׳</span></div><div class="label" data-i18n="common.total">סך הכל</div></div>
+                </div>
+            </header>
+
+            <!-- Intro Video -->
+            <div class="video-block">
+                <div class="video-frame">
+                    <div class="video-play-btn"></div>
+                </div>
+                <div class="video-meta">
+                    <span class="video-title">🎬 וידאו פתיחה: מה תלמדי היום</span>
+                    <span class="video-duration">⏱ 4:30</span>
+                </div>
+                <div class="video-placeholder-note">
+                    📹 <strong>הקלטת וידאו תיווסף בקרוב.</strong> בינתיים — קראי את התוכן הכתוב למטה. הוא מכיל את אותו המידע במלואו, רק בפורמט קריאה.
+                </div>
+            </div>
+
+            <!-- Warmup -->
+            <section class="warmup">
+                <div class="warmup-header">
+                    <div class="warmup-icon">🔥</div>
+                    <div>
+                        <span class="warmup-tag">חימום · 5 דקות</span>
+                        <h3>לפני שמתחילים — תרגיל קצר של מודעות</h3>
+                    </div>
+                </div>
+                <p>חשבי על <strong>משימה אחת</strong> בעבודה שלך שאת עושה כל שבוע (או יותר) ולוקחת לפחות שעה. כתבי אותה במספר משפטים — מה את עושה, באיזה כלי, וכמה זמן זה לוקח. אנחנו נחזור לזה בסוף היום.</p>
+                <textarea class="warmup-input" data-qkey="day1-warmup" placeholder="המשימה שלי ש-AI יכל לעזור לי איתה היא..."></textarea>
+            </section>
+
+            <!-- Section 1: Intro -->
+            <section class="section" id="intro">
+                <h2><span class="section-num">1</span>ברוכה הבאה ל-Cowork</h2>
+                <p>אם את קוראת את זה, סימן שהורדת את Claude Cowork למחשב — מזל טוב, את עומדת להכיר את אחד הכלים העוצמתיים שיש היום בעולם. אבל לפני שמתחילים — בואי נבין מה בדיוק יש לפנינו.</p>
+
+                <h3>מה זה Claude?</h3>
+                <p>Claude הוא מודל שפה מתקדם של חברת Anthropic — בינה מלאכותית שיכולה לקרוא, לכתוב, להבין ולחשוב. תחשבי עליו כעל עוזר אישי שלמד את כל האינטרנט (כמעט), ויודע להתבטא בעברית מצוינת.</p>
+
+                <h3>מה זה Cowork?</h3>
+                <p>Cowork זו אפליקציית הדסקטופ של Claude — לא רק צ׳אט בדפדפן. ההבדל המהותי: Cowork יכולה <strong>לעבוד עם הקבצים שלך, להפעיל אפליקציות, להתחבר לכלים שלך</strong>, ולבצע משימות אמיתיות במקום רק לתת לך עצות.</p>
+
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">💻</div>
+                        <h4>גישה למחשב שלך</h4>
+                        <p>קלוד יכול לקרוא, לכתוב, ולערוך קבצים בתיקיות שאת מאפשרת — ממש כמו עוזר שיושב לידך.</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">🔧</div>
+                        <h4>הפעלת כלים</h4>
+                        <p>סקילים, פלאגינים, MCPs — כלים שמרחיבים את היכולות שלו לדברים ספציפיים (כמו יצירת Excel או שליחת מייל).</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">⚡</div>
+                        <h4>זיכרון מתמשך</h4>
+                        <p>Cowork זוכרת מה דיברתן בעבר — ההעדפות, הפרויקטים, ההקשר. לא צריך לחזור על הכל בכל פעם.</p>
+                    </div>
+                </div>
+
+                <div class="callout callout-tip">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-body">
+                        <div class="callout-title">חשוב להבין</div>
+                        <p>קלוד הוא כלי. הוא לא קורא מחשבות, הוא לא יודע מה לא אמרת לו, והוא לא תמיד צודק. ככל שתלמדי לתקשר איתו טוב יותר — כך תקבלי תוצאות טובות יותר. זה בדיוק מה שלומדים בקורס הזה.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: First Chat -->
+            <section class="section" id="first-chat">
+                <h2><span class="section-num">2</span>השיחה הראשונה</h2>
+                <p>נתחיל פשוט. פתחי את Cowork במחשב שלך. את אמורה לראות תיבת טקסט. תכתבי שם משהו וקלוד יענה. <strong>זהו זה</strong>. זה הבסיס.</p>
+
+                <h3>תרגול ראשון</h3>
+                <div class="practice-box">
+                    <span class="practice-tag">תרגול בקלוד שלך</span>
+                    <h4>🎯 שלום ראשון</h4>
+                    <p>פתחי את Cowork וכתבי בדיוק את הפרומפט הזה:</p>
+                    <div class="practice-prompt">
+                        שלום! קוראים לי [השם שלך]. אני בקורס הראשון שלי על Cowork. מה ההבדל בינך לבין צ׳אט בדפדפן רגיל?
+                    </div>
+                    <p style="margin-top:14px;">קראי את התשובה. שימי לב איך קלוד מסביר את עצמו, ואיך הטון שלו ידידותי. עכשיו תשאלי שאלת המשך — כל מה שמסקרן אותך.</p>
+                </div>
+
+                <h3>שלוש פעולות שכדאי לדעת מההתחלה</h3>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h4>שיחה חדשה (New Chat)</h4>
+                            <p>כשאת מתחילה נושא חדש, תמיד פתחי שיחה חדשה. אם תדברי על 5 נושאים שונים באותה שיחה, קלוד יתבלבל. שיחה אחת = נושא אחד.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h4>עצירה (Stop)</h4>
+                            <p>אם קלוד התחיל לכתוב משהו לא נכון או ארוך מדי — את לא חייבת לחכות. יש כפתור עצירה. עצרי, תקני את הפרומפט, ותתחילי שוב.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h4>שינוי הודעה (Edit)</h4>
+                            <p>אם הבנת אחרי שלחת שאת רוצה לשאול אחרת — אפשר לערוך את ההודעה האחרונה שלך וקלוד יענה מחדש. לא צריך להתחיל מאפס.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">⚠️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">טעות נפוצה של מתחילות</div>
+                        <p>הרבה אנשים מתייחסים לקלוד כמו ל-Google. שואלים שאלה קצרה ומקבלים תשובה לא מספיק טובה. קלוד עובד הכי טוב כשנותנים לו <strong>הקשר</strong>. ככל שתסבירי לו יותר — מי את, מה את עושה, מה התוצאה הרצויה — כך התשובה תהיה רלוונטית ומדויקת יותר.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Prompt Anatomy -->
+            <section class="section" id="prompt-anatomy">
+                <h2><span class="section-num">3</span>אנטומיה של פרומפט טוב</h2>
+                <p>פרומפט = ההודעה שאת שולחת לקלוד. זה הכלי המרכזי שלך. בואי נראה את ההבדל בין פרומפט גרוע לפרומפט מצוין:</p>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">❌</div>
+                    <div class="callout-body">
+                        <div class="callout-title">פרומפט חלש</div>
+                        <p style="font-style:italic;">"תכתוב לי מייל ללקוח"</p>
+                        <p style="margin-top:8px;font-size:0.92rem;">קלוד יכול לכתוב הכל. הוא לא יודע על איזה לקוח, מה להגיד, באיזה טון, ולמה. התוצאה תהיה גנרית.</p>
+                    </div>
+                </div>
+
+                <div class="callout callout-success">
+                    <div class="callout-icon">✅</div>
+                    <div class="callout-body">
+                        <div class="callout-title">פרומפט חזק</div>
+                        <p style="font-style:italic;">"תכתוב לי מייל קצר וידידותי לדנה לוי, לקוחה ותיקה. אני רוצה לעדכן אותה שהמוצר שלה יגיע ביום שלישי במקום שני (יש עיכוב מהספק). להציע פיצוי קטן (10% הנחה על הזמנה הבאה). הטון - אישי, להתנצל אבל בלי דרמה."</p>
+                        <p style="margin-top:8px;font-size:0.92rem;">עכשיו קלוד יודע בדיוק מה לעשות. התוצאה תהיה קרובה מאוד למה שרצית.</p>
+                    </div>
+                </div>
+
+                <h3>5 רכיבי הזהב של פרומפט</h3>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h4>הקשר (Context)</h4>
+                            <p>מי את? מה החברה? מה הסיטואציה? קלוד צריך להבין את העולם שבו את חיה.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h4>המשימה (Task)</h4>
+                            <p>מה בדיוק את רוצה שיעשה? "תכתוב", "תסכם", "תנתח", "תכין". פועל ברור.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h4>פרטים (Specifics)</h4>
+                            <p>אורך, פורמט, טון, קהל יעד, אילוצים. ככל שיותר פרטים — יותר דיוק.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-body">
+                            <h4>דוגמה (Example) — אם רלוונטי</h4>
+                            <p>"כמו המייל ששלחתי בשבוע שעבר", או "בסגנון של הדף הזה". דוגמה שווה אלף הסברים.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-body">
+                            <h4>תוצאה רצויה (Output)</h4>
+                            <p>"תן לי 3 גרסאות", "ככה: כותרת, פסקה, סיום עם CTA", "בעברית, 200 מילים".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">תרגול</span>
+                    <h4>📝 בנייה של פרומפט מצוין</h4>
+                    <p>חשבי על משימה אמיתית מהעבודה שלך — משהו שאת עושה לפעמים ולוקח זמן. עכשיו כתבי פרומפט שמכיל את כל 5 הרכיבים שלמעלה. שלחי אותו לקלוד וראי את התוצאה.</p>
+                    <p style="margin-top:14px;"><strong>טיפ:</strong> אם התוצאה לא מספקת — אל תיכנעי. תני לו פידבק: "טוב, אבל קצר מדי" או "הטון יותר מדי רשמי, רוצה משהו חברי יותר". זה בדיוק כמו לעבוד עם עוזר אנושי.</p>
+                </div>
+
+                <div class="callout callout-pro">
+                    <div class="callout-icon">⭐</div>
+                    <div class="callout-body">
+                        <div class="callout-title">טריק של פרו</div>
+                        <p>אם את לא בטוחה איך לכתוב פרומפט טוב — בקשי מקלוד עזרה! "אני רוצה לעשות X. מה השאלות שאתה צריך לדעת כדי לעזור לי הכי טוב?". קלוד יחזור עם רשימת שאלות, ואת תוכלי לענות עליהן. תקבלי תוצאה הרבה יותר מדויקת.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: When Claude -->
+            <section class="section" id="when-claude">
+                <h2><span class="section-num">4</span>מתי לפנות לקלוד (ומתי לא)</h2>
+                <p>קלוד הוא כלי מצוין — אבל לא לכל דבר. בואי נחדד מתי שווה לפנות אליו ומתי עדיף משהו אחר.</p>
+
+                <h3>קלוד מצוין ב:</h3>
+                <ul>
+                    <li><strong>כתיבה</strong> — מיילים, מסמכים, סיכומים, פוסטים, תסריטים</li>
+                    <li><strong>ניתוח</strong> — קריאת מסמכים ארוכים, השוואה בין אופציות, יצירת תובנות</li>
+                    <li><strong>חשיבה לאט ולעומק</strong> — תכנון, אסטרטגיה, פתרון בעיות מורכבות</li>
+                    <li><strong>למידה</strong> — הסבר על נושאים חדשים, תרגום, פירוש</li>
+                    <li><strong>יצירת קבצים</strong> — Excel, Word, PDF, מצגות, קוד</li>
+                    <li><strong>אוטומציה</strong> — ביצוע משימות חוזרות במקומך</li>
+                </ul>
+
+                <h3>קלוד פחות מתאים ל:</h3>
+                <ul>
+                    <li><strong>חיפוש מידע עדכני בזמן אמת</strong> — מחיר מניה כרגע, חדשות מהדקה האחרונה (אבל יש לו חיפוש באינטרנט שמסייע)</li>
+                    <li><strong>החלטות עם השלכות חוקיות או רפואיות מחייבות</strong> — תמיד תאשרי עם איש מקצוע</li>
+                    <li><strong>משימות שדורשות יד אנושית פיזית</strong> — לא, הוא לא יוכל להוציא לך מסמך מהמדפסת</li>
+                    <li><strong>פעולות פיננסיות אמיתיות</strong> — קלוד לא יבצע עסקה או יעביר כסף, גם אם תבקשי</li>
+                </ul>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">ℹ️</div>
+                    <div class="callout-body">
+                        <div class="callout-title">חוק האצבע: "האם זה יעלה לי 20 דקות לעשות לבד?"</div>
+                        <p>אם כן — תבקשי מקלוד. גם אם זה ייקח לך 5 דקות להסביר לו, חסכת 15. ואם המשימה חוזרת על עצמה — חסכת אותן בכל פעם.</p>
+                    </div>
+                </div>
+
+                <h3>סוגי בקשות נפוצות וניסוחים מומלצים</h3>
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">📧</div>
+                        <h4>מייל</h4>
+                        <p>"תכתוב מייל ל[נמען] בנושא [X]. מטרה: [Y]. טון: [Z]. אורך: [קצר/בינוני/ארוך]."</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">📊</div>
+                        <h4>ניתוח נתונים</h4>
+                        <p>"קח את הקובץ הזה, סכם מה הטרנדים העיקריים, וציין 3 תובנות שאני צריכה לפעול עליהן."</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">🧠</div>
+                        <h4>תכנון</h4>
+                        <p>"אני רוצה לעשות X. עזור לי לפרק לצעדים. שאל אותי את כל השאלות שצריך כדי לבנות תוכנית טובה."</p>
+                    </div>
+                    <div class="compare-card icon-green">
+                        <div class="compare-icon">📝</div>
+                        <h4>סיכום</h4>
+                        <p>"סכם את המסמך בעמוד אחד. הדגש את ה-3 הנקודות החשובות ביותר. הוסף המלצה לפעולה."</p>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <span class="practice-tag">תרגול מסכם</span>
+                    <h4>🎯 הפרומפט שלך לעבודה האמיתית</h4>
+                    <p>חשבי על משימה שאת עושה <strong>היום או מחר</strong> בעבודה. בני פרומפט שכולל הקשר, משימה, פרטים, ותוצאה רצויה. שלחי אותו לקלוד בקלוד שלך, וצפי בתוצאה.</p>
+                    <p style="margin-top:14px;">אם התוצאה לא טובה ב-100% — תני פידבק. תתעקשי. ככל שתתרגלי, כך הניסוחים שלך ישתפרו.</p>
+                </div>
+            </section>
+
+            <!-- ============ HANDS-ON EXERCISE ============ -->
+            <section class="exercise" id="exercise">
+                <div class="exercise-header">
+                    <div class="exercise-num">🎯</div>
+                    <div>
+                        <span class="exercise-tag">תרגיל מעשי · 30 דקות</span>
+                        <h3>בני פרומפט מנצח למשימה האמיתית שלך</h3>
+                        <div class="exercise-time">⏱ זמן משוער: 25-30 דקות בקלוד שלך</div>
+                    </div>
+                </div>
+
+                <div class="exercise-goal">
+                    <b>המטרה:</b> לקחת את המשימה שזיהית בחימום, ולבנות לה פרומפט שיביא תוצאה הרבה יותר טובה ממה שתקבלי בבקשה גנרית. בסוף התרגיל יהיה לך פרומפט מוכן שאפשר לחזור עליו בכל שבוע.
+                </div>
+
+                <div class="exercise-prompt-block">
+                    <pre>אני [תפקיד שלך, חברה, מה את עושה ביום-יום].
+
+אני צריכה עזרה ב-[המשימה שכתבת בחימום]. בדרך כלל זה לוקח לי [כמה זמן].
+
+לפני שתעזור לי — תשאל אותי 5 שאלות שצריך כדי לעשות את זה הכי טוב:
+- מה התוצאה הסופית שאני רוצה?
+- מה הקהל / הנמען?
+- מה הטון?
+- אילו אילוצים יש?
+- מה אסור לי לכלול?
+
+שאלה אחת בכל פעם, חכה לתשובה לפני הבאה.
+
+אחרי שתקבל את כל התשובות — תתחיל לעבוד.</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק פרומפט</button>
+                </div>
+
+                <div class="exercise-expected">
+                    <b>מה אמור לקרות:</b> AI ישאל אותך 5 שאלות ספציפיות. ענייני מילה במילה. אחרי שעניתי על כולן — התוצאה שהוא יחזיר תהיה איכותית פי 3-5 מבקשה גנרית. <strong>שמרי את הפרומפט הזה בקובץ — תשתמשי בו שוב ושוב.</strong>
+                </div>
+
+                <p style="margin-top:18px;font-weight:700;color:#065f46;">סמני לעצמך — מה עשית?</p>
+                <ul class="exercise-checklist">
+                    <li>פתחתי שיחה חדשה ב-Cowork (לא הוספתי לשיחה קיימת)</li>
+                    <li>הדבקתי את הפרומפט והתאמתי את החלקים בסוגריים מרובעים [...]</li>
+                    <li>עניתי על 5 השאלות בכנות (לא קיצרתי)</li>
+                    <li>קיבלתי תוצאה ראשונית, ונתתי לפחות סבב פידבק אחד</li>
+                    <li>שמרתי את הפרומפט המנצח בקובץ "ספריית פרומפטים" אישית</li>
+                </ul>
+            </section>
+
+            <!-- ============ CASE STUDY ============ -->
+            <section class="case-study" id="case-study">
+                <div class="case-study-header">
+                    <span class="case-study-tag">מקרה בוחן · 20 דקות</span>
+                    <h3>מקרה אמיתי: איך מנכ"לית הפכה את המייל-בוקר משעתיים ל-3 דקות</h3>
+                    <div class="case-study-meta">
+                        <span>👤 שרון · סמנכ"לית שיווק</span>
+                        <span>🏢 חברת SaaS B2B · 40 עובדים</span>
+                        <span>⏱ חיסכון: 100 שעות בשנה</span>
+                    </div>
+                </div>
+                <div class="case-study-body">
+                    <h4>מצב הפתיחה</h4>
+                    <p>שרון הייתה מבזבזת כל בוקר 60-90 דקות על דבר אחד: לעבור על תיבת המייל, לתעדף, לכתוב תשובות לדחופים, ולסדר את שאר היום בהתאם. היא ידעה שזה לא יעיל — אבל לא ידעה איך לעשות אחרת.</p>
+
+                    <h4>השלבים שנעשו (לפי סדר)</h4>
+                    <div class="case-study-timeline">
+                        <div class="step">
+                            <b>שלב 1 (10 דקות) — מיפוי המשימה</b>
+                            <span>שרון רשמה במשך שבוע מה היא בדיוק עושה כל בוקר. גילתה: 70% מהזמן הולך על "סינון" — לא על תוכן. רק 30% הוא תשובות אמיתיות.</span>
+                        </div>
+                        <div class="step">
+                            <b>שלב 2 (15 דקות) — בניית הפרומפט</b>
+                            <span>השתמשנו בדיוק בפרומפט מהתרגיל למעלה. AI שאל אותה: מי הנמענים החשובים? מה הקריטריון לדחיפות? איזה תשובות יכולות להיות אוטומטיות?</span>
+                        </div>
+                        <div class="step">
+                            <b>שלב 3 (5 דקות) — הרצה ראשונה</b>
+                            <span>שרון נתנה ל-AI גישה לתיבה. ביקשה לסכם 30 מיילים אחרונים לפי הקריטריונים שלה. תוצאה: רשימה של 5 דחופים אמיתיים, 8 שאפשר לדלג עליהם, 17 שאפשר לענות בהם בתבנית.</span>
+                        </div>
+                        <div class="step">
+                            <b>שלב 4 (פעם בשבוע, 3 דקות)</b>
+                            <span>בכל בוקר שני — שרון מריצה את הפרומפט. רואה את ה-5 הדחופים, מטפלת בהם. השאר — מטופלים אוטומטית או באיחור מבוקר.</span>
+                        </div>
+                    </div>
+
+                    <h4>הטעות שהיא כמעט עשתה</h4>
+                    <p>בהתחלה ניסתה ניסוח כללי: "תעבור על המייל ותגיד לי מה חשוב". התוצאה הייתה גרועה — AI לא יודע מה זה "חשוב" לה ספציפית. רק אחרי שעננה על 5 השאלות והגדירה <em>קריטריון אישי</em>, התוצאה הפכה לשימושית.</p>
+
+                    <div class="case-study-result">
+                        <b>התוצאה אחרי 30 יום:</b> 60-90 דקות יומיות הפכו ל-3-5 דקות. 100+ שעות חיסכון בשנה. שרון עוזבת את המשרד מוקדם בימי שני אחר הצהריים. הפרומפט הפך לתבנית שכל הצוות שלה משתמש בה היום.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ WORKBOOK ============ -->
+            <section class="workbook-card" id="workbook">
+                <div class="workbook-icon">📓</div>
+                <div class="workbook-body">
+                    <span class="workbook-tag">חוברת עבודה · 15 דקות</span>
+                    <h4>דפי עבודה מודפסים ליום 1</h4>
+                    <p>הורידי את חוברת העבודה — מילוי על דף, חזרה לחוברת בכל פעם שתרצי לבנות פרומפט חדש. כולל: גיליון מיפוי משימות, תבנית פרומפט מלאה, וקיר "ספריית הפרומפטים" שלך.</p>
+                </div>
+                <div class="workbook-actions">
+                    <a href="../Workbooks/workbook.html#day1" class="btn btn-primary btn-sm" target="_blank">📥 הורד PDF</a>
+                </div>
+            </section>
+
+            <!-- ============ BONUS CHALLENGE ============ -->
+            <section class="bonus" id="bonus">
+                <div class="bonus-header">
+                    <div class="bonus-icon">🚀</div>
+                    <div>
+                        <span class="bonus-tag">אתגר בונוס · 30 דקות (אופציונלי)</span>
+                        <h3>בני ספריית פרומפטים אישית ל-5 משימות שונות</h3>
+                    </div>
+                </div>
+                <p>אם הצלחת בתרגיל — קחי את זה צעד הלאה. תזהי 4 משימות נוספות שאת עושה באופן קבוע, ובני להן פרומפטים. עד סוף הקורס — יהיה לך מאגר של 30+ פרומפטים מוכחים.</p>
+
+                <div class="bonus-task">
+                    <pre>במקום לבנות 5 פרומפטים מאפס, השתמשי בטכניקה הזו:
+
+תני ל-AI את המשימות הבאות:
+1. [משימה 1 בקצרה]
+2. [משימה 2 בקצרה]
+3. [משימה 3 בקצרה]
+4. [משימה 4 בקצרה]
+5. [משימה 5 בקצרה]
+
+ובקשי: "בנה לי פרומפט מנצח לכל אחת. כל פרומפט יכלול:
+- הקשר ברור
+- משימה קונקרטית
+- 5 שאלות שאתה תשאל אותי לפני שתעבוד
+- פורמט תוצאה צפוי
+
+תכין את כל ה-5 ב-Markdown מסודר שאני יכולה להעתיק לקובץ."</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק את האתגר</button>
+                </div>
+
+                <p style="font-size:0.93rem;margin-top:14px;"><strong>טיפ של פרו:</strong> אחרי שיש לך 5 פרומפטים — שמרי אותם בקובץ Notes/Notion עם תיוג ברור. בעוד שבועיים תהיה לך מערכת שאת חוזרת אליה כל יום.</p>
+            </section>
+
+            <!-- ============ REFLECTION ============ -->
+            <section class="reflection" id="reflection">
+                <div class="reflection-header">
+                    <div class="reflection-icon">✍️</div>
+                    <div>
+                        <span class="reflection-tag">רפלקציה · 10 דקות</span>
+                        <h3>סגירת היום — מה לקחת איתך?</h3>
+                    </div>
+                </div>
+                <p style="font-size:0.95rem;">לפני שעוברים ליום הבא, שתי דקות לעצמך. הקלידי תשובות קצרות — זה נשמר במחשב שלך בלבד.</p>
+
+                <ol class="reflection-questions" style="counter-reset: ref-counter;">
+                    <li>
+                        <b>המשימה שזיהית בחימום — איך הרגיש לבנות לה פרומפט מנצח?</b>
+                        <textarea data-qkey="day1-r1" placeholder="לדוגמה: ׳הופתעתי כמה התוצאה שונה כשאני נותנת הקשר ספציפי...׳"></textarea>
+                    </li>
+                    <li>
+                        <b>איזה רכיב מהפרומפט (הקשר, משימה, פרטים, דוגמה, תוצאה) היה לך הכי קשה לנסח?</b>
+                        <textarea data-qkey="day1-r2" placeholder="הכי קשה לי היה..."></textarea>
+                    </li>
+                    <li>
+                        <b>אם תקדישי 30 דקות מחר לבניית פרומפטים נוספים — לאיזו משימה קודם?</b>
+                        <textarea data-qkey="day1-r3" placeholder="מחר אבנה פרומפט ל-..."></textarea>
+                    </li>
+                    <li>
+                        <b>מה הדבר הכי חשוב שלמדת היום שתרצי לזכור?</b>
+                        <textarea data-qkey="day1-r4" placeholder="הדבר הכי חשוב היום..."></textarea>
+                    </li>
+                </ol>
+
+                <div class="reflection-share">
+                    <b>💬 שתפי בקהילה (אופציונלי):</b> פרסמי בקבוצת WhatsApp של הקורס משפט אחד על המשימה ש-AI הולך לשנות לך השבוע. הקהילה שלנו תומכת אחת בשנייה — ואת מקבלת רעיונות מהאחרים.
+                </div>
+            </section>
+
+            <!-- Quiz -->
+            <section class="quiz-section" id="quiz">
+                <div id="quiz-container"></div>
+            </section>
+
+            <!-- Lesson Nav -->
+            <nav class="lesson-nav" id="lesson-nav"></nav>
+        </main>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-brand">
+            <div class="brand-logo" style="width:24px;height:24px;font-size:0.8rem;">A</div>
+            AlphaDevs Academy
+        </div>
+        <p>יום 1 מתוך 7 · © 2026 AlphaDevs</p>
+    </div>
+</footer>
+
+<meta name="i18n-incomplete" content="true">
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+const day1Quiz = [
+    {
+        q: "מה ההבדל העיקרי בין Cowork לבין צ׳אט של קלוד בדפדפן?",
+        options: [
+            "Cowork חינמית, הדפדפן בתשלום",
+            "Cowork יכולה לעבוד עם הקבצים שלך, להפעיל כלים, ולבצע משימות במחשב",
+            "אין הבדל מהותי, רק עיצוב",
+            "הדפדפן יותר חכם"
+        ],
+        correct: 1,
+        explanation: "Cowork היא אפליקציית דסקטופ שיכולה לקרוא, לכתוב ולערוך קבצים, להפעיל כלים, ולבצע משימות אמיתיות במחשב. בדפדפן זה רק צ׳אט."
+    },
+    {
+        q: "מה הבעיה המרכזית בפרומפט: ׳תכתוב לי מייל׳?",
+        options: [
+            "הוא קצר מדי בתווים",
+            "אין בו מספיק הקשר — קלוד לא יודע על מי, מה, ולמה",
+            "צריך להתחיל ב׳בבקשה׳",
+            "אסור להשתמש בעברית"
+        ],
+        correct: 1,
+        explanation: "פרומפט טוב כולל הקשר (מי הנמען, מה הסיטואציה), משימה ברורה, ופרטים על התוצאה הרצויה. בלי זה — התשובה תהיה גנרית."
+    },
+    {
+        q: "מה הם 5 הרכיבים של פרומפט מצוין?",
+        options: [
+            "שלום, נימוס, בקשה, תודה, להתראות",
+            "הקשר, משימה, פרטים, דוגמה, תוצאה רצויה",
+            "כותרת, פתיחה, גוף, סיום, חתימה",
+            "מי, מה, מתי, איפה, למה"
+        ],
+        correct: 1,
+        explanation: "החמישייה: הקשר (מי את ומה הסיטואציה), משימה (מה לעשות), פרטים (טון, אורך, פורמט), דוגמה (אופציונלי), ותוצאה רצויה (מה אמור לצאת)."
+    },
+    {
+        q: "מתי כדאי לפתוח שיחה חדשה (New Chat)?",
+        options: [
+            "כל בוקר",
+            "אף פעם — תמיד באותה שיחה",
+            "כשאת מתחילה נושא חדש לגמרי",
+            "רק כשהשיחה מתפצפצת"
+        ],
+        correct: 2,
+        explanation: "כל שיחה צריכה להיות מרוכזת בנושא אחד. אם תערבבי 5 נושאים באותה שיחה, קלוד יתבלבל ויאבד הקשר. שיחה אחת = נושא אחד."
+    },
+    {
+        q: "אם את לא יודעת איך לנסח פרומפט מורכב — מה הטריק?",
+        options: [
+            "להעתיק פרומפט מהאינטרנט",
+            "לבקש מקלוד שישאל אותך את השאלות שהוא צריך כדי לעזור הכי טוב",
+            "לוותר ולעשות לבד",
+            "לכתוב פרומפט ארוך מאוד עם הרבה מילים"
+        ],
+        correct: 1,
+        explanation: "טריק של מקצוענים: ׳אני רוצה לעשות X. מה השאלות שאתה צריך לדעת כדי לעזור לי הכי טוב?׳. קלוד יחזור עם שאלות, ותקבלי תוצאה מדויקת בהרבה."
+    },
+    {
+        q: "באיזה מקרה קלוד פחות מתאים?",
+        options: [
+            "כתיבת מייל",
+            "סיכום מסמך ארוך",
+            "ביצוע עסקה פיננסית אמיתית במקומך",
+            "תכנון אסטרטגי"
+        ],
+        correct: 2,
+        explanation: "קלוד לא יבצע עסקאות, יעביר כסף או ייצור פעולות פיננסיות בפועל — גם אם תבקשי. זה גבול מובנה לבטיחות."
+    },
+    {
+        q: "מה ההמלצה אם התשובה הראשונה של קלוד לא מספקת?",
+        options: [
+            "להתחיל מהתחלה בשיחה חדשה",
+            "לתת לקלוד פידבק ספציפי ולבקש שיתקן",
+            "לוותר על הכלי",
+            "לחכות 24 שעות"
+        ],
+        correct: 1,
+        explanation: "קלוד לומד מפידבק בתוך השיחה. ׳קצר מדי׳, ׳הטון רשמי מדי׳, ׳הוסף דוגמה׳ — כל אלה ישפרו את התשובה הבאה. כמו לעבוד עם עוזר אנושי."
+    }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderQuiz('quiz-container', 1, day1Quiz);
+    renderLessonNav('lesson-nav', 1);
+});
+</script>
+
+</body>
+</html>

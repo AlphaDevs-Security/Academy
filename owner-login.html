@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👑 Owner Login · AlphaDevs Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl;
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #831843 100%);
+    color: white; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 30px 20px;
+}
+.card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    padding: 50px 40px;
+    max-width: 540px; width: 100%;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.crown {
+    font-size: 4rem; margin-bottom: 16px;
+    filter: drop-shadow(0 10px 20px rgba(245,158,11,0.4));
+}
+.eyebrow {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(245,158,11,0.25), rgba(236,72,153,0.25));
+    border: 1px solid rgba(245,158,11,0.4);
+    color: #fbcfe8;
+    padding: 6px 16px; border-radius: 999px;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em;
+    margin-bottom: 18px;
+}
+h1 {
+    font-size: 2.2rem; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+    background: linear-gradient(135deg, #fbbf24 0%, #fbcfe8 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.lead { font-size: 1.05rem; opacity: 0.9; margin-bottom: 26px; line-height: 1.6; }
+
+.key-display {
+    background: rgba(0,0,0,0.4);
+    border: 1.5px dashed rgba(251,191,36,0.5);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 22px 0;
+    text-align: center;
+}
+.key-display .label {
+    font-size: 0.78rem; opacity: 0.6;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.key-display .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.6rem; font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #fbbf24;
+    direction: ltr;
+}
+
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 28px; }
+
+.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 24px; border-radius: 12px; font-weight: 700;
+    font-size: 0.95rem; cursor: pointer; transition: all 250ms;
+    border: none; font-family: inherit; text-decoration: none;
+}
+.btn-gold {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #78350f;
+    box-shadow: 0 10px 30px rgba(245,158,11,0.4);
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(245,158,11,0.55); }
+.btn-ghost {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.2); }
+
+.status {
+    margin-top: 24px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    display: none;
+    text-align: center;
+}
+.status.success {
+    background: rgba(16,185,129,0.15);
+    border: 1px solid rgba(16,185,129,0.3);
+    color: #6ee7b7;
+    display: block;
+}
+
+.divider {
+    margin: 28px 0;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+}
+
+.access-list {
+    text-align: right;
+    list-style: none;
+    padding: 0;
+    margin: 14px 0;
+}
+.access-list li {
+    padding: 10px 28px 10px 0;
+    position: relative;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.access-list li::before {
+    content: '✓';
+    position: absolute;
+    right: 0; top: 10px;
+    color: #6ee7b7;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+.access-list li:last-child { border-bottom: none; }
+
+.help {
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.82rem;
+    opacity: 0.7;
+}
+
+.url-box {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: #fbcfe8;
+    direction: ltr;
+    text-align: center;
+    cursor: pointer;
+    transition: background 200ms;
+}
+.url-box:hover { background: rgba(0,0,0,0.5); }
+
+.quick-nav {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px; margin: 16px 0;
+}
+.nav-link {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    text-decoration: none; color: white;
+    transition: all 200ms; cursor: pointer;
+    font-size: 0.92rem;
+}
+.nav-link:hover {
+    background: rgba(251,191,36,0.15);
+    border-color: rgba(251,191,36,0.4);
+    transform: translateY(-1px);
+}
+.nav-link .emoji { font-size: 1.2rem; flex-shrink: 0; }
+.nav-link .title { font-weight: 600; }
+.nav-link .day-num {
+    flex-shrink: 0;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: grid; place-items: center;
+    font-weight: 800; font-size: 0.95rem;
+}
+.days-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="crown">👑</div>
+    <span class="eyebrow">OWNER ACCESS</span>
+    <h1>שלום לאור</h1>
+    <p class="lead">זה הדף האישי שלך — לחיצה אחת ויש לך גישה מלאה לכל הקורסים, בכל מכשיר, ללא watermark וללא הגבלות.</p>
+
+    <div class="key-display">
+        <div class="label">המפתח האישי שלך</div>
+        <div class="value">AD-LL2680</div>
+    </div>
+
+    <ul class="access-list">
+        <li>גישה מלאה לכל הקורסים והשיעורים</li>
+        <li>אין watermark אישי על הדפים</li>
+        <li>אפשר להעתיק טקסט ולעשות screenshots</li>
+        <li>אין הגבלות anti-share</li>
+        <li>תג "OWNER" מופיע בפינה</li>
+    </ul>
+
+    <div class="btn-row">
+        <button class="btn btn-gold" onclick="installOwner()">⚡ הפעל ועבור לאינדקס</button>
+        <button class="btn btn-ghost" onclick="copyMagicUrl()">📋 העתק לינק קסם</button>
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <div class="divider"></div>
+
+    <h3 style="font-size:1.05rem;margin-bottom:14px;color:#fbcfe8;text-align:right;">⚡ קפיצה ישירה לכל דף (קליק אחד = פתיחה ללא modal)</h3>
+
+    <div class="quick-nav">
+        <a class="nav-link" data-target="README.html"><span class="emoji">📁</span><span class="title">אינדקס מרכזי</span></a>
+        <a class="nav-link" data-target="index.html"><span class="emoji">🏠</span><span class="title">דף הבית של הקורס</span></a>
+        <a class="nav-link" data-target="00-START-HERE.html"><span class="emoji">📋</span><span class="title">מסמך פעולות</span></a>
+        <a class="nav-link" data-target="Master-Plan/index.html"><span class="emoji">📊</span><span class="title">תכנית המאסטר</span></a>
+        <a class="nav-link" data-target="Landing-Pages/sales.html"><span class="emoji">🛒</span><span class="title">דף נחיתה ראשי</span></a>
+        <a class="nav-link" data-target="Lead-Magnet/landing.html"><span class="emoji">📨</span><span class="title">Lead Magnet</span></a>
+        <a class="nav-link" data-target="Lead-Magnet/pdf-content.html"><span class="emoji">📄</span><span class="title">PDF מתנה</span></a>
+        <a class="nav-link" data-target="Workbooks/workbook.html"><span class="emoji">📓</span><span class="title">חוברת עבודה</span></a>
+        <a class="nav-link" data-target="Marketing/linkedin-posts.md"><span class="emoji">💼</span><span class="title">15 פוסטים לינקדאין</span></a>
+        <a class="nav-link" data-target="Marketing/email-sequence.md"><span class="emoji">📧</span><span class="title">רצף 7 מיילים</span></a>
+        <a class="nav-link" data-target="Video-Scripts/all-scripts.md"><span class="emoji">🎬</span><span class="title">תסריטי וידאו</span></a>
+        <a class="nav-link" data-target="certificate.html"><span class="emoji">🎓</span><span class="title">תעודת סיום</span></a>
+    </div>
+
+    <div style="margin-top:24px;">
+        <h3 style="font-size:1rem;margin-bottom:10px;color:#fbcfe8;text-align:right;">📚 7 ימי הקורס</h3>
+        <div class="quick-nav days-grid">
+            <a class="nav-link day" data-target="days/day1.html"><span class="day-num">1</span><span class="title">יסודות הצ׳אט</span></a>
+            <a class="nav-link day" data-target="days/day2.html"><span class="day-num">2</span><span class="title">קבצים ומסמכים</span></a>
+            <a class="nav-link day" data-target="days/day3.html"><span class="day-num">3</span><span class="title">סקילים</span></a>
+            <a class="nav-link day" data-target="days/day4.html"><span class="day-num">4</span><span class="title">פלאגינים</span></a>
+            <a class="nav-link day" data-target="days/day5.html"><span class="day-num">5</span><span class="title">זיכרון</span></a>
+            <a class="nav-link day" data-target="days/day6.html"><span class="day-num">6</span><span class="title">אג׳נטים</span></a>
+            <a class="nav-link day" data-target="days/day7.html"><span class="day-num">7</span><span class="title">אוטומציה</span></a>
+        </div>
+    </div>
+
+    <div style="margin-top:18px;text-align:right;">
+        <div style="font-size:0.78rem;opacity:0.6;letter-spacing:0.06em;margin-bottom:6px;">לינק קסם — לסימנייה (bookmark)</div>
+        <div class="url-box" onclick="copyMagicUrl()" id="magic-url-display"></div>
+    </div>
+
+    <div class="help">
+        אם אבדת את המפתח — תפתח את הקובץ <code style="background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;">owner-login.html</code> בתיקיית הפרויקט. הוא תמיד שם.<br>
+        כדי לאפס גישה (לעבור למצב לקוח רגיל): פתח Console בדפדפן והרץ <code style="background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;direction:ltr;display:inline-block;">localStorage.clear()</code>
+    </div>
+</div>
+
+<script>
+const OWNER_KEY = 'AD-LL2680';
+const OWNER_EMAIL = 'lior@alphadevs.co';
+const OWNER_NAME = 'לאור לסרי';
+const STORAGE_KEY = 'alphadevs_academy_license_v1';
+
+function installOwner() {
+    storeOwnerCredentials();
+    const status = document.getElementById('status');
+    status.className = 'status success';
+    status.innerHTML = '✅ מחובר! מעביר אותך לאינדקס הקורסים תוך 2 שניות...';
+    setTimeout(() => {
+        window.location.href = 'README.html';
+    }, 2000);
+}
+
+function storeOwnerCredentials() {
+    const data = {
+        email: OWNER_EMAIL,
+        key: OWNER_KEY,
+        name: OWNER_NAME,
+        activatedAt: new Date().toISOString(),
+        owner: true
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+// Wire up all "nav-link" elements: clicking installs credentials and navigates
+function wireNavLinks() {
+    document.querySelectorAll('.nav-link[data-target]').forEach(link => {
+        const target = link.getAttribute('data-target');
+        link.setAttribute('href', target);
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            storeOwnerCredentials();
+            window.location.href = target;
+        });
+    });
+}
+
+function copyMagicUrl() {
+    const baseUrl = window.location.origin + window.location.pathname.replace('owner-login.html', 'README.html');
+    const magicUrl = baseUrl + '?owner=' + OWNER_KEY;
+    navigator.clipboard.writeText(magicUrl).then(() => {
+        const status = document.getElementById('status');
+        status.className = 'status success';
+        status.innerHTML = '📋 הלינק הועתק! שמור אותו ב-bookmarks או שלח לעצמך במייל.';
+    }).catch(() => {
+        prompt('העתק את הלינק:', magicUrl);
+    });
+}
+
+// Show the magic URL on load + wire up nav links
+document.addEventListener('DOMContentLoaded', () => {
+    const baseUrl = window.location.href.replace('owner-login.html', 'README.html');
+    const magicUrl = baseUrl + '?owner=' + OWNER_KEY;
+    document.getElementById('magic-url-display').textContent = magicUrl;
+    wireNavLinks();
+});
+</script>
+
+</body>
+</html>

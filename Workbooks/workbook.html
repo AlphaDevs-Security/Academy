@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>חוברת העבודה · AlphaDevs Academy · מאפס לגיבור עם AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+@page { size: A4; margin: 18mm 14mm; }
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl;
+    color: #0f172a; line-height: 1.65; background: white;
+    font-size: 11pt;
+}
+.page-cover {
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #831843 100%);
+    color: white; padding: 80px 50px; min-height: 95vh;
+    display: flex; flex-direction: column; justify-content: space-between;
+    page-break-after: always;
+}
+.cover-logo {
+    width: 70px; height: 70px; border-radius: 16px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+    display: grid; place-items: center; color: white;
+    font-weight: 900; font-size: 2rem; margin-bottom: 30px;
+}
+.cover h1 {
+    font-size: 3rem; font-weight: 900; line-height: 1.1; margin-bottom: 18px;
+    background: linear-gradient(135deg, white 0%, #fbcfe8 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cover .sub { font-size: 1.3rem; opacity: 0.92; margin-bottom: 12px; }
+.cover .desc { font-size: 1rem; opacity: 0.78; max-width: 480px; }
+
+.day-page {
+    padding: 30px 25px;
+    page-break-before: always;
+    min-height: 95vh;
+}
+.day-page:first-of-type { page-break-before: auto; }
+.day-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 16px; border-bottom: 3px solid #6366f1;
+    margin-bottom: 28px;
+}
+.day-num-tag {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white; padding: 8px 18px; border-radius: 999px;
+    font-size: 1rem; font-weight: 900; letter-spacing: 0.05em;
+}
+.day-page h2 {
+    font-size: 1.7rem; font-weight: 800; margin: 0;
+    color: #0f172a; line-height: 1.2;
+}
+.day-page h3 {
+    font-size: 1.15rem; font-weight: 700; margin: 24px 0 10px;
+    color: #4338ca;
+    display: flex; align-items: center; gap: 10px;
+}
+.day-page h3::before {
+    content: ''; width: 6px; height: 22px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 3px;
+}
+.day-page p { color: #475569; margin-bottom: 12px; font-size: 0.95rem; }
+.day-page strong { color: #0f172a; }
+
+.input-area {
+    margin: 14px 0;
+    page-break-inside: avoid;
+}
+.input-area .label {
+    font-size: 0.88rem; font-weight: 700; color: #1e293b;
+    margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+}
+.input-area .label::before {
+    content: '✏️'; font-size: 0.95rem;
+}
+.input-line {
+    border-bottom: 1.5px solid #cbd5e1;
+    height: 32px;
+    margin-bottom: 6px;
+}
+.input-box {
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px 14px;
+    min-height: 80px;
+    background: #fafbff;
+    margin-bottom: 8px;
+}
+.input-box.tall { min-height: 120px; }
+.input-box.tall-x { min-height: 160px; }
+
+.checklist {
+    list-style: none; padding: 0; margin: 12px 0;
+}
+.checklist li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    font-size: 0.94rem;
+    color: #334155;
+    border-bottom: 1px dashed #e2e8f0;
+}
+.checklist li::before {
+    content: '☐';
+    position: absolute; right: 0; top: 6px;
+    font-size: 1.3rem; color: #6366f1; font-weight: 700;
+}
+.checklist li:last-child { border-bottom: none; }
+
+.callout {
+    background: #fef3c7;
+    border-right: 3px solid #f59e0b;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.92rem;
+    color: #78350f;
+}
+.callout b { color: #78350f; }
+
+.callout-tip {
+    background: #ede9fe;
+    border-right: 3px solid #8b5cf6;
+    color: #5b21b6;
+}
+.callout-tip b { color: #5b21b6; }
+
+.template-box {
+    background: #1e293b;
+    color: #f8fafc;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.86rem;
+    line-height: 1.6;
+    margin: 14px 0;
+    direction: rtl;
+}
+.template-box pre { white-space: pre-wrap; color: #fbcfe8; }
+.template-box .label {
+    color: #94a3b8; font-size: 0.78rem;
+    margin-bottom: 8px; letter-spacing: 0.06em;
+}
+
+.day-meta {
+    display: flex; gap: 18px; flex-wrap: wrap;
+    margin: 16px 0 24px;
+    padding: 12px 16px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.summary-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin: 16px 0;
+}
+@media print { .summary-row { break-inside: avoid; } }
+
+.col-tip {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 0.88rem;
+    color: #065f46;
+}
+.col-tip b { color: #065f46; }
+
+.print-instruction {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 0.85rem;
+    color: #78350f;
+}
+@media print { .print-instruction { display: none; } }
+
+table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+table th { background: #f1f5f9; padding: 10px; text-align: right; font-size: 0.88rem; }
+table td { padding: 10px; border-bottom: 1px solid #e2e8f0; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="page-cover">
+    <div>
+        <div class="cover-logo">A</div>
+        <div style="font-size:0.85rem;opacity:0.7;letter-spacing:0.1em;margin-bottom:14px;">ALPHADEVS ACADEMY</div>
+        <h1>חוברת העבודה<br>שלך</h1>
+        <div class="sub">מאפס לגיבור עם AI · 7 ימים · 7 חוברות יום</div>
+        <div class="desc">חוברת עבודה אישית עם דפי תרגול, תבניות, ומקום לתשובות לכל שיעור בקורס. הדפיסי, מלאי, חזרי שוב.</div>
+    </div>
+    <div style="font-size:0.85rem;opacity:0.7;">
+        <b>לאור לסרי</b><br>
+        AlphaDevs Academy · © 2026
+    </div>
+</div>
+
+<!-- HOW TO USE -->
+<div class="day-page">
+    <h2 style="margin-bottom:16px;">איך להשתמש בחוברת הזו</h2>
+    <div class="print-instruction">
+        💡 <strong>הדפיסי את החוברת ב-A4 דו-צדדי.</strong> כל יום מתחיל בעמוד חדש. את לא חייבת להדפיס את הכל — אפשר גם למלא דיגיטלית בעורך PDF.
+    </div>
+
+    <h3>3 כללי הזהב</h3>
+    <ol style="margin:14px 24px;line-height:2;">
+        <li><strong>מילוי בכתב יד עדיף.</strong> מחקרים מראים שכתיבה ביד מעמיקה הבנה פי 3.</li>
+        <li><strong>אל תדלגי על שאלות.</strong> חלקן נראות פשוטות. הן הבסיס למה שיבוא.</li>
+        <li><strong>חזרי לחוברת.</strong> אחרי שבועיים, פתחי שוב. תראי איפה את עומדת.</li>
+    </ol>
+
+    <h3>מבנה כל יום</h3>
+    <table>
+        <tr><th>חלק</th><th>זמן</th><th>מטרה</th></tr>
+        <tr><td>חימום</td><td>5 דק׳</td><td>מודעות + הצבת יעד</td></tr>
+        <tr><td>תרגיל מובנה</td><td>30-40 דק׳</td><td>ביצוע אמיתי בקלוד שלך</td></tr>
+        <tr><td>מקרה בוחן</td><td>20-25 דק׳</td><td>למידה מסיפור אמיתי</td></tr>
+        <tr><td>חוברת עבודה</td><td>15-20 דק׳</td><td>חקיקה אישית של מה שלמדת</td></tr>
+        <tr><td>בונוס</td><td>30-35 דק׳</td><td>אתגר מתקדם (אופציונלי)</td></tr>
+        <tr><td>רפלקציה</td><td>10 דק׳</td><td>סגירה ומעבר ליום הבא</td></tr>
+    </table>
+
+    <h3>טיפ מאיתנו</h3>
+    <div class="callout-tip callout">
+        <b>הכי חשוב:</b> אל תדאגי להצליח ב-100%. הקורס בנוי כדי שתעשי טעויות. כל טעות = הזדמנות לראות איך לתקן ולהבין יותר עמוק. החוברת היא המקום שלך לעקוב, לחזור, ולשפר.
+    </div>
+</div>
+
+<!-- DAY 1 -->
+<div class="day-page" id="day1">
+    <div class="day-header">
+        <h2>יסודות הצ׳אט עם AI</h2>
+        <div class="day-num-tag">יום 1</div>
+    </div>
+    <div class="day-meta">
+        <span>🎯 יעד היום: לבנות פרומפט מנצח אחד שתשתמשי בו השבוע</span>
+    </div>
+
+    <h3>תרגיל 1 — המשימה האמיתית שלך</h3>
+    <p>בחרי משימה אחת מהעבודה שלך — משהו שאת עושה לפחות פעם בשבוע, ולוקח לפחות שעה.</p>
+
+    <div class="input-area">
+        <div class="label">המשימה:</div>
+        <div class="input-box"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">כמה זמן זה לוקח לי בדרך כלל:</div>
+        <div class="input-line"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">מה התוצרת המצופה (מסמך? החלטה? פעולה?):</div>
+        <div class="input-line"></div>
+    </div>
+
+    <h3>תרגיל 2 — בנייה של פרומפט מנצח</h3>
+    <p>השתמשי בתבנית הבאה כדי לבנות את הפרומפט המושלם למשימה שלך:</p>
+
+    <div class="template-box">
+        <div class="label">תבנית פרומפט מנצח</div>
+        <pre>אני [תפקיד], חברה [שם], אני עושה [תיאור קצר].
+
+אני צריכה עזרה ב-[המשימה].
+בדרך כלל זה לוקח לי [זמן].
+
+לפני שתעזור לי - תשאל אותי 5 שאלות שצריך:
+- מה התוצאה הסופית הרצויה?
+- מי הקהל / הנמען?
+- מה הטון?
+- אילו אילוצים יש?
+- מה אסור לכלול?
+
+שאלה אחת בכל פעם, חכה לתשובה.
+
+אחרי שתקבל את כל התשובות - תתחיל לעבוד.</pre>
+    </div>
+
+    <h3>תרגיל 3 — הביצוע (בקלוד שלך)</h3>
+    <p>פתחי את Cowork. הדבקי את הפרומפט. ענייני על השאלות. רשמי כאן את התשובות שלך:</p>
+
+    <div class="input-area">
+        <div class="label">תשובה לשאלה 1:</div>
+        <div class="input-box"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">תשובה לשאלה 2:</div>
+        <div class="input-box"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">תשובה לשאלה 3:</div>
+        <div class="input-box"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">תשובה לשאלה 4:</div>
+        <div class="input-box"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">תשובה לשאלה 5:</div>
+        <div class="input-box"></div>
+    </div>
+
+    <h3>סיכום היום</h3>
+    <ul class="checklist">
+        <li>הצלחתי לבנות פרומפט שעובד למשימה שלי</li>
+        <li>שמרתי את הפרומפט בקובץ אישי</li>
+        <li>החלטתי על 2-3 משימות נוספות שאעשה להן פרומפטים השבוע</li>
+    </ul>
+</div>
+
+<!-- DAY 2 -->
+<div class="day-page" id="day2">
+    <div class="day-header">
+        <h2>קבצים, מסמכים, והעולם הדיגיטלי</h2>
+        <div class="day-num-tag">יום 2</div>
+    </div>
+    <div class="day-meta">
+        <span>🎯 יעד: לבנות workflow של ניתוח-שיפור-תוצר עבור 1 קובץ אמיתי</span>
+    </div>
+
+    <h3>תרגיל 1 — מיפוי הקובץ שלך</h3>
+    <div class="input-area">
+        <div class="label">סוג הקובץ:</div>
+        <div class="input-line"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">איפה הוא נמצא:</div>
+        <div class="input-line"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">מה אני רוצה לעשות איתו:</div>
+        <div class="input-box"></div>
+    </div>
+
+    <h3>תרגיל 2 — תוצאות 3 השלבים</h3>
+
+    <div class="input-area">
+        <div class="label">שלב 1 — ניתוח. מה AI החזיר?</div>
+        <div class="input-box tall"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">שלב 2 — שיפור. מה השתפר במסמך?</div>
+        <div class="input-box tall"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">שלב 3 — תוצר חדש. מה יצרת?</div>
+        <div class="input-box tall"></div>
+    </div>
+
+    <h3>תבניות מסמכים שאני אבנה השבוע</h3>
+    <ul class="checklist">
+        <li>תבנית 1: __________________________</li>
+        <li>תבנית 2: __________________________</li>
+        <li>תבנית 3: __________________________</li>
+    </ul>
+
+    <div class="callout-tip callout">
+        <b>טיפ:</b> תבנית טובה לבנות פעם אחת — חיסכון לחיים. הצעת מחיר, סיכום פגישה, דוח חודשי — כל אחד מהם שווה את 2 השעות שייקח לבנות בפעם הראשונה.
+    </div>
+</div>
+
+<!-- DAY 3 -->
+<div class="day-page" id="day3">
+    <div class="day-header">
+        <h2>סקילים — מומחים מובנים</h2>
+        <div class="day-num-tag">יום 3</div>
+    </div>
+    <div class="day-meta">
+        <span>🎯 יעד: למפות את הסקילים הרלוונטיים לעבודה שלך</span>
+    </div>
+
+    <h3>מפת הסקילים שלי</h3>
+    <p>סמני כל סקיל לפי כמה הוא רלוונטי לעבודה שלך:</p>
+
+    <table>
+        <tr><th>סקיל</th><th>שימוש שלי</th><th>תדירות</th></tr>
+        <tr><td>docx (Word)</td><td>__________</td><td>כל יום / שבוע / חודש</td></tr>
+        <tr><td>xlsx (Excel)</td><td>__________</td><td>כל יום / שבוע / חודש</td></tr>
+        <tr><td>pptx (מצגות)</td><td>__________</td><td>כל יום / שבוע / חודש</td></tr>
+        <tr><td>pdf</td><td>__________</td><td>כל יום / שבוע / חודש</td></tr>
+        <tr><td>schedule</td><td>__________</td><td>כל יום / שבוע / חודש</td></tr>
+        <tr><td>gmail-send</td><td>__________</td><td>כל יום / שבוע / חודש</td></tr>
+    </table>
+
+    <h3>3 השילובים שיחסכו לי הכי הרבה זמן</h3>
+    <div class="input-area">
+        <div class="label">שילוב 1 (איזה סקילים + לאיזה תוצאה):</div>
+        <div class="input-box"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">שילוב 2:</div>
+        <div class="input-box"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">שילוב 3:</div>
+        <div class="input-box"></div>
+    </div>
+</div>
+
+<!-- DAY 4 -->
+<div class="day-page" id="day4">
+    <div class="day-header">
+        <h2>פלאגינים וחיבורים</h2>
+        <div class="day-num-tag">יום 4</div>
+    </div>
+    <div class="day-meta">
+        <span>🎯 יעד: חיבור 2-3 כלים + בריף בוקר ראשון</span>
+    </div>
+
+    <h3>הכלים שלי</h3>
+    <table>
+        <tr><th>כלי</th><th>איפה אני משתמשת בו</th><th>חיברתי?</th></tr>
+        <tr><td>Gmail</td><td>__________</td><td>☐</td></tr>
+        <tr><td>Google Calendar</td><td>__________</td><td>☐</td></tr>
+        <tr><td>Google Drive</td><td>__________</td><td>☐</td></tr>
+        <tr><td>Monday/Asana</td><td>__________</td><td>☐</td></tr>
+        <tr><td>Slack</td><td>__________</td><td>☐</td></tr>
+    </table>
+
+    <h3>תבנית הבריף בוקר שלי</h3>
+    <div class="template-box">
+        <div class="label">השלם את התבנית לבריף הבוקר שלך</div>
+        <pre>בריף הבוקר היומי שלי כולל:
+
+1. ___________________________
+2. ___________________________
+3. ___________________________
+4. ___________________________
+
+מה לא לכלול:
+- ___________________________
+
+הצורה: ___________________________</pre>
+    </div>
+
+    <h3>3 התובנות החזקות מהיום</h3>
+    <div class="input-area">
+        <div class="input-box tall"></div>
+    </div>
+</div>
+
+<!-- DAY 5 -->
+<div class="day-page" id="day5">
+    <div class="day-header">
+        <h2>זיכרון, פרויקטים, ארטיפקטים</h2>
+        <div class="day-num-tag">יום 5</div>
+    </div>
+    <div class="day-meta">
+        <span>🎯 יעד: לבנות פרופיל זיכרון + פרויקט אחד + ארטיפקט אחד</span>
+    </div>
+
+    <h3>הפרופיל שלי בזיכרון של AI</h3>
+    <div class="input-area">
+        <div class="label">שם:</div>
+        <div class="input-line"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">תפקיד:</div>
+        <div class="input-line"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">חברה:</div>
+        <div class="input-line"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">מה אני עושה ביום-יום:</div>
+        <div class="input-box"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">5 ההעדפות החשובות שלי בעבודה עם AI:</div>
+        <div class="input-box tall"></div>
+    </div>
+
+    <h3>הפרויקטים שלי</h3>
+    <table>
+        <tr><th>שם הפרויקט</th><th>תפקידו</th><th>קבצים שיצורפו</th></tr>
+        <tr><td>__________</td><td>__________</td><td>__________</td></tr>
+        <tr><td>__________</td><td>__________</td><td>__________</td></tr>
+        <tr><td>__________</td><td>__________</td><td>__________</td></tr>
+    </table>
+
+    <h3>הארטיפקט שלי — דשבורד יומי</h3>
+    <div class="input-area">
+        <div class="label">מה יוצג בארטיפקט שלי בכל בוקר:</div>
+        <div class="input-box tall"></div>
+    </div>
+</div>
+
+<!-- DAY 6 -->
+<div class="day-page" id="day6">
+    <div class="day-header">
+        <h2>אג׳נטים — לבנות עוזרים אישיים</h2>
+        <div class="day-num-tag">יום 6</div>
+    </div>
+    <div class="day-meta">
+        <span>🎯 יעד: לבנות אג׳נט אחד מקצה-לקצה + לתכנן 2 נוספים</span>
+    </div>
+
+    <h3>תכנון 3 האג׳נטים שלי</h3>
+
+    <h3 style="font-size:1rem;">אג׳נט 1 (זה שתבני היום):</h3>
+    <div class="input-area">
+        <div class="label">שם:</div>
+        <div class="input-line"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">תפקיד:</div>
+        <div class="input-box"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">מתי הוא נכנס לפעולה (טריגרים):</div>
+        <div class="input-box"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">אישיות וטון:</div>
+        <div class="input-line"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">כלים שצריך:</div>
+        <div class="input-line"></div>
+    </div>
+
+    <h3 style="font-size:1rem;">אג׳נט 2 (לבנות בעוד שבוע):</h3>
+    <div class="input-area">
+        <div class="label">שם ותפקיד:</div>
+        <div class="input-box"></div>
+    </div>
+
+    <h3 style="font-size:1rem;">אג׳נט 3 (לבנות בעוד חודש):</h3>
+    <div class="input-area">
+        <div class="label">שם ותפקיד:</div>
+        <div class="input-box"></div>
+    </div>
+
+    <div class="callout-tip callout">
+        <b>טיפ:</b> האג׳נט הראשון — אל תכוון לשלמות. תבחרי משהו ספציפי וקטן. אחרי שיש לך אחד עובד, השני יבוא קל יותר.
+    </div>
+</div>
+
+<!-- DAY 7 -->
+<div class="day-page" id="day7">
+    <div class="day-header">
+        <h2>אוטומציה ותזמון — פרויקט הסיום</h2>
+        <div class="day-num-tag">יום 7</div>
+    </div>
+    <div class="day-meta">
+        <span>🎯 יעד: לבנות "מכונה" אחת מתוזמנת — ולתכנן 90 ימים</span>
+    </div>
+
+    <h3>המכונה שאני בונה היום</h3>
+    <div class="input-area">
+        <div class="label">שם המשימה:</div>
+        <div class="input-line"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">תדירות:</div>
+        <div class="input-line"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">מה היא עושה (פירוט):</div>
+        <div class="input-box tall"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">מה התוצרת שאני אקבל:</div>
+        <div class="input-box"></div>
+    </div>
+
+    <h3>תכנית 90 הימים</h3>
+    <p>בכל שבוע — אוטומציה אחת חדשה. בסוף 12 שבועות, יש לך מערכת שלמה.</p>
+    <table>
+        <tr><th>שבוע</th><th>אוטומציה / אג׳נט</th><th>חיסכון משוער</th></tr>
+        <tr><td>1</td><td>__________</td><td>____ שעות/שבוע</td></tr>
+        <tr><td>2</td><td>__________</td><td>____ שעות/שבוע</td></tr>
+        <tr><td>3</td><td>__________</td><td>____ שעות/שבוע</td></tr>
+        <tr><td>4</td><td>__________</td><td>____ שעות/שבוע</td></tr>
+        <tr><td>5-8</td><td>__________</td><td>____ שעות/שבוע</td></tr>
+        <tr><td>9-12</td><td>__________</td><td>____ שעות/שבוע</td></tr>
+    </table>
+
+    <h3>סיכום הקורס שלי</h3>
+    <div class="input-area">
+        <div class="label">3 הדברים החשובים ביותר שלמדתי:</div>
+        <div class="input-box tall-x"></div>
+    </div>
+    <div class="input-area">
+        <div class="label">איך אני אחזור לחומר הזה בעוד 30 יום:</div>
+        <div class="input-box"></div>
+    </div>
+
+    <div class="callout">
+        <b>אם הגעת עד כאן — את מקצוענית.</b> לא רק שלמדת — את ביצעת. עכשיו המשימה היא פשוטה: להמשיך להשתמש. כל יום. גם דברים קטנים. ההרגל הוא הכל.
+    </div>
+</div>
+
+</body>
+</html>

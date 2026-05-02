@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>10 פרומפטים שמשנים את יום העבודה שלך · AlphaDevs Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+@page { size: A4; margin: 18mm 14mm; }
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl;
+    color: #0f172a; line-height: 1.65; background: white;
+    font-size: 11pt;
+}
+.page { max-width: 800px; margin: 0 auto; padding: 30px; }
+
+/* Cover */
+.cover {
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #831843 100%);
+    color: white; padding: 80px 50px; min-height: 95vh;
+    display: flex; flex-direction: column; justify-content: space-between;
+    page-break-after: always;
+}
+.cover-logo {
+    width: 70px; height: 70px; border-radius: 16px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+    display: grid; place-items: center; color: white;
+    font-weight: 900; font-size: 2rem; margin-bottom: 30px;
+}
+.cover h1 {
+    font-size: 2.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 18px;
+    background: linear-gradient(135deg, white 0%, #fbcfe8 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cover .sub { font-size: 1.3rem; opacity: 0.9; margin-bottom: 12px; }
+.cover .desc { font-size: 1rem; opacity: 0.75; max-width: 480px; line-height: 1.7; }
+.cover .footer-cover { font-size: 0.85rem; opacity: 0.7; }
+.cover .footer-cover b { display: block; font-size: 1rem; opacity: 1; margin-bottom: 4px; }
+
+/* Intro page */
+.intro { padding-bottom: 40px; page-break-after: always; }
+.intro h2 { font-size: 1.6rem; margin-bottom: 14px; color: #4338ca; }
+.intro p { color: #475569; margin-bottom: 12px; }
+
+/* Prompt cards */
+.prompts { display: flex; flex-direction: column; gap: 20px; }
+.prompt {
+    border: 1px solid #e2e8f0; border-radius: 12px;
+    padding: 22px 26px; background: #fafbff;
+    page-break-inside: avoid;
+}
+.prompt-num {
+    display: inline-block; padding: 4px 12px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white; border-radius: 999px; font-size: 0.78rem;
+    font-weight: 800; letter-spacing: 0.05em; margin-bottom: 10px;
+}
+.prompt h3 {
+    font-size: 1.2rem; margin-bottom: 10px; color: #0f172a;
+}
+.prompt .why {
+    font-size: 0.92rem; color: #475569; margin-bottom: 12px;
+    padding-bottom: 10px; border-bottom: 1px dashed #e2e8f0;
+}
+.prompt-text {
+    background: white; border: 1px solid #e2e8f0;
+    border-right: 3px solid #6366f1;
+    padding: 14px 16px; border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.88rem;
+    line-height: 1.7; color: #1e293b; direction: rtl;
+}
+.prompt-tag {
+    display: inline-block; padding: 3px 10px;
+    background: #ede9fe; color: #6b21a8;
+    border-radius: 999px; font-size: 0.72rem; font-weight: 700;
+    margin-left: 6px; margin-top: 12px;
+}
+
+/* End */
+.end {
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%);
+    color: white; padding: 60px 40px; border-radius: 20px;
+    margin-top: 40px; text-align: center; page-break-before: always;
+}
+.end h2 { color: white; font-size: 2rem; margin-bottom: 14px; }
+.end p { color: rgba(255,255,255,0.85); margin-bottom: 20px; max-width: 520px; margin-inline: auto; }
+.end .cta {
+    display: inline-block; background: white; color: #4338ca;
+    padding: 14px 28px; border-radius: 10px; font-weight: 800;
+    text-decoration: none; margin-top: 8px;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+    <div>
+        <div class="cover-logo">A</div>
+        <div style="font-size:0.85rem;opacity:0.7;letter-spacing:0.1em;margin-bottom:14px;">ALPHADEVS ACADEMY · מתנה</div>
+        <h1>10 פרומפטים<br>שמשנים את יום<br>העבודה שלך</h1>
+        <div class="sub">העתקה, הדבקה, תוצאה.</div>
+        <div class="desc">פרומפטים מוכחים לעבודה עם AI שאתה יכולים להשתמש בהם עוד היום. כל אחד מהם בודד חוסך לך שעה בשבוע. כל ה-10 ביחד? מהפכה.</div>
+    </div>
+    <div class="footer-cover">
+        <b>נכתב על ידי לאור לסרי</b>
+        מנכ"ל AlphaDevs · בונה אג׳נטים מבוססי AI לעסקים<br>
+        <span style="opacity:0.6;">© 2026 AlphaDevs Academy · alphadevs.co/academy</span>
+    </div>
+</div>
+
+<!-- INTRO PAGE -->
+<div class="page intro">
+    <h2>לפני שאת מתחילה</h2>
+    <p>תני לי 30 שניות להסביר משהו חשוב.</p>
+    <p>הפרומפטים האלה לא "יפים" או "מבריקים" — הם <strong>מוכחים</strong>. כתבתי כל אחד מהם אחרי שראיתי לקוחות שלי משתמשים בו בפועל וחוסכים שעות.</p>
+    <p>הכלל הזהוב: <strong>אל תשני את המבנה</strong>. רק את הפרטים בסוגריים מרובעים [...]. המבנה עצמו הוא מה שעובד.</p>
+    <p>השתמשי באיזה כלי AI שאת רוצה — Claude, ChatGPT, Gemini. הפרומפטים האלה מתוכננים להיות אגנוסטיים.</p>
+    <p>ועכשיו — בואי נתחיל.</p>
+    <p style="margin-top:30px;color:#94a3b8;font-size:0.88rem;">— לאור לסרי, AlphaDevs</p>
+</div>
+
+<!-- PROMPTS -->
+<div class="page">
+<div class="prompts">
+
+<!-- 1 -->
+<div class="prompt">
+    <span class="prompt-num">פרומפט 1</span>
+    <h3>שדרוג מייל גנרי למייל שמשכנע</h3>
+    <div class="why">מתי להשתמש: כתבת מייל מהיר וזה נשמע שטוח. זה הפרומפט שיהפוך אותו לחד.</div>
+    <div class="prompt-text">קח את המייל הבא ושפר אותו לפי 3 קריטריונים:<br>
+1. שורת נושא קולעת שגורמת לפתוח<br>
+2. פתיחה שמושכת תשומת לב מיד<br>
+3. CTA אחד ברור בסוף<br><br>
+שמור על הטון שלי, אורך דומה, ואל תוסיף בולשיט.<br><br>
+המייל המקורי:<br>
+[הדבק את המייל שלך כאן]</div>
+    <span class="prompt-tag">📧 מיילים</span>
+</div>
+
+<!-- 2 -->
+<div class="prompt">
+    <span class="prompt-num">פרומפט 2</span>
+    <h3>סיכום ישיבה ארוכה ל-5 שורות מעשיות</h3>
+    <div class="why">מתי להשתמש: יצאת מישיבה של שעה. רוצה לדעת מה עכשיו לעשות בלי לקרוא 8 עמודי תמלול.</div>
+    <div class="prompt-text">תחלץ מהתמלול הבא 3 דברים בלבד:<br>
+1. ההחלטות שהתקבלו (בלי הסבר)<br>
+2. המשימות שלי אישית (עם דדליין אם הוזכר)<br>
+3. נושאים שנשארו פתוחים<br><br>
+תוצאה: לא יותר מ-5 שורות בסך הכל. בלי הקדמות.<br><br>
+התמלול:<br>
+[הדבק את התמלול]</div>
+    <span class="prompt-tag">📝 ישיבות</span>
+</div>
+
+<!-- 3 -->
+<div class="prompt">
+    <span class="prompt-num">פרומפט 3</span>
+    <h3>"ראיין אותי" — לפני שאני כותב/יוצר משהו</h3>
+    <div class="why">מתי להשתמש: צריך להכין משהו (מסמך, פרזנטציה, פוסט) ואין כיוון ברור. תני ל-AI לראיין אותך.</div>
+    <div class="prompt-text">אני צריך להכין [תיאור — למשל "פרזנטציה למשקיעים על הפרויקט החדש"].<br><br>
+לפני שאני מתחיל לכתוב — תשאל אותי 5 שאלות מדויקות שיעזרו לך להבין:<br>
+- מי הקהל?<br>
+- מה התוצאה הרצויה?<br>
+- מה הטון?<br>
+- מה ההקשר?<br>
+- מה אסור להגיד?<br><br>
+שאלה אחת בכל פעם, חכה לתשובה לפני הבאה.</div>
+    <span class="prompt-tag">🎯 תכנון</span>
+</div>
+
+<!-- 4 -->
+<div class="prompt">
+    <span class="prompt-num">פרומפט 4</span>
+    <h3>"מה אני מפספסת?" — לפני החלטה גדולה</h3>
+    <div class="why">מתי להשתמש: לפני ההחלטה — לבדוק מה לא חשבת עליו. AI כעורך דין שטן.</div>
+    <div class="prompt-text">אני שוקלת לעשות את הצעד הבא: [תיאור ההחלטה ב-2-3 משפטים].<br><br>
+הסיבות שאני בעדה: [רשימה קצרה]<br><br>
+תנסחי לי 5 השלכות / סיכונים שאני אולי לא רואה. תהיי קונקרטית — לא קלישאות. תני דוגמאות מהעולם האמיתי.<br><br>
+בסוף תני המלצה: ללכת על זה / לעצור / לעשות שינוי. אבל בכנות — לא להיות נחמדה.</div>
+    <span class="prompt-tag">🧠 החלטות</span>
+</div>
+
+<!-- 5 -->
+<div class="prompt">
+    <span class="prompt-num">פרומפט 5</span>
+    <h3>דוח שבועי בשפה אחת — אוטומטי</h3>
+    <div class="why">מתי להשתמש: כל שבוע צריך להגיש "מה עשיתי?". זה הופך את זה ל-3 דקות במקום שעה.</div>
+    <div class="prompt-text">אני אספק לך 3 קבצים:<br>
+1. סיכום פגישות השבוע<br>
+2. רשימת המשימות שעשיתי<br>
+3. רשימת מיילים חשובים שטיפלתי בהם<br><br>
+הכן לי דוח שבועי בפורמט הזה:<br>
+- הישגים מרכזיים (3 בלבד)<br>
+- מה התקדם (3-5 פריטים)<br>
+- מה נתקע ולמה<br>
+- יעדים לשבוע הבא (3 בלבד)<br><br>
+טון: מקצועי אבל אנושי. אורך: עמוד אחד.<br><br>
+הקבצים:<br>
+[צרף קבצים]</div>
+    <span class="prompt-tag">📊 דוחות</span>
+</div>
+
+<!-- 6 -->
+<div class="prompt">
+    <span class="prompt-num">פרומפט 6</span>
+    <h3>תרגום ש-נשמע כמו ילד-בית, לא Google Translate</h3>
+    <div class="why">מתי להשתמש: צריך לכתוב באנגלית ולא רוצה שזה ישמע "תרגום". או הפוך — מאנגלית לעברית טבעית.</div>
+    <div class="prompt-text">תרגם את הטקסט הבא מ[שפה] ל[שפה].<br><br>
+חשוב — לא תרגום מילולי. תרגם איך שילד-בית של השפה היעד היה כותב את זה. אם יש ביטויים שלא קיימים — מצא חלופה טבעית. אם המבנה מוזר — שנה אותו.<br><br>
+הטון של המקור: [רשמי / חברי / מקצועי / עוקצני / אחר]<br><br>
+הטקסט:<br>
+[הדבק]</div>
+    <span class="prompt-tag">🌍 תרגום</span>
+</div>
+
+<!-- 7 -->
+<div class="prompt">
+    <span class="prompt-num">פרומפט 7</span>
+    <h3>ניתוח Excel ב-3 דקות במקום 3 שעות</h3>
+    <div class="why">מתי להשתמש: קיבלת קובץ עם הרבה מספרים. לא רוצה לקרוא 800 שורות.</div>
+    <div class="prompt-text">קח את הקובץ הבא ותענה על 4 שאלות בלבד:<br>
+1. מה הטרנד הכי בולט?<br>
+2. מה הנתון הכי מפתיע?<br>
+3. אם הייתי מנהלת — על איזה דבר אחד הייתי פועלת מיד?<br>
+4. אילו שאלות נוספות אני צריכה לשאול כדי להבין יותר?<br><br>
+תני תשובות קצרות, לא יותר מ-2 שורות לכל אחת.<br><br>
+הקובץ:<br>
+[צרף את ה-Excel]</div>
+    <span class="prompt-tag">📊 דאטה</span>
+</div>
+
+<!-- 8 -->
+<div class="prompt">
+    <span class="prompt-num">פרומפט 8</span>
+    <h3>תגובה לביקורת — בלי להישבר ובלי להישבר</h3>
+    <div class="why">מתי להשתמש: לקוח כועס. עובד מתלונן. מישהו תוקף ברשת. צריך תגובה מקצועית.</div>
+    <div class="prompt-text">קיבלתי את ההודעה / ביקורת הבאה: [העתק].<br><br>
+תכין 3 גרסאות תגובה:<br>
+1. רגועה ומפייסת — מתאימה אם רוצה לסגור את העניין<br>
+2. אסרטיבית אבל מנומסת — מתאימה אם הצד השני טועה<br>
+3. ענעית עם הומור — מתאימה לתקשורת קלה<br><br>
+לכל אחת — לא יותר מ-3 שורות. ניוטרלית, בלי דרמה.</div>
+    <span class="prompt-tag">💬 תקשורת</span>
+</div>
+
+<!-- 9 -->
+<div class="prompt">
+    <span class="prompt-num">פרומפט 9</span>
+    <h3>"תכין לי תוכנית" — מהרעיון לתוכנית שאפשר לבצע</h3>
+    <div class="why">מתי להשתמש: יש רעיון. אין תוכנית. רוצה משהו שאפשר באמת לבצע מחר.</div>
+    <div class="prompt-text">יש לי רעיון: [תיאור ב-2-3 משפטים].<br><br>
+תכין לי תוכנית פעולה ל-30 הימים הראשונים. כללים:<br>
+- כל יום — 1-2 פעולות מקסימום<br>
+- כל פעולה — קונקרטית, אפשרית בפחות מ-30 דק׳<br>
+- חלוקה לשבועות — מטרה לכל שבוע<br>
+- בסוף יום 30 — מה צריך להיות מוכן<br><br>
+לא רוצה "פעולות אסטרטגיות". רוצה רק דברים שאני יכולה לעשות.</div>
+    <span class="prompt-tag">📅 תכנון</span>
+</div>
+
+<!-- 10 -->
+<div class="prompt">
+    <span class="prompt-num">פרומפט 10</span>
+    <h3>הפרומפט שכותב פרומפטים</h3>
+    <div class="why">מתי להשתמש: כשאת לא יודעת איך לנסח. הפרומפט הזה ישפר את הפרומפטים שלך לעולמי-עד.</div>
+    <div class="prompt-text">יש לי פרומפט חלש שאני משתמש בו: [העתק].<br><br>
+תשפר אותו לפי 5 העקרונות של פרומפטים מנצחים:<br>
+1. הקשר ברור (מי אני, מה הסיטואציה)<br>
+2. משימה קונקרטית (מה בדיוק לעשות)<br>
+3. פרטים על התוצאה (פורמט, אורך, טון)<br>
+4. דוגמה / קונטרא-דוגמה<br>
+5. תוצאה רצויה (מה צריך לצאת)<br><br>
+תן לי גם את הפרומפט המשופר וגם הסבר מה שינית ולמה.</div>
+    <span class="prompt-tag">⭐ מטה</span>
+</div>
+
+</div>
+</div>
+
+<!-- END / CTA -->
+<div class="page">
+<div class="end">
+    <h2>נהנת? זה רק 1% ממה שיש בקורס.</h2>
+    <p>הקורס המלא של AlphaDevs Academy לוקח אותך מ-0 ל-100 — מהשיעור הראשון ועד לבניית אג׳נטים אישיים שעובדים בשבילך 24/7. 7 ימים. 32 שיעורים. תעודת סיום.</p>
+    <a href="https://academy.alphadevs.co" class="cta">צפי בקורס המלא ←</a>
+    <p style="margin-top:24px;font-size:0.85rem;opacity:0.7;">בונוס מיוחד לקוראי ה-PDF: 50% הנחה על Pro עם הקוד <b style="color:#fbcfe8;">PROMPTS50</b> · 7 ימים בלבד</p>
+</div>
+</div>
+
+</body>
+</html>

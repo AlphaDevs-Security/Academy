@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>התחל כאן · AlphaDevs Academy Launch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl; background: #fafbff;
+    color: #0f172a; line-height: 1.7; padding: 40px 24px;
+}
+.wrap { max-width: 900px; margin: 0 auto; }
+.hero {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    color: white; padding: 50px 40px; border-radius: 24px;
+    margin-bottom: 32px; box-shadow: 0 20px 50px rgba(99,102,241,0.3);
+}
+.hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; }
+.hero p { font-size: 1.1rem; opacity: 0.95; }
+.eyebrow {
+    display: inline-block; background: rgba(255,255,255,0.2);
+    padding: 6px 14px; border-radius: 999px; font-size: 0.82rem;
+    font-weight: 700; letter-spacing: 0.06em; margin-bottom: 16px;
+}
+h2 {
+    font-size: 1.6rem; margin: 40px 0 20px; padding-bottom: 12px;
+    border-bottom: 2px solid #e2e8f0;
+}
+h3 { font-size: 1.15rem; margin: 24px 0 10px; color: #4338ca; }
+p { color: #475569; margin-bottom: 12px; }
+strong { color: #0f172a; }
+a { color: #4338ca; font-weight: 600; }
+ol, ul { margin: 12px 28px; }
+li { margin-bottom: 8px; color: #475569; }
+.action {
+    background: white; border: 1px solid #e2e8f0;
+    border-right: 4px solid #6366f1; border-radius: 12px;
+    padding: 22px 26px; margin: 16px 0;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+}
+.action.urgent { border-right-color: #ef4444; background: #fef2f2; }
+.action.done { border-right-color: #10b981; background: #ecfdf5; }
+.action h4 {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+.action .num {
+    flex-shrink: 0; width: 32px; height: 32px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white;
+    border-radius: 50%; display: grid; place-items: center;
+    font-weight: 800; font-size: 0.9rem;
+}
+.action.urgent .num { background: #ef4444; }
+.action.done .num { background: #10b981; }
+.action .meta {
+    display: flex; gap: 14px; margin-top: 10px;
+    font-size: 0.82rem; color: #64748b; flex-wrap: wrap;
+}
+.action .meta span { background: #f1f5f9; padding: 3px 10px; border-radius: 999px; }
+.tag {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 0.72rem; font-weight: 700; margin-inline-start: 8px;
+}
+.tag-urgent { background: #fee2e2; color: #991b1b; }
+.tag-quick { background: #d1fae5; color: #065f46; }
+.tag-money { background: #fef3c7; color: #92400e; }
+.note {
+    background: #faf5ff; border: 1px solid #e9d5ff;
+    border-radius: 12px; padding: 18px 22px; margin: 20px 0;
+}
+.note b { color: #6b21a8; }
+table {
+    width: 100%; border-collapse: collapse; margin: 16px 0;
+    background: white; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.06);
+}
+th { background: #f8fafc; padding: 12px 14px; text-align: right; font-size: 0.9rem; font-weight: 700; }
+td { padding: 12px 14px; border-bottom: 1px solid #f1f5f9; font-size: 0.93rem; }
+tr:last-child td { border-bottom: none; }
+.summary {
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+    border: 2px solid #6ee7b7; border-radius: 16px;
+    padding: 28px; margin: 30px 0;
+}
+.summary h3 { color: #047857; margin-top: 0; }
+code {
+    background: #f1f5f9; padding: 2px 8px; border-radius: 5px;
+    font-family: monospace; color: #4338ca; direction: ltr; display: inline-block;
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="hero">
+    <span class="eyebrow">📋 רשימת פעולות אישית · יום 1</span>
+    <h1>התחל כאן, לאור</h1>
+    <p>זו הרשימה המסודרת של מה שאתה צריך לעשות עכשיו כדי שאני אוכל לבנות את שאר המערכת. סך הכל: ~90 דקות עבודה שלך, פרושות לאורך 3-4 ימים.</p>
+</div>
+
+<h2>החלוקה לפי סדר עדיפויות</h2>
+<p>הפעולות מסודרות לפי דחיפות. ככל שתסיים יותר מהר, כך אני אוכל להתקדם מהר יותר. אדומות = קריטיות לחסימת התקדמות. כחולות = חשובות אבל לא חוסמות.</p>
+
+<h2>השבוע הזה (קריטי)</h2>
+
+<div class="action urgent">
+    <h4><span class="num">1</span>החלטה: שם דומיין למותג <span class="tag tag-urgent">חוסם הכל</span></h4>
+    <p><strong>מה צריך:</strong> בחר אחת מהאפשרויות:</p>
+    <ul>
+        <li><code>academy.alphadevs.co</code> (תת-דומיין שלך - חינם, מקצועי)</li>
+        <li><code>alphadevs.academy</code> (דומיין נפרד - $15/שנה, ממותג)</li>
+        <li><code>aiacademy.co.il</code> (דומיין ישראלי - ₪150/שנה, מקומי)</li>
+    </ul>
+    <p><strong>המלצתי:</strong> <code>academy.alphadevs.co</code> — הכי מהיר וחינם. אפשר תמיד להחליף בעתיד.</p>
+    <div class="meta"><span>⏱️ 5 דקות</span><span>💰 חינם-₪200</span><span>🔓 חוסם בנייה של דפי נחיתה</span></div>
+</div>
+
+<div class="action urgent">
+    <h4><span class="num">2</span>פתיחת חשבון Stripe לעסק <span class="tag tag-money">תשלומים</span></h4>
+    <p><strong>למה:</strong> מעבד התשלומים העיקרי שלנו לחו"ל ולקרדיט קארד. עמלה 2.9%+30¢.</p>
+    <p><strong>איך:</strong> <a href="https://stripe.com/" target="_blank">stripe.com</a> → "Start Now" → רישום עם פרטי AlphaDevs (מספר עוסק, חשבון בנק).</p>
+    <p><strong>אחרי הרישום:</strong> שתף איתי את ה-API keys (Test mode בהתחלה, נחליף ל-Live כשמוכנים).</p>
+    <div class="meta"><span>⏱️ 20 דקות</span><span>💰 חינם להירשם</span><span>📋 צריך: ת.ז., אישור עוסק, חשבון בנק</span></div>
+</div>
+
+<div class="action urgent">
+    <h4><span class="num">3</span>פתיחת חשבון iCount לחשבוניות <span class="tag tag-money">חוקי</span></h4>
+    <p><strong>למה:</strong> חשבוניות מס/קבלה אוטומטיות לכל קונה ישראלי (חובה חוקית).</p>
+    <p><strong>איך:</strong> <a href="https://www.icount.co.il/" target="_blank">icount.co.il</a> → רישום עוסק. תוכנית הבסיסית ₪99 לחודש.</p>
+    <p><strong>אופציה:</strong> אם כבר יש לך חשבוניות (Greeninvoice, EZcount, Hashavshevet) — נחבר את זה במקום.</p>
+    <div class="meta"><span>⏱️ 15 דקות</span><span>💰 ₪99/חודש</span><span>📋 צריך: פרטי עוסק</span></div>
+</div>
+
+<div class="action urgent">
+    <h4><span class="num">4</span>פתיחת חשבון ConvertKit לאימייל <span class="tag tag-quick">חינם בהתחלה</span></h4>
+    <p><strong>למה:</strong> שולח את כל המיילים האוטומטיים — ברוך הבא, רצף onboarding, ניוזלטרים.</p>
+    <p><strong>איך:</strong> <a href="https://convertkit.com/" target="_blank">convertkit.com</a> → Free plan (עד 1,000 מנויים בחינם).</p>
+    <p><strong>אחרי:</strong> שתף איתי את ה-API key + Form ID של טופס ההרשמה הראשון.</p>
+    <div class="meta"><span>⏱️ 10 דקות</span><span>💰 חינם עד 1K מנויים</span></div>
+</div>
+
+<h2>השבוע הבא (חשוב)</h2>
+
+<div class="action">
+    <h4><span class="num">5</span>פתיחת חשבון Thinkific (LMS)</h4>
+    <p><strong>למה:</strong> פלטפורמת הקורסים — איפה שהלקוחות צופים בקורס. תומכת בעברית RTL.</p>
+    <p><strong>איך:</strong> <a href="https://www.thinkific.com/" target="_blank">thinkific.com</a> → Free plan למעשה לבדיקה, אז Basic ב-$36/חודש כשמתחילים למכור.</p>
+    <p><strong>אלטרנטיבה זולה:</strong> Hotmart (חינם, לוקחים % מכל מכירה) — מתאים אם רוצים להתחיל אפס עלויות.</p>
+    <div class="meta"><span>⏱️ 30 דקות</span><span>💰 חינם / $36-99 חודש</span></div>
+</div>
+
+<div class="action">
+    <h4><span class="num">6</span>פתיחת חשבון Make.com (אוטומציות)</h4>
+    <p><strong>למה:</strong> מחבר בין כל המערכות — תשלום → חשבונית → גישה לקורס → מייל ברוך הבא.</p>
+    <p><strong>איך:</strong> <a href="https://www.make.com/" target="_blank">make.com</a> → Free plan (1,000 פעולות חודשיות, מספיק להתחלה).</p>
+    <div class="meta"><span>⏱️ 10 דקות</span><span>💰 חינם עד 1K פעולות</span></div>
+</div>
+
+<div class="action">
+    <h4><span class="num">7</span>הקמת חשבון Meta Business</h4>
+    <p><strong>למה:</strong> ניהול פרסום בפייסבוק/אינסטגרם, התקנת פיקסל לאתר.</p>
+    <p><strong>איך:</strong> <a href="https://business.facebook.com/" target="_blank">business.facebook.com</a> → Create Business Manager.</p>
+    <p><strong>חשוב:</strong> חבר את עמוד הפייסבוק של AlphaDevs ואת חשבון ה-Instagram.</p>
+    <div class="meta"><span>⏱️ 15 דקות</span><span>💰 חינם</span></div>
+</div>
+
+<h2>החלטות עיצוב — תאמר לי בוואטסאפ/בצ׳אט</h2>
+
+<div class="action">
+    <h4><span class="num">8</span>אישור פלטת צבעים</h4>
+    <p>אני מציע להמשיך עם פלטת המותג של הקורס: כחול-סגול-ורוד (#6366f1 → #8b5cf6 → #ec4899). מקצועי, בולט, מתאים לעולם ה-AI. <strong>אם אתה רוצה משהו אחר — אמור לי.</strong></p>
+    <div class="meta"><span>⏱️ 2 דקות</span></div>
+</div>
+
+<div class="action">
+    <h4><span class="num">9</span>אישור פונט ראשי</h4>
+    <p>אני ממשיך עם <strong>Heebo</strong> (פונט עברי מודרני, פתוח, יפה ב-Google Fonts). אופציה אחרת: Rubik / Assistant. <strong>תאשר Heebo או תציע אחרת.</strong></p>
+    <div class="meta"><span>⏱️ 2 דקות</span></div>
+</div>
+
+<div class="action">
+    <h4><span class="num">10</span>החלטה: שם המוצר הסופי</h4>
+    <p>בשיחה הקודמת דנו בשם. תחליט עכשיו:</p>
+    <ul>
+        <li><code>AlphaDevs Academy — מומחים ב-AI</code> (אנגלית-עברית, ממותג)</li>
+        <li><code>אקדמיית AlphaDevs</code> (עברית מלאה)</li>
+        <li><code>The AI Academy by AlphaDevs</code> (אנגלית מלאה)</li>
+    </ul>
+    <p><strong>המלצתי:</strong> שילוב — שם המותג באנגלית כראשי, תיאור עברי כמשני. למשל בלוגו: "AlphaDevs Academy" + מתחת בקטן: "אקדמיית הבינה המלאכותית".</p>
+    <div class="meta"><span>⏱️ 5 דקות</span></div>
+</div>
+
+<h2>עניינים פיננסיים שאתה אחראי עליהם</h2>
+
+<table>
+    <thead><tr><th>סעיף</th><th>פעולה</th><th>מועד</th></tr></thead>
+    <tbody>
+        <tr><td>חשבון בנק עסקי</td><td>וודא שיש חשבון נפרד (לא חשבון פרטי)</td><td>לפני התשלום הראשון</td></tr>
+        <tr><td>מע"מ</td><td>לקוחות ישראלים — חיוב עם מע"מ. חו"ל — בלי מע"מ</td><td>iCount עושה את זה אוטומטית</td></tr>
+        <tr><td>דיווח חודשי</td><td>תיאום עם רואה החשבון על דיווח מע"מ חודשי</td><td>חודשי</td></tr>
+        <tr><td>הצהרת הון</td><td>וודא שהכנסות הקורס נכללות בדוח השנתי</td><td>סוף שנה</td></tr>
+    </tbody>
+</table>
+
+<div class="note">
+    <p><b>הערה משפטית קריטית:</b> אני לא יועץ מס. הסעיפים האלה הם המלצות כלליות. לפני שאתה מתחיל למכור — שיחה של 30 דק׳ עם רואה החשבון שלך (איך לדווח, איך לחייב מע"מ נכון, איך להתנהל עם תשלומים מחו"ל). זה יחסוך כאב ראש בעתיד.</p>
+</div>
+
+<h2>מה אתה לא צריך לעשות</h2>
+
+<div class="action done">
+    <h4><span class="num">✓</span>זה כבר נבנה / נבנה על ידי</h4>
+    <ul>
+        <li>הקורס עצמו ✓</li>
+        <li>תכנית המאסטר ✓</li>
+        <li>זהות מותג + לוגו (אני בונה בשעות הקרובות)</li>
+        <li>דפי נחיתה (אני בונה ביום 2-3)</li>
+        <li>Lead Magnet (אני בונה ביום 3-4)</li>
+        <li>תוכן שיווקי (אני כותב כבר עכשיו)</li>
+        <li>רצף מיילים (אני כותב)</li>
+        <li>הגדרת אוטומציות (אני עושה אחרי שתפתח חשבונות)</li>
+    </ul>
+</div>
+
+<div class="summary">
+    <h3>📊 סיכום זמני שלך — שבוע 1</h3>
+    <p><strong>סך הכל:</strong> ~95 דקות פרושות לאורך 3-4 ימים</p>
+    <ul>
+        <li><strong>היום:</strong> 4 פעולות אדומות (60 דקות)</li>
+        <li><strong>השבוע:</strong> 3 פעולות כחולות (55 דקות)</li>
+        <li><strong>החלטות:</strong> 3 דברים לאישור (10 דקות)</li>
+    </ul>
+    <p><strong>אחרי שתסיים את הרשימה הזו</strong> — אני אוכל להגדיר את כל המערכת האוטומטית ולהיכנס לתחזוקה. שלוש שעות נוספות בשבועיים הבאים — וזה זה. המערכת מוכנה לעבוד 24/7.</p>
+</div>
+
+<h2>איך לעדכן אותי מה הסטטוס</h2>
+<p>פשוט תכתוב לי בצ׳אט: "סיימתי 1, 2, 4" או "צריך עזרה ב-3". אני אעדכן את הרשימה הזו ונמשיך הלאה. אם נתקעת באיזשהו שלב — אני יכול להדריך צעד-אחר-צעד.</p>
+
+<p style="text-align:center; margin-top: 50px; color: #94a3b8; font-size: 0.85rem;">
+מסמך פעולות · AlphaDevs Academy Launch · יום 1<br>
+עודכן אחרי אישור התכנית
+</p>
+
+</div>
+
+</body>
+</html>

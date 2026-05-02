@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יום 7: תזמון, אוטומציה, וטריקים · AlphaDevs Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Heebo,sans-serif' font-size='52' font-weight='900' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body id="top" class="gated">
+
+<header class="topbar">
+    <div class="container topbar-inner">
+        <a href="../index.html" class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-name"><b>AlphaDevs Academy</b><span>יום 7 מתוך 7 — היום האחרון!</span></div>
+        </a>
+        <div class="topbar-actions">
+            <div class="progress-pill" id="progress-pill"><span class="dot"></span> טוען...</div>
+            <a href="../index.html" class="btn btn-ghost btn-sm">← חזרה לקורס</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="lesson-shell">
+        <aside class="lesson-sidebar">
+            <h4>תוכן היום</h4>
+            <ul class="toc-list">
+                <li><a href="#scheduled" class="active"><span class="toc-num">1</span>משימות מתוזמנות</a></li>
+                <li><a href="#workflows"><span class="toc-num">2</span>שילובים ואוטומציות</a></li>
+                <li><a href="#tricks"><span class="toc-num">3</span>10 טריקים של מקצוענים</a></li>
+                <li><a href="#final-project"><span class="toc-num">4</span>פרויקט סיום</a></li>
+                <li><a href="#path-forward"><span class="toc-num">5</span>הדרך מכאן</a></li>
+                <li><a href="#quiz"><span class="toc-num">★</span>מבחן סיום</a></li>
+            </ul>
+        </aside>
+
+        <main class="lesson-main">
+            <header class="lesson-header">
+                <span class="lesson-eyebrow">יום 7 · 60 דקות · רמה: מתקדמת</span>
+                <h1>אוטומציה, תזמון, וטריקים מקצועיים</h1>
+                <p class="lesson-subtitle">היום נסגור את הקורס בגדול. נלמד איך לתזמן את קלוד שיעבוד בשבילך גם כשאת לא, נבנה אוטומציות אמיתיות, וניחשף ל-10 הטריקים שיהפכו אותך למקצוענית.</p>
+                <div class="lesson-progress">
+                    <div class="bar"><div class="bar-fill" style="width:100%;"></div></div>
+                    <div class="progress-text">יום 7 מתוך 7</div>
+                </div>
+
+                <div class="lesson-time-bar">
+                    <div class="time-block"><div class="num">5'</div><div class="label">חימום</div></div>
+                    <div class="time-block"><div class="num">60'</div><div class="label">שיעורים</div></div>
+                    <div class="time-block"><div class="num">45'</div><div class="label">פרויקט סיום</div></div>
+                    <div class="time-block"><div class="num">25'</div><div class="label">מקרה בוחן</div></div>
+                    <div class="time-block"><div class="num">20'</div><div class="label">חוברת עבודה</div></div>
+                    <div class="time-block"><div class="num">35'</div><div class="label">בונוס</div></div>
+                    <div class="time-block total"><div class="num">3.2 ש׳</div><div class="label">סך הכל</div></div>
+                </div>
+            </header>
+
+            <div class="video-block">
+                <div class="video-frame"><div class="video-play-btn"></div></div>
+                <div class="video-meta">
+                    <span class="video-title">🎬 וידאו סיום: היום שיוצרת מכונה שעובדת בלעדייך</span>
+                    <span class="video-duration">⏱ 7:00</span>
+                </div>
+                <div class="video-placeholder-note">📹 <strong>הקלטת וידאו תיווסף בקרוב.</strong></div>
+            </div>
+
+            <section class="warmup">
+                <div class="warmup-header">
+                    <div class="warmup-icon">🔥</div>
+                    <div>
+                        <span class="warmup-tag">חימום · 5 דקות</span>
+                        <h3>מה הדבר שאת עושה כל יום שני בבוקר ב-9:00?</h3>
+                    </div>
+                </div>
+                <p>פעולה קבועה. כתבי אותה. אנחנו נהפוך אותה היום למשימה אוטומטית שתרוץ בלעדייך לעולמי-עד.</p>
+                <textarea class="warmup-input" data-qkey="day7-warmup" placeholder="כל יום שני בבוקר אני..."></textarea>
+            </section>
+
+            <!-- Section 1 -->
+            <section class="section" id="scheduled">
+                <h2><span class="section-num">1</span>משימות מתוזמנות</h2>
+                <p>זה אחד הכלים השוויים בעולם — קלוד שעובד בשבילך לפי לוח זמנים, גם כשאת לא יושבת מולו.</p>
+
+                <h3>מה זה משימה מתוזמנת?</h3>
+                <p>פקודה שאת מגדירה פעם אחת, וקלוד מבצע אותה אוטומטית — כל בוקר, כל יום ראשון, כל סוף חודש, או בכל מועד שתבחרי.</p>
+
+                <h3>דוגמאות חיות</h3>
+                <div class="compare-grid">
+                    <div class="compare-card icon-blue">
+                        <div class="compare-icon">☕</div>
+                        <h4>בריף בוקר</h4>
+                        <p>"כל בוקר ב-7:30 — תכין סיכום: מיילים חשובים, פגישות היום, משימות חמות."</p>
+                    </div>
+                    <div class="compare-card icon-purple">
+                        <div class="compare-icon">📊</div>
+                        <h4>דוח שבועי</h4>
+                        <p>"כל יום שישי ב-16:00 — תכין דוח שבועי. שלח אותו לכל הצוות."</p>
+                    </div>
+                    <div class="compare-card icon-pink">
+                        <div class="compare-icon">🚨</div>
+                        <h4>התראות</h4>
+                        <p>"כל שעה — בדוק אם הגיעו מיילים מהלקוחות החשובים. אם כן — תתריע."</p>
+                    </div>
+                    <div class="compare-card icon-green">
+                        <div class="compare-icon">📈</div>
+                        <h4>סוף חודש</h4>
+                        <p>"ב-1 לכל חודש — תכין סיכום פיננסי: הכנסות, הוצאות, פגישות שבוצעו."</p>
+                    </div>
+                </div>
+
+                <h3>איך מגדירים?</h3>
+                <div class="practice-box">
+                    <span class="practice-tag">תרגול</span>
+                    <h4>⏰ הבריף הבוקר הראשון שלך</h4>
+                    <div class="practice-prompt">
+                        אני רוצה משימה מתוזמנת לכל בוקר ב-7:30: תכין לי סיכום של 1) המיילים החשובים שהגיעו אתמול בלילה ולא עניתי, 2) הפגישות של היום עם הסבר קצר על כל אחת, 3) המשימות עם דדליין השבוע. תשלח לי הכל כסיכום בצ׳אט. תשמור את המשימה הזו לרוץ אוטומטית מחר בבוקר ובכל בוקר אחר כך.
+                    </div>
+                </div>
+
+                <div class="callout callout-tip">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-body">
+                        <div class="callout-title">תחשבי כמו מנהלת</div>
+                        <p>במקום לעשות משימה — חשבי איך לעשות שמישהו אחר יעשה אותה לעולמי-עד. כל פעם שאת תופסת את עצמך עושה משהו פעם בשבוע, פעם בחודש — שאלי "האם אפשר לתזמן את זה?". התשובה כמעט תמיד: כן.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="section" id="workflows">
+                <h2><span class="section-num">2</span>שילובים ואוטומציות</h2>
+                <p>הקסם האמיתי קורה כשמשלבים. אג׳נט + סקיל + פלאגין + תזמון = אוטומציה אמיתית.</p>
+
+                <h3>דוגמה 1: אוטומציית מכירות</h3>
+                <div class="practice-box">
+                    <span class="practice-tag">workflow מורכב</span>
+                    <h4>🎯 מעקב אחרי לידים אוטומטי</h4>
+                    <p style="color:rgba(255,255,255,0.95);">משימה מתוזמנת ל-Sales Agent, כל יום ב-9:00:</p>
+                    <div class="practice-prompt">
+                        1. בדוק ב-CRM אילו לידים לא קיבלו מגע ב-7 הימים האחרונים.
+                        2. לכל ליד כזה — נתח את ההיסטוריה והכן טיוטת מייל מותאם אישי.
+                        3. שמור את הטיוטות ב-Gmail.
+                        4. שלח לי סיכום: כמה לידים זוהו, וקישור לכל הטיוטות לאישור.
+                    </div>
+                </div>
+
+                <h3>דוגמה 2: אוטומציית תוכן</h3>
+                <div class="practice-box">
+                    <span class="practice-tag">workflow תוכן</span>
+                    <h4>📝 פוסט שבועי ל-LinkedIn</h4>
+                    <p style="color:rgba(255,255,255,0.95);">משימה מתוזמנת ל-LinkedIn Agent, כל יום ראשון ב-10:00:</p>
+                    <div class="practice-prompt">
+                        1. סקור את החדשות והטרנדים בתחום AI ואוטומציה לעסקים.
+                        2. בחר נושא מעניין שרלוונטי לקהל שלי.
+                        3. כתוב פוסט בסגנון שלי — אישי, ישיר, עם hook חזק.
+                        4. תשמור כטיוטה ותשלח לי לאישור עד 12:00.
+                    </div>
+                </div>
+
+                <h3>דוגמה 3: אוטומציית ניהול</h3>
+                <div class="practice-box">
+                    <span class="practice-tag">workflow ניהולי</span>
+                    <h4>📊 סיכום שבועי לצוות</h4>
+                    <p style="color:rgba(255,255,255,0.95);">משימה כל יום שישי ב-15:00:</p>
+                    <div class="practice-prompt">
+                        1. אסוף נתונים: משימות שהושלמו (Monday), פגישות שהיו (Calendar), מיילים חשובים (Gmail).
+                        2. הכן דוח Word מסודר עם כל הסיכום.
+                        3. הכן מצגת קצרה (4 סליידים) להצגה בישיבת השני.
+                        4. שלח את שניהם לכל חברי הצוות במייל.
+                    </div>
+                </div>
+
+                <div class="callout callout-success">
+                    <div class="callout-icon">🚀</div>
+                    <div class="callout-body">
+                        <div class="callout-title">כשהמכונה רצה לבד</div>
+                        <p>תארי לעצמך — את ישנה. בבוקר את פותחת את המחשב — וכל מה שצריך כבר קרה. דוחות מוכנים. טיוטות בהמתנה. סיכומים בתיבה. <strong>זה Cowork ברמה הגבוהה ביותר.</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="section" id="tricks">
+                <h2><span class="section-num">3</span>10 טריקים של מקצוענים</h2>
+                <p>הטריקים שלוקח חודשים ללמוד לבד — מרוכזים כאן.</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-body">
+                            <h4>"שאל אותי את כל השאלות"</h4>
+                            <p>כשמשימה מורכבת — אל תנסי לכתוב פרומפט מושלם. תני בקצרה את המטרה, ובקשי: "תשאל אותי את כל השאלות שצריך כדי לעזור הכי טוב". התוצאה תהיה הרבה יותר מדויקת.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-body">
+                            <h4>תכניני בקול</h4>
+                            <p>"לפני שתתחיל לבצע — תסבר לי את התכנית שלך ב-3 משפטים". ככה את תופסת בעיות לפני שהן קורות.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-body">
+                            <h4>דוגמאות > הסברים</h4>
+                            <p>במקום להסביר את הסגנון שאת רוצה — תני דוגמה. "תכתוב מייל בסגנון של זה: [העתקה של מייל קודם]". קלוד יחקה.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-body">
+                            <h4>השתמשי ב"כובעים"</h4>
+                            <p>"תיכנס לכובע של עורך דין/מומחה שיווק/מנהל פיננסי ותעבור על המסמך הזה". מקבלת זווית חדשה.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-body">
+                            <h4>בקשי מספר גרסאות</h4>
+                            <p>"תכין לי 3 גרסאות של מייל זה — אחת ידידותית, אחת רשמית, אחת קצרה". קל לבחור מאשר ליצור.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-body">
+                            <h4>אל תפחדי לתקן</h4>
+                            <p>קלוד הוא לא רגיש. "התשובה הקודמת לא טובה כי X. תכתוב מחדש עם Y". זה משפר אותו, לא פוגע בו.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-body">
+                            <h4>"תן לי את ה-3 הכי חשובים"</h4>
+                            <p>קלוד נוטה לתת מידע מקיף. אם את רוצה רק את הטופ — בקשי במפורש: "תן לי את 3 הנקודות הקריטיות, לא יותר".</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">8</div>
+                        <div class="step-body">
+                            <h4>"מה עוד אני צריכה לדעת?"</h4>
+                            <p>אחרי תשובה — שאלי את השאלה הזו. קלוד לרוב יוסיף נקודות שלא חשבת עליהן.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">9</div>
+                        <div class="step-body">
+                            <h4>שאלי "מה אני מפספסת?"</h4>
+                            <p>לפני החלטה גדולה: "אני שוקלת לעשות X. מה הסיכונים? מה אני אולי לא רואה?". קלוד מצוין בלהוות עורך דין שטן בונה.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">10</div>
+                        <div class="step-body">
+                            <h4>בנייה הדרגתית</h4>
+                            <p>למשימה מורכבת — אל תבקשי הכל בבת אחת. "בוא נתחיל מ-X. אחרי שזה טוב, נמשיך ל-Y". איטרציות > פרומפטים ענקיים.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-pro">
+                    <div class="callout-icon">⭐</div>
+                    <div class="callout-body">
+                        <div class="callout-title">הטריק הבונוס</div>
+                        <p>השמורים את הפרומפטים הטובים שלך. כשמצאת ניסוח שעובד מצוין — שמרי בקובץ. בפעם הבאה תשתמשי שוב. עם הזמן יהיה לך "ספריית פרומפטים" שלמה.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="section" id="final-project">
+                <h2><span class="section-num">4</span>פרויקט סיום</h2>
+                <p>הגיע הרגע. נשתמש בכל מה שלמדנו ונבנה משהו אמיתי שתשתמשי בו.</p>
+
+                <div class="practice-box">
+                    <span class="practice-tag">פרויקט סיום · 30 דקות</span>
+                    <h4>🎓 בנייה של אג׳נט אישי מתוזמן</h4>
+                    <p style="color:rgba(255,255,255,0.95);"><strong>המטרה:</strong> לבנות אג׳נט אחד שיעזור לך באמת בעבודה היומיומית, ולתזמן אותו שירוץ לבד.</p>
+
+                    <p style="color:rgba(255,255,255,0.95);margin-top:14px;"><strong>הפרומפט:</strong></p>
+                    <div class="practice-prompt">
+                        אני רוצה לבנות אג׳נט אישי שיעזור לי בעבודה. שמו: [בחרי שם]. תפקידו: [מה הוא צריך לעשות — לדוגמה: עוזר ניהולי / אנליסט / רכז תוכן].
+
+                        תפעל בשלבים:
+                        1. תשאל אותי 5 שאלות שיעזרו לך להגדיר אותו במדויק.
+                        2. אחרי התשובות, צור את האג׳נט.
+                        3. הצע שתי משימות מתוזמנות לאג׳נט הזה (יומיות / שבועיות).
+                        4. הסבר לי איך להפעיל אותו ואיך לערוך אותו בעתיד.
+                    </div>
+                    <p style="color:rgba(255,255,255,0.95);margin-top:14px;">בסוף — יהיה לך אג׳נט פעיל שאת תשתמשי בו. זה התרגיל הכי חשוב בקורס.</p>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="section" id="path-forward">
+                <h2><span class="section-num">5</span>הדרך מכאן</h2>
+                <p>סיימת את הקורס. מה הלאה?</p>
+
+                <h3>שבוע ראשון לאחר הקורס</h3>
+                <ul>
+                    <li><strong>השתמשי בקלוד מדי יום.</strong> אפילו לדברים קטנים. הרגל הוא העניין.</li>
+                    <li><strong>בני 2-3 אג׳נטים</strong> לתפקידים שאת רואה את עצמך עושה הרבה.</li>
+                    <li><strong>תתזמני משימה אחת.</strong> לפחות אחת. תרגישי איך זה לקבל משהו מוכן בבוקר.</li>
+                </ul>
+
+                <h3>חודש ראשון</h3>
+                <ul>
+                    <li><strong>חברי את כל הכלים שלך.</strong> Gmail, Calendar, Drive, ניהול פרויקטים.</li>
+                    <li><strong>בני ארטיפקט אחד</strong> שאת פותחת בכל בוקר.</li>
+                    <li><strong>שמרי ספריית פרומפטים</strong> שעובדים.</li>
+                </ul>
+
+                <h3>טווח ארוך</h3>
+                <ul>
+                    <li><strong>תהיי פתוחה לחקור</strong> — קלוד מתעדכן כל הזמן. תקשיבי לחדשות.</li>
+                    <li><strong>למדי אחרים.</strong> ההסבר הוא הדרך הכי טובה לשלוט בנושא.</li>
+                    <li><strong>בקשי עזרה</strong> — אם תקועה, תשאלי גם בקלוד עצמו: "איך אני יכולה לעשות X?"</li>
+                </ul>
+
+                <div class="callout callout-pro">
+                    <div class="callout-icon">🚀</div>
+                    <div class="callout-body">
+                        <div class="callout-title">המסר האחרון</div>
+                        <p>הקורס הזה הוא רק ההתחלה. הכוח האמיתי של Cowork לא נמצא בידיעת הפיצ׳רים — הוא נמצא בנכונות שלך לחשוב <strong>אחרת</strong> על העבודה. במקום "מה אני צריכה לעשות עכשיו?" — "איך אני יכולה לבנות מערכת שתעשה את זה לבד?". זו החשיבה שתשנה את היומיום שלך.</p>
+                    </div>
+                </div>
+
+                <div class="callout callout-success">
+                    <div class="callout-icon">✨</div>
+                    <div class="callout-body">
+                        <div class="callout-title">תודה שהשקעת</div>
+                        <p>אחרי המבחן הסופי — תקבלי תעודת סיום הקורס. את ראויה. את עברת מאפס לגיבור. עכשיו לכי לתת השראה לאחרים.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="exercise" id="exercise">
+                <div class="exercise-header">
+                    <div class="exercise-num">🎯</div>
+                    <div>
+                        <span class="exercise-tag">פרויקט סיום · 45 דקות</span>
+                        <h3>בני את ה"מכונה" — אג׳נט מתוזמן + workflow מלא</h3>
+                        <div class="exercise-time">⏱ זמן משוער: 40-45 דקות</div>
+                    </div>
+                </div>
+                <div class="exercise-goal">
+                    <b>המטרה — פרויקט הסיום:</b> בסוף התרגיל יש לך מערכת אוטומטית שלמה שעובדת בלעדייך. אג׳נט שיש לו תפקיד, כלים, ומשימה מתוזמנת שרצה כל יום/שבוע. זו ההוכחה שהיית בקורס ושאת מסוגלת.
+                </div>
+                <div class="exercise-prompt-block">
+                    <pre>אני רוצה לבנות "מכונה" - מערכת אוטומטית מלאה.
+
+הרכיבים:
+1. אג׳נט מותאם אישית עם תפקיד ספציפי
+2. גישה לכלים שצריך (Gmail, Calendar, וכו׳)
+3. משימה מתוזמנת קבועה
+4. תוצרת שמגיעה אליי
+
+הפעולה שלי לאוטומציה:
+[המשימה מהחימום - מה את עושה כל יום שני]
+
+תפעל בשלבים:
+
+שלב 1 — הגדרת האג׳נט (15 דקות):
+שאל אותי 5 שאלות, בנה את האג׳נט המתאים.
+
+שלב 2 — הגדרת המשימה המתוזמנת (15 דקות):
+- מה התדירות? (יומי/שבועי/חודשי)
+- מה השעה?
+- אילו פעולות בדיוק יבוצעו?
+- מה התוצרת שאני צריכה לקבל בסוף?
+
+שלב 3 — בדיקה (10 דקות):
+- הריצה ראשונה ידנית
+- האם התוצרת מספקת?
+- אם לא - מה צריך לתקן?
+
+שלב 4 — הפעלה (5 דקות):
+תפעיל את התזמון. בפעם הבאה זה ירוץ אוטומטית.</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+                <div class="exercise-expected">
+                    <b>מה אמור לקרות:</b> בסוף הקורס יש לך מערכת אוטומטית שעובדת בלעדייך, 24/7. זו ההוכחה שעברת מ-"מי שמשתמשת ב-AI" ל-"מי שבונה מערכות". <strong>זה ההישג שיהפוך את הקורס לכדאי לחיים.</strong>
+                </div>
+                <ul class="exercise-checklist">
+                    <li>בניתי אג׳נט מותאם לתפקיד ספציפי</li>
+                    <li>חיברתי את הכלים שצריך</li>
+                    <li>הגדרתי משימה מתוזמנת — ועובדת</li>
+                    <li>קיבלתי את התוצרת הראשונה</li>
+                    <li>אישרתי שהתזמון מופעל לעתיד</li>
+                </ul>
+            </section>
+
+            <section class="case-study" id="case-study">
+                <div class="case-study-header">
+                    <span class="case-study-tag">מקרה בוחן · 25 דקות</span>
+                    <h3>"המכונה שלי הופיעה במקומי לישיבת ההנהלה"</h3>
+                    <div class="case-study-meta">
+                        <span>👤 עפרי · מנכ"לית, חברת מוצר</span>
+                        <span>👥 25 עובדים · גיוס סדרה A</span>
+                        <span>⏱ חיסכון: 8 שעות בשבוע</span>
+                    </div>
+                </div>
+                <div class="case-study-body">
+                    <h4>המצב</h4>
+                    <p>עפרי הייתה מבזבזת כל יום ראשון בערב 3-4 שעות על הכנה לישיבת ההנהלה ביום שני בבוקר. סיכום הצוותים, הכנת KPIs, סטטוס פרויקטים. אחרי שהבן הראשון נולד - היא ידעה שצריך לפתור את זה.</p>
+                    <h4>המכונה שהיא בנתה</h4>
+                    <div class="case-study-timeline">
+                        <div class="step"><b>הגדרת אג׳נט "סוכנת ההנהלה"</b><span>אג׳נטית עם גישה ל-Slack, Monday, Gmail. תפקידה: לייצר חבילת מסמכים שלמה לישיבה.</span></div>
+                        <div class="step"><b>תזמון: כל יום ראשון, 19:00</b><span>היא רצה אוטומטית. אוספת מ-Slack מה הצוותים אמרו השבוע. מ-Monday - סטטוס פרויקטים. מ-Gmail - מה הלקוחות הגדולים אמרו.</span></div>
+                        <div class="step"><b>תוצרת אוטומטית</b><span>3 קבצים: מצגת ההנהלה (PowerPoint), מסמך KPIs (Excel), ודף "נושאים פתוחים" (Word). הכל מוכן לישיבה ב-9:00 בבוקר.</span></div>
+                        <div class="step"><b>השיפור הקריטי</b><span>אחרי חודש, האג׳נטית למדה את ההעדפות שלה. עכשיו היא גם מציעה - "השבוע הזה יש 3 נושאים שאני מציעה לשים בראש - האם להוסיף?"</span></div>
+                    </div>
+                    <div class="case-study-result">
+                        <b>אחרי 3 חודשים:</b> 4 שעות בשבוע הפכו ל-30 דקות (עפרי בודקת ומוסיפה הערות אישיות). 8 שעות חיסכון בחודש. אבל הכי חשוב - היא חוזרת הביתה ב-19:00 בימי ראשון. "המכונה שלי לוקחת אחריות. אני יכולה להיות אמא במקום מנכ"לית 24/7."
+                    </div>
+                </div>
+            </section>
+
+            <section class="workbook-card" id="workbook">
+                <div class="workbook-icon">📓</div>
+                <div class="workbook-body">
+                    <span class="workbook-tag">חוברת עבודה · 20 דקות</span>
+                    <h4>תכנית 90 הימים שלך — איזו "מכונה" תבני בכל שבוע</h4>
+                    <p>החוברת מובילה אותך לתכנון רב-חודשי. כל שבוע — אוטומציה אחת חדשה. אחרי 12 שבועות, יש לך מערכת שלמה.</p>
+                </div>
+                <div class="workbook-actions">
+                    <a href="../Workbooks/workbook.html#day7" class="btn btn-primary btn-sm" target="_blank">📥 הורד PDF</a>
+                </div>
+            </section>
+
+            <section class="bonus" id="bonus">
+                <div class="bonus-header">
+                    <div class="bonus-icon">🚀</div>
+                    <div>
+                        <span class="bonus-tag">בונוס · 35 דקות</span>
+                        <h3>יום העצמאות שלך — חבילת אוטומציות מלאה</h3>
+                    </div>
+                </div>
+                <p>האתגר האחרון: בנייה של 3 אוטומציות בו-זמנית - יומית, שבועית, וחודשית. אם תצליחי בזה — את במשחק אחר לגמרי.</p>
+                <div class="bonus-task">
+                    <pre>אני בונה את "חבילת העצמאות" שלי — 3 אוטומציות בו-זמנית:
+
+1. אוטומציה יומית (כל יום ב-X:XX):
+   - שם: [...]
+   - מה היא עושה: [...]
+   - תוצרת: [...]
+
+2. אוטומציה שבועית (כל [יום] ב-X:XX):
+   - שם: [...]
+   - מה היא עושה: [...]
+   - תוצרת: [...]
+
+3. אוטומציה חודשית (1 לחודש):
+   - שם: [...]
+   - מה היא עושה: [...]
+   - תוצרת: [...]
+
+הוראות:
+1. לכל אחת - בנה את האג׳נט המתאים
+2. הגדר תזמונים מדויקים
+3. הסבר איך אני אדע אם משהו נכשל
+4. תכין דשבורד אחד שמראה את הסטטוס של כל ה-3
+
+זה הצעד שמפריד את "משתמש AI" מ-"מנהל מערכת AI".</pre>
+                    <button class="exercise-copy-btn" onclick="copyPrompt(this)">📋 העתק</button>
+                </div>
+            </section>
+
+            <section class="reflection" id="reflection">
+                <div class="reflection-header">
+                    <div class="reflection-icon">✍️</div>
+                    <div>
+                        <span class="reflection-tag">רפלקציה · 10 דקות · רפלקציית סיום הקורס</span>
+                        <h3>מאפס לגיבור — איך הרגיש המסלול?</h3>
+                    </div>
+                </div>
+                <ol class="reflection-questions" style="counter-reset: ref-counter;">
+                    <li><b>איזו אוטומציה בנית? איך זה הרגיש לראות אותה רצה לבד?</b><textarea data-qkey="day7-r1"></textarea></li>
+                    <li><b>איפה היית לפני 7 ימים — ואיפה את עכשיו?</b><textarea data-qkey="day7-r2"></textarea></li>
+                    <li><b>מה ה-3 הדברים הכי חשובים שלמדת בקורס?</b><textarea data-qkey="day7-r3"></textarea></li>
+                    <li><b>מה הצעד הבא שלך — מה תבני בשבוע הקרוב?</b><textarea data-qkey="day7-r4"></textarea></li>
+                </ol>
+                <div class="reflection-share"><b>💬 שתפי בקהילה:</b> תספרי לקהילה איזו "מכונה" בנית — וכמה זמן היא חוסכת לך. את הסיפור שלך מעוררת השראה לאחרים.</div>
+            </section>
+
+            <section class="quiz-section" id="quiz">
+                <div id="quiz-container"></div>
+            </section>
+
+            <nav class="lesson-nav" id="lesson-nav"></nav>
+        </main>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-brand"><div class="brand-logo" style="width:24px;height:24px;font-size:0.8rem;">A</div>AlphaDevs Academy</div>
+        <p>יום 7 מתוך 7 · המבחן הסופי · © 2026 AlphaDevs</p>
+    </div>
+</footer>
+
+<meta name="i18n-incomplete" content="true">
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+const day7Quiz = [
+    {
+        q: "מה היתרון של משימות מתוזמנות?",
+        options: [
+            "אסתטי",
+            "קלוד מבצע אוטומטית לפי לוח זמנים — את מקבלת תוצאות מוכנות בלי לבקש בכל פעם",
+            "חוסך כסף",
+            "יותר מהיר באלגוריתם"
+        ],
+        correct: 1,
+        explanation: "משימה מתוזמנת רצה לבד לפי הזמן שתגדירי. בריף בוקר, דוח שבועי, בדיקות תקופתיות — הכל מוכן בלי שתבקשי שוב."
+    },
+    {
+        q: "מה הפרומפט הכי טוב כשהמשימה מורכבת ולא בטוחה איך לנסח?",
+        options: [
+            "לכתוב פרומפט ארוך מאוד",
+            "לתת רקע קצר ולבקש: ׳תשאל אותי את כל השאלות שאתה צריך כדי לעזור הכי טוב׳",
+            "לוותר",
+            "לחפש פרומפט באינטרנט"
+        ],
+        correct: 1,
+        explanation: "הטריק של מקצוענים. במקום לכתוב פרומפט מושלם — לתת רקע ולבקש מקלוד לשאול שאלות. תשובות → תוצאה הרבה יותר מדויקת."
+    },
+    {
+        q: "איך הכי טוב להעביר לקלוד סגנון כתיבה ספציפי?",
+        options: [
+            "להסביר במילים את הסגנון",
+            "לתת דוגמה: ׳תכתוב בסגנון של הטקסט הזה: [העתקה]׳",
+            "לבקש שיהיה קליל",
+            "לא לציין סגנון"
+        ],
+        correct: 1,
+        explanation: "דוגמה אחת שווה אלף הסברים. כשנותנים לקלוד דוגמה, הוא יודע בדיוק לחקות את הסגנון, הטון, ואפילו אורך המשפטים."
+    },
+    {
+        q: "מה לעשות לפני החלטה עסקית גדולה?",
+        options: [
+            "להחליט מהר",
+            "לשאול את קלוד: ׳אני שוקלת X. מה הסיכונים? מה אני אולי לא רואה?׳",
+            "להתעלם מקלוד",
+            "להחליט הפוך"
+        ],
+        correct: 1,
+        explanation: "קלוד מצוין בתפקיד ׳עורך דין שטן בונה׳. הוא יראה לך נקודות שלא חשבת עליהן וסיכונים פוטנציאליים. זה מקפיץ את איכות ההחלטה."
+    },
+    {
+        q: "מהי הגישה הנכונה למשימה מורכבת?",
+        options: [
+            "פרומפט אחד גדול שמכסה הכל",
+            "בנייה הדרגתית — שלב אחר שלב, כל שלב נסגר לפני הבא",
+            "לא לעשות בכלל",
+            "להעביר למישהו אחר"
+        ],
+        correct: 1,
+        explanation: "פרומפטים ענקיים מובילים לתוצאה לא ממוקדת. בנייה הדרגתית — שלב אחר שלב — נותנת תוצאה מדויקת יותר ושליטה לאורך הדרך."
+    },
+    {
+        q: "מה לעשות עם פרומפטים שעובדים מצוין?",
+        options: [
+            "לזרוק",
+            "לשמור בקובץ — ספריית פרומפטים אישית שתחזרי אליה",
+            "לפרסם בפייסבוק",
+            "לשכוח"
+        ],
+        correct: 1,
+        explanation: "פרומפטים טובים הם נכס. שמרי אותם בקובץ — עם הזמן יהיה לך ספרייה שלמה של פרומפטים מוכחים שאת משתמשת בהם שוב ושוב."
+    },
+    {
+        q: "מה זה אומר ׳לחשוב כמו מנהלת׳ עם Cowork?",
+        options: [
+            "ללבוש חליפה",
+            "לעבור מ׳מה אני צריכה לעשות עכשיו?׳ ל׳איך אני יכולה לבנות מערכת שתעשה את זה לבד?׳",
+            "לקבל החלטות מהירות",
+            "להיות קשה עם עובדים"
+        ],
+        correct: 1,
+        explanation: "השינוי בחשיבה הוא הכי חשוב. במקום לבצע משימות — לבנות מערכות שיבצעו אותן. אג׳נטים, אוטומציות, תזמונים. זה שינוי תפיסה."
+    },
+    {
+        q: "מה הצעד הכי חשוב אחרי סיום הקורס?",
+        options: [
+            "לחזור על כל הקורס",
+            "להתחיל להשתמש מדי יום, אפילו בדברים קטנים — ההרגל הוא הקריטי",
+            "לחכות לקורס הבא",
+            "לקרוא ספרים על AI"
+        ],
+        correct: 1,
+        explanation: "הידע ללא יישום נשכח. השימוש היומי הוא מה שבונה את ההרגל ואת המיומנות האמיתית. גם דברים קטנים — תשאלי, תבקשי, תנסי."
+    }
+];
+document.addEventListener('DOMContentLoaded', () => {
+    renderQuiz('quiz-container', 7, day7Quiz);
+    renderLessonNav('lesson-nav', 7);
+});
+</script>
+
+</body>
+</html>
