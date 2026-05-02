@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="uk" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🛠️ Natalia Access · AlphaDevs Academy</title>
+<title>🛠️ Доступ для Наталі · AlphaDevs Academy</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-    font-family: 'Heebo', sans-serif; direction: rtl;
+    font-family: 'Heebo', sans-serif; direction: ltr;
     background: linear-gradient(135deg, #0c1948 0%, #1e3a8a 40%, #1d4ed8 100%);
     color: white; min-height: 100vh;
     display: flex; align-items: center; justify-content: center;
@@ -23,6 +23,27 @@ body {
     text-align: center;
     backdrop-filter: blur(20px);
     box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    position: relative;
+}
+.lang-toggle {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 999px;
+    padding: 5px 12px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 200ms;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.lang-toggle:hover {
+    background: rgba(255,255,255,0.18);
+    color: white;
 }
 .icon {
     font-size: 4rem; margin-bottom: 16px;
@@ -51,19 +72,18 @@ h1 {
     border-radius: 12px;
     padding: 18px 22px;
     margin: 22px 0;
-    text-align: right;
+    text-align: left;
 }
 .creds-row { margin: 8px 0; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .creds-label {
     font-size: 0.78rem; opacity: 0.6;
     letter-spacing: 0.06em; text-transform: uppercase;
-    min-width: 100px;
+    min-width: 80px;
 }
 .creds-value {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.95rem; font-weight: 600;
     color: #93c5fd;
-    direction: ltr;
     background: rgba(0,0,0,0.3);
     padding: 4px 10px; border-radius: 6px;
 }
@@ -89,28 +109,6 @@ h1 {
 }
 .btn-ghost:hover { background: rgba(255,255,255,0.2); }
 
-.card { position: relative; }
-.lang-toggle {
-    position: absolute;
-    top: 16px; left: 16px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 999px;
-    padding: 5px 12px;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 200ms;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-.lang-toggle:hover {
-    background: rgba(255,255,255,0.18);
-    color: white;
-}
-
 .status {
     margin-top: 24px;
     padding: 14px 18px;
@@ -133,13 +131,13 @@ h1 {
 }
 
 .access-list {
-    text-align: right;
+    text-align: left;
     list-style: none;
     padding: 0;
     margin: 14px 0;
 }
 .access-list li {
-    padding: 10px 28px 10px 0;
+    padding: 10px 0 10px 28px;
     position: relative;
     font-size: 0.95rem;
     opacity: 0.9;
@@ -148,7 +146,7 @@ h1 {
 .access-list li::before {
     content: '✓';
     position: absolute;
-    right: 0; top: 10px;
+    left: 0; top: 10px;
     color: #6ee7b7;
     font-weight: 800;
     font-size: 1.1rem;
@@ -161,7 +159,7 @@ h1 {
     border-top: 1px solid rgba(255,255,255,0.1);
     font-size: 0.82rem;
     opacity: 0.7;
-    text-align: right;
+    text-align: left;
 }
 
 .quick-nav {
@@ -190,81 +188,81 @@ h1 {
 <body>
 
 <div class="card">
-    <a href="natalia-access-uk.html" class="lang-toggle">🇺🇦 Українська</a>
+    <a href="natalia-access.html" class="lang-toggle">🇮🇱 עברית</a>
 
     <div class="icon">🛠️</div>
-    <span class="eyebrow">MANAGER ACCESS</span>
-    <h1>שלום נטליה</h1>
-    <p class="lead">זה הדף האישי שלך לניהול הקורסים של AlphaDevs Academy. לחיצה אחת ויש לך גישת אדמין מלאה — לכל הקורסים, התוצרים, ולוחות השליטה.</p>
+    <span class="eyebrow">ДОСТУП МЕНЕДЖЕРА</span>
+    <h1>Привіт, Наталіє!</h1>
+    <p class="lead">Це твоя особиста сторінка для управління курсами AlphaDevs Academy. Один клік — і в тебе повний адміністративний доступ до всіх курсів, матеріалів та панелей керування.</p>
 
     <div class="creds-display">
         <div class="creds-row">
-            <span class="creds-label">שם:</span>
-            <span class="creds-value">נטליה</span>
+            <span class="creds-label">Ім'я:</span>
+            <span class="creds-value">Наталія</span>
         </div>
         <div class="creds-row">
-            <span class="creds-label">תפקיד:</span>
+            <span class="creds-label">Роль:</span>
             <span class="creds-value">Manager</span>
         </div>
         <div class="creds-row">
-            <span class="creds-label">מייל:</span>
+            <span class="creds-label">Email:</span>
             <span class="creds-value">natalia@alphadevs.co</span>
         </div>
         <div class="creds-row">
-            <span class="creds-label">מפתח:</span>
+            <span class="creds-label">Ключ:</span>
             <span class="creds-value">AD-NAT001</span>
         </div>
     </div>
 
     <ul class="access-list">
-        <li>גישה מלאה לכל הקורסים (קריאה + ניהול)</li>
-        <li>אין watermark אלכסוני על הדפים</li>
-        <li>אפשר להעתיק טקסט (לצורך תמיכת לקוחות)</li>
-        <li>תג "MANAGER" מופיע בפינה לזיהוי</li>
-        <li>גישה לכל החומרים השיווקיים והאסטרטגיים</li>
+        <li>Повний доступ до всіх курсів (читання + управління)</li>
+        <li>Без діагонального водяного знаку на сторінках</li>
+        <li>Можна копіювати текст (для підтримки клієнтів)</li>
+        <li>Значок «MANAGER» відображається в кутку для ідентифікації</li>
+        <li>Доступ до всіх маркетингових та стратегічних матеріалів</li>
     </ul>
 
     <div class="btn-row">
-        <button class="btn btn-blue" onclick="installManager()">⚡ הפעילי גישה ולכו לאינדקס</button>
-        <button class="btn btn-ghost" onclick="copyMagicUrl()">📋 העתיקי לינק קסם</button>
+        <button class="btn btn-blue" onclick="installManager()">⚡ Активувати доступ і перейти до головної</button>
+        <button class="btn btn-ghost" onclick="copyMagicUrl()">📋 Скопіювати магічне посилання</button>
     </div>
 
     <div id="status" class="status"></div>
 
     <div class="divider"></div>
 
-    <h3 style="font-size:1.05rem;margin-bottom:14px;color:#bfdbfe;text-align:right;">⚡ קפיצה ישירה לכל דף ניהול</h3>
+    <h3 style="font-size:1.05rem;margin-bottom:14px;color:#bfdbfe;text-align:left;">⚡ Швидкий доступ до адмінських сторінок</h3>
 
     <div class="quick-nav">
-        <a class="nav-link" data-target="README.html"><span class="emoji">📁</span><span class="title">אינדקס מרכזי</span></a>
-        <a class="nav-link" data-target="index.html"><span class="emoji">🏠</span><span class="title">דף הבית של הקורס</span></a>
-        <a class="nav-link" data-target="Master-Plan/index.html"><span class="emoji">📊</span><span class="title">תכנית המאסטר</span></a>
-        <a class="nav-link" data-target="Landing-Pages/sales.html"><span class="emoji">🛒</span><span class="title">דף נחיתה למכירות</span></a>
+        <a class="nav-link" data-target="README.html"><span class="emoji">📁</span><span class="title">Головна</span></a>
+        <a class="nav-link" data-target="index.html"><span class="emoji">🏠</span><span class="title">Сторінка курсу</span></a>
+        <a class="nav-link" data-target="Master-Plan/index.html"><span class="emoji">📊</span><span class="title">Майстер-план</span></a>
+        <a class="nav-link" data-target="Landing-Pages/sales.html"><span class="emoji">🛒</span><span class="title">Лендінг продажів</span></a>
         <a class="nav-link" data-target="Lead-Magnet/landing.html"><span class="emoji">📨</span><span class="title">Lead Magnet</span></a>
-        <a class="nav-link" data-target="Workbooks/workbook.html"><span class="emoji">📓</span><span class="title">חוברת עבודה</span></a>
-        <a class="nav-link" data-target="Marketing/linkedin-posts.md"><span class="emoji">💼</span><span class="title">15 פוסטים לינקדאין</span></a>
-        <a class="nav-link" data-target="Marketing/email-sequence.md"><span class="emoji">📧</span><span class="title">רצף 7 מיילים</span></a>
-        <a class="nav-link" data-target="Video-Scripts/all-scripts.md"><span class="emoji">🎬</span><span class="title">תסריטי וידאו</span></a>
-        <a class="nav-link" data-target="00-START-HERE.html"><span class="emoji">📋</span><span class="title">משימות פתוחות</span></a>
+        <a class="nav-link" data-target="Workbooks/workbook.html"><span class="emoji">📓</span><span class="title">Робочий зошит</span></a>
+        <a class="nav-link" data-target="Marketing/linkedin-posts.md"><span class="emoji">💼</span><span class="title">15 постів LinkedIn</span></a>
+        <a class="nav-link" data-target="Marketing/email-sequence.md"><span class="emoji">📧</span><span class="title">Серія 7 email</span></a>
+        <a class="nav-link" data-target="Video-Scripts/all-scripts.md"><span class="emoji">🎬</span><span class="title">Сценарії відео</span></a>
+        <a class="nav-link" data-target="00-START-HERE.html"><span class="emoji">📋</span><span class="title">Відкриті завдання</span></a>
     </div>
 
     <div style="margin-top:24px;">
-        <h3 style="font-size:1rem;margin-bottom:10px;color:#bfdbfe;text-align:right;">📚 7 ימי הקורס (לקריאה ולתמיכה)</h3>
+        <h3 style="font-size:1rem;margin-bottom:10px;color:#bfdbfe;text-align:left;">📚 7 днів курсу (для читання та підтримки)</h3>
         <div class="quick-nav" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr));">
-            <a class="nav-link" data-target="days/day1.html"><span class="emoji">1</span><span class="title">יסודות</span></a>
-            <a class="nav-link" data-target="days/day2.html"><span class="emoji">2</span><span class="title">קבצים</span></a>
-            <a class="nav-link" data-target="days/day3.html"><span class="emoji">3</span><span class="title">סקילים</span></a>
-            <a class="nav-link" data-target="days/day4.html"><span class="emoji">4</span><span class="title">פלאגינים</span></a>
-            <a class="nav-link" data-target="days/day5.html"><span class="emoji">5</span><span class="title">זיכרון</span></a>
-            <a class="nav-link" data-target="days/day6.html"><span class="emoji">6</span><span class="title">אג׳נטים</span></a>
-            <a class="nav-link" data-target="days/day7.html"><span class="emoji">7</span><span class="title">אוטומציה</span></a>
+            <a class="nav-link" data-target="days/day1.html"><span class="emoji">1</span><span class="title">Основи</span></a>
+            <a class="nav-link" data-target="days/day2.html"><span class="emoji">2</span><span class="title">Файли</span></a>
+            <a class="nav-link" data-target="days/day3.html"><span class="emoji">3</span><span class="title">Скіли</span></a>
+            <a class="nav-link" data-target="days/day4.html"><span class="emoji">4</span><span class="title">Плагіни</span></a>
+            <a class="nav-link" data-target="days/day5.html"><span class="emoji">5</span><span class="title">Пам'ять</span></a>
+            <a class="nav-link" data-target="days/day6.html"><span class="emoji">6</span><span class="title">Агенти</span></a>
+            <a class="nav-link" data-target="days/day7.html"><span class="emoji">7</span><span class="title">Автоматизація</span></a>
         </div>
     </div>
 
     <div class="help">
-        <strong style="color:#bfdbfe;">תמיכה / שאלות:</strong> פנייה ישירה ללאור — lior@alphadevs.co<br><br>
-        <strong style="color:#bfdbfe;">איפה נשמר המפתח שלך?</strong> בדפדפן הזה (localStorage). בדפדפן אחר — תפתחי את הדף הזה שוב כדי להפעיל.<br><br>
-        <strong style="color:#bfdbfe;">לאיפוס:</strong> Console בדפדפן → <code style="background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;direction:ltr;display:inline-block;">localStorage.clear()</code>
+        <strong style="color:#bfdbfe;">Підтримка / Питання:</strong> Звертайся напряму до Ліора — lior@alphadevs.co<br><br>
+        <strong style="color:#bfdbfe;">Де зберігається твій ключ?</strong> У цьому браузері (localStorage). Якщо відкриєш в іншому браузері — просто відкрий цю сторінку знову, щоб активувати.<br><br>
+        <strong style="color:#bfdbfe;">Для скидання:</strong> Console в браузері → <code style="background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;display:inline-block;">localStorage.clear()</code>
     </div>
 </div>
 
@@ -272,7 +270,7 @@ h1 {
 const MANAGER_DATA = {
     email: 'natalia@alphadevs.co',
     key: 'AD-NAT001',
-    name: 'נטליה',
+    name: 'Наталія',
     role: 'manager'
 };
 const STORAGE_KEY = 'alphadevs_academy_license_v1';
@@ -281,7 +279,7 @@ function installManager() {
     storeManagerCredentials();
     const status = document.getElementById('status');
     status.className = 'status success';
-    status.innerHTML = '✅ מחוברת! מעבירים אותך לאינדקס תוך 2 שניות...';
+    status.innerHTML = '✅ Підключено! Переходимо до головної через 2 секунди...';
     setTimeout(() => {
         window.location.href = 'README.html';
     }, 2000);
@@ -293,22 +291,22 @@ function storeManagerCredentials() {
         activatedAt: new Date().toISOString()
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    // Also save language preference if not set
+    // Set Ukrainian preference if i18n exists
     if (!localStorage.getItem('alphadevs_academy_lang_v1')) {
-        localStorage.setItem('alphadevs_academy_lang_v1', 'he');
+        localStorage.setItem('alphadevs_academy_lang_v1', 'en');
         localStorage.setItem('alphadevs_academy_lang_chosen_v1', 'true');
     }
 }
 
 function copyMagicUrl() {
-    const baseUrl = window.location.origin + window.location.pathname.replace('natalia-access.html', 'README.html');
+    const baseUrl = window.location.origin + window.location.pathname.replace('natalia-access-uk.html', 'README.html');
     const magicUrl = `${baseUrl}?key=${MANAGER_DATA.key}&email=${encodeURIComponent(MANAGER_DATA.email)}&name=${encodeURIComponent(MANAGER_DATA.name)}`;
     navigator.clipboard.writeText(magicUrl).then(() => {
         const status = document.getElementById('status');
         status.className = 'status success';
-        status.innerHTML = '📋 הלינק הועתק! שמרי ב-bookmarks.';
+        status.innerHTML = '📋 Посилання скопійовано! Збережи в закладках.';
     }).catch(() => {
-        prompt('העתיקי את הלינק:', magicUrl);
+        prompt('Скопіюй посилання:', magicUrl);
     });
 }
 

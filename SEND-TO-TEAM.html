@@ -244,7 +244,15 @@ code {
     </div>
 
     <div class="send-options">
-        <h4>📤 שלח לנטליה:</h4>
+        <h4>📤 שלח לנטליה — בחר שפה:</h4>
+        <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+            <label style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#f1f5f9;border-radius:10px;cursor:pointer;font-weight:700;font-size:0.92rem;">
+                <input type="radio" name="natalia-lang" value="he" checked onchange="updateNataliaPreview()"> 🇮🇱 עברית
+            </label>
+            <label style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#f1f5f9;border-radius:10px;cursor:pointer;font-weight:700;font-size:0.92rem;">
+                <input type="radio" name="natalia-lang" value="uk" onchange="updateNataliaPreview()"> 🇺🇦 Українська
+            </label>
+        </div>
         <div class="send-btn-row">
             <button class="send-btn send-btn-whatsapp" onclick="sendNataliaWhatsapp()">📱 שלח ב-WhatsApp</button>
             <button class="send-btn send-btn-email" onclick="sendNataliaEmail()">📧 שלח במייל</button>
@@ -253,7 +261,10 @@ code {
         </div>
 
         <h4 style="margin-top:18px;">תצוגת ההודעה:</h4>
-        <div class="message-preview" id="natalia-message">היי נטליה 🛠️
+        <div class="message-preview" id="natalia-message-display"></div>
+
+        <!-- Hidden message templates -->
+        <div style="display:none;" id="natalia-message-he">היי נטליה 🛠️
 
 לאור פה. בנינו מערכת חדשה לקורסים של AlphaDevs Academy — והכנתי לך גישת ניהול מלאה.
 
@@ -273,6 +284,27 @@ code {
 יש שאלות — תכתבי לי. אנחנו בונים פה משהו גדול.
 
 לאור</div>
+
+        <div style="display:none;" id="natalia-message-uk">Привіт, Наталіє! 🛠️
+
+Це Ліор. Ми побудували нову систему курсів для AlphaDevs Academy — і я підготував для тебе повний адміністративний доступ.
+
+Один клік — і в тебе доступ до всіх курсів, маркетингових матеріалів, майстер-плану та іншого.
+
+Ось твоє особисте посилання:
+[LINK]
+
+Що ти там знайдеш:
+✓ Головний індекс всіх матеріалів
+✓ Повний 7-денний курс
+✓ Головний лендінг + Lead Magnet
+✓ 45-денний план запуску
+✓ Робочий зошит + сценарії відео
+✓ 15 постів для LinkedIn та серія з 7 email-листів
+
+Питання — пиши. Ми тут будуємо щось велике.
+
+Ліор</div>
     </div>
 </div>
 
@@ -380,13 +412,30 @@ function getBaseUrl() {
 }
 
 // === NATALIA ===
+function getNataliaLang() {
+    const checked = document.querySelector('input[name="natalia-lang"]:checked');
+    return checked ? checked.value : 'he';
+}
+
 function getNataliaLink() {
-    return getBaseUrl() + 'natalia-access.html';
+    const lang = getNataliaLang();
+    const file = lang === 'uk' ? 'natalia-access-uk.html' : 'natalia-access.html';
+    return getBaseUrl() + file;
 }
 
 function getNataliaMessage() {
-    return document.getElementById('natalia-message').textContent
+    const lang = getNataliaLang();
+    const tplId = lang === 'uk' ? 'natalia-message-uk' : 'natalia-message-he';
+    return document.getElementById(tplId).textContent
         .replace('[LINK]', getNataliaLink());
+}
+
+function updateNataliaPreview() {
+    const display = document.getElementById('natalia-message-display');
+    const lang = getNataliaLang();
+    display.style.direction = lang === 'uk' ? 'ltr' : 'rtl';
+    display.style.textAlign = lang === 'uk' ? 'left' : 'right';
+    display.textContent = getNataliaMessage();
 }
 
 function sendNataliaWhatsapp() {
@@ -395,7 +444,12 @@ function sendNataliaWhatsapp() {
 }
 
 function sendNataliaEmail() {
-    const subject = encodeURIComponent('הגישה שלך למערכת AlphaDevs Academy');
+    const lang = getNataliaLang();
+    const subject = encodeURIComponent(
+        lang === 'uk'
+            ? 'Твій доступ до AlphaDevs Academy'
+            : 'הגישה שלך למערכת AlphaDevs Academy'
+    );
     const body = encodeURIComponent(getNataliaMessage());
     window.location.href = `mailto:natalia@alphadevs.co?subject=${subject}&body=${body}`;
 }
@@ -447,8 +501,7 @@ function showToast(text) {
 
 // Update message previews to include actual link
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('natalia-message').textContent =
-        document.getElementById('natalia-message').textContent.replace('[LINK]', getNataliaLink());
+    updateNataliaPreview();
     document.getElementById('reema-message').textContent =
         document.getElementById('reema-message').textContent.replace('[LINK]', getReemaLink());
 });

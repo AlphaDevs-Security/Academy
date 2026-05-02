@@ -2077,11 +2077,48 @@ body.dir-ltr .footer-lang-link { right: 14px; left: auto; }
 
 /* ============================================
    LTR Direction Overrides
-   When language is English (LTR), some RTL-specific styles need flipping.
+   When language is English (LTR) — FORCE direction to ltr
+   and flip all RTL-specific positioning.
    ============================================ */
 body.dir-ltr {
+    direction: ltr !important;
     text-align: left;
 }
+body.dir-ltr h1,
+body.dir-ltr h2,
+body.dir-ltr h3,
+body.dir-ltr h4,
+body.dir-ltr p,
+body.dir-ltr li,
+body.dir-ltr ul,
+body.dir-ltr ol {
+    text-align: left;
+    direction: ltr;
+}
+/* But preserve explicit centering */
+body.dir-ltr .hero,
+body.dir-ltr .hero-eyebrow,
+body.dir-ltr .hero h1,
+body.dir-ltr .hero-sub,
+body.dir-ltr .stat,
+body.dir-ltr .stat-item,
+body.dir-ltr .lesson-progress,
+body.dir-ltr .quiz-header,
+body.dir-ltr .quiz-result,
+body.dir-ltr [style*="text-align:center"],
+body.dir-ltr [style*="text-align: center"] {
+    text-align: center;
+}
+body.dir-ltr .hero-stats { justify-content: flex-start; }
+
+/* Fix common padding/margin direction-specific */
+body.dir-ltr .section ul,
+body.dir-ltr .section ol { margin: 14px 24px 14px 24px; padding-inline-start: 24px; }
+body.dir-ltr .topbar-actions { flex-direction: row; }
+body.dir-ltr code { direction: ltr; text-align: left; }
+
+/* Buttons should look natural in LTR */
+body.dir-ltr .btn { direction: ltr; }
 body.dir-ltr .toc-list a {
     border-right: 3px solid transparent;
     border-left: 0;

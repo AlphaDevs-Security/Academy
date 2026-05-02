@@ -540,9 +540,10 @@ const TRANSLATIONS = {
 
         // Quiz UI
         'quiz.badge': 'מבחן',
+        'quiz.badge_day': 'מבחן יום {n}',
         'quiz.title': 'מבחן סיכום',
         'quiz.desc': 'צריך לפחות 70% כדי לעבור הלאה. אפשר לנסות שוב.',
-        'quiz.submit': 'בדקי את עצמך ←',
+        'quiz.submit': 'בדקי את עצמך',
         'quiz.passed_title': 'כל הכבוד! עברת את המבחן 🎉',
         'quiz.failed_title': 'כמעט שם!',
         'quiz.try_again': 'נסי שוב 🔄',
@@ -551,6 +552,14 @@ const TRANSLATIONS = {
         'quiz.get_certificate': 'קבלי תעודת סיום 🎓',
         'quiz.back_home': 'חזרה לדף הבית',
         'quiz.explanation': 'הסבר',
+        'quiz.explanation_label': 'הסבר',
+        'quiz.correct_count': '{c} מתוך {t} תשובות נכונות. יום {d} סומן כהושלם.',
+        'quiz.failed_text': '{c} מתוך {t} תשובות נכונות. צריך 70% לפחות. סקרי שוב את החומר ונסי שוב — את יודעת את זה.',
+        'quiz.missing_confirm': 'לא ענית על {n} שאלות. להגיש בכל זאת?',
+
+        // Progress
+        'progress.days': 'ימים',
+        'progress.reset_confirm': 'לאפס את כל ההתקדמות? כל המבחנים יצטרכו להיעשות שוב.',
 
         // License modal
         'license.title': 'גישה לקורס',
@@ -561,6 +570,7 @@ const TRANSLATIONS = {
         'license.key_label': 'מפתח רישוי (License Key)',
         'license.submit': 'היכנסי לקורס ←',
         'license.help': 'שכחת מפתח?',
+        'license.help_example': 'לדוגמה: AD-DEMO01 — כל מפתח בפורמט תקין יעבוד',
         'license.error_invalid': 'פרטים לא תקינים. בדקי את המפתח (פורמט: AD-XXXXXX) ואת המייל.',
 
         // Lesson sidebar
@@ -841,10 +851,11 @@ const TRANSLATIONS = {
 
         // Quiz UI
         'quiz.badge': 'Quiz',
+        'quiz.badge_day': 'Day {n} Quiz',
         'quiz.title': 'Comprehension Quiz',
         'quiz.desc': 'You need at least 70% to pass to the next day. You can try again.',
-        'quiz.submit': 'Check yourself →',
-        'quiz.passed_title': 'Well done! You passed the quiz 🎉',
+        'quiz.submit': 'Check my answers',
+        'quiz.passed_title': 'Well done! You passed 🎉',
         'quiz.failed_title': 'Almost there!',
         'quiz.try_again': 'Try again 🔄',
         'quiz.back_to_content': 'Back to content',
@@ -852,6 +863,14 @@ const TRANSLATIONS = {
         'quiz.get_certificate': 'Get completion certificate 🎓',
         'quiz.back_home': 'Back to home',
         'quiz.explanation': 'Explanation',
+        'quiz.explanation_label': 'Explanation',
+        'quiz.correct_count': '{c} out of {t} correct. Day {d} marked complete.',
+        'quiz.failed_text': '{c} out of {t} correct. You need at least 70%. Review the material and try again — you got this.',
+        'quiz.missing_confirm': "You haven't answered {n} questions. Submit anyway?",
+
+        // Progress
+        'progress.days': 'days',
+        'progress.reset_confirm': 'Reset all progress? You will need to redo every quiz.',
 
         // License modal
         'license.title': 'Course Access',
@@ -862,6 +881,7 @@ const TRANSLATIONS = {
         'license.key_label': 'License Key',
         'license.submit': 'Enter Course →',
         'license.help': 'Forgot your key?',
+        'license.help_example': 'Example: AD-DEMO01 — any properly-formatted key works',
         'license.error_invalid': 'Invalid credentials. Check the key (format: AD-XXXXXX) and email.',
 
         // Lesson sidebar

@@ -85,7 +85,8 @@ function getProgressPercent() {
 }
 
 function resetProgress() {
-    if (confirm('לאפס את כל ההתקדמות? כל המבחנים יצטרכו להיעשות שוב.')) {
+    const msg = tr('progress.reset_confirm', 'לאפס את כל ההתקדמות? כל המבחנים יצטרכו להיעשות שוב.');
+    if (confirm(msg)) {
         localStorage.removeItem(STORAGE_KEY);
         location.reload();
     }
@@ -169,7 +170,8 @@ function renderProgressPill(elementId) {
     if (!el) return;
     const p = loadProgress();
     const pct = getProgressPercent();
-    el.innerHTML = `<span class="dot"></span> ${p.completedDays.length}/${COURSE_STRUCTURE.length} ימים · ${pct}%`;
+    const daysWord = tr('progress.days', 'ימים');
+    el.innerHTML = `<span class="dot"></span> ${p.completedDays.length}/${COURSE_STRUCTURE.length} ${daysWord} · ${pct}%`;
 }
 
 /* ---------- Quiz Engine ---------- */
@@ -181,24 +183,33 @@ function renderQuiz(containerId, dayNum, questions) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
+    const badgeTmpl = tr('quiz.badge_day', 'מבחן יום {n}');
+    const quizTitle = tr('quiz.title', 'מבחן סיכום');
+    const quizDesc = tr('quiz.desc', 'צריך לפחות 70% כדי לעבור הלאה. אפשר לנסות שוב.');
+    const submitBtn = tr('quiz.submit', 'בדקי את עצמך ←');
+
     container.innerHTML = `
         <div class="quiz-header">
-            <span class="quiz-badge">${iconQuiz()} מבחן יום ${dayNum}</span>
-            <h2>מבחן סיכום</h2>
-            <p class="muted">צריך לפחות 70% כדי לעבור הלאה. אפשר לנסות שוב.</p>
+            <span class="quiz-badge">${iconQuiz()} ${badgeTmpl.replace('{n}', dayNum)}</span>
+            <h2>${quizTitle}</h2>
+            <p class="muted">${quizDesc}</p>
         </div>
         <div id="quiz-questions">
             ${questions.map((q, i) => renderQuestion(q, i)).join('')}
         </div>
         <div class="quiz-submit">
-            <button class="btn btn-primary btn-lg" onclick="submitQuiz()">בדקי את עצמך ${iconArrowLeft()}</button>
+            <button class="btn btn-primary btn-lg" onclick="submitQuiz()">${submitBtn} ${iconArrowLeft()}</button>
         </div>
         <div id="quiz-result" class="quiz-result"></div>
     `;
 }
 
 function renderQuestion(q, idx) {
-    const letters = ['א', 'ב', 'ג', 'ד', 'ה'];
+    const lang = (typeof getLang === 'function') ? getLang() : 'he';
+    const letters = lang === 'he'
+        ? ['א', 'ב', 'ג', 'ד', 'ה']
+        : ['A', 'B', 'C', 'D', 'E'];
+    const explainLabel = tr('quiz.explanation_label', 'הסבר');
     return `
         <div class="quiz-question" id="q-${idx}">
             <div class="quiz-q-header">
@@ -214,7 +225,7 @@ function renderQuestion(q, idx) {
                 `).join('')}
             </div>
             <div class="quiz-explanation" id="exp-${idx}">
-                <b>הסבר:</b> ${q.explanation || ''}
+                <b>${explainLabel}:</b> ${q.explanation || ''}
             </div>
         </div>
     `;
@@ -233,7 +244,8 @@ function submitQuiz() {
     const answered = Object.keys(quizState.answers).length;
     if (answered < total) {
         const missing = total - answered;
-        if (!confirm(`לא ענית על ${missing} שאלות. להגיש בכל זאת?`)) return;
+        const tmpl = tr('quiz.missing_confirm', 'לא ענית על {n} שאלות. להגיש בכל זאת?');
+        if (!confirm(tmpl.replace('{n}', missing))) return;
     }
     quizState.submitted = true;
 
@@ -267,26 +279,37 @@ function submitQuiz() {
         markDayComplete(quizState.dayNum, score);
         const nextDay = quizState.dayNum + 1;
         const nextHref = nextDay <= 7 ? `day${nextDay}.html` : '../certificate.html';
-        const nextLabel = nextDay <= 7 ? `המשיכי ליום ${nextDay} ${iconArrowLeft()}` : `קבלי תעודת סיום 🎓`;
+        const continueLabel = tr('quiz.continue_to', 'המשיכי ליום');
+        const certLabel = tr('quiz.get_certificate', 'קבלי תעודת סיום 🎓');
+        const nextLabel = nextDay <= 7 ? `${continueLabel} ${nextDay} ${iconArrowLeft()}` : certLabel;
+        const passedTitle = tr('quiz.passed_title', 'כל הכבוד! עברת את המבחן 🎉');
+        const correctTmpl = tr('quiz.correct_count', '{c} מתוך {t} תשובות נכונות. יום {d} סומן כהושלם.');
+        const correctText = correctTmpl.replace('{c}', correct).replace('{t}', total).replace('{d}', quizState.dayNum);
+        const backHome = tr('quiz.back_home', 'חזרה לדף הבית');
         resultEl.innerHTML = `
             <div class="quiz-result-icon">${iconCheck()}</div>
-            <h3>כל הכבוד! עברת את המבחן 🎉</h3>
+            <h3>${passedTitle}</h3>
             <div class="quiz-score">${score}%</div>
-            <p class="muted">${correct} מתוך ${total} תשובות נכונות. יום ${quizState.dayNum} סומן כהושלם.</p>
+            <p class="muted">${correctText}</p>
             <div class="quiz-actions">
                 <a href="${nextHref}" class="btn btn-primary">${nextLabel}</a>
-                <a href="../index.html" class="btn btn-secondary">חזרה לדף הבית</a>
+                <a href="../index.html" class="btn btn-secondary">${backHome}</a>
             </div>
         `;
     } else {
+        const failedTitle = tr('quiz.failed_title', 'כמעט שם!');
+        const failedTmpl = tr('quiz.failed_text', '{c} מתוך {t} תשובות נכונות. צריך 70% לפחות. סקרי שוב את החומר ונסי שוב — את יודעת את זה.');
+        const failedText = failedTmpl.replace('{c}', correct).replace('{t}', total);
+        const tryAgain = tr('quiz.try_again', 'נסי שוב 🔄');
+        const backToContent = tr('quiz.back_to_content', 'חזרי לחומר');
         resultEl.innerHTML = `
             <div class="quiz-result-icon">📚</div>
-            <h3>כמעט שם!</h3>
+            <h3>${failedTitle}</h3>
             <div class="quiz-score">${score}%</div>
-            <p class="muted">${correct} מתוך ${total} תשובות נכונות. צריך 70% לפחות. סקרי שוב את החומר ונסי שוב — את יודעת את זה.</p>
+            <p class="muted">${failedText}</p>
             <div class="quiz-actions">
-                <button class="btn btn-primary" onclick="location.reload()">נסי שוב 🔄</button>
-                <a href="#top" class="btn btn-secondary">חזרי לחומר</a>
+                <button class="btn btn-primary" onclick="location.reload()">${tryAgain}</button>
+                <a href="#top" class="btn btn-secondary">${backToContent}</a>
             </div>
         `;
     }
@@ -486,27 +509,38 @@ function clearLicense() {
 
 function showLicenseModal() {
     if (document.getElementById('license-overlay')) return;
+
+    const title = tr('license.title', 'גישה לקורס');
+    const lead = tr('license.lead', 'הקורס הוא רכוש פרטי של מי שרכש. בבקשה הזן את הפרטים שקיבלת במייל אחרי הרכישה.');
+    const nameLabel = tr('license.name_label', 'שם מלא');
+    const namePlaceholder = tr('license.name_placeholder', 'השם שבו נרשמת');
+    const emailLabel = tr('license.email_label', 'מייל');
+    const keyLabel = tr('license.key_label', 'מפתח רישוי (License Key)');
+    const submit = tr('license.submit', 'היכנסי לקורס');
+    const help = tr('license.help', 'שכחת מפתח?');
+    const helpExample = tr('license.help_example', 'לדוגמה: AD-DEMO01 — לכל מפתח בפורמט תקין');
+
     const overlay = document.createElement('div');
     overlay.id = 'license-overlay';
     overlay.className = 'license-overlay';
     overlay.innerHTML = `
         <div class="license-card">
             <div style="font-size:3rem;margin-bottom:14px;">🔐</div>
-            <h2>גישה לקורס</h2>
-            <p class="lead muted">הקורס הוא רכוש פרטי של מי שרכש. בבקשה הזן את הפרטים שקיבלת במייל אחרי הרכישה.</p>
+            <h2>${title}</h2>
+            <p class="lead muted">${lead}</p>
             <form class="license-form" id="license-form">
-                <label>שם מלא</label>
-                <input type="text" id="lic-name" placeholder="השם שבו נרשמת" required autocomplete="name">
-                <label>מייל</label>
-                <input type="email" id="lic-email" placeholder="example@email.com" required autocomplete="email" dir="ltr" style="text-align:right;">
-                <label>מפתח רישוי (License Key)</label>
-                <input type="text" id="lic-key" placeholder="AD-XXXXXX" required style="direction:ltr;text-align:right;text-transform:uppercase;font-family:'JetBrains Mono',monospace;">
+                <label>${nameLabel}</label>
+                <input type="text" id="lic-name" placeholder="${namePlaceholder}" required autocomplete="name">
+                <label>${emailLabel}</label>
+                <input type="email" id="lic-email" placeholder="example@email.com" required autocomplete="email" dir="ltr">
+                <label>${keyLabel}</label>
+                <input type="text" id="lic-key" placeholder="AD-XXXXXX" required style="direction:ltr;text-transform:uppercase;font-family:'JetBrains Mono',monospace;">
                 <div class="license-error" id="lic-error"></div>
-                <button type="submit" class="btn btn-primary">היכנסי לקורס ${iconArrowLeft()}</button>
+                <button type="submit" class="btn btn-primary">${submit} ${iconArrowLeft()}</button>
             </form>
             <div class="help">
-                שכחת מפתח? <a href="mailto:support@alphadevs.co">support@alphadevs.co</a><br>
-                <span style="font-size:0.78rem;">לדוגמה: AD-DEMO01 — לכל מפתח בפורמט תקין</span>
+                ${help} <a href="mailto:support@alphadevs.co">support@alphadevs.co</a><br>
+                <span style="font-size:0.78rem;">${helpExample}</span>
             </div>
         </div>
     `;
@@ -520,7 +554,7 @@ function showLicenseModal() {
         const errEl = document.getElementById('lic-error');
 
         if (!isValidLicenseKey(key, email)) {
-            errEl.textContent = 'פרטים לא תקינים. בדקי את המפתח (פורמט: AD-XXXXXX) ואת המייל.';
+            errEl.textContent = tr('license.error_invalid', 'פרטים לא תקינים. בדקי את המפתח (פורמט: AD-XXXXXX) ואת המייל.');
             errEl.classList.add('show');
             return;
         }
