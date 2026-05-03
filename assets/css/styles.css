@@ -2100,21 +2100,35 @@ body.dir-ltr ol {
     text-align: left;
     direction: ltr;
 }
-/* But preserve explicit centering */
+/* Modern English landing pages — hero left-aligned (like Stripe/Linear/Notion) */
 body.dir-ltr .hero,
+body.dir-ltr .hero-inner,
 body.dir-ltr .hero-eyebrow,
 body.dir-ltr .hero h1,
-body.dir-ltr .hero-sub,
+body.dir-ltr .hero-sub {
+    text-align: left;
+}
+body.dir-ltr .hero h1 { margin-left: 0; margin-right: auto; }
+body.dir-ltr .hero-sub { margin-left: 0; margin-right: auto; }
+body.dir-ltr .hero-inner > div[style*="display:flex"] { justify-content: flex-start; }
+body.dir-ltr .hero-stats { justify-content: flex-start; }
+
+/* Stat items themselves stay centered (numbers above labels) */
 body.dir-ltr .stat,
-body.dir-ltr .stat-item,
+body.dir-ltr .stat-item {
+    text-align: left;
+}
+
+/* Other places that need to STAY centered (modals, quiz) */
 body.dir-ltr .lesson-progress,
 body.dir-ltr .quiz-header,
 body.dir-ltr .quiz-result,
+body.dir-ltr .license-card,
+body.dir-ltr .welcome-card,
 body.dir-ltr [style*="text-align:center"],
 body.dir-ltr [style*="text-align: center"] {
     text-align: center;
 }
-body.dir-ltr .hero-stats { justify-content: flex-start; }
 
 /* Fix common padding/margin direction-specific */
 body.dir-ltr .section ul,
