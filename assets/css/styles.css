@@ -1177,17 +1177,22 @@ code {
     -webkit-text-fill-color: transparent;
 }
 .license-card .lead { margin-bottom: 24px; font-size: 0.95rem; }
-.license-form { display: flex; flex-direction: column; gap: 14px; text-align: right; }
+.license-form { display: flex; flex-direction: column; gap: 14px; }
 .license-form label {
     font-size: 0.85rem; font-weight: 700; color: var(--text);
+    text-align: start;
 }
 .license-form input {
     padding: 13px 16px;
     border: 2px solid var(--border);
     border-radius: var(--radius);
     font-size: 1rem; font-family: inherit;
-    direction: rtl;
+    text-align: start;
 }
+body.dir-rtl .license-form input { direction: rtl; }
+body.dir-ltr .license-form input { direction: ltr; }
+body.dir-ltr .license-form { text-align: left; }
+body.dir-rtl .license-form { text-align: right; }
 .license-form input:focus { outline: none; border-color: var(--brand-500); }
 .license-form input.invalid { border-color: var(--danger); background: var(--danger-light); }
 .license-error {

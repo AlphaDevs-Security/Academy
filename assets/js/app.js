@@ -343,20 +343,30 @@ function renderLessonNav(containerId, currentDay) {
     const next = COURSE_STRUCTURE.find(d => d.num === currentDay + 1);
     const nextUnlocked = isDayCompleted(currentDay);
 
+    const dayWord = tr('day_card.day', 'יום');
+    const prevLabelTmpl = tr('lesson_nav.prev_label', '{day} {n} — הקודם');
+    const nextLabelTmpl = tr('lesson_nav.next_label', '{day} {n} — הבא');
+    const finishLabel = tr('lesson_nav.finish', 'סיום הקורס 🎓');
+    const certCta = tr('lesson_nav.get_cert', 'קבלי תעודה');
+    const lockedNext = tr('lesson_nav.locked_next', '🔒 השלימי את המבחן');
+
+    const prevTitle = prev && prev.titleKey ? tr(prev.titleKey, prev.title) : (prev ? prev.title : '');
+    const nextTitle = next && next.titleKey ? tr(next.titleKey, next.title) : (next ? next.title : '');
+
     const prevHTML = prev ? `
         <a href="${prev.slug}.html" class="lesson-nav-btn prev">
-            <span class="nav-direction">${iconArrowRight()} יום ${prev.num} — הקודם</span>
-            <span class="nav-title">${prev.title}</span>
+            <span class="nav-direction">${iconBack()} ${prevLabelTmpl.replace('{day}', dayWord).replace('{n}', prev.num)}</span>
+            <span class="nav-title">${prevTitle}</span>
         </a>` : '<div></div>';
 
     const nextHTML = next ? `
         <a href="${nextUnlocked ? next.slug + '.html' : '#'}" class="lesson-nav-btn next ${!nextUnlocked ? 'disabled' : ''}">
-            <span class="nav-direction">יום ${next.num} — הבא ${iconArrowLeft()}</span>
-            <span class="nav-title">${nextUnlocked ? next.title : '🔒 השלימי את המבחן'}</span>
+            <span class="nav-direction">${nextLabelTmpl.replace('{day}', dayWord).replace('{n}', next.num)} ${iconForward()}</span>
+            <span class="nav-title">${nextUnlocked ? nextTitle : lockedNext}</span>
         </a>`
         : `<a href="../certificate.html" class="lesson-nav-btn next">
-            <span class="nav-direction">סיום הקורס 🎓</span>
-            <span class="nav-title">קבלי תעודה</span>
+            <span class="nav-direction">${finishLabel}</span>
+            <span class="nav-title">${certCta}</span>
         </a>`;
 
     container.innerHTML = prevHTML + nextHTML;
@@ -366,8 +376,18 @@ function renderLessonNav(containerId, currentDay) {
 function iconCheck()   { return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>'; }
 function iconLock()    { return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>'; }
 function iconPlay()    { return '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>'; }
-function iconArrowLeft()  { return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;"><polyline points="15 18 9 12 15 6"></polyline></svg>'; }
-function iconArrowRight() { return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;"><polyline points="9 18 15 12 9 6"></polyline></svg>'; }
+function _arrowSvg(points) { return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;"><polyline points="${points}"></polyline></svg>`; }
+function _isRtl() {
+    return (typeof getLang === 'function') ? getLang() === 'he' : true;
+}
+// Direction-aware arrows (semantic):
+// iconForward = "next/continue/submit" (← in RTL Hebrew, → in LTR English)
+// iconBack    = "previous/return"      (→ in RTL Hebrew, ← in LTR English)
+function iconForward() { return _isRtl() ? _arrowSvg('15 18 9 12 15 6') : _arrowSvg('9 18 15 12 9 6'); }
+function iconBack()    { return _isRtl() ? _arrowSvg('9 18 15 12 9 6')  : _arrowSvg('15 18 9 12 15 6'); }
+// Legacy aliases — kept so existing call sites still work
+function iconArrowLeft()  { return iconForward(); }
+function iconArrowRight() { return iconBack(); }
 function iconClock()   { return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>'; }
 function iconBook()    { return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>'; }
 function iconQuiz()    { return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>'; }

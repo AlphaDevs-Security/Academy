@@ -561,6 +561,13 @@ const TRANSLATIONS = {
         'progress.days': 'ימים',
         'progress.reset_confirm': 'לאפס את כל ההתקדמות? כל המבחנים יצטרכו להיעשות שוב.',
 
+        // Lesson Navigation (between days)
+        'lesson_nav.prev_label': '{day} {n} — הקודם',
+        'lesson_nav.next_label': '{day} {n} — הבא',
+        'lesson_nav.finish': 'סיום הקורס 🎓',
+        'lesson_nav.get_cert': 'קבלי תעודה',
+        'lesson_nav.locked_next': '🔒 השלימי את המבחן',
+
         // License modal
         'license.title': 'גישה לקורס',
         'license.lead': 'הקורס הוא רכוש פרטי של מי שרכש. בבקשה הזן את הפרטים שקיבלת במייל אחרי הרכישה.',
@@ -871,6 +878,13 @@ const TRANSLATIONS = {
         // Progress
         'progress.days': 'days',
         'progress.reset_confirm': 'Reset all progress? You will need to redo every quiz.',
+
+        // Lesson Navigation (between days)
+        'lesson_nav.prev_label': 'Previous — {day} {n}',
+        'lesson_nav.next_label': 'Next — {day} {n}',
+        'lesson_nav.finish': 'Finish course 🎓',
+        'lesson_nav.get_cert': 'Get certificate',
+        'lesson_nav.locked_next': '🔒 Complete the quiz first',
 
         // License modal
         'license.title': 'Course Access',
