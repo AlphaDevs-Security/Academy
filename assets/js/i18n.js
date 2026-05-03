@@ -426,7 +426,10 @@ const TRANSLATIONS = {
         'nav.view_curriculum': 'צפי בתוכנית הקורס',
 
         // Brand
-        'brand.subtitle': 'From Zero to Hero with Claude',
+        'brand.subtitle': 'מאפס לגיבור עם Claude Cowork',
+
+        // Page titles
+        'page.home_title': 'מאפס לגיבור עם Claude Cowork · AlphaDevs Academy',
 
         // i18n notices
         'i18n.incomplete_notice': 'דף זה מתורגם חלקית לאנגלית. חזרי לעברית לחוויה מלאה.',
@@ -435,7 +438,7 @@ const TRANSLATIONS = {
         // ==================
         // INDEX (Course Home)
         // ==================
-        'index.eyebrow': '✨ קורס מקצועי · 7 ימים · עברית',
+        'index.eyebrow': 'קורס מקצועי · 7 ימים',
         'index.title': 'מאפס לגיבור',
         'index.title_2': 'עם Claude Cowork',
         'index.subtitle': 'הקורס המלא ביותר ללמידת עבודה עם Claude — מצ׳אט פשוט ועד בניית אג׳נטים, אוטומציות ופרויקטים מתקדמים. נבנה במיוחד עבור משתמשות ומשתמשים שרוצים לקפוץ קדימה בעבודה היומיומית.',
@@ -750,14 +753,17 @@ const TRANSLATIONS = {
         'nav.view_curriculum': 'View curriculum',
 
         // Brand
-        'brand.subtitle': 'From Zero to Hero with Claude',
+        'brand.subtitle': 'From Zero to Hero with Claude Cowork',
+
+        // Page titles
+        'page.home_title': 'From Zero to Hero with Claude Cowork · AlphaDevs Academy',
 
         // i18n notices
         'i18n.incomplete_notice': 'This page is partially translated. Switch to Hebrew for the full experience.',
         'i18n.switch_lang': 'Language',
 
         // INDEX
-        'index.eyebrow': '✨ Professional Course · 7 Days',
+        'index.eyebrow': 'Professional Course · 7 Days',
         'index.title': 'From Zero to Hero',
         'index.title_2': 'with Claude Cowork',
         'index.subtitle': 'The most comprehensive course for learning to work with Claude — from simple chat to building agents, automations, and advanced projects. Built specifically for users who want to leap forward in their daily work.',
