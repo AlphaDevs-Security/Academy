@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚀 השקה מסחרית · AlphaDevs Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl;
+    background: #fafbff; color: #0f172a;
+    line-height: 1.7; padding: 40px 24px;
+}
+.wrap { max-width: 920px; margin: 0 auto; }
+.hero {
+    background: linear-gradient(135deg, #064e3b 0%, #1e3a8a 50%, #4c1d95 100%);
+    color: white; padding: 50px 40px; border-radius: 24px;
+    margin-bottom: 32px; box-shadow: 0 20px 50px rgba(76,29,149,0.3);
+}
+.hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; }
+.hero p { opacity: 0.95; font-size: 1.05rem; }
+.eyebrow {
+    display: inline-block; background: rgba(255,255,255,0.2);
+    padding: 6px 14px; border-radius: 999px; font-size: 0.82rem;
+    font-weight: 700; letter-spacing: 0.05em; margin-bottom: 14px;
+}
+
+.tally {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    margin-top: 28px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,0.15);
+}
+.tally-item .num { font-size: 1.6rem; font-weight: 900; }
+.tally-item .label { font-size: 0.82rem; opacity: 0.8; margin-top: 4px; }
+
+h2 {
+    font-size: 1.6rem; margin: 36px 0 18px; padding-bottom: 12px;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex; align-items: center; gap: 14px;
+}
+h3 { font-size: 1.15rem; margin: 24px 0 10px; color: #4338ca; }
+p { color: #475569; margin-bottom: 12px; }
+strong { color: #0f172a; }
+a { color: #4338ca; font-weight: 600; }
+
+.platform {
+    background: white; border: 1px solid #e2e8f0;
+    border-radius: 18px; padding: 30px;
+    margin-bottom: 22px;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+    border-right: 6px solid;
+}
+.platform.stripe { border-right-color: #635bff; }
+.platform.icount { border-right-color: #00a86b; }
+.platform.convertkit { border-right-color: #fb6970; }
+.platform.thinkific { border-right-color: #1763a3; }
+.platform.make { border-right-color: #6d00cc; }
+.platform.legal { border-right-color: #94a3b8; }
+
+.platform-header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+}
+.platform-num {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white; border-radius: 50%;
+    display: grid; place-items: center;
+    font-weight: 900; font-size: 1.2rem;
+    box-shadow: 0 8px 20px rgba(99,102,241,0.4);
+}
+.platform-info b {
+    font-size: 1.4rem; display: block; line-height: 1.2;
+}
+.platform-info small { color: #64748b; font-size: 0.95rem; }
+
+.meta-row {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    padding: 12px 16px; background: #f8fafc;
+    border-radius: 10px; margin: 14px 0;
+    font-size: 0.92rem;
+}
+.meta-row span { display: inline-flex; align-items: center; gap: 6px; }
+.meta-row b { color: #0f172a; }
+
+ol, ul { margin: 12px 24px; }
+ol li, ul li { margin-bottom: 8px; color: #475569; }
+
+.code-block {
+    background: #1e293b;
+    color: #f1f5f9;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    margin: 14px 0;
+    direction: ltr;
+    text-align: left;
+    overflow-x: auto;
+}
+.code-block .comment { color: #94a3b8; }
+
+.callout {
+    background: #fef3c7; border: 1px solid #fde68a;
+    border-right: 3px solid #f59e0b;
+    border-radius: 10px; padding: 14px 18px; margin: 14px 0;
+    font-size: 0.93rem; color: #78350f;
+}
+.callout-tip {
+    background: #dbeafe; border-color: #93c5fd;
+    border-right-color: #3b82f6;
+    color: #1e3a8a;
+}
+.callout-warning {
+    background: #fee2e2; border-color: #fecaca;
+    border-right-color: #ef4444;
+    color: #991b1b;
+}
+.callout-success {
+    background: #d1fae5; border-color: #6ee7b7;
+    border-right-color: #10b981;
+    color: #065f46;
+}
+
+.share {
+    background: #fdf4ff; border: 1.5px solid #f0abfc;
+    border-radius: 10px; padding: 14px 18px; margin: 14px 0;
+}
+.share b { color: #86198f; }
+.share .key {
+    background: white; padding: 6px 12px;
+    border-radius: 6px; font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem; display: inline-block; margin-top: 6px;
+    color: #86198f; direction: ltr;
+}
+
+.checklist { list-style: none; padding: 0; margin: 12px 0; }
+.checklist li {
+    padding: 10px 0 10px 32px;
+    position: relative;
+    border-bottom: 1px dashed #e2e8f0;
+    color: #475569;
+}
+.checklist li::before {
+    content: '☐';
+    position: absolute;
+    right: 0; top: 8px;
+    font-size: 1.4rem; color: #6366f1;
+}
+.checklist li:last-child { border-bottom: none; }
+
+table {
+    width: 100%; border-collapse: collapse; margin: 14px 0;
+    background: white; border-radius: 10px; overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+th, td {
+    padding: 12px 14px; text-align: right;
+    border-bottom: 1px solid #f1f5f9; font-size: 0.93rem;
+}
+th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+tr:last-child td { border-bottom: none; }
+
+.timeline {
+    background: white; border: 1px solid #e2e8f0;
+    border-radius: 14px; padding: 26px 30px; margin-top: 30px;
+}
+.timeline h3 { margin-top: 0; color: #064e3b; }
+.timeline ol { margin: 12px 24px; line-height: 2; }
+
+.summary-banner {
+    background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
+    border: 2px solid #10b981; border-radius: 18px;
+    padding: 30px; margin: 30px 0; text-align: center;
+}
+.summary-banner h3 { color: #064e3b; font-size: 1.5rem; margin-bottom: 8px; }
+.summary-banner p { color: #064e3b; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="hero">
+    <span class="eyebrow">🚀 השקה מסחרית · 5-7 ימים</span>
+    <h1>מ-Validation למכירות אמיתיות</h1>
+    <p>5 פלטפורמות שצריך להגדיר. ~3-4 שעות עבודה שלך פרושות לאורך שבוע. בסוף — אתה מסוגל לקבל תשלום, להוציא חשבוניות, לתת גישה אוטומטית, ולשלוח רצף onboarding. כל זה — 24/7, בלי לגעת בכלום.</p>
+    <div class="tally">
+        <div class="tally-item"><div class="num">5</div><div class="label">פלטפורמות לחבר</div></div>
+        <div class="tally-item"><div class="num">~₪150</div><div class="label">עלות חודשית</div></div>
+        <div class="tally-item"><div class="num">3-4 ש'</div><div class="label">זמן ההגדרה שלך</div></div>
+        <div class="tally-item"><div class="num">25 שנ'</div><div class="label">מקליק עד גישה לקורס</div></div>
+    </div>
+</div>
+
+<div class="callout callout-tip">
+    💡 <b>הסדר חשוב.</b> תבצע את הצעדים בסדר שלהם. כל פלטפורמה תלויה בקודמת. אם תדלג — תצטרך לחזור.
+</div>
+
+<!-- 1. STRIPE -->
+<section class="platform stripe">
+    <div class="platform-header">
+        <span class="platform-num">1</span>
+        <div class="platform-info">
+            <b>מעבד תשלומים (Stripe)</b>
+            <small>הלב של העסק. כאן אנשים משלמים.</small>
+        </div>
+    </div>
+
+    <div class="meta-row">
+        <span>⏱ <b>זמן:</b> 25 דק'</span>
+        <span>💰 <b>עלות:</b> 2.9% + 30¢ לעסקה</span>
+        <span>🌍 <b>טריטוריה:</b> ישראל + העולם</span>
+        <span>🔗 <a href="https://stripe.com" target="_blank">stripe.com</a></span>
+    </div>
+
+    <h3>שלבי הרישום:</h3>
+    <ol>
+        <li>פתח את <a href="https://stripe.com" target="_blank">stripe.com</a> ולחץ "Start now"</li>
+        <li>הזן מייל (lior@alphadevs.co), סיסמה חזקה, ושם החברה (AlphaDevs)</li>
+        <li>וודא שהארץ היא "Israel" — חשוב לתמיכה בשקלים והמרת מטבע</li>
+        <li>בחירת סוג העסק: "Company" (אם AlphaDevs רשומה כחברה) או "Individual" (אם עוסק מורשה)</li>
+        <li>הזן מספר עוסק/ח.פ., כתובת עסק, מספר חשבון בנק לקבלת כספים</li>
+    </ol>
+
+    <h3>הגדרת מוצרים — קריטי:</h3>
+    <p>אחרי הרישום, היכנס ל-<code>Products</code> בתפריט ויצור 4 מוצרים:</p>
+
+    <table>
+        <tr><th>שם המוצר</th><th>מחיר</th><th>סוג</th></tr>
+        <tr><td>AlphaDevs Academy — Starter</td><td>₪97 ILS</td><td>One-time</td></tr>
+        <tr><td>AlphaDevs Academy — Pro</td><td>₪297 ILS</td><td>One-time</td></tr>
+        <tr><td>AlphaDevs Academy — Pro+</td><td>₪497 ILS</td><td>One-time</td></tr>
+        <tr><td>AlphaDevs Academy — Business</td><td>₪1,997 ILS</td><td>One-time</td></tr>
+    </table>
+
+    <h3>הגדרות נוספות חשובות:</h3>
+    <ul>
+        <li><b>Settings → Customer emails</b>: הפעל "Successful payments" — לקוחות יקבלו אישור</li>
+        <li><b>Settings → Branding</b>: העלה את הלוגו של AlphaDevs ובחר צבע מותג (#6366f1)</li>
+        <li><b>Settings → Payment methods</b>: וודא שגם "Cards" וגם "Bit" פעילים (Bit חשוב לקהל הישראלי!)</li>
+        <li><b>Tax</b>: הפעל אם רוצה ש-Stripe יחשב מע"מ אוטומטית. אבל iCount כבר מטפל בזה — אז תשאיר כבוי</li>
+    </ul>
+
+    <div class="share">
+        <b>📤 מה לשלוח אליי כשמסיים:</b>
+        <p style="margin-top:6px;">2 מפתחות API מ-<code>Developers → API keys</code>:</p>
+        <div class="key">pk_live_xxxxxxxxxxxxx (Publishable key)</div>
+        <div class="key" style="margin-right:8px;">sk_live_xxxxxxxxxxxxx (Secret key — לא לפרסם!)</div>
+        <p style="margin-top:8px;">בנוסף — 4 מזהי המוצרים מ-<code>Products</code> (price_xxxxx).</p>
+    </div>
+</section>
+
+<!-- 2. iCount -->
+<section class="platform icount">
+    <div class="platform-header">
+        <span class="platform-num">2</span>
+        <div class="platform-info">
+            <b>חשבוניות אוטומטיות (iCount)</b>
+            <small>חובה חוקית בישראל. כל לקוח מקבל חשבונית מס תוך דקה.</small>
+        </div>
+    </div>
+
+    <div class="meta-row">
+        <span>⏱ <b>זמן:</b> 30 דק'</span>
+        <span>💰 <b>עלות:</b> ₪99/חודש</span>
+        <span>🌍 <b>למה:</b> חוק ישראלי</span>
+        <span>🔗 <a href="https://www.icount.co.il" target="_blank">icount.co.il</a></span>
+    </div>
+
+    <h3>שלבי הרישום:</h3>
+    <ol>
+        <li>פתח את <a href="https://www.icount.co.il" target="_blank">icount.co.il</a> ולחץ "התחל ניסיון חינם"</li>
+        <li>בחר תוכנית "מקצועי" (₪99/חודש) — תומך באינטגרציה אוטומטית</li>
+        <li>הזן פרטי עוסק/חברה — חשוב שיהיו זהים למה שב-Stripe</li>
+        <li>אמת את חשבון הבנק ואת תעודת העוסק</li>
+        <li>בחר תבנית חשבונית (אפשר להוסיף לוגו)</li>
+    </ol>
+
+    <h3>הגדרות חשובות:</h3>
+    <ul>
+        <li><b>הגדרות → מסים</b>: וודא שמע"מ מוגדר נכון (17% נכון לעכשיו)</li>
+        <li><b>הגדרות → מספרי מסמכים</b>: בחר מאיזה מספר תתחיל החשבונית הראשונה (לא חייב 1)</li>
+        <li><b>הגדרות → API</b>: הפעל "API גישה חיצונית" וצור Token</li>
+    </ul>
+
+    <h3>אלטרנטיבות אם iCount לא מתאים:</h3>
+    <ul>
+        <li><b>Greeninvoice</b> (₪89/חודש) — ידידותי יותר, פחות תכונות</li>
+        <li><b>EZcount</b> (₪59/חודש) — הכי זול, פחות אינטגרציות</li>
+        <li><b>Hashavshevet</b> (₪150+/חודש) — מקצועי, מורכב יותר</li>
+    </ul>
+
+    <div class="share">
+        <b>📤 מה לשלוח אליי כשמסיים:</b>
+        <div class="key">API Token (מ-הגדרות → API)</div>
+        <div class="key" style="margin-right:8px;">CID (מספר חברה ב-iCount)</div>
+    </div>
+</section>
+
+<!-- 3. ConvertKit -->
+<section class="platform convertkit">
+    <div class="platform-header">
+        <span class="platform-num">3</span>
+        <div class="platform-info">
+            <b>אוטומציות אימייל (ConvertKit)</b>
+            <small>שולח את כל המיילים: ברוך הבא, תזכורות, דוחות. רץ לבד 24/7.</small>
+        </div>
+    </div>
+
+    <div class="meta-row">
+        <span>⏱ <b>זמן:</b> 20 דק'</span>
+        <span>💰 <b>עלות:</b> חינם עד 1,000 מנויים, אז $25/חודש</span>
+        <span>🔗 <a href="https://convertkit.com" target="_blank">convertkit.com</a></span>
+    </div>
+
+    <h3>שלבי הרישום:</h3>
+    <ol>
+        <li>פתח את <a href="https://convertkit.com" target="_blank">convertkit.com</a> ולחץ "Sign up free"</li>
+        <li>הזן מייל וסיסמה</li>
+        <li>בחר "Creator" כסוג חשבון — לא "Creator Pro" עדיין</li>
+        <li>אמת את המייל</li>
+        <li>הגדר "From name" (לאור לסרי) ו-"From email" (lior@alphadevs.co)</li>
+    </ol>
+
+    <h3>הגדרת טפסים — חובה:</h3>
+    <p>צור 2 טפסים שונים ב-<code>Grow → Landing Pages & Forms</code>:</p>
+    <table>
+        <tr><th>שם הטופס</th><th>מטרה</th></tr>
+        <tr><td>Lead Magnet — 10 Prompts</td><td>איסוף מיילים מ-Lead Magnet</td></tr>
+        <tr><td>Course Buyer</td><td>מי שקנה את הקורס (נטען אוטומטית)</td></tr>
+    </table>
+
+    <h3>טעינת רצף 7 המיילים:</h3>
+    <p>הקובץ <a href="Marketing/email-sequence.md">Marketing/email-sequence.md</a> מכיל 7 מיילים מוכנים. בכל מייל ב-ConvertKit:</p>
+    <ol>
+        <li><code>Send → Sequences → New sequence</code></li>
+        <li>שם: "AlphaDevs Onboarding"</li>
+        <li>הוסף 7 מיילים, אחד אחרי השני, עם עיכוב הזמן שמופיע בקובץ</li>
+        <li>קשר את הסדרה לטופס "Lead Magnet"</li>
+    </ol>
+
+    <div class="callout-tip callout">
+        💡 <b>בעיית עברית ב-ConvertKit:</b> תמיכה ב-RTL לא מושלמת. חלופה: <b>ActiveTrail</b> (₪49+/חודש) ישראלי, RTL מושלם, פחות אוטומציות מתקדמות.
+    </div>
+
+    <div class="share">
+        <b>📤 מה לשלוח אליי כשמסיים:</b>
+        <div class="key">API Key (מ-Settings → Advanced → API)</div>
+        <div class="key" style="margin-right:8px;">Form IDs של 2 הטפסים</div>
+    </div>
+</section>
+
+<!-- 4. THINKIFIC -->
+<section class="platform thinkific">
+    <div class="platform-header">
+        <span class="platform-num">4</span>
+        <div class="platform-info">
+            <b>פלטפורמת הקורסים (Thinkific)</b>
+            <small>איפה הלקוחות באמת לומדים. ניהול גישה, מעקב התקדמות, וידאו.</small>
+        </div>
+    </div>
+
+    <div class="meta-row">
+        <span>⏱ <b>זמן:</b> 60 דק' (העלאת תוכן)</span>
+        <span>💰 <b>עלות:</b> Free עד 1 קורס, אז $36-99/חודש</span>
+        <span>🔗 <a href="https://www.thinkific.com" target="_blank">thinkific.com</a></span>
+    </div>
+
+    <h3>שלבי הרישום:</h3>
+    <ol>
+        <li>פתח את <a href="https://www.thinkific.com" target="_blank">thinkific.com</a> → "Start free"</li>
+        <li>תוכנית "Free" מספקת לקורס אחד. כשמתחילים למכור — שדרג ל-Basic ($36)</li>
+        <li>בחר subdomain: <code>alphadevs.thinkific.com</code> (אפשר לחבר אחר כך לדומיין שלך)</li>
+        <li>אמת מייל</li>
+    </ol>
+
+    <h3>בנייה של הקורס בתוך Thinkific:</h3>
+    <ol>
+        <li><code>Manage Learning Content → Courses → New Course</code></li>
+        <li>שם: "מאפס לגיבור עם Claude Cowork"</li>
+        <li>צור 7 פרקים (chapters) — אחד לכל יום</li>
+        <li>בכל פרק — צור 4-5 שיעורים (lessons) — אחד לכל סקציה</li>
+        <li>העלה את הוידאו של כל יום (אחרי שתקליט אותם)</li>
+        <li>הוסף את התרגילים והמבחנים ב-<code>Quiz</code> מובנה</li>
+    </ol>
+
+    <h3>אלטרנטיבה זולה: Hotmart</h3>
+    <p>אם לא רוצים לשלם $36/חודש מהיום הראשון — <a href="https://www.hotmart.com" target="_blank">Hotmart</a> חינם להעלאה, אבל לוקחים 9.9% + עמלת תשלום מכל מכירה. למתחילים זה עלול להיות זול יותר. אחרי 50 מכירות — Thinkific חוסך.</p>
+
+    <div class="share">
+        <b>📤 מה לשלוח אליי כשמסיים:</b>
+        <div class="key">API Key + School ID (מ-Settings → API)</div>
+    </div>
+</section>
+
+<!-- 5. MAKE.COM -->
+<section class="platform make">
+    <div class="platform-header">
+        <span class="platform-num">5</span>
+        <div class="platform-info">
+            <b>האוטומציות שמחברות הכל (Make.com)</b>
+            <small>הדבק שמחבר את 4 הפלטפורמות. כל זה רץ לבד.</small>
+        </div>
+    </div>
+
+    <div class="meta-row">
+        <span>⏱ <b>זמן:</b> 30 דק' (אחרי שאני בונה את ה-scenario)</span>
+        <span>💰 <b>עלות:</b> חינם עד 1,000 פעולות חודשיות</span>
+        <span>🔗 <a href="https://www.make.com" target="_blank">make.com</a></span>
+    </div>
+
+    <h3>שלבי הרישום:</h3>
+    <ol>
+        <li>פתח את <a href="https://www.make.com" target="_blank">make.com</a> → "Get started free"</li>
+        <li>הירשם עם מייל וסיסמה</li>
+        <li>אחרי הרישום — אני אדריך אותך לבניית 3 scenarios:</li>
+    </ol>
+
+    <h3>3 ה-Scenarios שנבנה:</h3>
+    <ol>
+        <li><b>Stripe Payment → Course Access</b>: לקוח קונה → Stripe שולח webhook → Make.com יוצר משתמש ב-Thinkific → שולח מייל</li>
+        <li><b>Stripe Payment → Invoice</b>: לקוח קונה → Make.com יוצר חשבונית ב-iCount</li>
+        <li><b>Stripe Payment → Email Sequence</b>: לקוח קונה → מתווסף ל-ConvertKit → מקבל רצף 7 מיילים</li>
+    </ol>
+
+    <div class="callout-tip callout">
+        💡 <b>אני אבנה את ה-scenarios בשבילך</b> אחרי שתחבר את 4 הפלטפורמות הקודמות ותשלח לי את כל ה-API keys. תהליך של ~30 דקות עבודה משותפת.
+    </div>
+</section>
+
+<!-- 6. LEGAL -->
+<section class="platform legal">
+    <div class="platform-header">
+        <span class="platform-num">6</span>
+        <div class="platform-info">
+            <b>מסמכים משפטיים — חובה</b>
+            <small>תקנון, מדיניות פרטיות, מדיניות החזרים. בלעדיהם אסור למכור.</small>
+        </div>
+    </div>
+
+    <div class="meta-row">
+        <span>⏱ <b>זמן:</b> 30 דק' עם תבנית, או ₪500-1,500 לעו"ד</span>
+        <span>📄 <b>3 מסמכים:</b> תקנון · פרטיות · החזרים</span>
+    </div>
+
+    <h3>שלוש דרכים — מהמהיר לאמין:</h3>
+    <ol>
+        <li><b>תבניות אונליין מהירות:</b> <a href="https://www.termsfeed.com" target="_blank">TermsFeed</a> או <a href="https://www.iubenda.com" target="_blank">iubenda</a> — ממלאים שאלון, מקבלים מסמכים. ~$10-50.</li>
+        <li><b>תבניות עברית מותאמות לישראל:</b> חיפוש "תקנון אתר אונליין תבנית" — יש כמה תבניות חינמיות בעברית. תאמת עם רואה החשבון שמתאימות לך.</li>
+        <li><b>עורך דין:</b> ₪500-1,500 לחבילה מלאה. הכי בטוח. מומלץ אם המחזור צפוי לעבור ₪100K לשנה.</li>
+    </ol>
+
+    <h3>מה צריך להיות במסמכים:</h3>
+    <ul>
+        <li><b>תקנון:</b> מי המוכר, מה המוצר, איך מתבצעת הקנייה, מה הזכויות והחובות</li>
+        <li><b>פרטיות:</b> מה אתה אוסף (מייל, IP), איך משתמש (שליחת מיילים), עם מי משתף (Stripe, ConvertKit), זכות העיון</li>
+        <li><b>החזרים:</b> 30 יום החזר מלא ללא שאלות, איך לבקש (מייל ל-support@alphadevs.co), זמן עיבוד (3-5 ימי עסקים)</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        ⚠️ <b>אזהרה:</b> אני לא עורך דין. ההמלצות פה כלליות. לפני השקה — וודא עם עו"ד או רואה חשבון שיש לך כיסוי מלא.
+    </div>
+</section>
+
+<!-- TIMELINE -->
+<div class="timeline">
+    <h3>📅 לוח זמנים מומלץ — 7 ימים</h3>
+    <ol>
+        <li><b>יום 1 (היום):</b> פתח חשבונות Stripe + iCount. ~55 דק'.</li>
+        <li><b>יום 2:</b> פתח חשבונות ConvertKit + Thinkific. ~80 דק'.</li>
+        <li><b>יום 3:</b> שלח לי את כל ה-API keys. אני בונה את האוטומציות. ~30 דק' עבודה משותפת.</li>
+        <li><b>יום 4:</b> טפל במסמכים משפטיים (תבניות אונליין). ~30 דק'.</li>
+        <li><b>יום 5:</b> בדיקת רכישה מקצה לקצה — קנה את הקורס שלך מחשבון אחר. וודא שהכל זורם.</li>
+        <li><b>יום 6:</b> בנה את דפי המכירה ב-Thinkific (אם בחרת בו). ~60 דק'.</li>
+        <li><b>יום 7:</b> פתיחת רישום ל-Founders Circle (100 קונים ראשונים, מחיר מוזל). השקה רכה.</li>
+    </ol>
+</div>
+
+<!-- FINAL CHECKLIST -->
+<h2>✅ צ'קליסט סופי לפני השקה</h2>
+
+<ul class="checklist">
+    <li>חשבון Stripe פעיל עם 4 מוצרים מוגדרים</li>
+    <li>iCount מחובר עם API token זמין</li>
+    <li>ConvertKit עם 2 טפסים ורצף 7 מיילים פעיל</li>
+    <li>Thinkific (או Hotmart) עם הקורס מועלה</li>
+    <li>Make.com עם 3 scenarios רצים (אחרי הקמתי)</li>
+    <li>תקנון, מדיניות פרטיות, מדיניות החזרים — מקושרים מהדפים הרלוונטיים</li>
+    <li>בדיקה אמיתית: קנייה מסתיימת בגישה לקורס + מייל ברוך הבא + חשבונית, תוך 30 שניות</li>
+    <li>דף נחיתה (sales.html) עם כפתורי "Buy Now" שמחברים ל-Stripe Checkout האמיתי</li>
+    <li>support@alphadevs.co מוגדר ועונה</li>
+    <li>Google Analytics מותקן בכל הדפים — לבדוק קונברז'ן</li>
+</ul>
+
+<div class="summary-banner">
+    <h3>🎯 כשתסיים את הצ'קליסט</h3>
+    <p>תשלח לי הודעה "סיימתי הכל" — ואני אעבור על המערכת מקצה לקצה. אחרי שאוודא שהכל עובד — אתה מוכן לפרסם את הקישור באמצעי התקשורת שלך.</p>
+</div>
+
+</div>
+
+</body>
+</html>

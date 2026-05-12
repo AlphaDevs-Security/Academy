@@ -415,7 +415,8 @@ const MANAGERS = [
 // Students get standard experience: watermark on, anti-share on
 // To add: append { key: 'AD-XXXXXX', email: '...', name: '...' }
 const PRE_REG_STUDENTS = [
-    { key: 'AD-REEMA1', email: 'reema@alphadevs.co', name: 'רימה' }
+    { key: 'AD-REEMA1', email: 'reema@alphadevs.co', name: 'רימה' },
+    { key: 'AD-RVT001', email: 'revital@alphadevs.co', name: 'רויטל' }
 ];
 
 function isOwner(key, email) {
@@ -507,6 +508,56 @@ function cleanUrlParams() {
     const cleanUrl = window.location.pathname + window.location.hash;
     window.history.replaceState({}, '', cleanUrl);
 }
+
+/* ============================================
+   AFFILIATE / REFERRAL TRACKING
+   When ?ref=XXX in URL, save it for 60 days.
+   On purchase, the affiliate gets credited.
+   ============================================ */
+const REF_STORAGE = 'alphadevs_referral_v1';
+const REF_TTL_DAYS = 60;
+
+// Affiliates registry — name, commission %, type
+const AFFILIATES = {
+    'NI':       { name: 'ני',     fullName: 'ני לסרי',         commission: 0.50, role: 'kid-ambassador', avatar: '🌟' },
+    'NATALIA':  { name: 'נטליה',  fullName: 'נטליה לוהובה',   commission: 0.30, role: 'team',           avatar: '🛠️' },
+    'REEMA':    { name: 'רימה',   fullName: 'רימה לסרי',       commission: 0.30, role: 'family',         avatar: '💜' }
+};
+
+function checkReferralUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const ref = (params.get('ref') || '').toUpperCase();
+    if (ref && AFFILIATES[ref]) {
+        const data = {
+            code: ref,
+            timestamp: new Date().toISOString(),
+            expiresAt: new Date(Date.now() + REF_TTL_DAYS * 24 * 3600 * 1000).toISOString()
+        };
+        localStorage.setItem(REF_STORAGE, JSON.stringify(data));
+        return ref;
+    }
+    return null;
+}
+
+function getActiveReferral() {
+    try {
+        const raw = localStorage.getItem(REF_STORAGE);
+        if (!raw) return null;
+        const data = JSON.parse(raw);
+        if (new Date(data.expiresAt) < new Date()) {
+            localStorage.removeItem(REF_STORAGE);
+            return null;
+        }
+        return data;
+    } catch (e) { return null; }
+}
+
+function getAffiliate(code) {
+    return AFFILIATES[(code || '').toUpperCase()] || null;
+}
+
+// Auto-check referral on every page load
+checkReferralUrl();
 
 function getLicense() {
     try {

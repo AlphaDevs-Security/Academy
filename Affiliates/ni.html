@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌟 הדף האישי של ני · שגרירת AlphaDevs Junior</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Heebo', sans-serif; direction: rtl;
+    background: linear-gradient(135deg, #fef3c7 0%, #fce7f3 50%, #f3e8ff 100%);
+    color: #0f172a; min-height: 100vh; padding: 30px 20px;
+    background-attachment: fixed;
+}
+
+.container { max-width: 920px; margin: 0 auto; }
+
+/* Header */
+.hero-banner {
+    background: linear-gradient(135deg, #fbbf24 0%, #ec4899 50%, #a855f7 100%);
+    color: white; border-radius: 32px;
+    padding: 50px 40px; text-align: center;
+    position: relative; overflow: hidden;
+    box-shadow: 0 20px 60px rgba(168,85,247,0.3);
+    margin-bottom: 30px;
+}
+.hero-banner::before {
+    content: '🌟'; position: absolute;
+    top: -20px; right: -20px;
+    font-size: 8rem; opacity: 0.15;
+    transform: rotate(15deg);
+}
+.hero-banner::after {
+    content: '✨'; position: absolute;
+    bottom: -20px; left: -20px;
+    font-size: 8rem; opacity: 0.15;
+    transform: rotate(-15deg);
+}
+.hero-emoji {
+    font-size: 5rem; line-height: 1;
+    margin-bottom: 14px;
+    animation: bounce 2s ease infinite;
+    display: inline-block;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+.hero-banner h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+.hero-banner .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    font-weight: 600;
+}
+
+/* Stats grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+.stat-card {
+    background: white;
+    border-radius: 24px;
+    padding: 28px 24px;
+    text-align: center;
+    border: 4px solid;
+    transition: transform 200ms;
+    position: relative;
+    overflow: hidden;
+}
+.stat-card:hover { transform: translateY(-4px); }
+.stat-card.gold { border-color: #fbbf24; background: linear-gradient(135deg, #fef3c7 0%, white 70%); }
+.stat-card.pink { border-color: #ec4899; background: linear-gradient(135deg, #fce7f3 0%, white 70%); }
+.stat-card.purple { border-color: #a855f7; background: linear-gradient(135deg, #f3e8ff 0%, white 70%); }
+.stat-card.green { border-color: #10b981; background: linear-gradient(135deg, #d1fae5 0%, white 70%); }
+
+.stat-icon { font-size: 2.5rem; line-height: 1; margin-bottom: 10px; }
+.stat-num {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+.stat-card.gold .stat-num { color: #92400e; }
+.stat-card.pink .stat-num { color: #9d174d; }
+.stat-card.purple .stat-num { color: #6b21a8; }
+.stat-card.green .stat-num { color: #065f46; }
+.stat-label {
+    font-size: 0.95rem;
+    color: #475569;
+    font-weight: 700;
+}
+
+/* Magic link box */
+.magic-link-box {
+    background: white;
+    border-radius: 28px;
+    padding: 40px;
+    margin-bottom: 30px;
+    border: 5px dashed #fbbf24;
+    text-align: center;
+}
+.magic-link-box h2 {
+    font-size: 1.8rem;
+    color: #92400e;
+    margin-bottom: 8px;
+}
+.magic-link-box p {
+    color: #78350f;
+    margin-bottom: 22px;
+    font-size: 1.05rem;
+}
+.link-display {
+    background: linear-gradient(135deg, #fef3c7, #fce7f3);
+    border: 2px solid #fbbf24;
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin: 20px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #6b21a8;
+    direction: ltr;
+    word-break: break-all;
+}
+.btn-share-row {
+    display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+    margin-top: 20px;
+}
+.btn-share {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 24px; border-radius: 14px;
+    font-weight: 800; font-size: 1rem;
+    cursor: pointer; border: none;
+    text-decoration: none;
+    transition: transform 200ms;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.1), 0 12px 24px rgba(0,0,0,0.08);
+    font-family: inherit;
+    color: white;
+}
+.btn-share:hover { transform: translateY(-3px); }
+.btn-whatsapp { background: #25d366; }
+.btn-copy { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+.btn-share:active { transform: translateY(0); box-shadow: 0 2px 0 rgba(0,0,0,0.1); }
+
+/* How it works */
+.how-it-works {
+    background: white;
+    border-radius: 28px;
+    padding: 36px;
+    margin-bottom: 30px;
+}
+.how-it-works h2 {
+    font-size: 1.6rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+}
+.step {
+    text-align: center;
+    padding: 18px;
+    background: #f8fafc;
+    border-radius: 16px;
+}
+.step-num {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, #fbbf24, #ec4899);
+    color: white;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-weight: 900; font-size: 1.3rem;
+    margin: 0 auto 12px;
+    box-shadow: 0 8px 18px rgba(236,72,153,0.3);
+}
+.step h4 { color: #0f172a; margin-bottom: 6px; font-size: 1.05rem; }
+.step p { color: #64748b; font-size: 0.92rem; line-height: 1.6; }
+
+/* Goals/Milestones */
+.goals {
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #831843 100%);
+    color: white;
+    border-radius: 28px;
+    padding: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.goals h2 {
+    color: white;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+.milestones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+.milestone {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 18px 14px;
+    text-align: center;
+    transition: all 200ms;
+}
+.milestone.reached {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-color: #10b981;
+}
+.milestone .ms-num {
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+}
+.milestone .ms-label {
+    font-size: 0.82rem;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+.milestone .ms-prize {
+    font-size: 0.78rem;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    color: #fbcfe8;
+}
+
+/* Parent note */
+.parent-note {
+    background: #fffbeb;
+    border: 2px solid #fde68a;
+    border-radius: 18px;
+    padding: 22px 26px;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #78350f;
+}
+.parent-note b { color: #78350f; }
+
+footer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    padding-top: 20px;
+}
+
+/* Toast */
+.toast {
+    position: fixed; top: 20px; left: 50%;
+    transform: translateX(-50%);
+    background: #10b981; color: white;
+    padding: 14px 28px; border-radius: 999px;
+    font-weight: 800;
+    box-shadow: 0 10px 30px rgba(16,185,129,0.4);
+    opacity: 0; transition: opacity 250ms;
+    z-index: 1000;
+}
+.toast.show { opacity: 1; }
+
+/* Confetti for sale celebration */
+.confetti-piece {
+    position: fixed; width: 12px; height: 12px;
+    pointer-events: none; z-index: 99;
+    animation: fall linear forwards;
+}
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+    <section class="hero-banner">
+        <div class="hero-emoji">🌟</div>
+        <h1>היי ני!</h1>
+        <p class="subtitle">את שגרירה רשמית של AlphaDevs Junior</p>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-grid">
+        <div class="stat-card gold">
+            <div class="stat-icon">👥</div>
+            <div class="stat-num" id="stat-friends">0</div>
+            <div class="stat-label">חברים שקנו דרכך</div>
+        </div>
+        <div class="stat-card pink">
+            <div class="stat-icon">💰</div>
+            <div class="stat-num">₪<span id="stat-earned">0</span></div>
+            <div class="stat-label">כסף שהרווחת</div>
+        </div>
+        <div class="stat-card purple">
+            <div class="stat-icon">🔗</div>
+            <div class="stat-num" id="stat-clicks">0</div>
+            <div class="stat-label">לחיצות על הלינק</div>
+        </div>
+        <div class="stat-card green">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-num">50%</div>
+            <div class="stat-label">מכל מכירה — שלך</div>
+        </div>
+    </section>
+
+    <!-- MAGIC LINK -->
+    <section class="magic-link-box">
+        <h2>🪄 הלינק הקסום שלך</h2>
+        <p>שתפי את הלינק הזה עם חברים והורים שלהם. כל מי שיקנה דרכך — את מקבלת ₪73.50!</p>
+
+        <div class="link-display" id="magic-link">
+            https://academy.alphadevs.co/Kids/sales.html?ref=NI
+        </div>
+
+        <div class="btn-share-row">
+            <button class="btn-share btn-whatsapp" onclick="shareWhatsApp()">📱 שתפי בוואטסאפ</button>
+            <button class="btn-share btn-copy" onclick="copyLink()">📋 העתיקי לינק</button>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+        <h2>🎯 איך זה עובד?</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>שתפי את הלינק</h4>
+                <p>שלחי לחברים, להורים שלהם, או הראי בכיתה (עם רשות המורה)</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>הם רואים את הקורס</h4>
+                <p>הם נכנסים ורואים את הדף של הקורס לילדים. הם רואים שאת המליצת!</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>אם הם קונים — את מרוויחה!</h4>
+                <p>50% מכל מכירה. ₪147 = ₪73.50 לכיס שלך 💰</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MILESTONES -->
+    <section class="goals">
+        <h2>🏆 המטרות שלך</h2>
+        <p style="opacity:0.9;margin-bottom:6px;">כל מטרה שמשיגים — פרס מיוחד מאבא!</p>
+        <div class="milestones-grid">
+            <div class="milestone" data-target="1">
+                <div class="ms-num">1</div>
+                <div class="ms-label">חבר ראשון</div>
+                <div class="ms-prize">🍦 גלידה</div>
+            </div>
+            <div class="milestone" data-target="3">
+                <div class="ms-num">3</div>
+                <div class="ms-label">חברים</div>
+                <div class="ms-prize">🍕 פיצה משפחתית</div>
+            </div>
+            <div class="milestone" data-target="5">
+                <div class="ms-num">5</div>
+                <div class="ms-label">חברים</div>
+                <div class="ms-prize">🎮 משחק חדש</div>
+            </div>
+            <div class="milestone" data-target="10">
+                <div class="ms-num">10</div>
+                <div class="ms-label">חברים</div>
+                <div class="ms-prize">🎁 הפתעה ענקית</div>
+            </div>
+            <div class="milestone" data-target="20">
+                <div class="ms-num">20</div>
+                <div class="ms-label">חברים</div>
+                <div class="ms-prize">🏖️ יום בים</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARENT NOTE -->
+    <section class="parent-note">
+        <b>👨‍👩‍👧 הודעה להורים של ני:</b>
+        <p style="margin-top:8px;">ני היא שגרירה של הקורס שלנו לילדים. כל מכירה דרך הלינק שלה מזוהה אוטומטית, וני מקבלת 50% עמלה. הכסף נצבר בחשבון מיוחד ומועבר חודשית. למידע נוסף או לעצור את התוכנית — lior@alphadevs.co</p>
+    </section>
+
+    <footer>
+        🌟 ני · שגרירה ראשונה · AlphaDevs Junior · 2026
+    </footer>
+
+</div>
+
+<div id="toast" class="toast">✓ הועתק!</div>
+
+<script src="../assets/js/app.js"></script>
+<script>
+// === Ni's affiliate code ===
+const MY_CODE = 'NI';
+const MY_LINK = 'https://academy.alphadevs.co/Kids/sales.html?ref=NI';
+const COURSE_PRICE = 147;
+const COMMISSION = 0.50;
+
+// === Stats (placeholder — will integrate with real data later) ===
+// For now, simulated. In production, this would query the backend.
+function loadNiStats() {
+    const stats = JSON.parse(localStorage.getItem('alphadevs_ni_stats') || '{"friends":0,"clicks":0}');
+    return stats;
+}
+
+function renderStats() {
+    const stats = loadNiStats();
+    const earned = stats.friends * COURSE_PRICE * COMMISSION;
+    document.getElementById('stat-friends').textContent = stats.friends;
+    document.getElementById('stat-earned').textContent = earned.toFixed(2);
+    document.getElementById('stat-clicks').textContent = stats.clicks;
+
+    // Update milestones
+    document.querySelectorAll('.milestone').forEach(m => {
+        const target = parseInt(m.getAttribute('data-target'));
+        if (stats.friends >= target) m.classList.add('reached');
+    });
+}
+
+// === Share buttons ===
+function shareWhatsApp() {
+    const message = `היי! גיליתי קורס מגניב על AI לילדים. אבא של החברה שלי בנה אותו, וזה ממש כיף ✨\n\nתבדקו: ${MY_LINK}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+function copyLink() {
+    navigator.clipboard.writeText(MY_LINK).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+    });
+}
+
+// === Confetti when stats update ===
+function celebrate() {
+    const colors = ['#fbbf24', '#ec4899', '#a855f7', '#3b82f6', '#10b981'];
+    for (let i = 0; i < 60; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + 'vw';
+        piece.style.top = -20 + 'px';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+        piece.style.animationDuration = (2 + Math.random() * 2) + 's';
+        piece.style.animationDelay = Math.random() * 0.5 + 's';
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 5000);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderStats();
+});
+</script>
+
+</body>
+</html>
